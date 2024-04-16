@@ -1,0 +1,1558 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ud04 ProgramacionWeb - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#duracion-y-criterios-de-evaluacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ud04 ProgramacionWeb
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud0101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 3 PHP Orientado a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>unit: unidad didáctica 4
+title: Programación Web
+language: ES
+author: Arturo Blasco
+subject: Desarrollo Web en Entornos Servidor
+keywords: [2023, DWES, PHP]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${title} - ${subject} (ver: ${today}) 
+footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url:${filename}/../
+typora-copy-images-to:${filename}/../assets
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Índice</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#duracion-y-criterios-de-evaluacion">duración y criterios de evaluación</a></li>
+<li><a href="#variables-de-servidor">variables de servidor</a></li>
+<li><a href="#formularios">formularios</a><ul>
+<li><a href="#validacion">validación</a></li>
+<li><a href="#parametros-multivalor">parámetros multivalor</a></li>
+<li><a href="#volviendo-a-rellenar-un-formulario">volviendo a rellenar un formulario</a></li>
+<li><a href="#subiendo-archivos">subiendo archivos</a><ul>
+<li><a href="#filtrado-con-php-de-tipos-de-ficheros-subidos-con-html">filtrado con php de tipos de ficheros subidos con html</a></li>
+<li><a href="#escritura-de-imagenes-en-carpeta-del-servidor">escritura de imágenes en carpeta del servidor</a></li>
+<li><a href="#seguridad-de-escritura-de-imagenes-en-carpeta-del-servidor">seguridad de escritura de imagenes en carpeta del servidor</a></li>
+<li><a href="#extra-1-mostrar-imagenes-subidas-con-html">extra 1: mostrar imagenes subidas con html</a></li>
+<li><a href="#extra-2-descargar-ficheros-subidos-con-html">extra 2: descargar ficheros subidos con html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#cabeceras-de-respuesta">cabeceras de respuesta</a></li>
+<li><a href="#gestion-de-estado">gestión de estado</a><ul>
+<li><a href="#cookies">cookies</a></li>
+<li><a href="#sesion">sesión</a></li>
+</ul>
+</li>
+<li><a href="#autenticacion-de-usuarios">autenticación de usuarios</a></li>
+<li><a href="#referencias">referencias</a></li>
+</ul>
+</div>
+<h1 id="duracion-y-criterios-de-evaluacion">duración y criterios de evaluación</h1>
+<p><strong>Duración estimada</strong>: 12 sesiones</p>
+<hr />
+<p><strong>Resultado de aprendizaje y criterios de evaluación</strong>:</p>
+<ol>
+<li>Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.</li>
+</ol>
+<p>a) <em>Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.</em></p>
+<p>b) <em>Se han utilizado sesiones para mantener el estado de las aplicaciones Web.</em></p>
+<p>c) <em>Se han utilizado cookies para almacenar información en el cliente Web y para recuperar su contenido.</em></p>
+<p>d) <em>Se han identificado y caracterizado los mecanismos disponibles para la autentificación de usuarios.</em></p>
+<p>e) <em>Se han escrito aplicaciones que integren mecanismos de autentificación de usuarios.</em></p>
+<p>f) <em>Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.</em></p>
+<p>g) <em>Se han utilizado herramientas y entornos para facilitar la programación, prueba y depuración del código.</em></p>
+<h1 id="variables-de-servidor">variables de servidor</h1>
+<p>PHP almacena la información del servidor y de las peticiones HTTP en seis arrays globales:</p>
+<ul>
+<li><code>$_ENV</code>: información sobre las variables de entorno.</li>
+<li><code>$_GET</code>: parámetros enviados en la petición GET.</li>
+<li><code>$_POST</code>: parámetros enviados en el envio POST.</li>
+<li><code>$_COOKIE</code>: contiene las cookies de la petición, las claves del array son los nombres de las cookies.</li>
+<li><code>$_SERVER</code>: información sobre el servidor.</li>
+<li><code>$_FILES</code>: información sobre los ficheros cargados via upload.</li>
+</ul>
+<p>Si nos centramos en el array <code>$_SERVER</code> podemos consultar las siguientes propiedades:</p>
+<ul>
+<li><code>PHP_SELF</code>: nombre del script ejecutado, relativo al document root (p.e.: <code>/tienda/carrito.php</code>).</li>
+<li><code>SERVER_SOFTWARE</code>: (p.e.: <code>Apache</code>).</li>
+<li><code>SERVER_NAME</code>: dominio, alias DNS (p.e.: <code>www.elche.es</code>).</li>
+<li><code>REQUEST_METHOD</code>: GET.</li>
+<li><code>REQUEST_URI</code>: URI, sin el dominio.</li>
+<li><code>QUERY_STRING</code>: todo lo que va después de <code>?</code> en la URL (p.e.: <code>heroe=Batman&amp;nombre=Bruce</code>).</li>
+</ul>
+<p>Más información en https://www.php.net/manual/es/reserved.variables.server.php.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_SELF&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// /u4/401server.php</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;SERVER_SOFTWARE&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.4.9</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;SERVER_NAME&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// localhost</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// GET</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_URI&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// /u4/401server.php?hero=Batman</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;QUERY_STRING&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// hero=Batman</span>
+</code></pre></div></td></tr></table></div>
+<p>Otras propiedades relacionadas:</p>
+<ul>
+<li><code>PATH_INFO</code>: ruta extra tras la petición (p.e.: si la URL es <code>http://www.php.com/php/pathInfo.php/algo/cosa?foo=bar</code>, entonces <code>$_SERVER['PATH_INFO']</code> será <code>/algo/cosa</code>).</li>
+<li><code>REMOTE_HOST</code>: hostname que hizo la petición.</li>
+<li><code>REMOTE_ADDR</code>: IP del cliente.</li>
+<li><code>AUTH_TYPE</code>: tipo de autenticación (p.ej: <code>Basic</code>).</li>
+<li><code>REMOTE_USER</code>: nombre del usuario autenticado.</li>
+</ul>
+<p>Apache crea una clave para cada cabecera HTTP, en mayúsculas y sustituyendo los guiones por subrayados:</p>
+<ul>
+<li><code>HTTP_USER_AGENT</code>: agente (navegador).</li>
+<li><code>HTTP_REFERER</code>: página desde la que se hizo la petición.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;HTTP_USER_AGENT&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="formularios">formularios</h1>
+<p>A la hora de enviar un formulario, debemos tener claro cuando usar GET o POST:</p>
+<ul>
+<li>GET: los parámetros se pasan en la URL.</li>
+<li>&lt;2048 caracteres, sólo ASCII.</li>
+<li>Permite almacenar la dirección completa (marcador / historial).</li>
+<li>Idempotente: dos llamadas con los mismos datos siempre debe dar el mismo resultado.</li>
+<li>El navegador puede cachear las llamadas.</li>
+<li>POST: parámetros ocultos (no encriptados).</li>
+<li>Sin límite de datos, permite datos binarios.</li>
+<li>No se pueden cachear.</li>
+<li>No idempotente → actualizar la BBDD.</li>
+</ul>
+<p>Así pues, para recoger los datos accederemos al array dependiendo del método del formulario que nos ha invocado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Para los siguientes apartados nos vamos a basar en el siguiente ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">&lt;form action=&quot;formulario.php&quot; method=&quot;GET&quot;&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="x">  &lt;p&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="x">    &lt;label for=&quot;nombre&quot;&gt;Nombre del alumno:&lt;/label&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="x">    &lt;input type=&quot;text&quot; name=&quot;nombre&quot; id=&quot;nombre&quot; value=&quot;&quot; /&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="x">  &lt;/p&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="x">  &lt;p&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="x">    &lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; id=&quot;modulosDWES&quot; value=&quot;DWES&quot; /&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="x">    &lt;label for=&quot;modulosDWES&quot;&gt;Desarrollo web en entorno servidor&lt;/label&gt;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="x">  &lt;/p&gt;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="x">  &lt;p&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="x">    &lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; id=&quot;modulosDWEC&quot; value=&quot;DWEC&quot; /&gt;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="x">    &lt;label for=&quot;modulosDWEC&quot;&gt;Desarrollo web en entorno cliente&lt;/label&gt;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="x">  &lt;/p&gt;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="x">  &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; name=&quot;enviar&quot; /&gt;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="x">&lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="validacion">validación</h2>
+<p>Respecto a la validación, es conveniente siempre hacer <strong>validación doble</strong>:</p>
+<ul>
+<li>En el cliente mediante JS.</li>
+<li>En servidor, antes de llamar a negocio, es conveniente volver a validar los datos.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">];</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="c1">// comprobar si $par tiene el formato adecuado, su valor, etc...</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>librerías de validación</strong></p>
+<p>Existen diversas librerías que facilitan la validación de los formularios, como son <a href="https://respect-validation.readthedocs.io/en/latest/">respect/validation</a> o <a href="https://validator.particle-php.com/en/latest/">particle/validator</a>. Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa.</p>
+</blockquote>
+<h2 id="parametros-multivalor">parámetros multivalor</h2>
+<p>Existen elementos HTML que envían varios valores:</p>
+<ul>
+<li><code>select multiple</code></li>
+<li><code>checkbox</code></li>
+</ul>
+<p>Para recoger los datos, el nombre del elemento debe ser un array.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">&lt;select name=&quot;lenguajes[]&quot; multiple=&quot;true&quot;&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="x">    &lt;option value=&quot;c&quot;&gt;C&lt;/option&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="x">    &lt;option value=&quot;java&quot;&gt;Java&lt;/option&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="x">    &lt;option value=&quot;php&quot;&gt;PHP&lt;/option&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="x">    &lt;option value=&quot;python&quot;&gt;Python&lt;/option&gt;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="x">&lt;/select&gt;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="x">&lt;input type=&quot;checkbox&quot; name=&quot;lenguajes[]&quot; value=&quot;c&quot; /&gt;C&lt;br /&gt;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="x">&lt;input type=&quot;checkbox&quot; name=&quot;lenguajes[]&quot; value=&quot;java&quot; /&gt;Java&lt;br /&gt;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="x">&lt;input type=&quot;checkbox&quot; name=&quot;lenguajes[]&quot; value=&quot;php&quot; /&gt;Php&lt;br /&gt;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="x">&lt;input type=&quot;checkbox&quot; name=&quot;lenguajes[]&quot; value=&quot;python&quot; /&gt;Python&lt;br /&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>De manera que luego al recoger los datos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="nv">$lenguajes</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;lenguajes&quot;</span><span class="p">];</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$lenguajes</span> <span class="k">as</span> <span class="nv">$lenguaje</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$lenguaje</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="volviendo-a-rellenar-un-formulario">volviendo a rellenar un formulario</h2>
+<p>Un <em>sticky form</em> es un formulario que recuerda sus valores. Para ello, hemos de rellenar los atributos <code>value</code> de los elementos HTML con la información que contenían:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;modulos&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="c1">// Aquí se incluye el código a ejecutar cuando los datos son correctos</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="c1">// Generamos el formulario</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>    <span class="nv">$modulos</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;modulos&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="x">&lt;form action=&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;PHP_SELF&#39;</span><span class="p">];</span><span class="cp">?&gt;</span><span class="x">&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="x">  &lt;p&gt;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="x">   &lt;label for=&quot;nombre&quot;&gt;Nombre del alumno:&lt;/label&gt;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="x">   &lt;input type=&quot;text&quot; name=&quot;nombre&quot; id=&quot;nombre&quot; value=&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$nombre</span> <span class="cp">?&gt;</span><span class="x">&quot; /&gt; </span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="x">  &lt;/p&gt;</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="x">  &lt;p&gt;</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="x">   &lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; id=&quot;modulosDWES&quot; value=&quot;DWES&quot;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="x">   </span><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;DWES&quot;</span><span class="p">,</span><span class="nv">$modulos</span><span class="p">))</span> <span class="k">echo</span> <span class="s1">&#39;checked=&quot;checked&quot;&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"> /&gt;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="x">   &lt;label for=&quot;modulosDWES&quot;&gt;Desarrollo web en entorno servidor&lt;/label&gt;</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="x">  &lt;/p&gt;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="x">  &lt;p&gt;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="x">   &lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; id=&quot;modulosDWEC&quot; value=&quot;DWEC&quot;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="x">   </span><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;DWEC&quot;</span><span class="p">,</span><span class="nv">$modulos</span><span class="p">))</span> <span class="k">echo</span> <span class="s1">&#39;checked=&quot;checked&quot;&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"> /&gt;</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="x">   &lt;label for=&quot;modulosDWEC&quot;&gt;Desarrollo web en entorno cliente&lt;/label&gt;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="x">  &lt;/p&gt;</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="x">  &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; name=&quot;enviar&quot;/&gt;</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="x">&lt;/form&gt;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="cp">&lt;?php</span> <span class="p">}</span> <span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="subiendo-archivos">subiendo archivos</h2>
+<p>Se almacenan en el servidor en el array <code>$_FILES</code> con el nombre del campo del tipo <code>file</code> del formulario.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">&lt;form enctype=&quot;multipart/form-data&quot; action=&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;PHP_SELF&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">&quot;  method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="x">    Archivo: &lt;input name=&quot;archivoEnviado&quot; type=&quot;file&quot; /&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="x">    &lt;br /&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="x">    &lt;input type=&quot;submit&quot; name=&quot;btnSubir&quot; value=&quot;Subir&quot; /&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="x">&lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Configuración en <code>php.ini</code>:</p>
+<ul>
+<li><code>file_uploads</code>: on / off.</li>
+<li><code>upload_max_filesize</code>: 2M.</li>
+<li><code>upload_tmp_dir</code>: directorio temporal. No es necesario configurarlo, cogerá el predeterminado del sistema.</li>
+<li><code>post_max_size</code>: tamaño máximo de los datos POST. Debe ser mayor a upload_max_filesize.</li>
+<li><code>max_file_uploads</code>: número máximo de archivos que se pueden cargar a la vez.</li>
+<li><code>max_input_time</code>: tiempo máximo empleado en la carga (GET/POST y upload → normalmente se configura en 60).</li>
+<li><code>memory_limit</code>: 128M.</li>
+<li><code>max_execution_time</code>: tiempo de ejecución de un script (no tiene en cuenta el upload).</li>
+</ul>
+<p>Veamos de qué información disponemos en el array <code>$_FILES</code> para una imagen llamada 'saludo.jpg' subida mediante nuestro formulario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="k">echo</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>    <span class="k">echo</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">];</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="k">echo</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">];</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>    <span class="k">echo</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;size&#39;</span><span class="p">];</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Mediante estos <em>echo's</em> se ha accedido a toda la información disponible del fichero en PHP. La información impresa sería la siguiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>saludo
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>213mnuashduahs0923
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>image/jpg
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="m">120304</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="m">0</span>
+</code></pre></div></td></tr></table></div>
+<p>Para cargar los archivos, accedemos al array <code>$_FILES</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>  <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;btnSubir&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;btnSubir&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Subir&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>     <span class="k">if</span> <span class="p">(</span><span class="nb">is_uploaded_file</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>        <span class="c1">// subido con éxito</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>        <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>        <span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">],</span> <span class="s2">&quot;./uploads/</span><span class="si">{</span><span class="nv">$nombre</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Archivo </span><span class="si">$nombre</span><span class="s2"> subido con éxito&lt;/p&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>     <span class="p">}</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>  <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Cada archivo cargado en <code>$_FILES</code> tiene:</p>
+<ul>
+<li><code>name</code>: nombre.</li>
+<li><code>tmp_name</code>: nombre temporal asignado al fichero por el servidor. Este nombre es único y permite identificarlo dentro de la carpeta de temporales.</li>
+<li><code>size</code>: tamaño en bytes.</li>
+<li><code>type</code>: tipo MIME.</li>
+<li><code>error</code>: código de error de la subida, en nuestro caso 0 o UPLOAD_ERR_OK que indica que no se ha producido error alguno. <a href="https://www.php.net/manual/es/features.file-upload.errors.php">Códigos de error subida de fichero</a>.</li>
+</ul>
+<h3 id="filtrado-con-php-de-tipos-de-ficheros-subidos-con-html">filtrado con php de tipos de ficheros subidos con html</h3>
+<p>Una vez sabemos cómo acceder a la información de los ficheros subidos, vamos a centrarnos en el filtrado de los tipos de ficheros aceptados. Limitar el tipo de fichero subido es altamente recomendable para evitar posibles problemas de seguridad.</p>
+<p><em>Para este ejemplo voy comprobar que la imagen súbida sea en efecto una imagen con una de las extensiones más comunes y que su tamaño sea menor a 1 MB</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="nv">$extensiones</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;image/jpg&#39;</span><span class="p">,</span><span class="s1">&#39;image/jpeg&#39;</span><span class="p">,</span><span class="s1">&#39;image/png&#39;</span><span class="p">];</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="nv">$max_tamanyo</span> <span class="o">=</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>    <span class="k">if</span> <span class="p">(</span> <span class="nb">in_array</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">],</span> <span class="nv">$extensiones</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>         <span class="k">echo</span> <span class="s1">&#39;Es una imagen&#39;</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>         <span class="k">if</span> <span class="p">(</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;size&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nv">$max_tamanyo</span> <span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>              <span class="k">echo</span> <span class="s1">&#39;Pesa menos de 1 MB&#39;</span><span class="p">;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>         <span class="p">}</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>    <span class="p">}</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="escritura-de-imagenes-en-carpeta-del-servidor">escritura de imágenes en carpeta del servidor</h3>
+<p>Una vez tengamos nuestros ficheros filtrados vamos a proceder a guardarlos de forma permanente en una carpeta de nuestro servidor.</p>
+<p>Las imagenes o ficheros subidos mediante los formularios HTML son almacenados siempre en una carpeta temporal del sistema, por lo tanto deberemos moverlos para poder guardarlos permanentemente.</p>
+<p>Para trasladar los ficheros de la carpeta temporal directamente a nuestra carpeta elegida usaremos la  función <a href="https://www.php.net/manual/es/function.move-uploaded-file.php">move_uploaded_file( origen, destino )</a>.</p>
+<p>El siguiente ejemplo sería un script alojado en la carpeta raiz de nuestra web, p.e. index.php:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>  <span class="nv">$ruta_indexphp</span> <span class="o">=</span> <span class="nb">dirname</span><span class="p">(</span><span class="nb">realpath</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">));</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>  <span class="nv">$ruta_fichero_origen</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">];</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>  <span class="nv">$ruta_nuevo_destino</span> <span class="o">=</span> <span class="nv">$ruta_indexphp</span> <span class="o">.</span> <span class="s1">&#39;/uploads/&#39;</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;imagen1&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a>  <span class="k">if</span> <span class="p">(</span> <span class="nb">in_array</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">],</span> <span class="nv">$extensiones</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>   
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>     <span class="k">echo</span> <span class="s1">&#39;Es una imagen&#39;</span><span class="p">;</span>     
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>     <span class="k">if</span> <span class="p">(</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;size&#39;</span><span class="p">]</span><span class="o">&lt;</span> <span class="nv">$max_tamanyo</span> <span class="p">)</span> <span class="p">{</span>          
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a>        <span class="k">echo</span> <span class="s1">&#39;Pesa menos de 1 MB&#39;</span><span class="p">;</span>          
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>        <span class="k">if</span><span class="p">(</span> <span class="nb">move_uploaded_file</span> <span class="p">(</span> <span class="nv">$ruta_fichero_origen</span><span class="p">,</span> <span class="nv">$ruta_nuevo_destino</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>                      <span class="k">echo</span> <span class="s1">&#39;Fichero guardado con éxito&#39;</span><span class="p">;</span>          
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a>        <span class="p">}</span>     
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a>     <span class="p">}</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a>  <span class="p">}</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>El nombre temporal del fichero subido, que se encuentra en la carpeta de temporales, en <code>$ruta_fichero_origen</code>.</li>
+<li>La ruta completa de destino del fichero, que se compone por una parte de la ruta raiz del script donde estamos trabajando (estamos programando en <em>index.php</em>) más el nombre de la carpeta que se ha creado para guardar las imagenes (<em>/uploads</em>) y por último el nombre definitivo que tendrá el fichero (<em>el nombre original del fichero</em>).</li>
+</ul>
+<h3 id="seguridad-de-escritura-de-imagenes-en-carpeta-del-servidor">seguridad de escritura de imagenes en carpeta del servidor</h3>
+<p>Al guardar los archivos subidos por los usuarios en nuestro servidor, puede ocurrir que no filtremos los ficheros introducidos, o guardemos ficheros susceptibles de provocar problemas de seguridad. Para evitar problemas de este tipo lo mejor será incluir en la carpeta donde los almacenamos un pequeño <em>script htaccess</em> que evite la ejecución de código:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>RemoveHandler<span class="w"> </span>.phtml<span class="w"> </span>.php3<span class="w"> </span>.php<span class="w"> </span>.pl<span class="w"> </span>.py<span class="w"> </span>.jsp<span class="w"> </span>.asp<span class="w"> </span>.htm<span class="w"> </span>.shtml<span class="w"> </span>.sh<span class="w"> </span>.cgi<span class="w"> </span>.dat
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>RemoveType<span class="w"> </span>.phtml<span class="w"> </span>.php3<span class="w"> </span>.php<span class="w"> </span>.pl<span class="w"> </span>.py<span class="w"> </span>.jsp<span class="w"> </span>.asp<span class="w"> </span>.htm<span class="w"> </span>.shtml<span class="w"> </span>.sh<span class="w"> </span>.cgi<span class="w"> </span>.dat
+</code></pre></div></td></tr></table></div>
+<p>Con estas dos líneas en un fichero con extensión <em>.htaccess</em> evitaremos una posible ejecución de código por parte de usuarios malintencionados. Recuerda que debes incluir este fichero en la misma carpeta donde almacenas los ficheros.</p>
+<p>Y ya está, con esto tendríamos terminado un <strong>formulario para subir imagenes con php</strong> totalmente funcional, con comprobaciones de seguridad para evitar subidas de ficheros inesperadas que puedan provocar problemas o hackeos inesperados.</p>
+<h3 id="extra-1-mostrar-imagenes-subidas-con-html">extra 1: mostrar imagenes subidas con html</h3>
+<p>Mostrar las imagenes guardadas en nuestra carpeta de almacenamiento es sencillo, tan solo deberemos incluir la ruta hasta el fichero en una etiqueta IMG html:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">&lt;img src=&quot;uploads/nombreImagen.jpg&quot; /&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="extra-2-descargar-ficheros-subidos-con-html">extra 2: descargar ficheros subidos con html</h3>
+<p>Si queremos incluir un enlace de descarga para el fichero almacenado,  en vez de utilizar una etiqueta <em>IMG</em> usaremos una etiqueta para enlaces con el atributo <em>HREF</em> la ruta al fichero:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">&lt;a href=&quot;uploads/nombreImagen.jpg&quot;&gt; Descarga de la imagen &lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Este enlace producirá que el usuario descargue el fichero en cuestión, no obstante si el archivo es por ejemplo una imagen o pdf, el usuario en vez de lograr una descarga directa visualizará el contenido, teniendo que descargarlo haciendo uso de la opción descargar del menú desplegable con clic derecho.</p>
+<p>Evitar la visualización de ficheros es posible gracias a HTML5 y los navegadores más modernos: Chrome, Firefox, Opera. Deberemos incluir el atributo <code>download</code> en la etiqueta de enlace anterior (<em>A</em>), así, el enlace final para una descarga forzada quedaría así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x">&lt;a href=&quot;uploads/nombreImagen.jpg&quot; download=&quot;nombreImagen&quot;&gt;Descarga la imagen&lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="cabeceras-de-respuesta">cabeceras de respuesta</h1>
+<p>Se devuelven mediante la función <code>header(cadena)</code>. Mediante las cabeceras podemos configurar el tipo de contenido, tiempo de expiración, redireccionar el navegador, especificar errores HTTP, etc.</p>
+<blockquote>
+<p>Debe ser <strong>lo primero a devolver</strong></p>
+<p>El motivo es que en cuando un programa genera contenido HTML, el servidor genera automáticamente la información de estado y los campos de cabecera y a continuación envía el contenido generado. Si después el programa contiene una instrucción <strong>header()</strong>, se produce un <strong>error</strong> porque las cabeceras ya se han enviado (ni siquiera deja una linea en blanco).</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="cp">&lt;?php</span> <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-Type: text/plain&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="cp">&lt;?php</span> <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: http://www.ejemplo.com/inicio.html&quot;</span><span class="p">);</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="k">exit</span><span class="p">();</span> 
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>inspeccionando las cabeceras</strong></p>
+<p>Se puede comprobar en las herramientas del desarrollador de los navegadores web mediante <em>Developer Tools → Network → Headers</em>.</p>
+</blockquote>
+<p>Es muy común configurar las cabeceras para evitar consultas a la caché o provocar su renovación:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span>
+<span class="normal"><a href="#__codelineno-19-13">13</a></span>
+<span class="normal"><a href="#__codelineno-19-14">14</a></span>
+<span class="normal"><a href="#__codelineno-19-15">15</a></span>
+<span class="normal"><a href="#__codelineno-19-16">16</a></span>
+<span class="normal"><a href="#__codelineno-19-17">17</a></span>
+<span class="normal"><a href="#__codelineno-19-18">18</a></span>
+<span class="normal"><a href="#__codelineno-19-19">19</a></span>
+<span class="normal"><a href="#__codelineno-19-20">20</a></span>
+<span class="normal"><a href="#__codelineno-19-21">21</a></span>
+<span class="normal"><a href="#__codelineno-19-22">22</a></span>
+<span class="normal"><a href="#__codelineno-19-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Expires: Sun, 31 Jan 2021 23:59:59 GMT&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a>  <span class="c1">// tres horas</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a>  <span class="nv">$now</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a>  <span class="nv">$horas3</span> <span class="o">=</span> <span class="nb">gmstrftime</span><span class="p">(</span><span class="s2">&quot;%a, %d %b %Y %H:%M:%S GMT&quot;</span><span class="p">,</span> <span class="nv">$now</span> <span class="o">+</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Expires: </span><span class="si">{</span><span class="nv">$horas3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a>  <span class="c1">// un año</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a>  <span class="nv">$now</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11"></a>  <span class="nv">$anyo1</span> <span class="o">=</span> <span class="nb">gmstrftime</span><span class="p">(</span><span class="s2">&quot;%a, %d %b %Y %H:%M:%S GMT&quot;</span><span class="p">,</span> <span class="nv">$now</span> <span class="o">+</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">86440</span><span class="p">);</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Expires: </span><span class="si">{</span><span class="nv">$anyo1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13"></a>
+<a id="__codelineno-19-14" name="__codelineno-19-14"></a>  <span class="c1">// se marca como expirado (fecha en el pasado)</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15"></a>  <span class="nv">$pasado</span> <span class="o">=</span> <span class="nb">gmstrftime</span><span class="p">(</span><span class="s2">&quot;%a, %d %b %Y %H:%M:%S GMT&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Expires: </span><span class="si">{</span><span class="nv">$pasado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17"></a>
+<a id="__codelineno-19-18" name="__codelineno-19-18"></a>  <span class="c1">// evitamos cache de navegador y/o proxy</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Expires: Mon, 26 Jul 1997 05:00:00 GMT&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Last-Modified: &quot;</span> <span class="o">.</span> <span class="nb">gmdate</span><span class="p">(</span><span class="s2">&quot;D, d M Y H:i:s&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot; GMT&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-21" name="__codelineno-19-21"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Cache-Control: no-store, no-cache, must-revalidate&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-22" name="__codelineno-19-22"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Cache-Control: post-check=0, pre-check=0&quot;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+<a id="__codelineno-19-23" name="__codelineno-19-23"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Pragma: no-cache&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="gestion-de-estado">gestión de estado</h1>
+<p>HTTP es un protocolo stateless, sin estado. Por ello, se simula el estado mediante el uso de <em>cookies</em>, <em>tokens</em> o la <em>sesión</em>. El estado es necesario para procesos tales como el carrito de la compra, operaciones asociadas a un usuario, etc... El mecanismo de PHP para gestionar la sesión emplea <em>cookies</em> de forma interna. Las <em>cookies</em> se almacenan en el navegador, y la sesión en el servidor web.</p>
+<h2 id="cookies">cookies</h2>
+<p>Las <em>cookies</em> se almacenan en el array global <code>$_COOKIE</code>. Lo que coloquemos dentro del array, se guardará en el cliente. Hay que tener presente que el cliente puede no querer almacenarlas.</p>
+<p>Existe una limitació de 20 <em>cookies</em> por dominio y 300 en total en el navegador.</p>
+<p>En PHP, para crear una cookie se utiliza la función <code>setcookie</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>  <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span> <span class="p">[,</span> <span class="nx">valor</span> <span class="p">[,</span> <span class="nx">expira</span> <span class="p">[,</span> <span class="nx">ruta</span> <span class="p">[,</span> <span class="nx">dominio</span> <span class="p">[,</span> <span class="nx">seguro</span> <span class="p">[,</span> <span class="nx">httponly</span> <span class="p">]]]]]]);</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a>  <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span> <span class="p">[,</span> <span class="nx">valor</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="p">[,</span> <span class="nx">opciones</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">]]</span> <span class="p">)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Destacar que el nombre no puede contener espacios ni el caracter ;. Respecto al contenido de la cookie, no puede superar los 4 KB.</p>
+<p>Por ejemplo, mediante <em>cookies</em> podemos comprobar la cantidad de visitas diferentes que realiza un usuario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span>
+<span class="normal"><a href="#__codelineno-21-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>  <span class="nv">$accesosPagina</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>  <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;accesos&#39;</span><span class="p">]))</span> <span class="p">{</span> 
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>     <span class="nv">$accesosPagina</span> <span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;accesos&#39;</span><span class="p">];</span> <span class="c1">// recuperamos una cookie</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a>     <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;accesos&#39;</span><span class="p">,</span> <span class="o">++</span><span class="nv">$accesosPagina</span><span class="p">);</span> <span class="c1">// le asignamos un valor</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a>  <span class="p">}</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>inspeccionando las cookies</strong></p>
+<p>Si queremos ver que contienen las <em>cookies</em> que tenemos almacenadas en el navegador, se puede comprobar su valor en <strong>Dev Tools</strong> → <strong>Application</strong> → <strong>Storage</strong></p>
+</blockquote>
+<p>Ejemplo de cookies: </p>
+<p>1) vamos a realizar un fichero html (<code>cookiesEjemplo1.html</code>) en el que:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span>
+<span class="normal"><a href="#__codelineno-22-11">11</a></span>
+<span class="normal"><a href="#__codelineno-22-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>elige idioma:<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;cookiesEjemplo1.php?idioma=va&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/flag_valencian.png&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;valencià&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a>    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;cookiesEjemplo1.php?idioma=es&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/flag_spanish.png&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;castellano&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a>    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;cookiesEjemplo1.php?idioma=en&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/flag_england.png&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;inglés&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11"></a>    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/img03_cookies1.png" style="zoom:50%;" /></p>
+<p>2) Creamos fichero <code>cookiesEjemplo1.php</code> en el que comprueba si se ha enviado el parámetro <code>idioma</code>, si es así, crea una <em>cookie</em> de nombre <code>idioma</code>, valor <code>$_GET['idioma']</code>, tiempo <code>1 hora</code> y que trabaja desde la raíz <code>\</code>. Además, se ha añadido una cabecera que redireccionará a la página <code>cookiesEjemplo1_b.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span>
+<span class="normal"><a href="#__codelineno-23-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">])){</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>        <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;idioma&#39;</span><span class="p">,</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">],</span> <span class="nb">time</span><span class="p">()</span><span class="o">+</span><span class="mi">3600</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>        <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location:cookiesEjemplo1_b.php&quot;</span><span class="p">);</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a>    <span class="p">}</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>3) En el fichero <code>cookiesEjemplo1_b.php</code> se comprueba el valor de la <em>cookie</em> <code>idioma</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]){</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1.html&#39;</span><span class="p">);</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;va&quot;</span><span class="p">){</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1Va.php&#39;</span><span class="p">);</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;va&quot;</span><span class="p">){</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1Es.php&#39;</span><span class="p">);</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;va&quot;</span><span class="p">){</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1En.php&#39;</span><span class="p">);</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a>    <span class="p">}</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>El fichero, por ejemplo, <code>cookiesEjemplo1Va.php</code> quedaría:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="x">&lt;h2&gt; idioma en valencià &lt;/h2&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="x">&lt;br /&gt; &lt;br /&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="x">&lt;a href=&quot;cookiesEjemplo2BorrarCookies.php&quot;&gt;borrar cookies&lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>El tiempo de vida de las cookies puede ser tan largo como el sitio web en el que residen. Ellas seguirán ahí, incluso si el navegador está cerrado o abierto.</p>
+<p>Para borrar una cookie se puede poner que expiren en el pasado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a>    <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// pasado</span>
+</code></pre></div></td></tr></table></div>
+<p>O que caduquen dentro de un periodo de tiempo determinado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a>    <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">valor</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">)</span> <span class="c1">// Caducan dentro de una hora</span>
+</code></pre></div></td></tr></table></div>
+<p>Ejemplo 2: Siguiendo con el ejemplo anterior de idiomas, podríamos crear el fichero <code>cookiesEjemplo2BorrarCookies.php</code> y, desde ahí, eliminar la <em>cookie</em> idioma:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a>    <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;idioma&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a>    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1.html&#39;</span><span class="p">);</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/img01comunicacionCookies.png" style="zoom:30%;" /></p>
+<p>Se utilizan para:</p>
+<ul>
+<li>Recordar los inicios de sesión.</li>
+<li>Almacenar valores temporales de usuario.</li>
+<li>Si un usuario está navegando por una lista paginada de artículos, ordenados de cierta manera, podemos almacenar el ajuste de la clasificación.</li>
+</ul>
+<p>La alternativa en el cliente para almacenar información en el navegador es el objeto <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage">LocalStorage</a>.</p>
+<h2 id="sesion">sesión</h2>
+<p>La <em>sesión</em> añade la gestión del estado a HTTP, almacenando en este caso la información en el servidor. Cada visitante tiene un ID de sesión único, el cual por defecto se almacena en una cookie denominada <code>PHPSESSID</code>. Si el cliente no tiene las <em>cookies</em> activas, el ID se propaga en cada URL dentro del mismo dominio. Cada sesión tiene asociado un almacén de datos mediante el array global <code>$_SESSION</code> en el cual podemos almacenar y recuperar información.</p>
+<p>La sesión comienza al ejecutar un script PHP. Se genera un nuevo ID y se cargan los datos del almacén:</p>
+<p><img src="/assets/img02comunicacionSesion.png" style="zoom:30%;" /></p>
+<p>El trabajo con sesiones tiene tres partes:</p>
+<ul>
+<li>Creación o apertura de la sesión:</li>
+</ul>
+<p>Cuando alguna página crea una sesión utilizando la cabecera <code>session_start();</code>(<em>recuerda que las cabeceras deben ir justo después de <code>&lt;?php</code></em>), el servidor asocia al navegador del usuario un identificador de usuario único. El identificador se guarda en el usuario en forma de cookie o, si el navegador del usuario no permite la creación de cookies, añadiendo el identificador en la dirección de la página.</p>
+<ul>
+<li>Utilización de la sesión:</li>
+</ul>
+<p>Si ya se ha creado la sesión, las páginas solicitadas por el mismo navegador pueden guardar y recuperar información en el servidor, información que se asocia al identificador de usuario, por lo que no es accesible a otros usuarios. La información se conserva hasta que el usuario o el servidor destruyan la sesión.</p>
+<ul>
+<li>Destrucción o cierre de la sesión:</li>
+</ul>
+<p>Tanto el usuario como el servidor pueden cerrar la sesión. El usuario puede destruir la sesión cerrando el navegador. El servidor puede destruir la sesión cuando alguna página utilice la función <code>session_destroy();</code> o al cabo de un tiempo determinado (definido mediante la función <strong><a href="https://www.php.net/manual/en/function.session-set-cookie-params.php">session_set_cookie_params()</a></strong>).</p>
+<p>Las operaciones que podemos realizar con la sesión son:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span>
+<span class="normal"><a href="#__codelineno-29-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>    <span class="nb">session_start</span><span class="p">();</span> <span class="c1">// carga la sesión</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a>    <span class="nb">session_id</span><span class="p">()</span> <span class="c1">// devuelve el id</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="nx">clave</span><span class="p">]</span> <span class="o">=</span> <span class="nx">valor</span><span class="p">;</span> <span class="c1">// inserción</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a>    <span class="nb">session_destroy</span><span class="p">();</span> <span class="c1">// destruye la sesión</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a>    <span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="nx">clave</span><span class="p">];</span> <span class="c1">// borrado</span>
+</code></pre></div></td></tr></table></div>
+<p>Vamos a ver mediante un ejemplo cómo podemos insertar en un página datos en la <em>sesión</em> para posteriormente en otra página acceder a esos datos. Por ejemplo, en <code>sesion1.php</code> tendríamos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span>
+<span class="normal"><a href="#__codelineno-30-3">3</a></span>
+<span class="normal"><a href="#__codelineno-30-4">4</a></span>
+<span class="normal"><a href="#__codelineno-30-5">5</a></span>
+<span class="normal"><a href="#__codelineno-30-6">6</a></span>
+<span class="normal"><a href="#__codelineno-30-7">7</a></span>
+<span class="normal"><a href="#__codelineno-30-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a>    <span class="nb">session_start</span><span class="p">();</span> <span class="c1">// inicializamos</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;ies&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;IES Mestre Ramon Esteve&quot;</span><span class="p">;</span> <span class="c1">// asignación</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a>    <span class="nv">$instituto</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;ies&quot;</span><span class="p">];</span> <span class="c1">// recuperación</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a>    <span class="k">echo</span> <span class="s2">&quot;Estamos en el </span><span class="si">$instituto</span><span class="s2"> &quot;</span><span class="p">;</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a>    <span class="cp">?&gt;</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="x">    &lt;br /&gt;</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="x">    &lt;a href=&quot;sesion2.php&quot;&gt;Y luego&lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Y posteriormente podemos acceder a la sesión en <code>sesion2.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span>
+<span class="normal"><a href="#__codelineno-31-4">4</a></span>
+<span class="normal"><a href="#__codelineno-31-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a>    <span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a>    <span class="nv">$instituto</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;ies&quot;</span><span class="p">];</span> <span class="c1">// recuperación</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Otra vez, en el </span><span class="si">$instituto</span><span class="s2"> &quot;</span><span class="p">;</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>configurando la sesión en php.ini</strong></p>
+<p>Las siguientes propiedades de <code>php.ini</code> permiten configurar algunos aspectos de la sesión:</p>
+<ul>
+<li><code>session.save_handler</code>: controlador que gestiona cómo se almacena (valor <code>files</code>).</li>
+<li><code>session.save_path</code>: ruta donde se almacenan los archivos con los datos (si tenemos un cluster, podríamos usar /mnt/sessions en todos los servidores de manera que apuntan a una carpeta compartida).</li>
+<li><code>session.name</code>: nombre de la sesión (PHSESSID).</li>
+<li><code>session.auto_start</code>: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.</li>
+<li><code>session.cookie_lifetime</code>: tiempo de vida por defecto.</li>
+</ul>
+<p>Más información en la <a href="https://www.php.net/manual/es/session.configuration.php">documentación oficial</a>.</p>
+<p><strong>cookie VS session</strong></p>
+<p>Las <em>sesiones</em> no deben confundirse con las <em>cookies</em>. Las <em>cookies</em> es un método que permite guardar información en el ordenador del cliente para recuperarla en el futuro; mientras que en las <em>sesiones</em> la información se mantiene en el servidor hasta que se cierra la sesión (por intervención del usuario o por tiempo). En el manual de PHP se ofrece un <a href="https://www.php.net/manual/en/book.session.php">capítulo dedicado a las sesiones</a>.</p>
+</blockquote>
+<p>Ejemplo: he aquí un ejemplo gráfico de utilización de sesiones. Programa de dos páginas que muestra gráficamente los votos recogidos por dos opciones.</p>
+<ul>
+<li>
+<p>La primera página contiene un formulario con tres botones de tipo <code>submit</code> con el mismo atributo <code>name</code>.</p>
+</li>
+<li>
+<p>Dos botones permiten votar a una u otra opción.</p>
+</li>
+<li>
+<p>El tercer botón pone a cero los contadores de votos.</p>
+</li>
+<li>
+<p>La segunda página recibe el dato, modifica la variable de sesión que contiene el número de votos de la opción elegida (o ambas) y redirige a la primera página.</p>
+</li>
+<li>
+<p>Los dos números se guardan en dos variables de sesión. Si las variables de sesión no están definidas, se les dará el valor 0.</p>
+</li>
+<li>
+<p>Las franjas correspondientes a los votos se alargan de 10px en 10px y no tienen límite de tamaño.</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-32-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-32-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-32-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-32-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-32-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-32-10">10</a></span>
+<span class="normal"><a href="#__codelineno-32-11">11</a></span>
+<span class="normal"><a href="#__codelineno-32-12">12</a></span>
+<span class="normal"><a href="#__codelineno-32-13">13</a></span>
+<span class="normal"><a href="#__codelineno-32-14">14</a></span>
+<span class="normal"><a href="#__codelineno-32-15">15</a></span>
+<span class="normal"><a href="#__codelineno-32-16">16</a></span>
+<span class="normal"><a href="#__codelineno-32-17">17</a></span>
+<span class="normal"><a href="#__codelineno-32-18">18</a></span>
+<span class="normal"><a href="#__codelineno-32-19">19</a></span>
+<span class="normal"><a href="#__codelineno-32-20">20</a></span>
+<span class="normal"><a href="#__codelineno-32-21">21</a></span>
+<span class="normal"><a href="#__codelineno-32-22">22</a></span>
+<span class="normal"><a href="#__codelineno-32-23">23</a></span>
+<span class="normal"><a href="#__codelineno-32-24">24</a></span>
+<span class="normal"><a href="#__codelineno-32-25">25</a></span>
+<span class="normal"><a href="#__codelineno-32-26">26</a></span>
+<span class="normal"><a href="#__codelineno-32-27">27</a></span>
+<span class="normal"><a href="#__codelineno-32-28">28</a></span>
+<span class="normal"><a href="#__codelineno-32-29">29</a></span>
+<span class="normal"><a href="#__codelineno-32-30">30</a></span>
+<span class="normal"><a href="#__codelineno-32-31">31</a></span>
+<span class="normal"><a href="#__codelineno-32-32">32</a></span>
+<span class="normal"><a href="#__codelineno-32-33">33</a></span>
+<span class="normal"><a href="#__codelineno-32-34">34</a></span>
+<span class="normal"><a href="#__codelineno-32-35">35</a></span>
+<span class="normal"><a href="#__codelineno-32-36">36</a></span>
+<span class="normal"><a href="#__codelineno-32-37">37</a></span>
+<span class="normal"><a href="#__codelineno-32-38">38</a></span>
+<span class="normal"><a href="#__codelineno-32-39">39</a></span>
+<span class="normal"><a href="#__codelineno-32-40">40</a></span>
+<span class="normal"><a href="#__codelineno-32-41">41</a></span>
+<span class="normal"><a href="#__codelineno-32-42">42</a></span>
+<span class="normal"><a href="#__codelineno-32-43">43</a></span>
+<span class="normal"><a href="#__codelineno-32-44">44</a></span>
+<span class="normal"><a href="#__codelineno-32-45">45</a></span>
+<span class="normal"><a href="#__codelineno-32-46">46</a></span>
+<span class="normal"><a href="#__codelineno-32-47">47</a></span>
+<span class="normal"><a href="#__codelineno-32-48">48</a></span>
+<span class="normal"><a href="#__codelineno-32-49">49</a></span>
+<span class="normal"><a href="#__codelineno-32-50">50</a></span>
+<span class="normal"><a href="#__codelineno-32-51">51</a></span>
+<span class="normal"><a href="#__codelineno-32-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a>&lt;?php
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a>// Accedemos a la sesión
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a>session_name(&quot;sesion1&quot;);
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a>session_start();
+<a id="__codelineno-32-5" name="__codelineno-32-5"></a>
+<a id="__codelineno-32-6" name="__codelineno-32-6"></a>// Si algún contador no está guardado en la sesión, ponemos ambos a cero
+<a id="__codelineno-32-7" name="__codelineno-32-7"></a>if (!isset($_SESSION[&quot;a&quot;]) || !isset($_SESSION[&quot;b&quot;])) {
+<a id="__codelineno-32-8" name="__codelineno-32-8"></a>   $_SESSION[&quot;a&quot;] = $_SESSION[&quot;b&quot;] = 0;
+<a id="__codelineno-32-9" name="__codelineno-32-9"></a>}
+<a id="__codelineno-32-10" name="__codelineno-32-10"></a>?&gt;
+<a id="__codelineno-32-11" name="__codelineno-32-11"></a>
+<a id="__codelineno-32-12" name="__codelineno-32-12"></a>&lt;!-- ... --&gt;
+<a id="__codelineno-32-13" name="__codelineno-32-13"></a>&lt;body&gt;
+<a id="__codelineno-32-14" name="__codelineno-32-14"></a>  &lt;h2&gt;Votar una opción&lt;/h2&gt;
+<a id="__codelineno-32-15" name="__codelineno-32-15"></a>  &lt;form action=&quot;ps2.php&quot; method=&quot;get&quot;&gt;
+<a id="__codelineno-32-16" name="__codelineno-32-16"></a>    &lt;table&gt;
+<a id="__codelineno-32-17" name="__codelineno-32-17"></a>      &lt;tr&gt;
+<a id="__codelineno-32-18" name="__codelineno-32-18"></a>        &lt;td style=&quot;vertical-align: top;&quot;&gt;
+<a id="__codelineno-32-19" name="__codelineno-32-19"></a>          &lt;button type=&quot;submit&quot; name=&quot;accion&quot; value=&quot;a&quot; 
+<a id="__codelineno-32-20" name="__codelineno-32-20"></a>                  style=&quot;font-size: 60px; line-height: 50px; color: hwb(200 0% 0%);&quot;&gt;  &amp;#x2714; &lt;/button&gt;
+<a id="__codelineno-32-21" name="__codelineno-32-21"></a>        &lt;/td&gt;
+<a id="__codelineno-32-22" name="__codelineno-32-22"></a>        &lt;td&gt;
+<a id="__codelineno-32-23" name="__codelineno-32-23"></a>&lt;?php
+<a id="__codelineno-32-24" name="__codelineno-32-24"></a>// Dibujamos la primera barra
+<a id="__codelineno-32-25" name="__codelineno-32-25"></a>print &quot; &lt;svg width=\&quot;$_SESSION[a]\&quot; height=\&quot;50\&quot;&gt;\n&quot;;
+<a id="__codelineno-32-26" name="__codelineno-32-26"></a>print &quot;   &lt;line x1=\&quot;0\&quot; y1=\&quot;25\&quot; x2=\&quot;$_SESSION[a]\&quot; y2=\&quot;25\&quot; stroke=\&quot;hwb(200 0% 0%)\&quot; stroke-width=\&quot;50\&quot; /&gt;\n&quot;;
+<a id="__codelineno-32-27" name="__codelineno-32-27"></a>print &quot; &lt;/svg&gt;\n&quot;;
+<a id="__codelineno-32-28" name="__codelineno-32-28"></a>?&gt;
+<a id="__codelineno-32-29" name="__codelineno-32-29"></a>        &lt;/td&gt;
+<a id="__codelineno-32-30" name="__codelineno-32-30"></a>      &lt;/tr&gt;
+<a id="__codelineno-32-31" name="__codelineno-32-31"></a>      &lt;tr&gt;
+<a id="__codelineno-32-32" name="__codelineno-32-32"></a>        &lt;td&gt;
+<a id="__codelineno-32-33" name="__codelineno-32-33"></a>            &lt;button type=&quot;submit&quot; name=&quot;accion&quot; value=&quot;b&quot; 
+<a id="__codelineno-32-34" name="__codelineno-32-34"></a>                    style=&quot;font-size: 60px; line-height: 50px; color: hwb(35 0% 0%)&quot;&gt;&amp;#x2714;
+<a id="__codelineno-32-35" name="__codelineno-32-35"></a>            &lt;/button&gt;
+<a id="__codelineno-32-36" name="__codelineno-32-36"></a>        &lt;/td&gt;
+<a id="__codelineno-32-37" name="__codelineno-32-37"></a>&lt;?php
+<a id="__codelineno-32-38" name="__codelineno-32-38"></a>// Dibujamos la segunda barra
+<a id="__codelineno-32-39" name="__codelineno-32-39"></a>print &quot; &lt;td&gt;\n&quot;;
+<a id="__codelineno-32-40" name="__codelineno-32-40"></a>print &quot; &lt;svg width=\&quot;$_SESSION[b]\&quot; height=\&quot;50\&quot;&gt;\n&quot;;
+<a id="__codelineno-32-41" name="__codelineno-32-41"></a>print &quot;   &lt;line x1=\&quot;0\&quot; y1=\&quot;25\&quot; x2=\&quot;$_SESSION[b]\&quot; y2=\&quot;25\&quot; stroke=\&quot;hwb(35 0% 0%)\&quot; stroke-width=\&quot;50\&quot; /&gt;\n&quot;;
+<a id="__codelineno-32-42" name="__codelineno-32-42"></a>print &quot; &lt;/svg&gt;\n&quot;;
+<a id="__codelineno-32-43" name="__codelineno-32-43"></a>print &quot; &lt;/td&gt;\n&quot;;
+<a id="__codelineno-32-44" name="__codelineno-32-44"></a>?&gt;
+<a id="__codelineno-32-45" name="__codelineno-32-45"></a>      &lt;/tr&gt;
+<a id="__codelineno-32-46" name="__codelineno-32-46"></a>    &lt;/table&gt;
+<a id="__codelineno-32-47" name="__codelineno-32-47"></a>    &lt;p&gt;
+<a id="__codelineno-32-48" name="__codelineno-32-48"></a>      &lt;button type=&quot;submit&quot; name=&quot;accion&quot; value=&quot;cero&quot;&gt;Poner a cero&lt;/button&gt;
+<a id="__codelineno-32-49" name="__codelineno-32-49"></a>    &lt;/p&gt;
+<a id="__codelineno-32-50" name="__codelineno-32-50"></a>  &lt;/form&gt;
+<a id="__codelineno-32-51" name="__codelineno-32-51"></a>&lt;/body&gt;
+<a id="__codelineno-32-52" name="__codelineno-32-52"></a>&lt;/html&gt;
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-33-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-33-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-33-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-33-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-33-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-33-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-33-10">10</a></span>
+<span class="normal"><a href="#__codelineno-33-11">11</a></span>
+<span class="normal"><a href="#__codelineno-33-12">12</a></span>
+<span class="normal"><a href="#__codelineno-33-13">13</a></span>
+<span class="normal"><a href="#__codelineno-33-14">14</a></span>
+<span class="normal"><a href="#__codelineno-33-15">15</a></span>
+<span class="normal"><a href="#__codelineno-33-16">16</a></span>
+<span class="normal"><a href="#__codelineno-33-17">17</a></span>
+<span class="normal"><a href="#__codelineno-33-18">18</a></span>
+<span class="normal"><a href="#__codelineno-33-19">19</a></span>
+<span class="normal"><a href="#__codelineno-33-20">20</a></span>
+<span class="normal"><a href="#__codelineno-33-21">21</a></span>
+<span class="normal"><a href="#__codelineno-33-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a>&lt;?php
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a>session_name(&quot;sesion1&quot;);
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a>session_start();
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5"></a>// Si alguno de los números de votos no está guardado en la sesión, redirigimos a la primera página
+<a id="__codelineno-33-6" name="__codelineno-33-6"></a>if (!isset($_SESSION[&quot;a&quot;]) || !isset($_SESSION[&quot;b&quot;])) {
+<a id="__codelineno-33-7" name="__codelineno-33-7"></a>    header(&quot;Location:ps1.php&quot;);
+<a id="__codelineno-33-8" name="__codelineno-33-8"></a>    exit;
+<a id="__codelineno-33-9" name="__codelineno-33-9"></a>}
+<a id="__codelineno-33-10" name="__codelineno-33-10"></a>
+<a id="__codelineno-33-11" name="__codelineno-33-11"></a>$accion = $_GET[&#39;accion&#39;];
+<a id="__codelineno-33-12" name="__codelineno-33-12"></a>// Dependiendo de la acción recibida, modificamos el número correspondiente
+<a id="__codelineno-33-13" name="__codelineno-33-13"></a>if ($accion == &quot;a&quot;) {
+<a id="__codelineno-33-14" name="__codelineno-33-14"></a>    $_SESSION[&quot;a&quot;] += 10;
+<a id="__codelineno-33-15" name="__codelineno-33-15"></a>} elseif ($accion == &quot;b&quot;) {
+<a id="__codelineno-33-16" name="__codelineno-33-16"></a>    $_SESSION[&quot;b&quot;] += 10;
+<a id="__codelineno-33-17" name="__codelineno-33-17"></a>} elseif ($accion == &quot;cero&quot;) {
+<a id="__codelineno-33-18" name="__codelineno-33-18"></a>    $_SESSION[&quot;a&quot;] = $_SESSION[&quot;b&quot;] = 0;
+<a id="__codelineno-33-19" name="__codelineno-33-19"></a>}
+<a id="__codelineno-33-20" name="__codelineno-33-20"></a>
+<a id="__codelineno-33-21" name="__codelineno-33-21"></a>// Volvemos al formulario
+<a id="__codelineno-33-22" name="__codelineno-33-22"></a>header(&quot;Location:ps1.php&quot;);
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/img04_session1.png" style="zoom: 60%;" /></p>
+<h1 id="autenticacion-de-usuarios">autenticación de usuarios</h1>
+<p>Una sesión establece una relación anónima con un usuario particular, de manera que podemos saber si es el mismo usuario entre dos peticiones distintas. Si preparamos un sistema de login, podremos saber quién utiliza nuestra aplicación.</p>
+<p>Para ello, preparemos un sencillo sistema de autenticación:</p>
+<ul>
+<li>Mostrar el formulario login/password.</li>
+<li>Comprobar los datos enviados.</li>
+<li>Añadir el login a la sesión.</li>
+<li>Comprobar el login en la sesión para realizar tareas específicas del usuario.</li>
+<li>Eliminar el login de la sesión cuando el usuario la cierra.</li>
+</ul>
+<p>Vamos a ver en código cada paso del proceso. Comenzamos con el archivo <code>index.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-34-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-34-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-34-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-34-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-34-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-34-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-34-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-34-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-34-10">10</a></span>
+<span class="normal"><a href="#__codelineno-34-11">11</a></span>
+<span class="normal"><a href="#__codelineno-34-12">12</a></span>
+<span class="normal"><a href="#__codelineno-34-13">13</a></span>
+<span class="normal"><a href="#__codelineno-34-14">14</a></span>
+<span class="normal"><a href="#__codelineno-34-15">15</a></span>
+<span class="normal"><a href="#__codelineno-34-16">16</a></span>
+<span class="normal"><a href="#__codelineno-34-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="x">&lt;form action=&#39;login.php&#39; method=&#39;post&#39;&gt;</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="x">  &lt;fieldset&gt;</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="x">    &lt;legend&gt;Login&lt;/legend&gt;</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="x">    &lt;div&gt;&lt;span class=&#39;error&#39;&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$error</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;&lt;/div&gt;</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="x">    &lt;div class=&#39;fila&#39;&gt;</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6"></a><span class="x">        &lt;label for=&#39;usuario&#39;&gt;Usuario:&lt;/label&gt;&lt;br /&gt;</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7"></a><span class="x">        &lt;input type=&#39;text&#39; name=&#39;inputUsuario&#39; id=&#39;usuario&#39; maxlength=&quot;50&quot; /&gt;&lt;br /&gt;</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9"></a><span class="x">    &lt;div class=&#39;fila&#39;&gt;</span>
+<a id="__codelineno-34-10" name="__codelineno-34-10"></a><span class="x">        &lt;label for=&#39;password&#39;&gt;Contraseña:&lt;/label&gt;&lt;br /&gt;</span>
+<a id="__codelineno-34-11" name="__codelineno-34-11"></a><span class="x">        &lt;input type=&#39;password&#39; name=&#39;inputPassword&#39; id=&#39;password&#39; maxlength=&quot;50&quot; /&gt;&lt;br /&gt;</span>
+<a id="__codelineno-34-12" name="__codelineno-34-12"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-34-13" name="__codelineno-34-13"></a><span class="x">    &lt;div class=&#39;fila&#39;&gt;</span>
+<a id="__codelineno-34-14" name="__codelineno-34-14"></a><span class="x">        &lt;input type=&#39;submit&#39; name=&#39;enviar&#39; value=&#39;Enviar&#39; /&gt;</span>
+<a id="__codelineno-34-15" name="__codelineno-34-15"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-34-16" name="__codelineno-34-16"></a><span class="x">  &lt;/fieldset&gt;</span>
+<a id="__codelineno-34-17" name="__codelineno-34-17"></a><span class="x">  &lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Al hacer submit nos lleva a <code>login.php</code>, el cual hace de controlador:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-35-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-35-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-35-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-35-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-35-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-35-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-35-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-35-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-35-10">10</a></span>
+<span class="normal"><a href="#__codelineno-35-11">11</a></span>
+<span class="normal"><a href="#__codelineno-35-12">12</a></span>
+<span class="normal"><a href="#__codelineno-35-13">13</a></span>
+<span class="normal"><a href="#__codelineno-35-14">14</a></span>
+<span class="normal"><a href="#__codelineno-35-15">15</a></span>
+<span class="normal"><a href="#__codelineno-35-16">16</a></span>
+<span class="normal"><a href="#__codelineno-35-17">17</a></span>
+<span class="normal"><a href="#__codelineno-35-18">18</a></span>
+<span class="normal"><a href="#__codelineno-35-19">19</a></span>
+<span class="normal"><a href="#__codelineno-35-20">20</a></span>
+<span class="normal"><a href="#__codelineno-35-21">21</a></span>
+<span class="normal"><a href="#__codelineno-35-22">22</a></span>
+<span class="normal"><a href="#__codelineno-35-23">23</a></span>
+<span class="normal"><a href="#__codelineno-35-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="c1">// Comprobamos si ya se ha enviado el formulario</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;enviar&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4"></a>    <span class="nv">$usuario</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;inputUsuario&#39;</span><span class="p">];</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5"></a>    <span class="nv">$password</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;inputPassword&#39;</span><span class="p">];</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6"></a>
+<a id="__codelineno-35-7" name="__codelineno-35-7"></a>    <span class="c1">// validamos que recibimos ambos parámetros</span>
+<a id="__codelineno-35-8" name="__codelineno-35-8"></a>    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$usuario</span><span class="p">)</span> <span class="o">||</span> <span class="k">empty</span><span class="p">(</span><span class="nv">$password</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-35-9" name="__codelineno-35-9"></a>        <span class="nv">$error</span> <span class="o">=</span> <span class="s2">&quot;Debes introducir un usuario y contraseña&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10"></a>        <span class="k">include</span> <span class="s2">&quot;index.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-11" name="__codelineno-35-11"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-35-12" name="__codelineno-35-12"></a>        <span class="k">if</span> <span class="p">(</span><span class="nv">$usuario</span> <span class="o">==</span> <span class="s2">&quot;admin&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">$password</span> <span class="o">==</span> <span class="s2">&quot;admin&quot;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-35-13" name="__codelineno-35-13"></a>            <span class="c1">// almacenamos el usuario en la sesión</span>
+<a id="__codelineno-35-14" name="__codelineno-35-14"></a>            <span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-35-15" name="__codelineno-35-15"></a>            <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuario&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$usuario</span><span class="p">;</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16"></a>            <span class="c1">// cargamos la página principal</span>
+<a id="__codelineno-35-17" name="__codelineno-35-17"></a>            <span class="k">include</span> <span class="s2">&quot;main.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-18" name="__codelineno-35-18"></a>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-35-19" name="__codelineno-35-19"></a>            <span class="c1">// Si las credenciales no son válidas, se vuelven a pedir</span>
+<a id="__codelineno-35-20" name="__codelineno-35-20"></a>            <span class="nv">$error</span> <span class="o">=</span> <span class="s2">&quot;Usuario o contraseña no válidos!&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-21" name="__codelineno-35-21"></a>            <span class="k">include</span> <span class="s2">&quot;index.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-22" name="__codelineno-35-22"></a>        <span class="p">}</span>
+<a id="__codelineno-35-23" name="__codelineno-35-23"></a>    <span class="p">}</span>
+<a id="__codelineno-35-24" name="__codelineno-35-24"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Dependiendo del usuario que se haya logueado, vamos a ir a una vista o a otra. Por ejemplo, en <code>main.php</code> tendríamos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-36-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-36-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-36-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-36-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-36-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-36-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-36-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-36-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-36-10">10</a></span>
+<span class="normal"><a href="#__codelineno-36-11">11</a></span>
+<span class="normal"><a href="#__codelineno-36-12">12</a></span>
+<span class="normal"><a href="#__codelineno-36-13">13</a></span>
+<span class="normal"><a href="#__codelineno-36-14">14</a></span>
+<span class="normal"><a href="#__codelineno-36-15">15</a></span>
+<span class="normal"><a href="#__codelineno-36-16">16</a></span>
+<span class="normal"><a href="#__codelineno-36-17">17</a></span>
+<span class="normal"><a href="#__codelineno-36-18">18</a></span>
+<span class="normal"><a href="#__codelineno-36-19">19</a></span>
+<span class="normal"><a href="#__codelineno-36-20">20</a></span>
+<span class="normal"><a href="#__codelineno-36-21">21</a></span>
+<span class="normal"><a href="#__codelineno-36-22">22</a></span>
+<span class="normal"><a href="#__codelineno-36-23">23</a></span>
+<span class="normal"><a href="#__codelineno-36-24">24</a></span>
+<span class="normal"><a href="#__codelineno-36-25">25</a></span>
+<span class="normal"><a href="#__codelineno-36-26">26</a></span>
+<span class="normal"><a href="#__codelineno-36-27">27</a></span>
+<span class="normal"><a href="#__codelineno-36-28">28</a></span>
+<span class="normal"><a href="#__codelineno-36-29">29</a></span>
+<span class="normal"><a href="#__codelineno-36-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a>    <span class="c1">// Recuperamos la información de la sesión</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3"></a>    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4"></a>        <span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5"></a>    <span class="p">}</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6"></a>
+<a id="__codelineno-36-7" name="__codelineno-36-7"></a>    <span class="c1">// Y comprobamos que el usuario se haya autentificado</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuario&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-36-9" name="__codelineno-36-9"></a>       <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Error - debe &lt;a href=&#39;index.php&#39;&gt;identificarse&lt;/a&gt;.&lt;br /&gt;&quot;</span><span class="p">);</span>
+<a id="__codelineno-36-10" name="__codelineno-36-10"></a>    <span class="p">}</span>
+<a id="__codelineno-36-11" name="__codelineno-36-11"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-36-12" name="__codelineno-36-12"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-36-13" name="__codelineno-36-13"></a><span class="x">&lt;html lang=&quot;es&quot;&gt;</span>
+<a id="__codelineno-36-14" name="__codelineno-36-14"></a><span class="x">&lt;head&gt;</span>
+<a id="__codelineno-36-15" name="__codelineno-36-15"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<a id="__codelineno-36-16" name="__codelineno-36-16"></a><span class="x">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+<a id="__codelineno-36-17" name="__codelineno-36-17"></a><span class="x">    &lt;title&gt;Listado de productos&lt;/title&gt;</span>
+<a id="__codelineno-36-18" name="__codelineno-36-18"></a><span class="x">&lt;/head&gt;</span>
+<a id="__codelineno-36-19" name="__codelineno-36-19"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-36-20" name="__codelineno-36-20"></a><span class="x">    &lt;h1&gt;Bienvenido </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuario&#39;</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
+<a id="__codelineno-36-21" name="__codelineno-36-21"></a><span class="x">    &lt;p&gt;Pulse &lt;a href=&quot;logout.php&quot;&gt;aquí&lt;/a&gt; para salir&lt;/p&gt;</span>
+<a id="__codelineno-36-22" name="__codelineno-36-22"></a><span class="x">    &lt;p&gt;Volver al &lt;a href=&quot;main.php&quot;&gt;inicio&lt;/a&gt;&lt;/p&gt;</span>
+<a id="__codelineno-36-23" name="__codelineno-36-23"></a><span class="x">    &lt;h2&gt;Listado de productos&lt;/h2&gt;</span>
+<a id="__codelineno-36-24" name="__codelineno-36-24"></a><span class="x">    &lt;ul&gt;</span>
+<a id="__codelineno-36-25" name="__codelineno-36-25"></a><span class="x">        &lt;li&gt;Producto 1&lt;/li&gt;</span>
+<a id="__codelineno-36-26" name="__codelineno-36-26"></a><span class="x">        &lt;li&gt;Producto 2&lt;/li&gt;</span>
+<a id="__codelineno-36-27" name="__codelineno-36-27"></a><span class="x">        &lt;li&gt;Producto 3&lt;/li&gt;</span>
+<a id="__codelineno-36-28" name="__codelineno-36-28"></a><span class="x">    &lt;/ul&gt;</span>
+<a id="__codelineno-36-29" name="__codelineno-36-29"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-36-30" name="__codelineno-36-30"></a><span class="x">&lt;/html&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Finalmente, necesitamos la opción de cerrar la sesión que colocamos en <code>logout.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
+<span class="normal"><a href="#__codelineno-37-2">2</a></span>
+<span class="normal"><a href="#__codelineno-37-3">3</a></span>
+<span class="normal"><a href="#__codelineno-37-4">4</a></span>
+<span class="normal"><a href="#__codelineno-37-5">5</a></span>
+<span class="normal"><a href="#__codelineno-37-6">6</a></span>
+<span class="normal"><a href="#__codelineno-37-7">7</a></span>
+<span class="normal"><a href="#__codelineno-37-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a>    <span class="c1">// Recuperamos la información de la sesión</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3"></a>    <span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4"></a>
+<a id="__codelineno-37-5" name="__codelineno-37-5"></a>    <span class="c1">// Y la destruimos</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6"></a>    <span class="nb">session_destroy</span><span class="p">();</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7"></a>    <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: index.php&quot;</span><span class="p">);</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>autenticación en producción</strong></p>
+<p>En la actualidad la autenticación de usuario no se realiza gestionando la sesión directamente, sino que se realiza mediante algún framekwork que abstrae todo el proceso o la integración de mecanismos de autenticación tipo OAuth, como estudiaremos en la última unidad mediante <em>Laravel</em>.</p>
+</blockquote>
+<h1 id="referencias">referencias</h1>
+<ul>
+<li><a href="https://www.php.net/manual/es/features.cookies.php">Cookies en PHP</a></li>
+<li><a href="https://www.php.net/manual/es/book.session.php">Manejo de sesiones en PHP</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

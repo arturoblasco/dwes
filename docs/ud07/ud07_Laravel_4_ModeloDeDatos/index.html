@@ -1,0 +1,1961 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ud07 Laravel 4 ModeloDeDatos - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#acceso-a-la-base-de-datos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ud07 Laravel 4 ModeloDeDatos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud0101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 3 PHP Orientado a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-de-conexion-a-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros de conexión a la base de datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la base de datos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<p>unit: unidad didáctica 7
+   title: Laravel - modelo de datos
+   language: ES
+   author: Arturo Blasco
+   subject: Desarrollo Web en Entorno Servidor
+   keywords: [DWES, 2023, PHP, Laravel]
+   IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+   header: ${unit}: ${title} - ${subject} (versión: ${today})
+   footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}|${pageCount}
+   typora-root-url:${filename}/../
+   typora-copy-images-to:${filename}/../assets</p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#acceso-a-la-base-de-datos">acceso a la base de datos</a><ul>
+<li><a href="#parametros-de-conexion-a-la-base-de-datos">Parámetros de conexión a la base de datos</a></li>
+<li><a href="#creacion-de-la-base-de-datos">Creación de la base de datos</a></li>
+</ul>
+</li>
+<li><a href="#migraciones">migraciones</a><ul>
+<li><a href="#estructura-de-las-migraciones">Estructura de las migraciones</a></li>
+<li><a href="#creacion-de-migraciones">Creación de migraciones</a><ul>
+<li><a href="#ejecucion-y-borrado-de-migraciones">Ejecución y borrado de migraciones</a></li>
+<li><a href="#aplicando-las-migraciones-a-nuestro-ejemplo">Aplicando las migraciones a nuestro ejemplo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#modelo-de-datos">modelo de datos</a><ul>
+<li><a href="#crear-el-modelo">Crear el modelo</a><ul>
+<li><a href="#otras-opciones-de-crear-modelos">Otras opciones de crear modelos</a></li>
+<li><a href="#seguir-una-nomenclatura-uniforme">Seguir una nomenclatura uniforme</a></li>
+</ul>
+</li>
+<li><a href="#operaciones-sobre-el-modelo-primeros-pasos-con-eloquent">Operaciones sobre el modelo. Primeros pasos con Eloquent</a><ul>
+<li><a href="#realizar-busquedas">Realizar búsquedas</a></li>
+<li><a href="#fichas-de-objetos-individuales">Fichas de objetos individuales</a></li>
+<li><a href="#inserciones">Inserciones</a></li>
+<li><a href="#modificaciones">Modificaciones</a></li>
+<li><a href="#borrados">Borrados</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#relaciones-entre-modelos">relaciones entre modelos</a><ul>
+<li><a href="#1-relaciones-uno-a-uno-o-one-to-one">1. Relaciones uno a uno o one to one</a><ul>
+<li><a href="#guardar-datos-relacionados">Guardar datos relacionados</a></li>
+</ul>
+</li>
+<li><a href="#relaciones-uno-a-muchos-o-one-to-many">Relaciones uno a muchos o one to many</a><ul>
+<li><a href="#aplicando-esta-relacion-en-nuestro-ejemplo">Aplicando esta relación en nuestro ejemplo</a></li>
+<li><a href="#acceso-eficiente-a-datos-relacionados-eager-loading">Acceso eficiente a datos relacionados. Eager loading</a></li>
+</ul>
+</li>
+<li><a href="#relaciones-muchos-a-muchos-o-many-to-many">Relaciones muchos a muchos o many to many</a></li>
+<li><a href="#mas-informacion">Más información</a></li>
+</ul>
+</li>
+<li><a href="#seeders-y-factories">seeders y factories</a><ul>
+<li><a href="#seeders">seeders</a><ul>
+<li><a href="#anadiendo-los-seeders-a-la-aplicacion">añadiendo los seeders a la aplicación</a></li>
+<li><a href="#lanzar-los-seeders">lanzar los seeders</a></li>
+</ul>
+</li>
+<li><a href="#factories">factories</a><ul>
+<li><a href="#generar-factories-y-asociarlos-a-su-modelo">generar factories y asociarlos a su modelo</a></li>
+<li><a href="#fakers">fakers</a></li>
+</ul>
+</li>
+<li><a href="#relacionando-los-modelos">relacionando los modelos</a></li>
+</ul>
+</li>
+<li><a href="#query-builder-y-uso-de-fechas">query builder y uso de fechas</a><ul>
+<li><a href="#query-builder">query builder</a><ul>
+<li><a href="#consultas">consultas</a></li>
+<li><a href="#actualizaciones">actualizaciones</a></li>
+</ul>
+</li>
+<li><a href="#uso-de-fechas">uso de fechas</a></li>
+</ul>
+</li>
+<li><a href="#bibliografia">bibliografia</a></li>
+</ul>
+</div>
+<blockquote>
+<p>El uso de estos materiales está sujeto a una licencia Creative Commons <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>.</p>
+<p>Material extraído de https://nachoiborraies.github.io/laravel/</p>
+</blockquote>
+<h1 id="acceso-a-la-base-de-datos">acceso a la base de datos</h1>
+<p>Una vez vistas dos de las tres patas en que se sustenta el patrón MVC (las vistas y los controladores), en esta sección abordaremos la tercera de ellas: el modelo de datos. Con esto, trataremos algunas cuestiones importantes sobre cómo gestiona Laravel el acceso a bases de datos, y qué mecanismos ofrece para sincronizar los datos de nuestra aplicación con los documentos o registros de una base de datos, así como para generar automáticamente la estructura de tablas y campos de la base de datos a partir del modelo de la aplicación.</p>
+<h2 id="parametros-de-conexion-a-la-base-de-datos">Parámetros de conexión a la base de datos</h2>
+<p>Una de las primeras cosas que debemos hacer para configurar el acceso a la base de datos en nuestro proyecto es establecer los parámetros con los que conectar a dicha base de datos: nombre del servidor, usuario, contraseña, etc. Estos parámetros se definen en el archivo <code>.env</code> para cada entorno de despliegue de la aplicación (recuerda que este archivo no se sube a Git, por lo que cada entorno tendrá el suyo). Dentro de este archivo, debemos modificar las siguientes variables de entorno:</p>
+<ul>
+<li><code>DB_CONNECTION</code>: tipo de SGBD a usar</li>
+<li><code>DB_HOST</code>: dirección o IP del SGBD (<em>127.0.0.1</em> para conexión local)</li>
+<li><code>DB_PORT</code>: puerto por el que el SGBD estará escuchando. Por ejemplo, el puerto por defecto para MySQL es 3306</li>
+<li><code>DB_DATABASE</code>: nombre de la base de datos a la que conectar</li>
+<li><code>DB_USERNAME</code>: login del usuario para conectar</li>
+<li><code>DB_PASSWORD</code>: password del usuario para conectar</li>
+</ul>
+<p>En cuanto al primer parámetro (<code>DB_CONNECTION</code>), aquí tenemos un listado de los sistemas más habituales, junto con sus puertos por defecto que podemos utilizar en <code>DB_PORT</code>:</p>
+<table>
+<thead>
+<tr>
+<th><em>Id</em> SGBD</th>
+<th>Nombre SGBD</th>
+<th style="text-align: center;">Puerto por defecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql</td>
+<td>MySQL/MariaDB</td>
+<td style="text-align: center;">3306</td>
+</tr>
+<tr>
+<td>oracle</td>
+<td>Oracle</td>
+<td style="text-align: center;">1521</td>
+</tr>
+<tr>
+<td>pgsql</td>
+<td>PostgreSQL</td>
+<td style="text-align: center;">5432</td>
+</tr>
+<tr>
+<td>sqlsrv</td>
+<td>SQL Server</td>
+<td style="text-align: center;">1433</td>
+</tr>
+<tr>
+<td>sqlite</td>
+<td>SQLite</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, para nuestro ejemplo de la biblioteca, el archivo <code>.env</code> del proyecto podría quedar así, suponiendo el usuario y contraseña por defecto que se instala con XAMPP (usuario <em>root</em> y password vacío).</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">DB_CONNECTION=mysql</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="x">DB_HOST=127.0.0.1</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x">DB_PORT=3306</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="x">DB_DATABASE=biblioteca</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="x">DB_USERNAME=root</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="x">DB_PASSWORD=</span>
+</code></pre></div></td></tr></table></div>
+<p>En el archivo <code>config/database.php</code> existen unos valores por defecto asociados a cada parámetro de configuración del archivo <code>.env</code>, de modo que si no se encuentra el parámetro, se toma el valor por defecto. Por ejemplo, el SGBD seleccionado si no se especifica ninguno es <em>mysql</em>, a juzgar por esta línea del archivo <code>database.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">&#39;default&#39; =&gt; env(&#39;DB_CONNECTION&#39;, &#39;mysql&#39;),</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="creacion-de-la-base-de-datos">Creación de la base de datos</h2>
+<p>El único paso necesario desde fuera de Laravel para acceder a la base de datos será crearla. El resto de operaciones (creación de tablas, campos, claves, relaciones, datos, etc) se podrán hacer desde el propio Laravel, como iremos viendo más adelante.</p>
+<p>La base de datos podemos crearla a través de algún administrador que tengamos disponible (por ejemplo, <em>phpMyAdmin</em> para bases de datos MySQL), o bien por línea de comandos, conectando con el SGBD en cuestión y creando la base de datos. Para la máquina virtual que estamos utilizando, podemos acceder a <em>phpMyAdmin</em> teniendo XAMPP en marcha (tanto el servidor Apache como el de MySQL) y accediendo a la URL <em>http://localhost/phpmyadmin</em>, normalmente.</p>
+<p>En nuestro caso, tendremos que crear una base de datos llamada “biblioteca”, tal y como hemos especificado en la propiedad <code>DB_DATABASE</code> del archivo <code>.env</code>. Vamos a la opción <em>Nueva</em> del panel izquierdo y escribimos el nombre de la nueva base de datos en el formulario que aparecerá. Pulsando el botón de <em>Crear</em> ya aparecerá la nueva base de datos en el listado izquierdo.</p>
+<p><img src="/assets/ud07_4_phpmyadmin.png" style="zoom:50%;" /></p>
+<h1 id="migraciones">migraciones</h1>
+<p>Las migraciones son un mecanismo de definición de datos ofrecido por Laravel para, a través de ciertas clases y opciones de configuración, generar la estructura completa de una base de datos. A su vez, suponen una especie de control de versiones para una base de datos, y permiten crear y modificar el esquema de la misma fácilmente.</p>
+<h2 id="estructura-de-las-migraciones">Estructura de las migraciones</h2>
+<p>Por defecto, Laravel trae unas migraciones predefinidas, que se hallan en la carpeta <code>database/migrations</code>. Cada una tiene un nombre de archivo que comienza por la fecha en que se hizo, seguida de una breve descripción de lo que contiene (creación de la tabla de usuarios, reseteo de contraseñas…). Puede que algunas de estas migraciones no nos vayan a ser necesarias, con lo que podemos borrarlas directamente, y puede que otras (en especial la creación de la tabla de usuarios) sí nos sirva, pero con otros campos, con lo que deberemos editarla, como veremos a continuación.</p>
+<p>Si examinamos el contenido de una migración, todas deben tener dos métodos:</p>
+<ul>
+<li><code>up</code>: permite agregar tablas, columnas o índices a la base de datos</li>
+<li><code>down</code>: revierte lo hecho por el método anterior</li>
+</ul>
+<p>Si observamos el contenido de un método <code>up</code> de los que vienen predefinidos para crear una tabla, vemos que se utilizan distintos métodos para definir los tipos de datos de cada campo de la tabla, como por ejemplo <code>id()</code> para campos que puedan contener enteros autoincrementales, o <code>string()</code> para campos de tipo texto. Además, existen otros métodos modificadores para agregar propiedades adicionales, como por ejemplo <code>unique()</code> para indicar valores únicos (claves alternativas), o <code>nullable()</code> para indicar que un campo admite nulos. Aquí tenemos un ejemplo de método <code>up</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">public function up()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="x">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="x">  Schema::create(&#39;usuarios&#39;, function(BluePrint $tabla) {</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="x">     $tabla-&gt;id();</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="x">     $tabla-&gt;string(&#39;nombre&#39;);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="x">     $tabla-&gt;string(&#39;email&#39;)-&gt;unique();</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="x">     // ...</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="x">     $tabla-&gt;timestamps();</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="x">  });</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Por defecto, como vemos en los ejemplos que se proporcionan, los esquemas se crean con un <em>id</em> autonumérico, y unos <em>timestamps</em> para indicar la fecha de creación y de modificación de cada registro, y que Laravel gestiona de forma automática cuando insertamos o actualizamos contenidos, lo cual resulta muy útil.</p>
+<p>Sobre esta base, podemos añadir o quitar los campos que queramos. Para ver los tipos disponibles para las columnas de la tabla, podemos visitar la <a href="https://laravel.com/docs/migrations">documentación de Laravel sobre migraciones</a>, en concreto buscaremos el subapartado <em>Available Column Types</em>. Conviene tener presente, por ejemplo, que el tipo <code>string</code> que hemos utilizado en el ejemplo anterior tiene una limitación de 255 caracteres. Para textos más grandes, se puede emplear el tipo <code>text</code> (20.000 caracteres aproximadamente) o <code>longText</code>.</p>
+<p>Podemos especificar una clave primaria con el método <code>primary</code>, al que le podemos pasar o bien el nombre del campo clave, o un array de campos clave, en el caso de que ésta sea compuesta. Por defecto, los campos de tipo <code>id</code> se auto-establecen como claves primarias.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">$table-&gt;primary([&#39;campo1&#39;, &#39;campo2&#39;]);</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="creacion-de-migraciones">Creación de migraciones</h2>
+<p>Creamos migraciones con el comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">php artisan make:migration nombre_migracion</span>
+</code></pre></div></td></tr></table></div>
+<p>Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">php artisan make:migration crear_tabla_prueba</span>
+</code></pre></div></td></tr></table></div>
+<p>Notar que Laravel ya asigna automáticamente la fecha de la migración, sólo debemos especificar el nombre descriptivo de la misma. Además, si Laravel detecta la palabra <em>create</em> en el nombre de la migración, finalizada en <em>table</em>, intuye que es para crear una tabla nueva. En cambio, si detecta la palabra <em>to</em> (entre otras), y al final la palabra <em>table</em>, intuye que se va a alterar o modificar una tabla existente. Esto es gracias a la clase <code>TableGuesser</code> incorporada en Laravel, que detecta ciertos patrones en los nombres de migraciones. La diferencia entre la creación y la modificación es que en el método <code>up</code> de la migración se utilizará <code>Schema::create</code> o <code>Schema::table</code> sobre la tabla en cuestión, respectivamente.</p>
+<p>En cualquier caso, también podemos especificar un parámetro adicional en el comando de migración para indicar si queremos crear o modificar una tabla, y de este modo podemos definir el nombre de la migración en el idioma que queramos, y sin restricciones de patrones. Estas dos migraciones crean una tabla (<em>pedidos</em>) y modifican otra (<em>usuarios</em>), respectivamente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">php artisan make:migration crear_tabla_pedidos --create=pedidos</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="x">php artisan make:migration nuevo_campo_usuario --table=usuarios</span>
+</code></pre></div></td></tr></table></div>
+<p>En el caso de la segunda migración, si, por ejemplo, queremos añadir una columna con el número de teléfono de los usuarios, puede quedar así (tanto el método <code>up</code> como el <code>down</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">public function up()</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="x">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="x">  Schema::table(&#39;usuarios&#39;, function(Blueprint $tabla) {</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="x">     $tabla-&gt;string(&#39;telefono&#39;)-&gt;nullable();</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="x">  });</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="x">}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="x">public function down()</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="x">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="x">  Schema::table(&#39;usuarios&#39;, function(Blueprint $tabla) {</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="x">     $tabla-&gt;dropColumn(&#39;telefono&#39;);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="x">  });</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Si queremos que el campo en cuestión esté en un orden concreto, podemos usar el método <code>after</code> para indicar detrás de qué campo queremos ponerlo (en el método <code>up</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">$tabla-&gt;string(&#39;telefono&#39;)-&gt;after(&#39;email&#39;)-&gt;nullable();</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="ejecucion-y-borrado-de-migraciones">Ejecución y borrado de migraciones</h3>
+<p>Para ejecutar las migraciones (el método <code>up</code> de cada una), lanzamos el siguiente comando desde la carpeta de nuestro proyecto (habiendo creado la base de datos ya previamente, y modificado las credenciales de acceso en el archivo <code>.env</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="x">php artisan migrate</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="x">// sudo docker-compose exec myapp php artisan migrate</span>
+</code></pre></div></td></tr></table></div>
+<p>Adicionalmente a las tablas afectadas, se tendrá otra tabla <code>migrations</code> en la base de datos con un histórico de las migraciones realizadas. Para cada una, se almacena su <em>id</em> (autonumérico), el nombre de la migración, y el número de proceso por lotes en que se hizo (aquellas que compartan el mismo número se hicieron a la vez en el mismo lote). De este modo, aquellas que ya se hayan hecho no se volverán a realizar.</p>
+<p>Para deshacer las migraciones realizadas (ejecutar el método <code>down</code> de las mismas), ejecutamos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="x">php artisan migrate:rollback</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="x">// sudo docker-compose exec myapp php artisan migrate:rollback</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto eliminará TODAS las migraciones del último lote existente en la tabla <code>migrations</code>. Si no queremos deshacerlo todo, sino retroceder un número determinado de migraciones dentro de ese lote, ejecutamos el comando anterior con un parámetro <code>--step</code>, indicando el número de pasos o migraciones a deshacer (en orden cronológico de más reciente a más antigua):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">php artisan migrate:rollback --step=2</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="x">// sudo docker-compose exec myapp php artisan migrate:rollback --step=2    </span>
+</code></pre></div></td></tr></table></div>
+<p>Si volvemos a hacer la migración, se restablecerán las migraciones deshechas de ese lote.</p>
+<p>Otro comando también muy utilizado es <code>migrate:fresh</code>. Lo que hace es eliminar todas las migraciones realizadas y volverlas a lanzar. Es útil cuando, estando en desarrollo, añadimos campos nuevos a alguna tabla y queremos rehacer las tablas completamente.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">php artisan migrate:fresh</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">// sudo docker-compose exec myapp php artisan migrate:fresh</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA</strong>: el comando <code>migrate:fresh</code> es DESTRUCTIVO, elimina los contenidos de las tablas, y sólo debe utilizarse en entornos de desarrollo, no de producción.</p>
+</blockquote>
+<h3 id="aplicando-las-migraciones-a-nuestro-ejemplo">Aplicando las migraciones a nuestro ejemplo</h3>
+<p>Vamos a poner en práctica todo lo visto en este apartado sobre nuestro proyecto <code>biblioteca</code>. Anteriormente ya hemos comentado cómo modificar el archivo <code>.env</code> del proyecto para darle los parámetros de conexión correctos a la base de datos, y cómo crear la base de datos “biblioteca” desde <em>phpMyAdmin</em>. Revisa ese apartado para hacer estos pasos, si no los has hecho ya.</p>
+<p>A continuación, vamos a eliminar las migraciones que no nos van a ser necesarias de la carpeta <code>database/migrations</code>. En concreto, borramos todas salvo la de creación de la tabla de usuarios <code>create_users_table</code>.</p>
+<p>Después, editamos la migración para la tabla de usuarios (<code>create_users_table</code>), ya que la utilizaremos en sesiones posteriores. Podemos renombrar el archivo a <code>crear_tabla_usuarios</code>. La clase interna en versiones recientes de Laravel no tiene nombre, se crea simplemente un subtipo de <em>Migration</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">// ...</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">return new class extends Migration</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="x">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="x">  // ...</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA:</strong> en versiones anteriores donde sí tenga nombre, podemos reemplazar el nombre viejo (<em>CreateUsersTable</em>) por <em>CrearTablaUsuarios</em>, por ejemplo.</p>
+</blockquote>
+<p>La tabla a la que se alude en los métodos <code>up</code> y <code>down</code> también la renombramos a <code>usuarios</code>, para dejarlo en nuestro idioma (respetando la fecha de creación en el nombre del archivo), y después editamos el método <code>up</code> para dejarlo así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span>
+<span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">public function up()</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">{</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">  Schema::create(&#39;usuarios&#39;, function(Blueprint $table) {</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">     $table-&gt;id();</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">     $table-&gt;string(&#39;login&#39;)-&gt;unique();</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">     $table-&gt;string(&#39;password&#39;);</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">     $table-&gt;timestamps();</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="x">  });</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora vamos a crear una nueva migración para definir la estructura de los libros:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">php artisan make:migration crear_tabla_libros --create=libros</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="x">// sudo docker-compose exec myapp php artisan make:migration crear_tabla_libros --create=libros</span>
+</code></pre></div></td></tr></table></div>
+<p>Editamos después el contenido de esta migración, en concreto el método <code>up</code> para definir estos campos en los libros:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">public function up()</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="x">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="x">  Schema::create(&#39;libros&#39;, function(Blueprint $table) {</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="x">     $table-&gt;id();</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="x">     $table-&gt;string(&#39;titulo&#39;);</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="x">     $table-&gt;string(&#39;editorial&#39;)-&gt;nullable();</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="x">     $table-&gt;float(&#39;precio&#39;);</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="x">     $table-&gt;timestamps();</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="x">  });</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Cargamos las migraciones con el comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x">php artisan migrate</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="x">// sudo docker-compose exec myapp php artisan migrate</span>
+</code></pre></div></td></tr></table></div>
+<p>Tras esto, ya deberíamos ver en nuestra base de datos “<em>biblioteca</em>” las dos tablas creadas (<em>usuarios</em> y <em>libros</em>), junto con la tabla <em>migrations</em> que crea Laravel para gestionar las migraciones realizadas.</p>
+<blockquote>
+<p><strong>NOTA:</strong> si, además de las tablas anteriores, aparece una tabla de <em>personal_access_tokens</em> (ésta la crea automáticamente el paquete <em>Sanctum</em>) incorporada por defecto en Laravel. No nos molesta para lo que vamos a hacer durante el curso, pero si queréis quitarla, hay que editar el archivo <code>app\Providers\AppServiceProvider.php</code> y añadir esta línea en el método <code>register</code> (junto con el correspondiente <code>use</code> para la clase <code>Sanctum</code>):</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">// ...</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="x">use Laravel\Sanctum\Sanctum;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="x">class AppServiceProvider ...</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="x">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="x">  // ...</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="x">  public function register()</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="x">  {</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="x">      Sanctum::ignoreMigrations();</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="x">  }</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="x">  // ...</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>Después, lanzamos <code>php artisan migrate:fresh</code> para ejecutar desde cero las migraciones, y esa tabla habrá desaparecido.</p>
+</blockquote>
+<h1 id="modelo-de-datos">modelo de datos</h1>
+<p>Ahora que ya tenemos la estructura de tablas creada en la base de datos, vamos a ver qué mecanismos ofrece Laravel para acceder a estos datos de forma sencilla desde la aplicación. Veremos cómo definir el modelo de datos asociado a cada tabla, y cómo manipular estos datos empleando el ORM Eloquent, incorporado con Laravel.</p>
+<h2 id="crear-el-modelo">Crear el modelo</h2>
+<p>La idea es crear una clase por cada tabla que tengamos en nuestra base de datos, para así interactuar con la tabla a través de dicha clase asociada. Para crear esta clase modelo, utilizamos la opción <code>make:model</code> del comando <code>php artisan</code>. Le pasaremos como parámetro adicional el nombre de la clase a crear. Por ejemplo, para el caso de nuestra biblioteca, podemos crear así el modelo <code>Libro</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="x">php artisan make:model Libro</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="x">// sudo docker-compose exec myapp php artisan make:model Libro</span>
+</code></pre></div></td></tr></table></div>
+<p>Por convención, los modelos se crean con un nombre en singular, empezando por mayúscula, y se ubican en la carpeta <code>app\Models</code>. La estructura básica del modelo es algo así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Model</span><span class="p">;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="k">class</span> <span class="nc">Libro</span> <span class="k">extends</span> <span class="nx">Model</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="p">{</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="p">}</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>En nuestro caso, vamos también a utilizar el modelo de usuario que ya existe en la carpeta <code>app\Models</code>, aunque lo renombraremos de <code>User</code> a <code>Usuario</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span>
+<span class="normal"><a href="#__codelineno-21-7">7</a></span>
+<span class="normal"><a href="#__codelineno-21-8">8</a></span>
+<span class="normal"><a href="#__codelineno-21-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Model</span><span class="p">;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="k">class</span> <span class="nc">Usuario</span> <span class="k">extends</span> <span class="nx">Model</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="p">{</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9"></a>  <span class="c1">// ...</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA</strong>: hasta Laravel 7, los modelos se generaban automáticamente en la carpeta <code>app</code>, y era necesario moverlos manualmente a una subcarpeta si queríamos estructurar mejor nuestro código, actualizando también el <code>namespace</code> correspondiente. Desde Laravel 8 la ubicación en la carpeta <code>app\Models</code> se realiza por defecto.</p>
+</blockquote>
+<p>Automáticamente, se asocia este modelo a una tabla con el mismo nombre, pero en plural y en minúscula, por lo que los modelos anteriores estarían asociados a unas tablas <em>libros</em> y <em>usuarios</em> en la base de datos, respectivamente. En caso de que no queramos que sea así, definimos una propiedad <code>$table</code> en la clase con el nombre que queramos que tenga la tabla asociada. Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="x">class Libro extends Model</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="x">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="x">  protected $table = &#39;mislibros&#39;;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="otras-opciones-de-crear-modelos">Otras opciones de crear modelos</h3>
+<p>El comando anterior <code>make:model</code> admite unos parámetros adicionales, de forma que se puede crear a la vez el modelo y la migración, y más aún, el modelo, la migración y el controlador asociado. Veamos algunos ejemplos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="x">php artisan make:model Pelicula -m</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="x">// sudo docker-compose exec myapp php artisan make:model Pelicula -m</span>
+</code></pre></div></td></tr></table></div>
+<p>El comando anterior crea un modelo <code>Pelicula</code> en la carpeta <code>app\Models</code> y, además, crea una migración llamada <code>create_peliculas_table</code> en la carpeta <code>database/migrations</code>, lista para que editemos el método <code>up</code> y especifiquemos los campos necesarios.</p>
+<p><strong>Notar</strong> que el nombre de la migración añade una “s” al nombre de la tabla automáticamente, a partir del modelo en singular.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="x">php artisan make:model Pelicula -mc</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="x">// sudo docker-compose exec myapp php artisan make:model Pelicula -mc</span>
+</code></pre></div></td></tr></table></div>
+<p>Este otro comando crea lo mismo que el anterior, y además, un controlador llamado <code>PeliculaController</code> en la carpeta <code>app\Http\Controllers</code>. Dicho controlador está vacío, para que añadamos los métodos que consideremos.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="x">php artisan make:model Pelicula -mcr</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="x">// sudo docker-compose exec myapp php artisan make:model Pelicula -mcr</span>
+</code></pre></div></td></tr></table></div>
+<p>Esta otra opción crea lo mismo que la anterior, pero el controlador <code>PeliculaController</code> es en este caso un controlador de recursos, por lo que tiene ya incorporados el conjunto de métodos propios de este tipo de controladores: <code>index</code>, <code>show</code>, etc.</p>
+<p>Podemos también usar la versión extendida de estos parámetros. Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="x">php artisan make:model Pelicula --migration --controller --resource</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="x">// ó, si no funciona:</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="x">// sudo docker-compose exec myapp php artisan make:model Pelicula --migration --controller --resource</span>
+</code></pre></div></td></tr></table></div>
+<p>En nuestro caso, como hemos ido creando los controladores y migraciones antes que los modelos, no sería necesario dar este paso, pero ahora que ya empezamos a ver cómo funciona y se interrelaciona todo, puede resultar útil emplear este comando para crear de golpe todas las partes implicadas (modelo, migración y controlador)</p>
+<h3 id="seguir-una-nomenclatura-uniforme">Seguir una nomenclatura uniforme</h3>
+<p>Recuerda que, de sesiones anteriores, hemos comentado la recomendación/necesidad de seguir una nomenclatura uniforme en los modelos, controladores y vistas. Así, para el modelo <code>Libro</code> ya tendríamos su controlador asociado <code>LibroController</code>, y las vistas se definirían en la subcarpeta <code>resources/views/libros</code>, con los nombres correspondientes a cada método del controlador (por ejemplo, <code>index.blade.php</code>, o <code>show.blade.php</code>).</p>
+<h2 id="operaciones-sobre-el-modelo-primeros-pasos-con-eloquent">Operaciones sobre el modelo. Primeros pasos con Eloquent</h2>
+<p>Eloquent es el ORM incorporado por defecto en Laravel. Un ORM (<em>Object Relational Mapping</em>) es una herramienta que permite establecer una relación entre los registros de una tabla de la base de datos y los objetos de una clase (de PHP en nuestro caso), de forma que los datos de la base de datos se convierten a objetos PHP y viceversa. Además, Eloquent implementa el patrón <em>Active Record</em>, que añade a las clases métodos como <code>save</code>, <code>update</code>, <code>delete</code>… que permiten interactuar con la base de datos para insertar, modificar o borrar registros asociados a objetos, respectivamente.</p>
+<h3 id="realizar-busquedas">Realizar búsquedas</h3>
+<p>Una vez creado el modelo, y aunque esté vacío, ya podemos utilizarlo en los controladores para acceder a los datos. Basta con importar la clase correspondiente (con <code>use</code>), y utilizar los métodos que se heredan de <code>Model</code>. Por ejemplo, el método <code>get</code> permite obtener los registros de la tabla, convertidos a objetos. Así es como obtendríamos todos los libros de la tabla desde un controlador:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span>
+<span class="normal"><a href="#__codelineno-27-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="x">// ...</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="x">use App\Models\Libro;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="x">// ...</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="x">class LibroController extends Controller</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="x">{</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="x">  public function index()</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="x">  {</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="x">     $libros = Libro::get();</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="x">     return view(&#39;libros.index&#39;, compact(&#39;libros&#39;));</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11"></a><span class="x">  }</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Lo que obtenemos es un array de objetos, por lo que deberemos acceder a sus propiedades como tales. Por ejemplo, si queremos mostrar los títulos de los libros en una vista Blade, haríamos algo como esto:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="x">@forelse($libros as $libro)</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="x">  {{ $libro-&gt;titulo }}</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="x">@endforelse</span>
+</code></pre></div></td></tr></table></div>
+<p>Alternativamente, también podemos obtener una <strong>consulta filtrada</strong>, especificando con el método <code>where</code> la condición que deben cumplir los registros a obtener. Por ejemplo, así obtendríamos los libros cuyo precio sea inferior a 10 euros:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="x">$libros = Libro::where(&#39;precio&#39;, &#39;&lt;&#39;, 10)-&gt;get();</span>
+</code></pre></div></td></tr></table></div>
+<p>De este otro modo obtendríamos libros con precio inferior a 10 euros y superior a 5 euros, de modo que podemos combinar condiciones:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="x">$libros = Libro::where(&#39;precio&#39;, &#39;&lt;&#39;, 10)</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="x">    -&gt;where(&#39;precio&#39;, &#39;&gt;&#39;, 5)-&gt;get();</span>
+</code></pre></div></td></tr></table></div>
+<p>Sobre estas consultas base podemos aplicar una serie de añadidos. Por ejemplo, podemos querer ordenar los libros por título, para lo que haríamos esto en el controlador:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="x">$libros = Libro::orderBy(&#39;titulo&#39;)-&gt;get();</span>
+</code></pre></div></td></tr></table></div>
+<p>El método <code>orderBy</code> admite un segundo parámetro que indica el sentido de la ordenación. Por defecto es <code>ASC</code> (ascendente), pero también puede ser <code>DESC</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="x">$libros = Libro::orderBy(&#39;titulo&#39;, &#39;DESC&#39;)-&gt;get();</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Paginaciones de resultados</strong></p>
+<p>Si queremos paginar los resultados obtenidos debemos, por un lado, cuando obtengamos el listado desde el controlador, indicar con <code>paginate</code> cuántos registros queremos por página:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
+<span class="normal"><a href="#__codelineno-33-2">2</a></span>
+<span class="normal"><a href="#__codelineno-33-3">3</a></span>
+<span class="normal"><a href="#__codelineno-33-4">4</a></span>
+<span class="normal"><a href="#__codelineno-33-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="x">public function index()</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="x">{</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="x">  $libros = Libro::paginate(5);</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="x">  return view(&#39;libros.index&#39;, compact(&#39;libros&#39;));</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Después, en la vista asociada (<code>libros.index</code> en el ejemplo anterior), podemos emplear el método <code>links</code> para que muestre los botones de paginación en el lugar deseado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<span class="normal"><a href="#__codelineno-34-2">2</a></span>
+<span class="normal"><a href="#__codelineno-34-3">3</a></span>
+<span class="normal"><a href="#__codelineno-34-4">4</a></span>
+<span class="normal"><a href="#__codelineno-34-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="x">@forelse($libros as $libro)</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="x">  {{ $libro-&gt;titulo }}</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="x">@endforelse</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="x">{{ $libros-&gt;links() }}</span>
+</code></pre></div></td></tr></table></div>
+<p>Si queremos ordenar el listado, podemos emplear <code>orderBy</code> u <code>orderByDesc</code>, pasándole como parámetro el nombre del campo por el que ordenar, antes de la paginación. Podemos, incluso, ordenar por múltiples criterios concatenados:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
+<span class="normal"><a href="#__codelineno-35-2">2</a></span>
+<span class="normal"><a href="#__codelineno-35-3">3</a></span>
+<span class="normal"><a href="#__codelineno-35-4">4</a></span>
+<span class="normal"><a href="#__codelineno-35-5">5</a></span>
+<span class="normal"><a href="#__codelineno-35-6">6</a></span>
+<span class="normal"><a href="#__codelineno-35-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="x">public function index()</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="x">{</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="x">  $libros = Libro::orderByAsc(&#39;titulo&#39;)</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="x">      -&gt;orderByAsc(&#39;editorial&#39;)</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5"></a><span class="x">      -&gt;paginate(5);</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6"></a><span class="x">  return view(&#39;libros.index&#39;, compact(&#39;libros&#39;));</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Paginaciones desde Laravel 8</strong></p>
+<p>En la versión 8 de Laravel se ha cambiado el estilo de los botones de paginación, empleando el del framework Tailwind CSS. Si queremos seguir utilizando los de Bootstrap, debemos añadir una de estas líneas en el método <code>boot</code> del <em>provider</em> <code>App\Providers\AppServiceProvider</code>, dependiendo de la versión de Bootstrap que queramos usar (por defecto se usará la 5 en la versión actual de los apuntes):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
+<span class="normal"><a href="#__codelineno-36-2">2</a></span>
+<span class="normal"><a href="#__codelineno-36-3">3</a></span>
+<span class="normal"><a href="#__codelineno-36-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="x">// Bootstrap 4</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="x">Paginator::useBootstrap();</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="x">// Bootstrap 5</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="x">Paginator::useBootstrapFive();</span>
+</code></pre></div></td></tr></table></div>
+<p>Además, debemos incorporar la cláusula <code>use</code> para localizar el elemento <code>Paginator</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="x">use Illuminate\Pagination\Paginator;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="fichas-de-objetos-individuales">Fichas de objetos individuales</h3>
+<p>Una operación bastante habitual es mostrar una ficha de un objeto a partir de un listado, haciendo clic en el título o alguna parte visible de ese objeto. Por ejemplo, si queremos ver los datos de un libro a partir de un listado con sus títulos, podemos hacer algo como esto en la plantilla Blade:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span>
+<span class="normal"><a href="#__codelineno-38-2">2</a></span>
+<span class="normal"><a href="#__codelineno-38-3">3</a></span>
+<span class="normal"><a href="#__codelineno-38-4">4</a></span>
+<span class="normal"><a href="#__codelineno-38-5">5</a></span>
+<span class="normal"><a href="#__codelineno-38-6">6</a></span>
+<span class="normal"><a href="#__codelineno-38-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="x">@forelse($libros as $libro)</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="x">  &lt;li&gt;</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3"></a><span class="x">     &lt;a href=&quot;{{ route(&#39;libros.show&#39;, $libro) }}&quot;&gt;</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4"></a><span class="x">         {{ $libro-&gt;titulo }}</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5"></a><span class="x">     &lt;/a&gt;</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6"></a><span class="x">  &lt;/li&gt;</span>
+<a id="__codelineno-38-7" name="__codelineno-38-7"></a><span class="x">@endforelse</span>
+</code></pre></div></td></tr></table></div>
+<p>Vemos que hemos utilizado el método <code>route</code> para indicar la ruta a seguir, con un segundo parámetro, que en este caso es el objeto concreto de esa fila. Laravel automáticamente lo reemplazará en el enlace por el identificador de dicho objeto.</p>
+<p>Por su parte, la ruta asociada a este enlace podría ser algo así (en el archivo de rutas):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="x">Route::get(&#39;/libros/{id}&#39;, [LibroController::class, &#39;show&#39;]) -&gt;name(&#39;libros.show&#39;);</span>
+</code></pre></div></td></tr></table></div>
+<p>Aunque también podemos haber definido las rutas como un paquete de recursos, y cada una tendrá su método asociado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="x">Route::resource(&#39;libros&#39;, LibroController::class);</span>
+</code></pre></div></td></tr></table></div>
+<p>Finalmente, el método <code>show</code> del controlador asociado se encargará de obtener los datos del libro a partir de su <em>id</em>, y generar la vista correspondiente. Para obtener los datos de un objeto a partir de su identificador, podemos emplear el método <code>find</code> del modelo, pasándole como parámetro el identificador. Así, podríamos generar una vista con los datos como ésta:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-41-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-41-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-41-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-41-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-41-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-41-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-41-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-41-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-41-10">10</a></span>
+<span class="normal"><a href="#__codelineno-41-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="x">// ...</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="x">class LibroController extends Controller</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="x">{</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="x">  // ...</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5"></a>
+<a id="__codelineno-41-6" name="__codelineno-41-6"></a><span class="x">  public function show($id)</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7"></a><span class="x">  {</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8"></a><span class="x">    $libro = Libro::find($id);</span>
+<a id="__codelineno-41-9" name="__codelineno-41-9"></a><span class="x">    return view(&#39;libros.show&#39;, compact(&#39;libro&#39;));</span>
+<a id="__codelineno-41-10" name="__codelineno-41-10"></a><span class="x">  }</span>
+<a id="__codelineno-41-11" name="__codelineno-41-11"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA</strong>: si devolvemos (<code>return</code>) directamente lo que obtiene el método <code>find</code>, nos llegará al navegador en formato JSON. De hecho, si devolvemos un array, Laravel lo envía directamente en formato JSON. Esta característica la utilizaremos más adelante para definir servicios REST.</p>
+</blockquote>
+<p>En el caso de que el objeto no se encuentre (porque, por ejemplo, utilicemos un <em>id</em> equivocado), la vista generada fallará. Para evitarlo, en lugar del método <code>find</code> podemos emplear <code>findOrFail</code>, que, en caso de que no se encuentre el objeto, generará una vista con un error 404, más apropiada. Además, recuerda que puedes personalizar estas páginas de error definiendo las vistas correspondientes.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="x">$libro = Libro::findOrFail($id);</span>
+</code></pre></div></td></tr></table></div>
+<p>En este punto, y a falta de que podamos hacer inserciones más adelante, puedes probar a insertar unos pocos libros de prueba en la base de datos <em>biblioteca</em> desde phpMyAdmin, y probar estas dos rutas que hemos hecho (listado y ficha de libro).</p>
+<h3 id="inserciones">Inserciones</h3>
+<p>Las inserciones a través de Eloquent se pueden realizar creando una instancia del objeto, rellenando sus atributos y llamando al método <code>save</code>, heredado de la superclase <code>Model</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1">1</a></span>
+<span class="normal"><a href="#__codelineno-43-2">2</a></span>
+<span class="normal"><a href="#__codelineno-43-3">3</a></span>
+<span class="normal"><a href="#__codelineno-43-4">4</a></span>
+<span class="normal"><a href="#__codelineno-43-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="x">$libro = new Libro();</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="x">$libro-&gt;titulo = &quot;El juego de Ender&quot;;</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="x">$libro-&gt;editorial = &quot;Ediciones B&quot;;</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4"></a><span class="x">$libro-&gt;precio = 8.95;</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5"></a><span class="x">$libro-&gt;save();</span>
+</code></pre></div></td></tr></table></div>
+<p>Como alternativa, también se puede utilizar el método <code>create</code> del modelo, y pasarle todos los datos de la petición, que llegarían desde un formulario, como veremos más adelante:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="x">Libro::create($request-&gt;all());</span>
+</code></pre></div></td></tr></table></div>
+<p>Para que esto último funcione, deben cumplirse dos premisas:</p>
+<ul>
+<li>Cada campo de la petición debe tener asociado un campo del mismo nombre en el modelo.</li>
+<li>Debemos definir en el modelo una propiedad llamada <code>$fillable</code> con los nombres de los campos de la petición que nos interesa procesar (el resto se descartan). Esto es obligatorio especificarlo, aunque nos interesen todos los campos, para evitar inserciones masivas malintencionadas (por ejemplo, editando el código fuente para añadir otros campos y modificar datos inesperados).</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1">1</a></span>
+<span class="normal"><a href="#__codelineno-45-2">2</a></span>
+<span class="normal"><a href="#__codelineno-45-3">3</a></span>
+<span class="normal"><a href="#__codelineno-45-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="x">class Libro extends Model</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="x">{</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="x">  protected $fillable = [&#39;titulo&#39;, &#39;editorial&#39;, &#39;precio&#39;];</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Este código de inserción (o bien campo a campo, o usando el método <code>all</code>) se suele poner en el método <code>store</code> del controlador, para que reciba los datos del formulario de inserción y la haga en la base de datos. Lo terminaremos de ver cuando abordemos el tema de los formularios en Laravel.</p>
+<h3 id="modificaciones">Modificaciones</h3>
+<p>La modificación consiste en dos pasos:</p>
+<ul>
+<li>Encontrar el objeto a modificar (buscándolo por el <em>id</em> con <code>findOrFail</code>, por ejemplo, como se ha explicado antes)</li>
+<li>Modificar las propiedades que se necesiten, y llamar al método <code>save</code> del objeto para guardar los cambios.</li>
+</ul>
+<p>Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1">1</a></span>
+<span class="normal"><a href="#__codelineno-46-2">2</a></span>
+<span class="normal"><a href="#__codelineno-46-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="x">$libroAModificar = Libro::findOrFail($id);</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2"></a><span class="x">$libroAModificar-&gt;titulo=&quot;Otro título&quot;;</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3"></a><span class="x">$libroAModificar-&gt;save();</span>
+</code></pre></div></td></tr></table></div>
+<p>También podemos utilizar el método <code>update</code> enlazado con <code>findOrFail</code>, y pasarle como parámetro todos los datos de la petición, igual que se ha explicado para la inserción, y siempre y cuando hayamos declarado el atributo <code>$fillable</code> en el modelo para indicar qué campos se aceptan:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-47-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="x">Libro::findOrFail($id)-&gt;update($request-&gt;all());</span>
+</code></pre></div></td></tr></table></div>
+<p>Este código de modificación se suele poner en el método <code>update</code> del controlador, para que reciba los datos del formulario de edición y haga la modificación correspondiente. Lo terminaremos de ver cuando abordemos el tema de los formularios en Laravel.</p>
+<h3 id="borrados">Borrados</h3>
+<p>Para hacer el borrado, también buscamos el objeto a borrar con <code>findOrFail</code>, y luego llamamos a su método <code>delete</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="x">Libro::findOrFail($id)-&gt;delete();</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto lo haremos normalmente en el método <code>destroy</code> del controlador en cuestión. Después, podemos redirigir o renderizar alguna vista resultado, como el listado de libros general para comprobar que se ha borrado.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1">1</a></span>
+<span class="normal"><a href="#__codelineno-49-2">2</a></span>
+<span class="normal"><a href="#__codelineno-49-3">3</a></span>
+<span class="normal"><a href="#__codelineno-49-4">4</a></span>
+<span class="normal"><a href="#__codelineno-49-5">5</a></span>
+<span class="normal"><a href="#__codelineno-49-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="x">public function destroy($id)</span>
+<a id="__codelineno-49-2" name="__codelineno-49-2"></a><span class="x">{</span>
+<a id="__codelineno-49-3" name="__codelineno-49-3"></a><span class="x">  Libro::findOrFail($id)-&gt;delete();</span>
+<a id="__codelineno-49-4" name="__codelineno-49-4"></a><span class="x">  $libros = Libro::get();</span>
+<a id="__codelineno-49-5" name="__codelineno-49-5"></a><span class="x">  return view(&#39;libros.index&#39;, compact(&#39;libros&#39;));</span>
+<a id="__codelineno-49-6" name="__codelineno-49-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Sobre el borrado desde las vistas</strong></p>
+<p>Lo normal es que el borrado se active haciendo clic en algún elemento de una vista. Por ejemplo, haciendo clic en un botón o enlace que ponga “Borrar”. Sin embargo, si implementamos esto así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-1">1</a></span>
+<span class="normal"><a href="#__codelineno-50-2">2</a></span>
+<span class="normal"><a href="#__codelineno-50-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a><span class="x">&lt;a href=&quot;{{ route(&#39;libros.destroy&#39;, $libro }}&quot;&gt;</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2"></a><span class="x">   Borrar</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3"></a><span class="x">&lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si queremos borrar el libro con <em>id</em> 3, se generará una ruta <em>http://biblioteca/libros/3</em>. Lo podemos comprobar pasando el ratón por el enlace y viendo la barra inferior de estado del navegador. Esta ruta, sin embargo, nos va a enviar a la ficha del libro 3, no al borrado, ya que estamos enviando una petición GET, y no una de borrado (DELETE). Para evitar esto, la opción de borrado debe hacerse siempre desde un formulario, donde a través del helper <code>@method</code> indicamos que es una petición de borrado (DELETE). Con lo que el “enlace” para borrar un libro quedaría así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1">1</a></span>
+<span class="normal"><a href="#__codelineno-51-2">2</a></span>
+<span class="normal"><a href="#__codelineno-51-3">3</a></span>
+<span class="normal"><a href="#__codelineno-51-4">4</a></span>
+<span class="normal"><a href="#__codelineno-51-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="x">&lt;form action=&quot;{{ route(&#39;libros.destroy&#39;, $libro) }}&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="x">  @method(&#39;DELETE&#39;)</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3"></a><span class="x">  @csrf</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4"></a><span class="x">  &lt;button&gt;Borrar&lt;/button&gt;</span>
+<a id="__codelineno-51-5" name="__codelineno-51-5"></a><span class="x">&lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA</strong> el helper <code>@csrf</code> lo veremos con más detalle al hablar de formularios, pero se añade a los formularios Laravel para evitar ataques de tipo <em>cross-site</em>, es decir, accesos a una URL de nuestra web desde otras webs.</p>
+<p><strong>Ejercicios</strong>: realizar la primera parte de ejercicios.</p>
+</blockquote>
+<h1 id="relaciones-entre-modelos">relaciones entre modelos</h1>
+<p>En esta sesión veremos qué tipos de relaciones se pueden establecer entre los modelos de la aplicación, y cómo se reflejan automáticamente en la base de datos. Para ello, Eloquent permite definir relaciones de varios tipos entre tablas. Éstas se definen a través de los distintos modelos involucrados en la relación, como veremos a continuación.</p>
+<h2 id="1-relaciones-uno-a-uno-o-one-to-one">1. Relaciones uno a uno o <em>one to one</em></h2>
+<p>Supongamos que tenemos dos modelos <code>Usuario</code> y <code>Telefono</code>, de modo que podemos establecer una relación <em>uno a uno</em> entre ellos: un usuario tiene un teléfono, y un teléfono pertenece a un usuario.</p>
+<p>Para reflejar esta relación en tablas, una de las dos debería tener una referencia a la otra. En este caso, podríamos tener un campo <code>telefono_id</code> en la tabla de <code>usuarios</code> que indique el teléfono que pertenece a dicho usuario, o viceversa (un campo <code>usuario_id</code> en la tabla <code>telefonos</code> que indique a qué usuario pertenece un teléfono). Conceptualmente es más correcta la primera opción (el usuario <em>tiene</em> el teléfono), así que seguiremos ese primer ejemplo. Es importante que el campo nuevo en la tabla <code>usuarios</code> se llame <code>telefono_id</code>, como veremos a continuación.</p>
+<p>Para indicar que <em>un usuario tiene un teléfono</em>, añadimos un nuevo método en el modelo de <code>Usuario</code>, que se llame igual que el modelo con el que queremos conectar (<code>telefono</code>, en este caso). Dentro, usaremos el método <code>hasOne</code> del modelo de usuario para indicar que un objeto de este tipo <em>tiene un</em> objeto del otro modelo (teléfono):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-52-1">1</a></span>
+<span class="normal"><a href="#__codelineno-52-2">2</a></span>
+<span class="normal"><a href="#__codelineno-52-3">3</a></span>
+<span class="normal"><a href="#__codelineno-52-4">4</a></span>
+<span class="normal"><a href="#__codelineno-52-5">5</a></span>
+<span class="normal"><a href="#__codelineno-52-6">6</a></span>
+<span class="normal"><a href="#__codelineno-52-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="x">class Usuario extends Model</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2"></a><span class="x">{</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3"></a><span class="x">  public function telefono()</span>
+<a id="__codelineno-52-4" name="__codelineno-52-4"></a><span class="x">  {</span>
+<a id="__codelineno-52-5" name="__codelineno-52-5"></a><span class="x">     return $this-&gt;hasOne(Telefono::class);</span>
+<a id="__codelineno-52-6" name="__codelineno-52-6"></a><span class="x">  }</span>
+<a id="__codelineno-52-7" name="__codelineno-52-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora, si queremos obtener el teléfono de un usuario, basta con que hagamos esto:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="x">$telefono = Usuario::findOrFail($id)-&gt;telefono;</span>
+</code></pre></div></td></tr></table></div>
+<p>Hemos empleado una característica de Eloquent denominada <em>propiedades dinámicas</em>, por la cual podemos referenciar un método de relación como si fuera una propiedad (en lugar de usar <code>telefono()</code>, hemos empleado <code>telefono</code>).</p>
+<p>La instrucción anterior obtiene el objeto <code>Telefono</code> asociado con el usuario buscado (a través del <code>$id</code> del teléfono). Para que esta asociación tenga efecto, es preciso que en la tabla <code>usuarios</code> exista un campo <code>telefono_id</code> y que se corresponda con un campo <code>id</code> de la tabla de <code>telefonos</code>, de modo que Eloquent establece la conexión entre una y otra tabla. Deberemos definir una nueva migración de modificación sobre la tabla <em>usuarios</em> para añadir ese nuevo campo, o refrescar la migración original con él y borrar los contenidos previos.</p>
+<p>Si queremos utilizar otros campos distintos en una y otra tabla para conectarlas, debemos indicar dos parámetros más al llamar a <code>hasOne</code>. Por ejemplo, así relacionaríamos las dos tablas anteriores, indicando que la clave ajena de <code>usuarios</code> a <code>telefonos</code> es <code>idTelefono</code>, y que la clave primaria de <code>telefonos</code> a la que se referencia es <code>codigo</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-54-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a><span class="x">return $this-&gt;hasOne(Telefono::class, &#39;idTelefono&#39;, &#39;codigo&#39;);</span>
+</code></pre></div></td></tr></table></div>
+<p>También es posible obtener la <strong>relación inversa</strong>, es decir, a partir de un teléfono, obtener el usuario al que pertenece. Para ello, añadimos un método <code>usuario</code> en el modelo <code>Telefono</code> y empleamos el método <code>belongsTo</code> para indicar a qué modelo se asocia:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-55-1">1</a></span>
+<span class="normal"><a href="#__codelineno-55-2">2</a></span>
+<span class="normal"><a href="#__codelineno-55-3">3</a></span>
+<span class="normal"><a href="#__codelineno-55-4">4</a></span>
+<span class="normal"><a href="#__codelineno-55-5">5</a></span>
+<span class="normal"><a href="#__codelineno-55-6">6</a></span>
+<span class="normal"><a href="#__codelineno-55-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="x">class Telefono extends Model</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2"></a><span class="x">{</span>
+<a id="__codelineno-55-3" name="__codelineno-55-3"></a><span class="x">  public function usuario()</span>
+<a id="__codelineno-55-4" name="__codelineno-55-4"></a><span class="x">  {</span>
+<a id="__codelineno-55-5" name="__codelineno-55-5"></a><span class="x">     return $this-&gt;belongsTo(Usuario::class);</span>
+<a id="__codelineno-55-6" name="__codelineno-55-6"></a><span class="x">  }</span>
+<a id="__codelineno-55-7" name="__codelineno-55-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Nuevamente, podemos especificar otros nombres de clave pasando parámetros adicionales a <code>belongsTo</code>, igual que se hace para <code>hasOne</code>.</p>
+<p>De este modo, si queremos obtener el usuario a partir del teléfono, podemos hacerlo así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-56-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a><span class="x">$usuario = Telefono::findOrFail($idTelefono)-&gt;usuario();</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="guardar-datos-relacionados">Guardar datos relacionados</h3>
+<p>Supongamos que queremos guardar un usuario con su teléfono asociado. Podemos simplemente guardar el <em>id</em> del teléfono como un campo más del usuario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-57-1">1</a></span>
+<span class="normal"><a href="#__codelineno-57-2">2</a></span>
+<span class="normal"><a href="#__codelineno-57-3">3</a></span>
+<span class="normal"><a href="#__codelineno-57-4">4</a></span>
+<span class="normal"><a href="#__codelineno-57-5">5</a></span>
+<span class="normal"><a href="#__codelineno-57-6">6</a></span>
+<span class="normal"><a href="#__codelineno-57-7">7</a></span>
+<span class="normal"><a href="#__codelineno-57-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a><span class="x">// Buscamos el teléfono que queremos asociar</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2"></a><span class="x">// (suponiendo que existe previamente)</span>
+<a id="__codelineno-57-3" name="__codelineno-57-3"></a><span class="x">$telefono = Telefono::findOrFail($idTelefono);</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4"></a><span class="x">$usuario = new Usuario();</span>
+<a id="__codelineno-57-5" name="__codelineno-57-5"></a><span class="x">$usuario-&gt;nombre = &quot;Pepe&quot;;</span>
+<a id="__codelineno-57-6" name="__codelineno-57-6"></a><span class="x">$usuario-&gt;email = &quot;pepe@gmail.com&quot;;</span>
+<a id="__codelineno-57-7" name="__codelineno-57-7"></a><span class="x">$usuario-&gt;telefono_id = $telefono-&gt;id;</span>
+<a id="__codelineno-57-8" name="__codelineno-57-8"></a><span class="x">$usuario-&gt;save();</span>
+</code></pre></div></td></tr></table></div>
+<p>Pero, además, podemos vincular ambos objetos en la relación, usando el método <code>associate</code>, de este modo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-58-1">1</a></span>
+<span class="normal"><a href="#__codelineno-58-2">2</a></span>
+<span class="normal"><a href="#__codelineno-58-3">3</a></span>
+<span class="normal"><a href="#__codelineno-58-4">4</a></span>
+<span class="normal"><a href="#__codelineno-58-5">5</a></span>
+<span class="normal"><a href="#__codelineno-58-6">6</a></span>
+<span class="normal"><a href="#__codelineno-58-7">7</a></span>
+<span class="normal"><a href="#__codelineno-58-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a><span class="x">// Buscamos el teléfono que queremos asociar</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2"></a><span class="x">// (suponiendo que existe previamente)</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3"></a><span class="x">$telefono = Telefono::findOrFail($idTelefono);</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4"></a><span class="x">$usuario = new Usuario();</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5"></a><span class="x">$usuario-&gt;nombre = &quot;Pepe&quot;;</span>
+<a id="__codelineno-58-6" name="__codelineno-58-6"></a><span class="x">$usuario-&gt;email = &quot;pepe@gmail.com&quot;;</span>
+<a id="__codelineno-58-7" name="__codelineno-58-7"></a><span class="x">$usuario-&gt;telefono()-&gt;associate($telefono);</span>
+<a id="__codelineno-58-8" name="__codelineno-58-8"></a><span class="x">$usuario-&gt;save();</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="relaciones-uno-a-muchos-o-one-to-many">Relaciones uno a muchos o <em>one to many</em></h2>
+<p>Para ilustrar esta relación veamos otro ejemplo: supongamos que tenemos los modelos <code>Autor</code> y <code>Libro</code>, de modo que un autor puede tener varios libros, y un libro está asociado a un autor.</p>
+<p>La forma de establecer la relación entre ambos consistirá en añadir en la tabla de <code>libros</code> una clave ajena al autor al que pertenece. A la hora de plasmar esta relación en los modelos, se hace de forma similar al caso anterior, sólo que en lugar de utilizar el método <code>hasOne</code> en la clase <code>Autor</code> usaríamos el método <code>hasMany</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1">1</a></span>
+<span class="normal"><a href="#__codelineno-59-2">2</a></span>
+<span class="normal"><a href="#__codelineno-59-3">3</a></span>
+<span class="normal"><a href="#__codelineno-59-4">4</a></span>
+<span class="normal"><a href="#__codelineno-59-5">5</a></span>
+<span class="normal"><a href="#__codelineno-59-6">6</a></span>
+<span class="normal"><a href="#__codelineno-59-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="x">class Autor extends Model</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2"></a><span class="x">{</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3"></a><span class="x">  public function libros()</span>
+<a id="__codelineno-59-4" name="__codelineno-59-4"></a><span class="x">  {</span>
+<a id="__codelineno-59-5" name="__codelineno-59-5"></a><span class="x">     return $this-&gt;hasMany(Libro::class);</span>
+<a id="__codelineno-59-6" name="__codelineno-59-6"></a><span class="x">  }</span>
+<a id="__codelineno-59-7" name="__codelineno-59-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Igual que ocurría antes, se asume que la tabla de libros tiene una clave primaria <code>id</code>, y que la clave ajena correspondiente hacia la tabla de autores es <code>autor_id</code>. De lo contrario, se pueden especificar otros pasando más parámetros a <code>hasMany</code>.</p>
+<p>De este modo obtenemos los libros asociados a un autor:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-60-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a><span class="x">$libros = Autor::findOrFail($id)-&gt;libros();</span>
+</code></pre></div></td></tr></table></div>
+<p>Finalmente, también podemos establecer la <strong>relación inversa</strong>, y recuperar el autor al que pertenece un determinado libro, definiendo un método en la clase <code>Libro</code> que emplee <code>belongsTo</code>, como en las relaciones uno a uno:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-61-1">1</a></span>
+<span class="normal"><a href="#__codelineno-61-2">2</a></span>
+<span class="normal"><a href="#__codelineno-61-3">3</a></span>
+<span class="normal"><a href="#__codelineno-61-4">4</a></span>
+<span class="normal"><a href="#__codelineno-61-5">5</a></span>
+<span class="normal"><a href="#__codelineno-61-6">6</a></span>
+<span class="normal"><a href="#__codelineno-61-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1"></a><span class="x">class Libro extends Model</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2"></a><span class="x">{</span>
+<a id="__codelineno-61-3" name="__codelineno-61-3"></a><span class="x">  public function autor()</span>
+<a id="__codelineno-61-4" name="__codelineno-61-4"></a><span class="x">  {</span>
+<a id="__codelineno-61-5" name="__codelineno-61-5"></a><span class="x">     return $this-&gt;belongsTo(Autor::class);</span>
+<a id="__codelineno-61-6" name="__codelineno-61-6"></a><span class="x">  }</span>
+<a id="__codelineno-61-7" name="__codelineno-61-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Y obtener, por ejemplo, el nombre del autor a partir del libro:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-62-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a><span class="x">$nombreAutor = Libro::findOrFail($id)-&gt;autor-&gt;nombre;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="aplicando-esta-relacion-en-nuestro-ejemplo">Aplicando esta relación en nuestro ejemplo</h3>
+<p>Esta relación la podemos dejar plasmada en nuestro ejemplo de la biblioteca, definiendo un nuevo modelo <code>Autor</code> con su correspondiente migración, y relacionando los modelos. Para ello, seguiremos estos pasos:</p>
+<ul>
+<li>Creamos una nueva migración de modificación sobre la tabla de <em>libros</em>, para añadir un nuevo campo <code>autor_id</code>.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-63-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1"></a><span class="x">php artisan make:migration nuevo_campo_autor_libros --table=libros</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-64-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-64-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-64-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-64-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-64-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-64-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-64-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-64-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-64-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-64-10">10</a></span>
+<span class="normal"><a href="#__codelineno-64-11">11</a></span>
+<span class="normal"><a href="#__codelineno-64-12">12</a></span>
+<span class="normal"><a href="#__codelineno-64-13">13</a></span>
+<span class="normal"><a href="#__codelineno-64-14">14</a></span>
+<span class="normal"><a href="#__codelineno-64-15">15</a></span>
+<span class="normal"><a href="#__codelineno-64-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><span class="x">class NuevoCampoAutorLibros extends Migration</span>
+<a id="__codelineno-64-2" name="__codelineno-64-2"></a><span class="x">{</span>
+<a id="__codelineno-64-3" name="__codelineno-64-3"></a><span class="x">  public function up()</span>
+<a id="__codelineno-64-4" name="__codelineno-64-4"></a><span class="x">  {</span>
+<a id="__codelineno-64-5" name="__codelineno-64-5"></a><span class="x">     Schema::table(&#39;libros&#39;, function(Blueprint $table) {</span>
+<a id="__codelineno-64-6" name="__codelineno-64-6"></a><span class="x">         $table-&gt;integer(&#39;autor_id&#39;);</span>
+<a id="__codelineno-64-7" name="__codelineno-64-7"></a><span class="x">     });</span>
+<a id="__codelineno-64-8" name="__codelineno-64-8"></a><span class="x">  }</span>
+<a id="__codelineno-64-9" name="__codelineno-64-9"></a>
+<a id="__codelineno-64-10" name="__codelineno-64-10"></a><span class="x">  public function down()</span>
+<a id="__codelineno-64-11" name="__codelineno-64-11"></a><span class="x">  {</span>
+<a id="__codelineno-64-12" name="__codelineno-64-12"></a><span class="x">     Schema::table(&#39;libros&#39;, function(Blueprint $table) {</span>
+<a id="__codelineno-64-13" name="__codelineno-64-13"></a><span class="x">         $table-&gt;dropColumn(&#39;autor_id&#39;);</span>
+<a id="__codelineno-64-14" name="__codelineno-64-14"></a><span class="x">     });</span>
+<a id="__codelineno-64-15" name="__codelineno-64-15"></a><span class="x">  }</span>
+<a id="__codelineno-64-16" name="__codelineno-64-16"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-65-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1"></a><span class="x">php artisan migrate</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Creamos de golpe el modelo, la migración y el controlador de autores (aunque el controlador no lo vamos a utilizar, al menos por el momento). El modelo <code>Autor</code> debe quedar en la carpeta <code>app\Models</code>, junto con el de usuarios y el de libros.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-66-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1"></a><span class="x">php artisan make:model Autor -mcr</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA</strong>: en este punto, deberás renombrar a mano la migración, ya que el plural que asignará Laravel por defecto será <em>autors</em>, y no <em>autores</em>. Recuerda cambiar tanto el nombre del fichero de la migración, como el nombre de la tabla a la que se referencia en los métodos <code>up</code> y <code>down</code>.</p>
+</blockquote>
+<ul>
+<li>Editamos la migración para definir los campos que tendrá la nueva tabla de autores, en su método <code>up</code>: un nombre y un año de nacimiento (opcional):</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-67-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-67-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-67-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-67-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-67-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-67-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-67-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-67-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-67-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-67-10">10</a></span>
+<span class="normal"><a href="#__codelineno-67-11">11</a></span>
+<span class="normal"><a href="#__codelineno-67-12">12</a></span>
+<span class="normal"><a href="#__codelineno-67-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1"></a><span class="x">return new class extends Migration</span>
+<a id="__codelineno-67-2" name="__codelineno-67-2"></a><span class="x">{</span>
+<a id="__codelineno-67-3" name="__codelineno-67-3"></a><span class="x">  public function up()</span>
+<a id="__codelineno-67-4" name="__codelineno-67-4"></a><span class="x">  {</span>
+<a id="__codelineno-67-5" name="__codelineno-67-5"></a><span class="x">     Schema::create(&#39;autores&#39;, function(Blueprint $table) {</span>
+<a id="__codelineno-67-6" name="__codelineno-67-6"></a><span class="x">         $table-&gt;id();</span>
+<a id="__codelineno-67-7" name="__codelineno-67-7"></a><span class="x">         $table-&gt;string(&#39;nombre&#39;);</span>
+<a id="__codelineno-67-8" name="__codelineno-67-8"></a><span class="x">         $table-&gt;integer(&#39;nacimiento&#39;)-&gt;nullable();</span>
+<a id="__codelineno-67-9" name="__codelineno-67-9"></a><span class="x">         $table-&gt;timestamps();</span>
+<a id="__codelineno-67-10" name="__codelineno-67-10"></a><span class="x">     });</span>
+<a id="__codelineno-67-11" name="__codelineno-67-11"></a><span class="x">  }</span>
+<a id="__codelineno-67-12" name="__codelineno-67-12"></a><span class="x">}</span>
+<a id="__codelineno-67-13" name="__codelineno-67-13"></a><span class="x">php artisan migrate</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Añadimos en el modelo <code>Autor</code> que la tabla asociada será <code>autores</code> (de lo contrario, considera que será <em>autors</em>. Además, definimos una relación de uno a muchos con los libros, añadiendo el método siguiente:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-68-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-68-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-68-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-68-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-68-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-68-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-68-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-68-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-68-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-68-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1"></a><span class="x">class Autor extends Model</span>
+<a id="__codelineno-68-2" name="__codelineno-68-2"></a><span class="x">{</span>
+<a id="__codelineno-68-3" name="__codelineno-68-3"></a><span class="x">  protected $table = &#39;autores&#39;;</span>
+<a id="__codelineno-68-4" name="__codelineno-68-4"></a><span class="x">  // ...</span>
+<a id="__codelineno-68-5" name="__codelineno-68-5"></a>
+<a id="__codelineno-68-6" name="__codelineno-68-6"></a><span class="x">  public function libros()</span>
+<a id="__codelineno-68-7" name="__codelineno-68-7"></a><span class="x">  {</span>
+<a id="__codelineno-68-8" name="__codelineno-68-8"></a><span class="x">     return $this-&gt;hasMany(Libro::class);</span>
+<a id="__codelineno-68-9" name="__codelineno-68-9"></a><span class="x">  }</span>
+<a id="__codelineno-68-10" name="__codelineno-68-10"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Recíprocamente, añadimos al modelo <code>Libro</code> este otro método, para poder recuperar un autor a partir de uno de sus libros:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-69-1">1</a></span>
+<span class="normal"><a href="#__codelineno-69-2">2</a></span>
+<span class="normal"><a href="#__codelineno-69-3">3</a></span>
+<span class="normal"><a href="#__codelineno-69-4">4</a></span>
+<span class="normal"><a href="#__codelineno-69-5">5</a></span>
+<span class="normal"><a href="#__codelineno-69-6">6</a></span>
+<span class="normal"><a href="#__codelineno-69-7">7</a></span>
+<span class="normal"><a href="#__codelineno-69-8">8</a></span>
+<span class="normal"><a href="#__codelineno-69-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1"></a><span class="x">class Libro extends Model</span>
+<a id="__codelineno-69-2" name="__codelineno-69-2"></a><span class="x">{</span>
+<a id="__codelineno-69-3" name="__codelineno-69-3"></a><span class="x">  // ...</span>
+<a id="__codelineno-69-4" name="__codelineno-69-4"></a>
+<a id="__codelineno-69-5" name="__codelineno-69-5"></a><span class="x">  public function autor()</span>
+<a id="__codelineno-69-6" name="__codelineno-69-6"></a><span class="x">  {</span>
+<a id="__codelineno-69-7" name="__codelineno-69-7"></a><span class="x">     return $this-&gt;belongsTo(Autor::class);</span>
+<a id="__codelineno-69-8" name="__codelineno-69-8"></a><span class="x">  }</span>
+<a id="__codelineno-69-9" name="__codelineno-69-9"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Utilizando <em>phpMyAdmin</em>, creamos a mano un par de autores en la tabla de autores, y los relacionamos con algunos de los libros que haya en la tabla de libros, añadiendo también a mano el <em>id</em> de cada autor en la clave ajena correspondiente de los libros. Por ejemplo:</li>
+</ul>
+<p><img src="./assets/ud07_4_tabla_autores.png" alt="tabla autores" style="zoom:70%;" /></p>
+<p><img src="./assets/ud07_4_tabla_libros.png" alt="tabla libros" style="zoom:67%;" /></p>
+<ul>
+<li>Para probar cómo funcionan las relaciones, vamos primero a crear un nuevo libro asociado al autor 1. Definimos una ruta de prueba en el archivo <code>routes/web.php</code> con este código (deberemos incorporar con <code>use</code> los modelos de <code>Autor</code> y <code>Libro</code>):</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-70-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-70-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-70-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-70-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-70-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-70-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-70-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-70-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-70-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-70-10">10</a></span>
+<span class="normal"><a href="#__codelineno-70-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1"></a><span class="x">Route::get(&#39;relacionPrueba&#39;, function() {</span>
+<a id="__codelineno-70-2" name="__codelineno-70-2"></a><span class="x">    $autor = Autor::findOrFail(1);</span>
+<a id="__codelineno-70-3" name="__codelineno-70-3"></a><span class="x">    $libro = new Libro();</span>
+<a id="__codelineno-70-4" name="__codelineno-70-4"></a><span class="x">    $libro-&gt;titulo = &quot;Libro de prueba &quot; . rand();</span>
+<a id="__codelineno-70-5" name="__codelineno-70-5"></a><span class="x">    $libro-&gt;editorial = &quot;Editorial de prueba&quot;;</span>
+<a id="__codelineno-70-6" name="__codelineno-70-6"></a><span class="x">    $libro-&gt;precio = 5;</span>
+<a id="__codelineno-70-7" name="__codelineno-70-7"></a><span class="x">    $libro-&gt;autor()-&gt;associate($autor);</span>
+<a id="__codelineno-70-8" name="__codelineno-70-8"></a><span class="x">    $libro-&gt;save();</span>
+<a id="__codelineno-70-9" name="__codelineno-70-9"></a>
+<a id="__codelineno-70-10" name="__codelineno-70-10"></a><span class="x">    return redirect()-&gt;route(&#39;libros.index&#39;);</span>
+<a id="__codelineno-70-11" name="__codelineno-70-11"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Ahora, modificamos la vista <code>libros/index.blade.php</code> para que, en el listado, utilice las relaciones entre tablas para mostrar el nombre del autor entre paréntesis junto al título de cada libro:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-71-1">1</a></span>
+<span class="normal"><a href="#__codelineno-71-2">2</a></span>
+<span class="normal"><a href="#__codelineno-71-3">3</a></span>
+<span class="normal"><a href="#__codelineno-71-4">4</a></span>
+<span class="normal"><a href="#__codelineno-71-5">5</a></span>
+<span class="normal"><a href="#__codelineno-71-6">6</a></span>
+<span class="normal"><a href="#__codelineno-71-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1"></a><span class="x">@forelse($libros as $libro)</span>
+<a id="__codelineno-71-2" name="__codelineno-71-2"></a><span class="x">    &lt;li&gt;&lt;a href=&quot;{{ route(&#39;libros.show&#39;, $libro) }}&quot;&gt;</span>
+<a id="__codelineno-71-3" name="__codelineno-71-3"></a><span class="x">        {{ $libro-&gt;titulo }} ({{ $libro-&gt;autor-&gt;nombre }})</span>
+<a id="__codelineno-71-4" name="__codelineno-71-4"></a><span class="x">    &lt;/a&gt;&lt;/li&gt;</span>
+<a id="__codelineno-71-5" name="__codelineno-71-5"></a><span class="x">@empty</span>
+<a id="__codelineno-71-6" name="__codelineno-71-6"></a><span class="x">    &lt;li&gt;No se encontraron libros&lt;/li&gt;</span>
+<a id="__codelineno-71-7" name="__codelineno-71-7"></a><span class="x">@endforelse</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Podemos probar las dos cosas accediendo respectivamente a estas dos URLs (suponiendo que el servidor está escuchando en <em>localhost</em> por el puerto 8000):</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-72-1">1</a></span>
+<span class="normal"><a href="#__codelineno-72-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1"></a>http://localhost:8000/relacionPrueba
+<a id="__codelineno-72-2" name="__codelineno-72-2"></a>http://localhost:8000/libros
+</code></pre></div></td></tr></table></div>
+<h3 id="acceso-eficiente-a-datos-relacionados-eager-loading">Acceso eficiente a datos relacionados. <em>Eager loading</em></h3>
+<p>En el ejemplo anterior, hemos visto cómo, dado un libro, podemos obtener el nombre del autor de este modo en una vista Blade:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-73-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1"></a><span class="x">{{ $libro-&gt;autor-&gt;nombre }}</span>
+</code></pre></div></td></tr></table></div>
+<p>Sin embargo, este código provoca una nueva consulta en la base de datos para buscar los datos del autor asociado al libro, con lo que, para un listado de 100 libros, estaremos haciendo 100 consultas adicionales para extraer la información de los respectivos autores.</p>
+<p>Para evitar esta sobrecarga, podemos emplear una técnica llamada <em>eager loading</em> (que en español podríamos traducir como <em>carga apresurada</em> o <em>impaciente</em>). Consiste en emplear el método <code>with</code> para indicar qué relación queremos dejar pre-cargada en el resultado. Por ejemplo, si indicamos algo así en la función <code>index</code> del controlador de libros:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-74-1">1</a></span>
+<span class="normal"><a href="#__codelineno-74-2">2</a></span>
+<span class="normal"><a href="#__codelineno-74-3">3</a></span>
+<span class="normal"><a href="#__codelineno-74-4">4</a></span>
+<span class="normal"><a href="#__codelineno-74-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1"></a><span class="x">public function index()</span>
+<a id="__codelineno-74-2" name="__codelineno-74-2"></a><span class="x">{</span>
+<a id="__codelineno-74-3" name="__codelineno-74-3"></a><span class="x">    $libros = Libro::with(&#39;autor&#39;)-&gt;get();</span>
+<a id="__codelineno-74-4" name="__codelineno-74-4"></a><span class="x">    return view(&#39;libros.index&#39;, compact(&#39;libros&#39;));</span>
+<a id="__codelineno-74-5" name="__codelineno-74-5"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="relaciones-muchos-a-muchos-o-many-to-many">Relaciones muchos a muchos o <em>many to many</em></h2>
+<p>Estas relaciones son más difíciles de plasmar, ya que es necesario contar con una tercera tabla que relacione las dos tablas afectadas. Pero vayamos por partes…</p>
+<p>Para ilustrar este caso, supongamos los modelos <code>Usuario</code> y <code>Rol</code>, de modo que un usuario puede tener varios roles, y un rol puede ser asignado a varios usuarios. Nuevamente, definimos un método en el modelo <code>Usuario</code> que utilice el método <code>belongsToMany</code> para indicar con qué otro modelo se relaciona:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-75-1">1</a></span>
+<span class="normal"><a href="#__codelineno-75-2">2</a></span>
+<span class="normal"><a href="#__codelineno-75-3">3</a></span>
+<span class="normal"><a href="#__codelineno-75-4">4</a></span>
+<span class="normal"><a href="#__codelineno-75-5">5</a></span>
+<span class="normal"><a href="#__codelineno-75-6">6</a></span>
+<span class="normal"><a href="#__codelineno-75-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1"></a><span class="x">class Usuario extends Model</span>
+<a id="__codelineno-75-2" name="__codelineno-75-2"></a><span class="x">{</span>
+<a id="__codelineno-75-3" name="__codelineno-75-3"></a><span class="x">  public function roles()</span>
+<a id="__codelineno-75-4" name="__codelineno-75-4"></a><span class="x">  {</span>
+<a id="__codelineno-75-5" name="__codelineno-75-5"></a><span class="x">     return $this-&gt;belongsToMany(Rol::class);</span>
+<a id="__codelineno-75-6" name="__codelineno-75-6"></a><span class="x">  }</span>
+<a id="__codelineno-75-7" name="__codelineno-75-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Así ya podremos acceder a los roles de un usuario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-76-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1"></a><span class="x">$roles = Usuario::findOrFail($id)-&gt;roles;</span>
+</code></pre></div></td></tr></table></div>
+<p>En este caso, al otro lado de la relación hacemos lo mismo: definimos un método en el modelo <code>Rol</code> que indique con <code>belongsToMany</code> que puede pertenecer a varios usuarios:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-77-1">1</a></span>
+<span class="normal"><a href="#__codelineno-77-2">2</a></span>
+<span class="normal"><a href="#__codelineno-77-3">3</a></span>
+<span class="normal"><a href="#__codelineno-77-4">4</a></span>
+<span class="normal"><a href="#__codelineno-77-5">5</a></span>
+<span class="normal"><a href="#__codelineno-77-6">6</a></span>
+<span class="normal"><a href="#__codelineno-77-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1"></a><span class="x">class Rol extends Model</span>
+<a id="__codelineno-77-2" name="__codelineno-77-2"></a><span class="x">{</span>
+<a id="__codelineno-77-3" name="__codelineno-77-3"></a><span class="x">  public function usuarios()</span>
+<a id="__codelineno-77-4" name="__codelineno-77-4"></a><span class="x">  {</span>
+<a id="__codelineno-77-5" name="__codelineno-77-5"></a><span class="x">     return $this-&gt;belongsToMany(Usuario::class);</span>
+<a id="__codelineno-77-6" name="__codelineno-77-6"></a><span class="x">  }</span>
+<a id="__codelineno-77-7" name="__codelineno-77-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>A efectos de automatización, es decir, para que Eloquent establezca los nexos de forma automática, si queremos establecer una relación muchos a muchos entre un modelo <code>A</code> y otro <code>B</code>, se asume que existirá otra tabla <code>a_b</code> (el orden en que se colocan los nombres de las tablas es alfabético), con los campos <code>a_id</code> y <code>b_id</code>, que relacionen los dos modelos. En nuetro caso, se asumirá que existe una tabla <code>rol_usuario</code> con un campo <code>rol_id</code> y otro llamado <code>usuario_id</code>, que enlacen con los correspondientes <code>id</code> de las tablas de usuarios y roles. Si esto no fuera así, podemos pasar más parámetros a <code>belongsToMany</code> para indicarlo.</p>
+<p>En el caso de las relaciones muchos a muchos, es posible que nos interese acceder a algún dato de esa tabla intermedia que los relaciona. En ese caso, hacemos uso del atributo <code>pivot</code>, predefinido, y que apunta a la tabla o modelo intermedio entre los dos relacionados. Por ejemplo, si quisiéramos obtener la fecha de creación de la relación entre un usuario y un rol, podríamos hacer esto:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-78-1">1</a></span>
+<span class="normal"><a href="#__codelineno-78-2">2</a></span>
+<span class="normal"><a href="#__codelineno-78-3">3</a></span>
+<span class="normal"><a href="#__codelineno-78-4">4</a></span>
+<span class="normal"><a href="#__codelineno-78-5">5</a></span>
+<span class="normal"><a href="#__codelineno-78-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1"></a><span class="x">$roles = Usuario::findOrFail($id)-&gt;roles;</span>
+<a id="__codelineno-78-2" name="__codelineno-78-2"></a>
+<a id="__codelineno-78-3" name="__codelineno-78-3"></a><span class="x">for($roles as $rol)</span>
+<a id="__codelineno-78-4" name="__codelineno-78-4"></a><span class="x">{</span>
+<a id="__codelineno-78-5" name="__codelineno-78-5"></a><span class="x">  echo $rol-&gt;pivot-&gt;created_at;</span>
+<a id="__codelineno-78-6" name="__codelineno-78-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="mas-informacion">Más información</h2>
+<p>Sobre estas relaciones existen algunas variantes, y formas de personalizar las tablas y campos afectados. Se puede consultar más información en la <a href="https://laravel.com/docs/eloquent-relationships#defining-relationships">documentación oficial de Eloquent</a>.</p>
+<h1 id="seeders-y-factories">seeders y factories</h1>
+<p>En las pruebas que hemos hecho hasta ahora, para tener datos con que probar la aplicación, nos hemos limitado a añadirlos a mano desde <em>phpMyAdmin</em>, o bien desde el código con algunos datos simples como “Título de prueba 1” o cosas similares.</p>
+<p>Dado que los datos de inicio son necesarios para probar algunas funcionalidades básicas de la aplicación, como son las búsquedas y filtrados, y dado que los formularios para dar de alta y gestionar estos datos normalmente no se tienen listos hasta etapas más tardías, puede resultar conveniente disponer de algún mecanismo que genere estos datos de prueba al inicio, sin preocuparnos de tocar la base de datos a mano o alterar el código de la aplicación para ello. En este aspecto, los <em>seeders</em> y <em>factories</em> juegan un papel importante.</p>
+<h2 id="seeders"><em>seeders</em></h2>
+<p>Los <em>seeders</em> son clases especiales que permiten sembrar (<em>seed</em>) de contenido una aplicación. Para crearlos, utilizamos el comando <code>php artisan</code> como sigue:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-79-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1"></a><span class="x">php artisan make:seeder NombreSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto creará una clase llamada <code>NombreSeeder</code> en la carpeta <code>database/seeds</code> (hasta Laravel 7) o <code>database/seeders</code> (desde Laravel 8). En el método <code>run</code> de dicha clase podemos crear los elementos que necesitemos añadir a la base de datos.</p>
+<p>Por ejemplo, vamos a crear en nuestro proyecto <em>biblioteca</em> un seeder llamado <code>LibrosSeeder</code> para crear libros, y otro llamado <code>AutoresSeeder</code> para autores:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-80-1">1</a></span>
+<span class="normal"><a href="#__codelineno-80-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1"></a><span class="x">php artisan make:seeder LibrosSeeder</span>
+<a id="__codelineno-80-2" name="__codelineno-80-2"></a><span class="x">php artisan make:seeder AutoresSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p>Editamos el método <code>run</code> del <em>seeder</em> que hemos creado (el de libros, por ejemplo), y definimos este código para crear un autor con un libro asociado (deberemos incorporar con <code>use</code> los modelos de <code>Autor</code> y <code>Libro</code> previamente):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-81-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-81-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-81-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-81-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-81-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-81-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-81-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-81-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-81-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-81-10">10</a></span>
+<span class="normal"><a href="#__codelineno-81-11">11</a></span>
+<span class="normal"><a href="#__codelineno-81-12">12</a></span>
+<span class="normal"><a href="#__codelineno-81-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1"></a><span class="x">public function run()</span>
+<a id="__codelineno-81-2" name="__codelineno-81-2"></a><span class="x">{</span>
+<a id="__codelineno-81-3" name="__codelineno-81-3"></a><span class="x">    $autor = new Autor();</span>
+<a id="__codelineno-81-4" name="__codelineno-81-4"></a><span class="x">    $autor-&gt;nombre = &quot;Juan Seeder&quot;;</span>
+<a id="__codelineno-81-5" name="__codelineno-81-5"></a><span class="x">    $autor-&gt;nacimiento = 1960;</span>
+<a id="__codelineno-81-6" name="__codelineno-81-6"></a><span class="x">    $autor-&gt;save();</span>
+<a id="__codelineno-81-7" name="__codelineno-81-7"></a><span class="x">    $libro = new Libro();</span>
+<a id="__codelineno-81-8" name="__codelineno-81-8"></a><span class="x">    $libro-&gt;titulo = &quot;El libro del Seeder&quot;;</span>
+<a id="__codelineno-81-9" name="__codelineno-81-9"></a><span class="x">    $libro-&gt;editorial = &quot;Seeder S.A.&quot;;</span>
+<a id="__codelineno-81-10" name="__codelineno-81-10"></a><span class="x">    $libro-&gt;precio = 10;</span>
+<a id="__codelineno-81-11" name="__codelineno-81-11"></a><span class="x">    $libro-&gt;autor()-&gt;associate($autor);</span>
+<a id="__codelineno-81-12" name="__codelineno-81-12"></a><span class="x">    $libro-&gt;save();</span>
+<a id="__codelineno-81-13" name="__codelineno-81-13"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>De forma similar, podríamos editar el método <code>run</code> de <code>AutoresSeeder</code> para crear, en este caso, un autor (sin libro asociado, normalmente).</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-82-1">1</a></span>
+<span class="normal"><a href="#__codelineno-82-2">2</a></span>
+<span class="normal"><a href="#__codelineno-82-3">3</a></span>
+<span class="normal"><a href="#__codelineno-82-4">4</a></span>
+<span class="normal"><a href="#__codelineno-82-5">5</a></span>
+<span class="normal"><a href="#__codelineno-82-6">6</a></span>
+<span class="normal"><a href="#__codelineno-82-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1"></a><span class="x">public function run()</span>
+<a id="__codelineno-82-2" name="__codelineno-82-2"></a><span class="x">{</span>
+<a id="__codelineno-82-3" name="__codelineno-82-3"></a><span class="x">    $autor = new Autor();</span>
+<a id="__codelineno-82-4" name="__codelineno-82-4"></a><span class="x">    $autor-&gt;nombre = &quot;Autor Suelto&quot;;</span>
+<a id="__codelineno-82-5" name="__codelineno-82-5"></a><span class="x">    $autor-&gt;nacimiento = 1951;</span>
+<a id="__codelineno-82-6" name="__codelineno-82-6"></a><span class="x">    $autor-&gt;save();</span>
+<a id="__codelineno-82-7" name="__codelineno-82-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="anadiendo-los-seeders-a-la-aplicacion">añadiendo los <em>seeders</em> a la aplicación</h3>
+<p>Por defecto, los <em>seeders</em> que creamos no forman parte de la aplicación aún, en el sentido de que aún no los podemos ejecutar. Para ello, debemos darlos de alta en el <em>seeder</em> general, llamado <code>DatabaseSeeder</code>, ubicado en la misma carpeta que los <em>seeders</em> que definimos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-83-1">1</a></span>
+<span class="normal"><a href="#__codelineno-83-2">2</a></span>
+<span class="normal"><a href="#__codelineno-83-3">3</a></span>
+<span class="normal"><a href="#__codelineno-83-4">4</a></span>
+<span class="normal"><a href="#__codelineno-83-5">5</a></span>
+<span class="normal"><a href="#__codelineno-83-6">6</a></span>
+<span class="normal"><a href="#__codelineno-83-7">7</a></span>
+<span class="normal"><a href="#__codelineno-83-8">8</a></span>
+<span class="normal"><a href="#__codelineno-83-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1"></a><span class="x">class DatabaseSeeder extends Seeder</span>
+<a id="__codelineno-83-2" name="__codelineno-83-2"></a><span class="x">{</span>
+<a id="__codelineno-83-3" name="__codelineno-83-3"></a><span class="x">    public function run()</span>
+<a id="__codelineno-83-4" name="__codelineno-83-4"></a><span class="x">    {</span>
+<a id="__codelineno-83-5" name="__codelineno-83-5"></a><span class="x">        ...</span>
+<a id="__codelineno-83-6" name="__codelineno-83-6"></a><span class="x">        $this-&gt;call(AutoresSeeder::class);</span>
+<a id="__codelineno-83-7" name="__codelineno-83-7"></a><span class="x">        $this-&gt;call(LibrosSeeder::class);</span>
+<a id="__codelineno-83-8" name="__codelineno-83-8"></a><span class="x">    }</span>
+<a id="__codelineno-83-9" name="__codelineno-83-9"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA:</strong> es importante el orden en que colocamos los <em>seeders</em> dentro de este método, como veremos después, ya que esto indicará en qué orden se crean los datos de prueba en la aplicación.</p>
+</blockquote>
+<h3 id="lanzar-los-seeders">lanzar los <em>seeders</em></h3>
+<p>Si queremos ejecutar los <em>seeders</em> para que añadan los datos, emplearemos este comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-84-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1"></a><span class="x">php artisan db:seed</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto lanzará todos los <em>seeders</em> que tengamos declarados en la clase <code>DatabaseSeeder</code>. Si sólo queremos lanzar uno en concreto, podemos hacer lo siguiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-85-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1"></a><span class="x">php artisan db:seed --class=LibrosSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p>También puede ser necesario (y a veces conveniente) limpiar la base de datos y llenarla desde cero con los datos de los seeds para empezar a probar la aplicación. En este caso, el comando es el siguiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-86-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1"></a><span class="x">php artisan migrate:fresh --seed</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="factories"><em>factories</em></h2>
+<p>Los <em>seeders</em> son una herramienta útil para poblar nuestra aplicación con datos al inicio. Podemos, por ejemplo, dar de alta una serie de usuarios iniciales con acceso a la aplicación, para que con ellos se puedan rellenar el resto de datos. También podemos dar de alta una serie de datos predefinidos en ciertas tablas, o datos de prueba que luego poder borrar.</p>
+<p>Sin embargo, los <em>seeders</em> por sí solos se quedan algo “cojos”. ¿Qué tendríamos que hacer para dar de alta 10 o 20 libros en nuestra base de datos de <em>biblioteca</em>? Tendríamos que definir algún tipo de bucle en el <em>seeder</em>, y definir datos diferentes (por ejemplo, con identificadores o contadores aleatorios) para cada libro. Para facilitar esta tarea, podemos echar mano de los <em>factories</em>.</p>
+<p>Los <em>factories</em> son clases que permiten generar datos por lotes. Se crean con el siguiente comando, almacenándose la clase en la carpeta <code>database/factories</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-87-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1"></a><span class="x">php artisan make:factory NombreFactory --model=NombreModelo</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="generar-factories-y-asociarlos-a-su-modelo">generar <em>factories</em> y asociarlos a su modelo</h3>
+<p>Si recordamos, cuando creamos los modelos de <code>Autor</code> y <code>Libro</code> la clase se crea con una cláusula <code>use</code> que alude al <em>trait</em> <code>HasFactory</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-88-1">1</a></span>
+<span class="normal"><a href="#__codelineno-88-2">2</a></span>
+<span class="normal"><a href="#__codelineno-88-3">3</a></span>
+<span class="normal"><a href="#__codelineno-88-4">4</a></span>
+<span class="normal"><a href="#__codelineno-88-5">5</a></span>
+<span class="normal"><a href="#__codelineno-88-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1"></a><span class="x">class Libro extends Model</span>
+<a id="__codelineno-88-2" name="__codelineno-88-2"></a><span class="x">{</span>
+<a id="__codelineno-88-3" name="__codelineno-88-3"></a><span class="x">    use HasFactory;</span>
+<a id="__codelineno-88-4" name="__codelineno-88-4"></a>
+<a id="__codelineno-88-5" name="__codelineno-88-5"></a><span class="x">    ...</span>
+<a id="__codelineno-88-6" name="__codelineno-88-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Un <em>trait</em> básicamente es un conjunto de métodos que se puede emplear por cualquier clase que quiera utilizarlos. De este modo, se amortigua en parte la limitación de sólo poder heredar de una clase, y mediante estos <em>traits</em> podemos incorporar la funcionalidad de otras. En este caso, indicamos que el modelo de <em>Libro</em> puede usar los métodos de su <em>factory</em> asociado.</p>
+<p>Por ejemplo, vamos a crear un <em>factory</em> para generar autores y otro para libros, indicando con el parámetro <code>--model</code> el modelo asociado a cada <em>factory</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-89-1">1</a></span>
+<span class="normal"><a href="#__codelineno-89-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1"></a><span class="x">php artisan make:factory AutorFactory --model=Autor</span>
+<a id="__codelineno-89-2" name="__codelineno-89-2"></a><span class="x">php artisan make:factory LibroFactory --model=Libro</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto generará dos clases donde, en una anotación <code>@extends</code> se especificará el modelo asociado. Por ejemplo, así quedaría el <em>factory</em> de autores:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-90-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-90-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-90-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-90-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-90-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-90-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-90-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-90-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-90-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-90-10">10</a></span>
+<span class="normal"><a href="#__codelineno-90-11">11</a></span>
+<span class="normal"><a href="#__codelineno-90-12">12</a></span>
+<span class="normal"><a href="#__codelineno-90-13">13</a></span>
+<span class="normal"><a href="#__codelineno-90-14">14</a></span>
+<span class="normal"><a href="#__codelineno-90-15">15</a></span>
+<span class="normal"><a href="#__codelineno-90-16">16</a></span>
+<span class="normal"><a href="#__codelineno-90-17">17</a></span>
+<span class="normal"><a href="#__codelineno-90-18">18</a></span>
+<span class="normal"><a href="#__codelineno-90-19">19</a></span>
+<span class="normal"><a href="#__codelineno-90-20">20</a></span>
+<span class="normal"><a href="#__codelineno-90-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1"></a><span class="x">namespace Database\Factories;</span>
+<a id="__codelineno-90-2" name="__codelineno-90-2"></a>
+<a id="__codelineno-90-3" name="__codelineno-90-3"></a><span class="x">use Illuminate\Database\Eloquent\Factories\Factory;</span>
+<a id="__codelineno-90-4" name="__codelineno-90-4"></a>
+<a id="__codelineno-90-5" name="__codelineno-90-5"></a><span class="x">/**</span>
+<a id="__codelineno-90-6" name="__codelineno-90-6"></a><span class="x"> * @extends Illuminate\Database\Eloquent\Factories\Factory&lt;\App\Models\Autor&gt;</span>
+<a id="__codelineno-90-7" name="__codelineno-90-7"></a><span class="x"> */ </span>
+<a id="__codelineno-90-8" name="__codelineno-90-8"></a><span class="x">class AutorFactory extends Factory</span>
+<a id="__codelineno-90-9" name="__codelineno-90-9"></a><span class="x">{</span>
+<a id="__codelineno-90-10" name="__codelineno-90-10"></a><span class="x">    /**</span>
+<a id="__codelineno-90-11" name="__codelineno-90-11"></a><span class="x">     * Define the model&#39;s default state.</span>
+<a id="__codelineno-90-12" name="__codelineno-90-12"></a><span class="x">     *</span>
+<a id="__codelineno-90-13" name="__codelineno-90-13"></a><span class="x">     * @return array&lt;string, mixed&gt;</span>
+<a id="__codelineno-90-14" name="__codelineno-90-14"></a><span class="x">     */</span>
+<a id="__codelineno-90-15" name="__codelineno-90-15"></a><span class="x">    public function definition()</span>
+<a id="__codelineno-90-16" name="__codelineno-90-16"></a><span class="x">    {</span>
+<a id="__codelineno-90-17" name="__codelineno-90-17"></a><span class="x">        return [</span>
+<a id="__codelineno-90-18" name="__codelineno-90-18"></a><span class="x">            //</span>
+<a id="__codelineno-90-19" name="__codelineno-90-19"></a><span class="x">        ];</span>
+<a id="__codelineno-90-20" name="__codelineno-90-20"></a><span class="x">    }</span>
+<a id="__codelineno-90-21" name="__codelineno-90-21"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En Laravel 8, en lugar de la anotación <code>@extends</code>, la relación entre el modelo y el <em>factory</em> se daba a través de un atributo protegido llamado <code>model</code>. Esta opción sigue estando permitida en Laravel 9:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-91-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-91-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-91-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-91-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-91-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-91-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-91-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-91-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-91-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-91-10">10</a></span>
+<span class="normal"><a href="#__codelineno-91-11">11</a></span>
+<span class="normal"><a href="#__codelineno-91-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1"></a><span class="x">...</span>
+<a id="__codelineno-91-2" name="__codelineno-91-2"></a><span class="x">class AutorFactory extends Factory</span>
+<a id="__codelineno-91-3" name="__codelineno-91-3"></a><span class="x">{</span>
+<a id="__codelineno-91-4" name="__codelineno-91-4"></a><span class="x">    /**</span>
+<a id="__codelineno-91-5" name="__codelineno-91-5"></a><span class="x">     * The name of the factory&#39;s corresponding model.</span>
+<a id="__codelineno-91-6" name="__codelineno-91-6"></a><span class="x">     *</span>
+<a id="__codelineno-91-7" name="__codelineno-91-7"></a><span class="x">     * @var string</span>
+<a id="__codelineno-91-8" name="__codelineno-91-8"></a><span class="x">     */</span>
+<a id="__codelineno-91-9" name="__codelineno-91-9"></a><span class="x">    protected $model = Autor::class;</span>
+<a id="__codelineno-91-10" name="__codelineno-91-10"></a>
+<a id="__codelineno-91-11" name="__codelineno-91-11"></a><span class="x">    ...</span>
+<a id="__codelineno-91-12" name="__codelineno-91-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En cualquiera de los dos casos, el método <code>definition</code> es el que se va a ejecutar cuando utilicemos el <em>factory</em>, para generar los datos del modelo asociado. Podemos devolver datos manualmente generados (por ejemplo, <em>Autor 1</em>, <em>Autor 2</em>, etc):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-92-1">1</a></span>
+<span class="normal"><a href="#__codelineno-92-2">2</a></span>
+<span class="normal"><a href="#__codelineno-92-3">3</a></span>
+<span class="normal"><a href="#__codelineno-92-4">4</a></span>
+<span class="normal"><a href="#__codelineno-92-5">5</a></span>
+<span class="normal"><a href="#__codelineno-92-6">6</a></span>
+<span class="normal"><a href="#__codelineno-92-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1"></a><span class="x">public function definition()</span>
+<a id="__codelineno-92-2" name="__codelineno-92-2"></a><span class="x">{</span>
+<a id="__codelineno-92-3" name="__codelineno-92-3"></a><span class="x">    return [</span>
+<a id="__codelineno-92-4" name="__codelineno-92-4"></a><span class="x">        &#39;nombre&#39; =&gt; &quot;Autor &quot; . rand(1, 100),</span>
+<a id="__codelineno-92-5" name="__codelineno-92-5"></a><span class="x">        &#39;nacimiento&#39; =&gt; rand(1950, 1990)</span>
+<a id="__codelineno-92-6" name="__codelineno-92-6"></a><span class="x">    ];</span>
+<a id="__codelineno-92-7" name="__codelineno-92-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Para crear autores usando este <em>factory</em>, lo invocamos desde el <em>seeder</em> correspondiente (<code>AutoresSeeder</code>, en este caso), en su método <code>run</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-93-1">1</a></span>
+<span class="normal"><a href="#__codelineno-93-2">2</a></span>
+<span class="normal"><a href="#__codelineno-93-3">3</a></span>
+<span class="normal"><a href="#__codelineno-93-4">4</a></span>
+<span class="normal"><a href="#__codelineno-93-5">5</a></span>
+<span class="normal"><a href="#__codelineno-93-6">6</a></span>
+<span class="normal"><a href="#__codelineno-93-7">7</a></span>
+<span class="normal"><a href="#__codelineno-93-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1"></a><span class="x">...</span>
+<a id="__codelineno-93-2" name="__codelineno-93-2"></a><span class="x">class AutoresSeeder extends Seeder</span>
+<a id="__codelineno-93-3" name="__codelineno-93-3"></a><span class="x">{</span>
+<a id="__codelineno-93-4" name="__codelineno-93-4"></a><span class="x">    public function run()</span>
+<a id="__codelineno-93-5" name="__codelineno-93-5"></a><span class="x">    {</span>
+<a id="__codelineno-93-6" name="__codelineno-93-6"></a><span class="x">        return Autor::factory()-&gt;count(5)-&gt;create();</span>
+<a id="__codelineno-93-7" name="__codelineno-93-7"></a><span class="x">    }</span>
+<a id="__codelineno-93-8" name="__codelineno-93-8"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Notar cómo acudimos al <em>factory</em> a través del modelo, con <code>Autor::factory()</code>, gracias al <em>trait</em> <code>HasFactory</code>. Esto generará 5 autores con datos distintos y aleatorios.</p>
+<h3 id="fakers"><em>fakers</em></h3>
+<p>Estaremos de acuerdo en que generar datos del tipo “Autor 1”, “Autor 2”, etc, no queda demasiado “real” en una aplicación, por mucho que sean datos de prueba. Por ello, Laravel nos proporciona los <em>fakers</em> para generar datos al azar con una apariencia determinada. Así, podemos generar nombres reales aleatorios, o direcciones de correo electrónico, o frases, o textos largos.</p>
+<p>Para generar estos datos de prueba, Laravel cuenta con una clase llamada <code>Faker</code>, cuyo objeto está automáticamente incorporado en el <em>factory</em> a través de la propiedad <code>$this-&gt;faker</code>. Internamente dispone de métodos para generar datos de distintos tipos.Algunos de los más habituales son:</p>
+<ul>
+<li><code>name</code>: genera un nombre de persona. Admite como parámetro opcional “male” o “female” para generar nombres masculinos o femeninos, respectivamente.</li>
+<li><code>sentence</code>: genera una frase corta. Admite como parámetro opcional un número, indicando cuántas palabras generar.</li>
+<li><code>word</code>: genera una palabra aleatoria.</li>
+<li><code>text</code>: genera un texto largo.</li>
+<li><code>phoneNumber</code>: genera un número de teléfono.</li>
+<li><code>email</code>: genera un e-mail aleatorio.</li>
+<li><code>randomNumber</code>: genera un número aleatorio. Como alternativa, también se tiene <code>numberBetween</code>, que genera un número aleatorio entre un mínimo y un máximo pasados como parámetro.</li>
+<li>… etc (<a href="https://github.com/fzaninotto/Faker">aquí</a> podéis consultar más posibilidades al respecto).</li>
+</ul>
+<p>Además, también tenemos disponible el método <code>unique()</code> para asegurarnos de que alguno de los campos que generemos no se repita entre registros.</p>
+<p>Vamos a generar los datos de autores usando este <em>faker</em> en el método <code>definition</code> de nuestra <code>AutorFactory</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-94-1">1</a></span>
+<span class="normal"><a href="#__codelineno-94-2">2</a></span>
+<span class="normal"><a href="#__codelineno-94-3">3</a></span>
+<span class="normal"><a href="#__codelineno-94-4">4</a></span>
+<span class="normal"><a href="#__codelineno-94-5">5</a></span>
+<span class="normal"><a href="#__codelineno-94-6">6</a></span>
+<span class="normal"><a href="#__codelineno-94-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1"></a><span class="x">public function definition()</span>
+<a id="__codelineno-94-2" name="__codelineno-94-2"></a><span class="x">{</span>
+<a id="__codelineno-94-3" name="__codelineno-94-3"></a><span class="x">    return [</span>
+<a id="__codelineno-94-4" name="__codelineno-94-4"></a><span class="x">        &#39;nombre&#39; =&gt; $this-&gt;faker-&gt;name,</span>
+<a id="__codelineno-94-5" name="__codelineno-94-5"></a><span class="x">        &#39;nacimiento&#39; =&gt; $this-&gt;faker-&gt;numberBetween(1950, 1990)</span>
+<a id="__codelineno-94-6" name="__codelineno-94-6"></a><span class="x">    ];</span>
+<a id="__codelineno-94-7" name="__codelineno-94-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Como podemos intuir, generamos un nombre al azar (de hombre o mujer) y un año de nacimiento entre 1950 y 1990.</p>
+<p>Del mismo modo, completamos la información del método <code>definition</code> para el <em>factory</em> de libros (<code>LibroFactory</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-95-1">1</a></span>
+<span class="normal"><a href="#__codelineno-95-2">2</a></span>
+<span class="normal"><a href="#__codelineno-95-3">3</a></span>
+<span class="normal"><a href="#__codelineno-95-4">4</a></span>
+<span class="normal"><a href="#__codelineno-95-5">5</a></span>
+<span class="normal"><a href="#__codelineno-95-6">6</a></span>
+<span class="normal"><a href="#__codelineno-95-7">7</a></span>
+<span class="normal"><a href="#__codelineno-95-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1"></a><span class="x">public function definition()</span>
+<a id="__codelineno-95-2" name="__codelineno-95-2"></a><span class="x">{</span>
+<a id="__codelineno-95-3" name="__codelineno-95-3"></a><span class="x">    return [</span>
+<a id="__codelineno-95-4" name="__codelineno-95-4"></a><span class="x">        &#39;titulo&#39; =&gt; $this-&gt;faker-&gt;sentence,</span>
+<a id="__codelineno-95-5" name="__codelineno-95-5"></a><span class="x">        &#39;editorial&#39; =&gt; $this-&gt;faker-&gt;sentence(2),</span>
+<a id="__codelineno-95-6" name="__codelineno-95-6"></a><span class="x">        &#39;precio&#39; =&gt; $this-&gt;faker-&gt;randomFloat(2, 5, 20)</span>
+<a id="__codelineno-95-7" name="__codelineno-95-7"></a><span class="x">    ];</span>
+<a id="__codelineno-95-8" name="__codelineno-95-8"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="relacionando-los-modelos">relacionando los modelos</h2>
+<p>Finalmente, en los <em>seeder</em> correspondientes, podemos utilizar estos <em>factory</em> para generar N objetos del modelo asociado. Por ejemplo, para el caso de los autores, generamos 5 autores aleatorios:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-96-1">1</a></span>
+<span class="normal"><a href="#__codelineno-96-2">2</a></span>
+<span class="normal"><a href="#__codelineno-96-3">3</a></span>
+<span class="normal"><a href="#__codelineno-96-4">4</a></span>
+<span class="normal"><a href="#__codelineno-96-5">5</a></span>
+<span class="normal"><a href="#__codelineno-96-6">6</a></span>
+<span class="normal"><a href="#__codelineno-96-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1"></a><span class="x">class AutoresSeeder extends Seeder</span>
+<a id="__codelineno-96-2" name="__codelineno-96-2"></a><span class="x">{</span>
+<a id="__codelineno-96-3" name="__codelineno-96-3"></a><span class="x">    public function run()</span>
+<a id="__codelineno-96-4" name="__codelineno-96-4"></a><span class="x">    {</span>
+<a id="__codelineno-96-5" name="__codelineno-96-5"></a><span class="x">        Autor::factory()-&gt;count(5)-&gt;create();</span>
+<a id="__codelineno-96-6" name="__codelineno-96-6"></a><span class="x">    }</span>
+<a id="__codelineno-96-7" name="__codelineno-96-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En el caso de los libros, recorremos los autores y, para cada uno, le generamos 2 libros al azar:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-97-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-97-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-97-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-97-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-97-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-97-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-97-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-97-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-97-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-97-10">10</a></span>
+<span class="normal"><a href="#__codelineno-97-11">11</a></span>
+<span class="normal"><a href="#__codelineno-97-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1"></a><span class="x">class LibrosSeeder extends Seeder</span>
+<a id="__codelineno-97-2" name="__codelineno-97-2"></a><span class="x">{</span>
+<a id="__codelineno-97-3" name="__codelineno-97-3"></a><span class="x">    public function run()</span>
+<a id="__codelineno-97-4" name="__codelineno-97-4"></a><span class="x">    {</span>
+<a id="__codelineno-97-5" name="__codelineno-97-5"></a><span class="x">        $autores = Autor::all();</span>
+<a id="__codelineno-97-6" name="__codelineno-97-6"></a><span class="x">        $autores-&gt;each(function($autor) {</span>
+<a id="__codelineno-97-7" name="__codelineno-97-7"></a><span class="x">            Libro::factory()-&gt;count(2)-&gt;create([</span>
+<a id="__codelineno-97-8" name="__codelineno-97-8"></a><span class="x">                &#39;autor_id&#39; =&gt; $autor-&gt;id</span>
+<a id="__codelineno-97-9" name="__codelineno-97-9"></a><span class="x">            ]);</span>
+<a id="__codelineno-97-10" name="__codelineno-97-10"></a><span class="x">        });</span>
+<a id="__codelineno-97-11" name="__codelineno-97-11"></a><span class="x">    }</span>
+<a id="__codelineno-97-12" name="__codelineno-97-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Recordemos ahora algo que hemos comentado antes en este mismo documento: es IMPORTANTE el orden en que se declaran los <em>seeders</em> en la clase <code>DatabaseSeeder</code>: si primero colocamos el de libros y luego el de autores, aún no habrá autores con los que generar los libros. Por eso es importante generar primero los autores y así, usarlos para recorrerlos y generar los libros.</p>
+<h1 id="query-builder-y-uso-de-fechas"><em>query builder</em> y uso de fechas</h1>
+<p>En este documento veremos un par de cuestiones secundarias que nos han quedado en el tintero. La primera es una forma alternativa de “atacar” la base de datos, sin emplear el ORM Eloquent: el <em>query builder</em>. La segunda es cómo trabajar cómodamente con fechas en aplicaciones Laravel.</p>
+<h2 id="query-builder"><em>query builder</em></h2>
+<p>A la hora de obtener datos de la base de datos, en lugar de usar modelos de Eloquent, podemos emplear también el <em>query builder</em>, una herramienta incorporada con Laravel que permite realizar operaciones sobre la base de datos sin utilizar un modelo de objetos por detrás, y con una sintaxis diferente a SQL.</p>
+<h3 id="consultas">consultas</h3>
+<p>Para utilizar estas consultas, utilizamos el elemento <code>DB</code>. Dicho elemento corresponde al espacio de nombres <code>Illuminate\Support\Facades\DB</code> que deberemos incluir. Internamente, tiene un método <code>table</code> para especificar la tabla sobre la que se quiere consultar. Una vez referenciada, con el método <code>get</code> obtenemos todos los registros:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-98-1">1</a></span>
+<span class="normal"><a href="#__codelineno-98-2">2</a></span>
+<span class="normal"><a href="#__codelineno-98-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1"></a><span class="x">use Illuminate\Support\Facades\DB;</span>
+<a id="__codelineno-98-2" name="__codelineno-98-2"></a><span class="x">//...</span>
+<a id="__codelineno-98-3" name="__codelineno-98-3"></a><span class="x">$personas = DB::table(&#39;personas&#39;)-&gt;get();</span>
+</code></pre></div></td></tr></table></div>
+<p>A pesar de no estar trabajando con clases, lo que obtenemos aquí es un array de objetos, no un array asociativo.</p>
+<p>En el caso de buscar un registro concreto (por su <em>id</em>, por ejemplo), utilizamos el método <code>where</code>, pasándole como parámetros el nombre del campo a comparar, y el valor que debe tener. Después, enlazamos con el método <code>first</code> para obtener sólo el primer registro de la búsqueda (de lo contrario, obtendríamos un array con un resultado, si buscamos por <em>id</em>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-99-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1"></a><span class="x">$persona = DB::table(&#39;personas&#39;)-&gt;where(&#39;id&#39;, $id)-&gt;first();</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="actualizaciones">actualizaciones</h3>
+<p>Si lo que queremos hacer es una <strong>inserción</strong>, empleamos el método <code>insert</code> de la tabla. En este caso, le pasamos un array asociativo con los nombres de cada campo del nuevo registro, y sus valores:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-100-1">1</a></span>
+<span class="normal"><a href="#__codelineno-100-2">2</a></span>
+<span class="normal"><a href="#__codelineno-100-3">3</a></span>
+<span class="normal"><a href="#__codelineno-100-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1"></a><span class="x">DB::table(&#39;personas&#39;)-&gt;insert([</span>
+<a id="__codelineno-100-2" name="__codelineno-100-2"></a><span class="x">  &#39;nombre&#39; =&gt; &#39;Juan&#39;,</span>
+<a id="__codelineno-100-3" name="__codelineno-100-3"></a><span class="x">  &#39;edad&#39; =&gt; 56</span>
+<a id="__codelineno-100-4" name="__codelineno-100-4"></a><span class="x">]);</span>
+</code></pre></div></td></tr></table></div>
+<p>En el caso de <strong>modificaciones</strong>, utilizamos el método <code>where</code> para filtrar el registro o registros a modificar, y empleamos el método <code>update</code> con el array de campos a modificar:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-101-1">1</a></span>
+<span class="normal"><a href="#__codelineno-101-2">2</a></span>
+<span class="normal"><a href="#__codelineno-101-3">3</a></span>
+<span class="normal"><a href="#__codelineno-101-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1"></a><span class="x">DB::table(&#39;personas&#39;)-&gt;where(&#39;id&#39;, $id)-&gt;update([</span>
+<a id="__codelineno-101-2" name="__codelineno-101-2"></a><span class="x">  &#39;nombre&#39; =&gt; &#39;Juan&#39;,</span>
+<a id="__codelineno-101-3" name="__codelineno-101-3"></a><span class="x">  &#39;edad&#39; =&gt; 56</span>
+<a id="__codelineno-101-4" name="__codelineno-101-4"></a><span class="x">]);</span>
+</code></pre></div></td></tr></table></div>
+<p>Para <strong>borrados</strong>, usamos una estructura similar a la anterior, reemplazando la llamada a <code>update</code> por <code>delete</code>, que no necesita parámetros:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-102-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-102-1" name="__codelineno-102-1"></a><span class="x">DB::table(&#39;personas&#39;)-&gt;where(&#39;id&#39;, $id)-&gt;delete();</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="uso-de-fechas">uso de fechas</h2>
+<p>En algunas tablas que hemos visto o creado, se ha usado un tipo <em>timestamp</em>, que básicamente genera un tipo fecha en la tabla correspondiente. Estos campos de tipo tabla son instancias de una librería PHP llamada <em>Carbon</em>, muy útil para trabajar con fechas. Así que, si tenemos un registro de tipo <code>Persona</code> con un campo <code>created_at</code> de tipo fecha, podemos trabajar con él como una fecha <em>Carbon</em>, y, por ejemplo, mostrarla en una vista con un formato específico:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-103-1">1</a></span>
+<span class="normal"><a href="#__codelineno-103-2">2</a></span>
+<span class="normal"><a href="#__codelineno-103-3">3</a></span>
+<span class="normal"><a href="#__codelineno-103-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-103-1" name="__codelineno-103-1"></a><span class="x">&lt;p&gt;</span>
+<a id="__codelineno-103-2" name="__codelineno-103-2"></a><span class="x">  Fecha creación: </span>
+<a id="__codelineno-103-3" name="__codelineno-103-3"></a><span class="x">  {{ Carbon\Carbon::parse($persona-&gt;created_at)-&gt;format(&#39;d/m/Y&#39;) }}</span>
+<a id="__codelineno-103-4" name="__codelineno-103-4"></a><span class="x">&lt;/p&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Además, para trabajar sobre los campos <code>created_at</code> y <code>updated_at</code> que por defecto se crean en una tabla desde una migración Laravel, podemos emplear esta librería <em>Carbon</em> para darles valor, aunque de esto ya se encarga Eloquent automáticamente, pero por si lo queremos hacer manualmente, aquí va un ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-104-1">1</a></span>
+<span class="normal"><a href="#__codelineno-104-2">2</a></span>
+<span class="normal"><a href="#__codelineno-104-3">3</a></span>
+<span class="normal"><a href="#__codelineno-104-4">4</a></span>
+<span class="normal"><a href="#__codelineno-104-5">5</a></span>
+<span class="normal"><a href="#__codelineno-104-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-104-1" name="__codelineno-104-1"></a><span class="x">DB::table(&#39;personas&#39;)-&gt;insert([</span>
+<a id="__codelineno-104-2" name="__codelineno-104-2"></a><span class="x">  &#39;nombre&#39; =&gt; &#39;Juan&#39;,</span>
+<a id="__codelineno-104-3" name="__codelineno-104-3"></a><span class="x">  &#39;edad&#39; =&gt; 56,</span>
+<a id="__codelineno-104-4" name="__codelineno-104-4"></a><span class="x">  &#39;created_at&#39; =&gt; Carbon::now(),</span>
+<a id="__codelineno-104-5" name="__codelineno-104-5"></a><span class="x">  &#39;updated_at&#39; =&gt; Carbon::now()</span>
+<a id="__codelineno-104-6" name="__codelineno-104-6"></a><span class="x">]);</span>
+</code></pre></div></td></tr></table></div>
+<p>Para poder emplear la clase <code>Carbon</code>, debemos importarla (<code>use Carbon\Carbon</code>), o bien anteponerle siempre el prefijo del <em>namespace</em> <code>Carbon\Carbon</code>, como en el ejemplo de <code>format</code> anterior.</p>
+<h1 id="bibliografia">bibliografia</h1>
+<ul>
+<li><a href="https://nachoiborraies.github.io/laravel/">Nacho Iborra Baeza</a>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

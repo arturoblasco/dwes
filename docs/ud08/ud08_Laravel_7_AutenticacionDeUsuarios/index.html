@@ -1,0 +1,1686 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ud08 Laravel 7 AutenticacionDeUsuarios - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#autenticacion-basada-en-sesiones" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ud08 Laravel 7 AutenticacionDeUsuarios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud0101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 3 PHP Orientado a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-configuracion-general-de-la-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Configuración general de la autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Configuración general de la autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-el-modelo-o-la-tabla-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. El modelo o la tabla de usuarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-anadir-autenticacion-a-un-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Añadir autenticación a un proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Añadir autenticación a un proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-el-formulario-de-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. El formulario de login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-el-controlador-de-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. El controlador de login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-las-rutas-asociadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Las rutas asociadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Las rutas asociadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-redireccion-en-caso-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1. Redirección en caso de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-proteger-las-rutas-de-acceso-restringido" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Proteger las rutas de acceso restringido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-detectar-en-las-vistas-al-usuario-autenticado" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Detectar en las vistas al usuario autenticado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-implementacion-del-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6. Implementación del logout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-definir-roles-uso-de-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Definir roles. Uso de middleware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Definir roles. Uso de middleware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-middleware-con-mas-de-un-parametro" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Middleware con más de un parámetro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-sobre-el-concepto-de-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Sobre el concepto de middleware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mas-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Más información
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<p>unit: unidad didáctica 8
+   title: Laravel - autenticación de usuarios
+   language: ES
+   author: Arturo Blasco
+   subject: Desarrollo Web en Entorno Servidor
+   keywords: [DWES, 2023, PHP, Laravel]
+   IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+   header: ${unit}: ${title} - ${subject} (versión: ${today})
+   footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}|${pageCount}
+   typora-root-url:${filename}/../
+   typora-copy-images-to:${filename}/../assets</p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#autenticacion-basada-en-sesiones">autenticación basada en sesiones</a><ul>
+<li><a href="#1-configuracion-general-de-la-autenticacion">1. Configuración general de la autenticación</a><ul>
+<li><a href="#11-el-modelo-o-la-tabla-de-usuarios">1.1. El modelo o la tabla de usuarios</a></li>
+</ul>
+</li>
+<li><a href="#2-anadir-autenticacion-a-un-proyecto">2. Añadir autenticación a un proyecto</a><ul>
+<li><a href="#21-el-formulario-de-login">2.1. El formulario de login</a></li>
+<li><a href="#22-el-controlador-de-login">2.2. El controlador de login</a></li>
+<li><a href="#23-las-rutas-asociadas">2.3. Las rutas asociadas</a><ul>
+<li><a href="#231-redireccion-en-caso-de-error">2.3.1. Redirección en caso de error</a></li>
+</ul>
+</li>
+<li><a href="#24-proteger-las-rutas-de-acceso-restringido">2.4. Proteger las rutas de acceso restringido</a></li>
+<li><a href="#25-detectar-en-las-vistas-al-usuario-autenticado">2.5. Detectar en las vistas al usuario autenticado</a></li>
+<li><a href="#26-implementacion-del-logout">2.6. Implementación del logout</a></li>
+</ul>
+</li>
+<li><a href="#3-definir-roles-uso-de-middleware">3. Definir roles. Uso de middleware</a><ul>
+<li><a href="#31-middleware-con-mas-de-un-parametro">3.1. Middleware con más de un parámetro</a></li>
+<li><a href="#32-sobre-el-concepto-de-middleware">3.2. Sobre el concepto de middleware</a></li>
+</ul>
+</li>
+<li><a href="#4-mas-informacion">4. Más información</a></li>
+</ul>
+</li>
+<li><a href="#autenticacion-basada-en-tokens">autenticación basada en tokens</a><ul>
+<li><a href="#1-fundamentos-de-la-autenticacion-basada-en-tokens">1. Fundamentos de la autenticación basada en tokens</a></li>
+<li><a href="#2-alternativas-para-la-implementacion-de-la-autenticacion-basada-en-tokens">2. Alternativas para la implementación de la autenticación basada en tokens</a><ul>
+<li><a href="#21-preparando-el-ejemplo-base">2.1. Preparando el ejemplo base</a></li>
+</ul>
+</li>
+<li><a href="#3-autenticacion-basada-en-tokens-nativa">3. Autenticación basada en tokens nativa</a><ul>
+<li><a href="#31-configuracion-basica">3.1. Configuración básica</a></li>
+<li><a href="#32-proteccion-de-rutas">3.2. Protección de rutas</a></li>
+</ul>
+</li>
+<li><a href="#4-autenticacion-basada-en-tokens-usando-laravel-sanctum">4. Autenticación basada en tokens usando Laravel Sanctum</a><ul>
+<li><a href="#441-configuracion-de-sanctum">4.4.1. Configuración de Sanctum</a></li>
+<li><a href="#42-proteccion-de-rutas">4.2. Protección de rutas</a></li>
+</ul>
+</li>
+<li><a href="#5-prueba-de-autenticacion-basada-en-tokens">5. Prueba de autenticación basada en tokens</a></li>
+</ul>
+</li>
+<li><a href="#bibliografia">bibliografia</a></li>
+</ul>
+</div>
+<blockquote>
+<p>El uso de estos materiales está sujeto a una licencia Creative Commons <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>.</p>
+<p>Material extraído de https://nachoiborraies.github.io/laravel/</p>
+</blockquote>
+<h1 id="autenticacion-basada-en-sesiones">autenticación basada en sesiones</h1>
+<p>En esta sesión veremos cómo incluir mecanismos de autenticación en nuestros proyectos Laravel. Partiremos de la base de un proyecto ya creado (como el ejemplo de la biblioteca que venimos haciendo de sesiones anteriores) e incorporaremos paso a paso los elementos necesarios para autenticar usuarios.</p>
+<h2 id="1-configuracion-general-de-la-autenticacion">1. Configuración general de la autenticación</h2>
+<p>En el archivo <code>config/auth.php</code> se dispone de algunas opciones de configuración generales de autenticación. Esta autenticación en Laravel se apoya en dos elementos: los <em>guards</em> y los <em>providers</em>.</p>
+<ul>
+<li>Los <strong>*guards*</strong> son mecanismos que definen cómo se van a autenticar los usuarios para cada petición. El mecanismo más habitual es mediante sesiones, donde se guarda la información del usuario autenticado en la sesión, aunque por defecto también se habilita la autenticación mediante tokens.</li>
+<li>Los <em><strong>providers*</strong> indican cómo se van a obtener los usuarios de la base de datos para comprobar la autenticación. Las opciones habilitadas por defecto son mediante Eloquent (y el modelo de usuarios que tengamos definido), o mediante </em>query builder*, consultando directamente la tabla correspondiente de usuarios.</li>
+</ul>
+<p>Deberemos modificar en el archivo la referencia a la tabla donde almacenaremos los usuarios (por defecto se hace referencia a una tabla llamada <code>users</code>) y/o al modelo asociado (por defecto, la clase <code>User</code>). Así que convendrá modificar los nombres de estos dos elementos en la sección <code>providers</code>, así como la ubicación (<em>namespace</em>) del modelo de usuario, si procede. Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">// ...</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x">&#39;providers&#39; =&gt; [</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="x">    &#39;users&#39; =&gt; [</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="x">        &#39;driver&#39; =&gt; &#39;eloquent&#39;,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="x">        &#39;model&#39; =&gt; App\Models\Usuario::class,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="x">    ],</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="x">    // &#39;users&#39; =&gt; [</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="x">    //     &#39;driver&#39; =&gt; &#39;database&#39;,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="x">    //     &#39;table&#39; =&gt; &#39;usuarios&#39;,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="x">    // ],</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="x">],</span>
+</code></pre></div></td></tr></table></div>
+<p>Notar que la sección <code>providers</code> dispone de dos proveedores de autenticación: uno (el que está habilitado) está basado en Eloquent, y hace uso del modelo de usuarios que hayamos definido. El otro (que aparece comentado) no utiliza Eloquent, sino el <em>query builder</em> contra la propia base de datos. Si preferimos esta segunda opción, deberemos comentar la primera y dejar habilitada la segunda. También es posible dejar habilitados múltiples <em>providers</em>, cada uno con un nombre diferente, y asignarlo a múltiples <em>guards</em>.</p>
+<h3 id="11-el-modelo-o-la-tabla-de-usuarios">1.1. El modelo o la tabla de usuarios</h3>
+<p>Si elegimos el <em>provider</em> basado en Eloquent, deberemos tener un modelo de usuarios al que acceder. En el caso de nuestra aplicación de biblioteca (o el ejercicio del blog), disponemos ya de un modelo creado en <code>App\Models\Usuario</code>, por lo que el ejemplo anterior nos serviría para establecer este modelo como el modelo de usuarios por defecto.</p>
+<p>Si optamos por utilizar el <em>query builder</em> en lugar de Eloquent, deberemos tener una tabla en la base de datos donde estén los datos de los usuarios. En nuestro caso, también disponemos de esa tabla <em>usuarios</em>, por lo que podríamos emplear esta otra opción para autenticar usuarios si quisiéramos. No obstante, nos valdremos de Eloquent para la autenticación.</p>
+<p>En cualquier caso, como veremos a continuación, será conveniente que los passwords de los usuarios estén <strong>encriptados</strong> mediante <em>bcrypt</em>, que es el mecanismo de encriptación por defecto que utiliza Laravel. Vamos a crear un nuevo <em>seeder</em> en nuestra aplicación de <em>biblioteca</em> para crear un usuario con un login y password predefinidos. Llamamos al <em>seeder</em> <code>UsuariosSeeder</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">php artisan make:seeder UsuariosSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p>En el método <code>run</code> del nuevo <em>seeder</em> añadiremos un nuevo usuario con login <em>admin</em> y password <em>admin</em> (encriptado usando <em>bcrypt</em>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">public function run()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="x">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="x">  $usuario = new Usuario();</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="x">  $usuario-&gt;login = &#39;admin&#39;;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="x">  $usuario-&gt;password = bcrypt(&#39;admin&#39;);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="x">  $usuario-&gt;save();</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Finalmente, cargamos este nuevo <em>seeder</em> en la base de datos, o bien con una migración completa nueva (<code>php artisan migrate:fresh --seed</code>), o bien ejecutando sólo el seeder con esto:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">php artisan db:seed --class=UsuariosSeeder</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="2-anadir-autenticacion-a-un-proyecto">2. Añadir autenticación a un proyecto</h2>
+<p>Para añadir autenticación a un proyecto Laravel ya existente que no disponga de estos mecanismos, seguiremos estos pasos:</p>
+<ol>
+<li>Definiremos un formulario de login.</li>
+<li>Definiremos un nuevo controlador que se encargue de gestionar el login: tanto de mostrar el formulario cuando el usuario no esté autenticado como de validar sus credenciales cuando las envíe.</li>
+<li>Añadiremos las rutas pertinentes en el archivo <code>routes/web.php</code> tanto para el formulario de login como para la autenticación posterior.</li>
+<li>Protegeremos las rutas que sean de acceso restringido.</li>
+<li>Opcionalmente, podemos añadir también una opción de <em>logout</em>.</li>
+</ol>
+<h3 id="21-el-formulario-de-login">2.1. El formulario de login</h3>
+<p>Vamos a definir un formulario de login en la vista <code>resources/views/auth/login.blade.php</code>, para que el usuario especifique su <em>login</em> y su <em>password</em>. También dejaremos una zona para mostrar un posible mensaje de error si la autenticación no ha sido exitosa:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">@extends(&#39;plantilla&#39;)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x">@section(&#39;titulo&#39;, &#39;Login&#39;)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="x">@section(&#39;contenido&#39;)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="x">  &lt;h1&gt;Login&lt;/h1&gt;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="x">  @if (!empty($error))</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="x">  &lt;div class=&quot;text-danger&quot;&gt;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="x">     {{ $error }}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="x">  &lt;/div&gt;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="x">  @endif</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="x">  &lt;form action=&quot;{{ route(&#39;login&#39;) }}&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="x">     @csrf</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="x">     &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="x">        &lt;label for=&quot;login&quot;&gt;Login:&lt;/label&gt;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="x">        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; </span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="x">               name=&quot;login&quot; id=&quot;login&quot; /&gt;</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="x">      &lt;/div&gt;</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="x">      &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="x">        &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="x">        &lt;input type=&quot;password&quot; class=&quot;form-control&quot; </span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="x">               name=&quot;password&quot; id=&quot;password&quot; /&gt;</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="x">      &lt;/div&gt;</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="x">      &lt;input type=&quot;submit&quot; class=&quot;btn btn-dark btn-block&quot; </span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="x">             name=&quot;enviar&quot; value=&quot;Enviar&quot; /&gt;</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="x">  &lt;/form&gt;</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="x">@endsection</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="22-el-controlador-de-login">2.2. El controlador de login</h3>
+<p>Crearemos un nuevo controlador que se encargue de gestionar toda la autenticación:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">php artisan make:controller LoginController</span>
+</code></pre></div></td></tr></table></div>
+<p>Dentro, definimos una función que se encargará de mostrar el formulario anterior:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">public function loginForm()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="x">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="x">  return view(&#39;auth.login&#39;);</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Y añadiremos una segunda función que se encargue de validar las credenciales enviadas por el usuario. Para esto, haremos uso del <em>facade</em> de autenticación, existente en <code>Illuminate\Support\Facades\Auth</code>. Recuerda de sesiones previas que un <em>facade</em> es básicamente un elemento que proporciona acceso a una serie de métodos estáticos de utilidad, en este caso para autenticar usuarios.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">namespace App\Http\Controllers;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="x">use Illuminate\Http\Request;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="x">use Illuminate\Support\Facades\Auth;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="x">class LoginController extends Controller</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="x">{</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="x">  // ...</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="x">  public function login(Request $request)</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="x">  {</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="x">     $credenciales = $request-&gt;only(&#39;login&#39;, &#39;password&#39;);</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="x">     if (Auth::attempt($credenciales)) </span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="x">     {</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="x">        // Autenticación exitosa</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="x">        return redirect()-&gt;intended(route(&#39;libros.index&#39;));</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="x">     } else {</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="x">        $error = &#39;Usuario incorrecto&#39;;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="x">        return view(&#39;auth.login&#39;, compact(&#39;error&#39;));</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="x">     }</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="x">  }</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>El método <code>attempt</code> acepta una serie de pares <em>clave-valor</em> como primer parámetro. En este caso, le pasamos un sólo par formado por el login (o el e-mail, dependiendo del campo que usemos para autenticar) y el password recibidos en la petición. Esto servirá para localizar al usuario por la clave (login), y comprobar si tiene el valor asociado (el password). En el caso de los passwords, Laravel automáticamente los encripta en formato <em>bcrypt</em>, por lo que debemos cerciorarnos de que el password está encriptado en ese formato en la base de datos.</p>
+<p>Por otra parte, el método <code>intended</code> trata de enviar al usuario a la ruta a la que intentaba acceder antes de que se le solicitara autenticación. Le pasamos como parámetro una ruta por defecto en el caso de que el destino previsto no esté disponible.</p>
+<h3 id="23-las-rutas-asociadas">2.3. Las rutas asociadas</h3>
+<p>Finalmente, debemos definir las rutas tanto para mostrar el formulario (por <em>get</em>) como para recoger las credenciales y validar al usuario (por <em>post</em>).</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">Route::get(&#39;login&#39;, [LoginController::class, &#39;loginForm&#39;])-&gt;name(&#39;login&#39;);</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="x">Route::post(&#39;login&#39;, [LoginController::class, &#39;login&#39;]);</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="231-redireccion-en-caso-de-error">2.3.1. Redirección en caso de error</h4>
+<p>Cuando se detecta que un usuario no autenticado intenta acceder a una ruta protegida, automáticamente se le redirige a la ruta nombrada como <em>login</em> (como la que hemos definido previamente), donde verá el formulario de acceso. Si queremos cambiar el nombre de la ruta a la que redirigir (en el caso de que no queramos que sea <em>login</em>), debemos modificar el método <code>redirectTo</code> en el <em>middleware</em> de autenticación <code>app/Http/Middleware/Authenticate.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="x">protected function redirectTo($request)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="x">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="x">  // ...</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="x">  return route(&#39;login&#39;);</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="24-proteger-las-rutas-de-acceso-restringido">2.4. Proteger las rutas de acceso restringido</h3>
+<p>Ahora que ya tenemos definido el mecanismo de login (controlador con método de autenticación, formulario de login y ruta asociada), podemos proteger aquellas rutas o enlaces que queramos que sean de acceso restringido. Por ejemplo, podemos hacer que las operaciones de creación, borrado y edición de libros (funciones <code>create</code>, <code>store</code>, <code>edit</code>, <code>update</code> y <code>destroy</code>) sólo estén disponibles para usuarios autenticados. Esto puede hacerse de varias formas.</p>
+<ul>
+<li>Si tenemos una ruta de recursos (<code>Route::resource</code>) en el archivo <code>routes/web.php</code>, entonces la opción más cómoda es definir un constructor en el controlador asociado (en este caso, <code>LibroController</code>), y especificar qué funciones queremos proteger, bien con <code>only</code> o con <code>except</code> (en este último caso, se protegerán todas las rutas salvo las indicadas en la lista):</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span>
+<span class="normal"><a href="#__codelineno-10-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="x">class LibroController extends Controller</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="x">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="x">  public function __construct()</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="x">  {</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="x">     $this-&gt;middleware(&#39;auth&#39;, </span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="x">        [&#39;only&#39; =&gt; [&#39;create&#39;, &#39;store&#39;, &#39;edit&#39;, &#39;update&#39;, &#39;destroy&#39;]]);</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="x"> }</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="x">  // ...</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Si definimos las rutas sueltas, podemos emplear el método <code>middleware</code> para indicar en cada una si queremos que se aplique el <em>middleware</em> de autenticación:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">Route::get(&#39;prueba&#39;, [PruebaController::class, &#39;create&#39;])-&gt;middleware(&#39;auth&#39;);</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="25-detectar-en-las-vistas-al-usuario-autenticado">2.5. Detectar en las vistas al usuario autenticado</h3>
+<p>Puede ser muy necesario detectar en una vista si el usuario se ha autenticado o no, bien para mostrar ciertos controles (por ejemplo, enlaces para crear libros), o para cargar información propia del usuario (por ejemplo, posts creados por el usuario que ha entrado en un blog).</p>
+<p>Por ejemplo, de este modo podemos modificar el menú de navegación (<code>resources/views/partials/nav.blade.php</code>) para que muestre el enlace de crear nuevo libro sólo si el usuario se ha autenticado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">@if(auth()-&gt;check())</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">  &lt;li class=&quot;{{ setActivo(&#39;libros.create&#39;) }} nav-item&quot;&gt;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">      &lt;a class=&quot;nav-link&quot; href=&quot;{{ route(&#39;libros.create&#39;) }}&quot;&gt;Nuevo libro&lt;/a&gt;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">  &lt;/li&gt;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">@endif</span>
+</code></pre></div></td></tr></table></div>
+<p>Podemos emplear el método <code>auth()-&gt;guest()</code> si queremos comprobar si el usuario aún NO se ha autenticado (por ejemplo, para mostrarle el enlace a <em>login</em>), y el método <code>auth()-&gt;check()</code> para comprobar si SÍ está autenticado (para mostrarle, por ejemplo, las opciones restringidas). De forma análoga, el método <code>auth()-&gt;user()</code> obtiene el objeto del usuario autenticado, con lo que podemos acceder a sus atributos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">Bienvenido/a {{ auth()-&gt;user()-&gt;login }}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="26-implementacion-del-logout">2.6. Implementación del <em>logout</em></h3>
+<p>Para implementar el <em>logout</em>, basta con llamar al método <code>logout</code> del <em>facade</em> <code>Auth</code> utilizado anteriormente, en el método que se vaya a encargar de esa tarea. Lo podemos añadir en el mismo controlador anterior:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">namespace App\Http\Controllers;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">use Illuminate\Http\Request;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">use Illuminate\Support\Facades\Auth;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">class LoginController extends Controller</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">{</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="x">  // ...</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="x">  public function logout()</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="x">  {</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="x">     Auth::logout();</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="x">     // ... renderizar la vista deseada</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="x">  }</span>
+</code></pre></div></td></tr></table></div>
+<p>También hará falta definir la ruta asociada en <code>routes/web.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">Route::get(&#39;logout&#39;, [LoginController::class, &#39;logout&#39;])-&gt;name(&#39;logout&#39;);</span>
+</code></pre></div></td></tr></table></div>
+<p>Obviamente, también será necesario añadir un enlace para hacer <em>logout</em> en alguna parte. Podemos ponerlo en el menú de navegación (archivo <code>resources/views/partials/nav.blade.php</code>, cuando detectemos que el usuario está autenticado):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span>
+<span class="normal"><a href="#__codelineno-16-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">@if(auth()-&gt;check())</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="x">  &lt;li class=&quot;{{ setActivo(&#39;libros.create&#39;) }} nav-item&quot;&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="x">     &lt;a class=&quot;nav-link&quot; href=&quot;{{ route(&#39;libros.create&#39;) }}&quot;&gt;Nuevo libro&lt;/a&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="x">  &lt;/li&gt;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="x">  &lt;li class=&quot;nav-item&quot;&gt;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="x">     &lt;a class=&quot;nav-link&quot; href=&quot;{{ route(&#39;logout&#39;) }}&quot;&gt;Logout&lt;/a&gt;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="x">  &lt;/li&gt;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="x">@endif</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="3-definir-roles-uso-de-middleware">3. Definir roles. Uso de <em>middleware</em></h2>
+<p>Para poder definir roles para los distintos usuarios de nuestra aplicación, obviamente debemos comenzar por definir un nuevo campo en la tabla de usuarios para almacenar dicho rol. Deberemos crear la migración correspondiente y lanzarla.</p>
+<p>Después, para proteger ciertas rutas en función de los roles, podemos ocultar el enlace en las vistas con una simple comprobación. Por ejemplo, asumiendo que el campo de los roles se llama <code>rol</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x">@if (auth()-&gt;user()-&gt;rol === &#39;admin&#39;)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="x">  // mostrar contenido</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="x">@endif</span>
+</code></pre></div></td></tr></table></div>
+<p>Sin embargo, si accedemos a la URL sin pasar por el enlace, podremos ver el contenido. Debemos nuevamente incorporar el <em>middleware</em> <code>auth</code> al controlador que corresponda (si no lo está ya), para proteger el acceso general para usuarios autenticados.</p>
+<p>Además, debemos definir un <em>middleware</em> propio que verifique el rol del usuario logueado. Podemos crearlo con este comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">php artisan make:middleware RolCheck</span>
+</code></pre></div></td></tr></table></div>
+<p>En este caso hemos llamado al <em>middleware</em> <code>RolCheck</code>, pero el nombre puede ser el que queramos. Este <em>middleware</em> se creará en la carpeta <code>App\Http\Middleware</code>. Debemos editar su método <code>handle</code> para verificar que los usuarios son de tipo “admin”:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span>
+<span class="normal"><a href="#__codelineno-19-6">6</a></span>
+<span class="normal"><a href="#__codelineno-19-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="x">public function handle($request, Closure $next, $rol)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="x">{</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="x">  if (auth()-&gt;user()-&gt;rol === $rol)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="x">     return $next($request);</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="x">  else</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="x">     return redirect(&#39;/&#39;);</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Tras definir el <em>middleware</em>, lo registramos en el archivo <code>App/Http/Kernel.php</code> (en el apartado de <em>routeMiddleware</em>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="x">protected $routeMiddleware = [</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="x">  // ...</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="x">  &#39;roles&#39; =&gt; \App\Http\Middleware\RolCheck::class</span>
+</code></pre></div></td></tr></table></div>
+<p>Finalmente, lo cargamos en el constructor de nuestro controlador. Podemos incluir con <code>except</code> y <code>only</code> restricciones sobre qué métodos del controlador se verán afectados o no por el <em>middleware</em>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="x">public function __construct()</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="x">{</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="x">  $this-&gt;middleware([&#39;auth&#39;, &#39;roles:admin&#39;]);</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En este ejemplo, hemos mapeado el <em>middleware</em> con el alias <em>roles</em> en el archivo <code>Kernel.php</code>, y lo que hay tras los dos puntos es el parámetro extra que tiene el método <code>handle</code> del <em>middleware</em> (el rol a comprobar).</p>
+<h3 id="31-middleware-con-mas-de-un-parametro">3.1. Middleware con más de un parámetro</h3>
+<p>En el caso de querer poder definir más de un rol en nuestro método del <em>middleware</em>, necesitamos definir la función con un número de parámetros variable, de este modo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span>
+<span class="normal"><a href="#__codelineno-22-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="x">public function handle($request, Closure $next, ...$roles)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="x">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="x">  if (in_array(auth()-&gt;user()-&gt;rol, $roles))</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="x">     return $next($request);</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="x">  else</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="x">     return redirect(&#39;/&#39;);</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Notar que, en este caso, lo que obtenemos en el parámetro <code>$roles</code> es un array, y debemos comprobar si el rol del usuario es uno de los que hay en el array. Ahora podemos cargar un <em>middleware</em> basado en múltiples roles, separados por comas, o incluso varios <em>middleware</em> para funciones diferentes, en el constructor.</p>
+<p>Por ejemplo, este constructor permitiría listar (<em>index</em>) a usuarios con rol editor, y permitiría ver la ficha (<em>show</em>) a editores y administradores.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="x">public function __construct()</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="x">{</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="x">  $this-&gt;middleware([&#39;auth&#39;, &#39;roles:editor&#39;], [&#39;only&#39; =&gt; [&#39;index&#39;]]);</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="x">  $this-&gt;middleware([&#39;auth&#39;, &#39;roles:editor,admin&#39;], [&#39;only&#39; =&gt; [&#39;show&#39;]]);</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="32-sobre-el-concepto-de-middleware">3.2. Sobre el concepto de <em>middleware</em></h3>
+<p>Hemos comentado brevemente el concepto de <em>middleware</em> asociado tanto al mecanismo de autenticación como a la clase “extra” que podemos crear para comprobar roles. En general, un <strong>middleware</strong> es un fragmento de código (normalmente una función) que se ejecuta en medio de un proceso. En este caso, se ejecuta desde que se recibe la petición hasta que se emite la respuesta, y permite alterar ese flujo normal, haciendo ciertas comprobaciones sobre la petición. Por ejemplo, como es el caso, verificar que el usuario tiene los permisos adecuados antes de emitir una respuesta u otra.</p>
+<h2 id="4-mas-informacion">4. Más información</h2>
+<p>Los mecanismos de autenticación de Laravel son muy variados y flexibles. Aquí hemos pretendido ofrecer sólo una parte, quizá la más habitual o estándar. Para más información, podéis consultar la documentación oficial:</p>
+<ul>
+<li><a href="https://laravel.com/docs/authentication">Autenticación con Laravel</a></li>
+<li><a href="https://laravel.com/docs/middleware">Uso de middleware</a></li>
+</ul>
+<h1 id="autenticacion-basada-en-tokens">autenticación basada en tokens</h1>
+<p>En una API REST también puede ser necesario proteger ciertos servicios, de forma que sólo puedan acceder a ellos los usuarios autenticados. Sin embargo, en este caso no tenemos disponible el mecanismo de autenticación basado en sesiones que vimos antes, ya que la parte cliente que consulta la API REST no tiene por qué estar basada en un navegador. Podríamos acceder desde una aplicación de escritorio hecha en Java, por ejemplo, o desde una aplicación móvil, y en estos casos no podríamos disponer de las sesiones, propias de clientes web o navegadores. En su lugar, emplearemos un mecanismo de autenticación basado en <strong>tokens</strong>.</p>
+<h2 id="1-fundamentos-de-la-autenticacion-basada-en-tokens">1. Fundamentos de la autenticación basada en tokens</h2>
+<p>La autenticación basada en tokens es un mecanismo de validación de usuarios en aplicaciones cliente-servidor que podríamos decir que es más universal que la autenticación basada en sesiones, ya que permite autenticar usuarios provenientes de distintos tipos de clientes. Lo que se hace es lo siguiente:</p>
+<ul>
+<li>El usuario necesita enviar sus credenciales (<em>login</em> y <em>password</em>), de forma similar a como se hace en una aplicación web normal, aunque esta vez los datos se envían normalmente en formato JSON.</li>
+<li>El servidor valida esas credenciales y, si son correctas, genera una cadena de texto llamada <em>token</em>, de una cierta longitud, y que servirá para identificar unívocamente al usuario a partir de ese momento. Dicho <em>token</em> debe ser enviado de vuelta (también en formato JSON) al cliente que se validó</li>
+<li>A partir de este punto, el cliente debe adjuntar el <em>token</em> como parte de la información en cada petición que realiza a una zona de acceso restringido, de forma que el servidor pueda consultar el token y comprobar si corresponde con el de algún usuario autorizado. Este token normalmente se envía en una cabecera de la petición llamada <em>Authorization</em>, como veremos después, y el servidor puede consultar el valor de dicha cabecera para verificar el acceso del cliente.</li>
+</ul>
+<h2 id="2-alternativas-para-la-implementacion-de-la-autenticacion-basada-en-tokens">2. Alternativas para la implementación de la autenticación basada en tokens</h2>
+<p>Podemos emplear distintas alternativas para la autenticación basada en tokens bajo Laravel. Comentaremos en esta sesión dos de ellas.</p>
+<ul>
+<li>Por un lado, podemos emplear el mecanismo nativo de Laravel para autenticación basada en tokens. Como ventajas principales, no se necesita instalar ninguna dependencia adicional, y es relativamente sencillo de utilizar. Como inconvenientes, requiere añadir un campo más a la tabla de usuarios, para almacenar el token generado para cada usuario, y requiere también de una gestión manual del token, aunque es sencilla.</li>
+<li>Por otro lado podemos valernos de la librería <a href="https://laravel.com/docs/8.x/sanctum">Laravel Sanctum</a>, que proporciona mecanismos de autenticación para APIs y para SPAs (<em>Single Page Applications</em>, aplicaciones de página única). Entre sus ventajas podemos destacar que es sencilla de integrar en la aplicación y automatiza algunos aspectos de la gestión de tokens, además de contar con el soporte oficial de Laravel. Como inconvenientes, es una librería más intrusiva que la anterior, ya que requiere crear una tabla adicional donde almacenar los tokens.</li>
+</ul>
+<p>En los siguientes apartados veremos cómo proteger mediante tokens un proyecto sencillo en Laravel empleando cada uno de estos mecanismos. Como ejercicio de este apartado se pide que elijáis cualquiera de ellos y sigáis paso a paso el ejemplo para configurar la protección mediante tokens en él.</p>
+<h3 id="21-preparando-el-ejemplo-base">2.1. Preparando el ejemplo base</h3>
+<p>Partiremos de un mismo proyecto base, que luego adaptaremos en función del mecanismo de autenticación elegido. Comenzaremos creando un proyecto llamado <code>pruebaToken</code>, en nuestra carpeta de proyectos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>laravel new pruebaToken
+</code></pre></div></td></tr></table></div>
+<p>Después, eliminaremos las migraciones que no vamos a utilizar de la carpeta <code>database/migrations</code>: en concreto, eliminaremos los archivos sobre <em>create_password_resets_table</em> y <em>create_failed_jobs_table</em>, y dejaremos el resto. Sobre la migración de usuarios, editaremos los métodos <code>up</code> y <code>down</code> para dejar sólo los campos que nos interesen, y renombrar la tabla a <em>usuarios</em>, de este modo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span>
+<span class="normal"><a href="#__codelineno-25-11">11</a></span>
+<span class="normal"><a href="#__codelineno-25-12">12</a></span>
+<span class="normal"><a href="#__codelineno-25-13">13</a></span>
+<span class="normal"><a href="#__codelineno-25-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>public function up()
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>{
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>    Schema::create(&#39;usuarios&#39;, function (Blueprint $table) {
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a>        $table-&gt;id();
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a>        $table-&gt;string(&#39;login&#39;)-&gt;unique;
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a>        $table-&gt;string(&#39;password&#39;);
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a>        $table-&gt;timestamps();
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a>    });
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a>}
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a>...
+<a id="__codelineno-25-11" name="__codelineno-25-11"></a>public function down()
+<a id="__codelineno-25-12" name="__codelineno-25-12"></a>{
+<a id="__codelineno-25-13" name="__codelineno-25-13"></a>    Schema::dropIfExists(&#39;usuarios&#39;);
+<a id="__codelineno-25-14" name="__codelineno-25-14"></a>}
+</code></pre></div></td></tr></table></div>
+<p>A continuación, renombramos el modelo <code>App\Models\User.php</code> a <code>App\Models\Usuario.php</code>, cambiando también el nombre de la clase interior:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>class Usuario extends Authenticatable
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a>{
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a>    ...
+</code></pre></div></td></tr></table></div>
+<p>Y hacemos lo mismo con el <em>factory</em> y el <em>seeder</em> correspondiente (modificamos directamente el <code>DatabaseSeeder</code> para no crear un <em>seeder</em> específico, en este caso):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span>
+<span class="normal"><a href="#__codelineno-27-12">12</a></span>
+<span class="normal"><a href="#__codelineno-27-13">13</a></span>
+<span class="normal"><a href="#__codelineno-27-14">14</a></span>
+<span class="normal"><a href="#__codelineno-27-15">15</a></span>
+<span class="normal"><a href="#__codelineno-27-16">16</a></span>
+<span class="normal"><a href="#__codelineno-27-17">17</a></span>
+<span class="normal"><a href="#__codelineno-27-18">18</a></span>
+<span class="normal"><a href="#__codelineno-27-19">19</a></span>
+<span class="normal"><a href="#__codelineno-27-20">20</a></span>
+<span class="normal"><a href="#__codelineno-27-21">21</a></span>
+<span class="normal"><a href="#__codelineno-27-22">22</a></span>
+<span class="normal"><a href="#__codelineno-27-23">23</a></span>
+<span class="normal"><a href="#__codelineno-27-24">24</a></span>
+<span class="normal"><a href="#__codelineno-27-25">25</a></span>
+<span class="normal"><a href="#__codelineno-27-26">26</a></span>
+<span class="normal"><a href="#__codelineno-27-27">27</a></span>
+<span class="normal"><a href="#__codelineno-27-28">28</a></span>
+<span class="normal"><a href="#__codelineno-27-29">29</a></span>
+<span class="normal"><a href="#__codelineno-27-30">30</a></span>
+<span class="normal"><a href="#__codelineno-27-31">31</a></span>
+<span class="normal"><a href="#__codelineno-27-32">32</a></span>
+<span class="normal"><a href="#__codelineno-27-33">33</a></span>
+<span class="normal"><a href="#__codelineno-27-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a>namespace Database\Factories;
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a>use Illuminate\Database\Eloquent\Factories\Factory;
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a>/**
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a> * @extends \Illuminate\Database\Eloquent\Factories\Factory&lt;\App\Models\Usuario&gt;
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a> */ 
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a>class UsuarioFactory extends Factory
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a>{
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a>    /**
+<a id="__codelineno-27-11" name="__codelineno-27-11"></a>     * Define the model&#39;s default state.
+<a id="__codelineno-27-12" name="__codelineno-27-12"></a>     *
+<a id="__codelineno-27-13" name="__codelineno-27-13"></a>     * @return array
+<a id="__codelineno-27-14" name="__codelineno-27-14"></a>     */
+<a id="__codelineno-27-15" name="__codelineno-27-15"></a>    public function definition()
+<a id="__codelineno-27-16" name="__codelineno-27-16"></a>    {
+<a id="__codelineno-27-17" name="__codelineno-27-17"></a>        return [
+<a id="__codelineno-27-18" name="__codelineno-27-18"></a>            &#39;login&#39; =&gt; $this-&gt;faker-&gt;word,
+<a id="__codelineno-27-19" name="__codelineno-27-19"></a>            &#39;password&#39; =&gt; bcrypt(&#39;1234&#39;)
+<a id="__codelineno-27-20" name="__codelineno-27-20"></a>        ];
+<a id="__codelineno-27-21" name="__codelineno-27-21"></a>    }
+<a id="__codelineno-27-22" name="__codelineno-27-22"></a>}
+<a id="__codelineno-27-23" name="__codelineno-27-23"></a>class DatabaseSeeder extends Seeder
+<a id="__codelineno-27-24" name="__codelineno-27-24"></a>{
+<a id="__codelineno-27-25" name="__codelineno-27-25"></a>    /**
+<a id="__codelineno-27-26" name="__codelineno-27-26"></a>     * Seed the application&#39;s database.
+<a id="__codelineno-27-27" name="__codelineno-27-27"></a>     *
+<a id="__codelineno-27-28" name="__codelineno-27-28"></a>     * @return void
+<a id="__codelineno-27-29" name="__codelineno-27-29"></a>     */
+<a id="__codelineno-27-30" name="__codelineno-27-30"></a>    public function run()
+<a id="__codelineno-27-31" name="__codelineno-27-31"></a>    {
+<a id="__codelineno-27-32" name="__codelineno-27-32"></a>         \App\Models\Usuario::factory(2)-&gt;create();
+<a id="__codelineno-27-33" name="__codelineno-27-33"></a>    }
+<a id="__codelineno-27-34" name="__codelineno-27-34"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Vamos a modificar también el archivo <code>.env</code> del proyecto para acceder a una base de datos llamada <code>pruebaToken</code>, que deberemos crear a través de <em>phpMyAdmin</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>DB_CONNECTION=mysql
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a>DB_HOST=127.0.0.1
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a>DB_PORT=3306
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a>DB_DATABASE=pruebaToken
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a>DB_USERNAME=root
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a>DB_PASSWORD=
+</code></pre></div></td></tr></table></div>
+<p>Necesitamos también editar el archivo <code>App\Http\Middleware\Authenticate.php</code> para indicar en el método <code>redirectTo</code> que sólo queremos redirigir al formulario de login cuando la petición no espere una respuesta en formato JSON. En caso contrario, no hay que mostrar dicho formulario, sino enviar una respuesta JSON adecuada. De hecho, si la aplicación sólo va a tener servicios REST podríamos eliminar o dejar comentado el código de este método para que no trate de redirigir a ningún formulario.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-29-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-29-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-29-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-29-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-29-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-29-10">10</a></span>
+<span class="normal"><a href="#__codelineno-29-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a>class Authenticate extends Middleware
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>{
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a>    protected function redirectTo($request)
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a>    {
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a>        /*
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a>        if (! $request-&gt;expectsJson()) {
+<a id="__codelineno-29-7" name="__codelineno-29-7"></a>            return route(&#39;login&#39;);
+<a id="__codelineno-29-8" name="__codelineno-29-8"></a>        }
+<a id="__codelineno-29-9" name="__codelineno-29-9"></a>        */
+<a id="__codelineno-29-10" name="__codelineno-29-10"></a>    }
+<a id="__codelineno-29-11" name="__codelineno-29-11"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Por otra parte, debemos editar el archivo <code>App\Exceptions\Handler.php</code>, en concreto su método <code>register</code> para definir los diferentes errores que pueden producirse y los mensajes que hay que devolver en cada caso:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-30-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-30-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-30-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-30-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-30-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-30-10">10</a></span>
+<span class="normal"><a href="#__codelineno-30-11">11</a></span>
+<span class="normal"><a href="#__codelineno-30-12">12</a></span>
+<span class="normal"><a href="#__codelineno-30-13">13</a></span>
+<span class="normal"><a href="#__codelineno-30-14">14</a></span>
+<span class="normal"><a href="#__codelineno-30-15">15</a></span>
+<span class="normal"><a href="#__codelineno-30-16">16</a></span>
+<span class="normal"><a href="#__codelineno-30-17">17</a></span>
+<span class="normal"><a href="#__codelineno-30-18">18</a></span>
+<span class="normal"><a href="#__codelineno-30-19">19</a></span>
+<span class="normal"><a href="#__codelineno-30-20">20</a></span>
+<span class="normal"><a href="#__codelineno-30-21">21</a></span>
+<span class="normal"><a href="#__codelineno-30-22">22</a></span>
+<span class="normal"><a href="#__codelineno-30-23">23</a></span>
+<span class="normal"><a href="#__codelineno-30-24">24</a></span>
+<span class="normal"><a href="#__codelineno-30-25">25</a></span>
+<span class="normal"><a href="#__codelineno-30-26">26</a></span>
+<span class="normal"><a href="#__codelineno-30-27">27</a></span>
+<span class="normal"><a href="#__codelineno-30-28">28</a></span>
+<span class="normal"><a href="#__codelineno-30-29">29</a></span>
+<span class="normal"><a href="#__codelineno-30-30">30</a></span>
+<span class="normal"><a href="#__codelineno-30-31">31</a></span>
+<span class="normal"><a href="#__codelineno-30-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a>use Illuminate\Auth\AuthenticationException;
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a>use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a>use Illuminate\Database\Eloquent\ModelNotFoundException;
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a>use Illuminate\Validation\ValidationException;
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a>use Throwable;
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a>class Handler extends ExceptionHandler
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a>{
+<a id="__codelineno-30-9" name="__codelineno-30-9"></a>    ...
+<a id="__codelineno-30-10" name="__codelineno-30-10"></a>    public function register()
+<a id="__codelineno-30-11" name="__codelineno-30-11"></a>    {
+<a id="__codelineno-30-12" name="__codelineno-30-12"></a>        $this-&gt;renderable(function (Throwable $exception) {
+<a id="__codelineno-30-13" name="__codelineno-30-13"></a>            if (request()-&gt;is(&#39;api*&#39;))
+<a id="__codelineno-30-14" name="__codelineno-30-14"></a>            {
+<a id="__codelineno-30-15" name="__codelineno-30-15"></a>                if ($exception instanceof ModelNotFoundException)
+<a id="__codelineno-30-16" name="__codelineno-30-16"></a>                    return response()-&gt;json(
+<a id="__codelineno-30-17" name="__codelineno-30-17"></a>                        [&#39;error&#39; =&gt; &#39;Elemento no encontrado&#39;], 404);
+<a id="__codelineno-30-18" name="__codelineno-30-18"></a>                else if ($exception instanceof AuthenticationException)
+<a id="__codelineno-30-19" name="__codelineno-30-19"></a>                    return response()-&gt;json(
+<a id="__codelineno-30-20" name="__codelineno-30-20"></a>                        [&#39;error&#39; =&gt; &#39;Usuario no autenticado&#39;], 401);
+<a id="__codelineno-30-21" name="__codelineno-30-21"></a>                else if ($exception instanceof ValidationException)
+<a id="__codelineno-30-22" name="__codelineno-30-22"></a>                    return response()-&gt;json(
+<a id="__codelineno-30-23" name="__codelineno-30-23"></a>                        [&#39;error&#39; =&gt; &#39;Datos no válidos&#39;], 400);
+<a id="__codelineno-30-24" name="__codelineno-30-24"></a>                else if (isset($exception))
+<a id="__codelineno-30-25" name="__codelineno-30-25"></a>                    return response()-&gt;json(
+<a id="__codelineno-30-26" name="__codelineno-30-26"></a>                        [&#39;error&#39; =&gt; &#39;Error en la aplicación (&#39; .
+<a id="__codelineno-30-27" name="__codelineno-30-27"></a>                        get_class($exception) . &#39;):&#39; . 
+<a id="__codelineno-30-28" name="__codelineno-30-28"></a>                        $exception-&gt;getMessage()], 500);
+<a id="__codelineno-30-29" name="__codelineno-30-29"></a>            }
+<a id="__codelineno-30-30" name="__codelineno-30-30"></a>        });
+<a id="__codelineno-30-31" name="__codelineno-30-31"></a>    }
+<a id="__codelineno-30-32" name="__codelineno-30-32"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Finalmente, vamos a definir un controlador de API con una serie de métodos de prueba. No lo vamos a vincular a ningún modelo, porque generaremos unos datos a mano en cada método para simplificar el código. Escribimos este comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>php artisan make:controller Api/PruebaController --api
+</code></pre></div></td></tr></table></div>
+<p>Rellenamos el código de los métodos del controlador con alguna respuesta sencilla para cada caso:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-32-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-32-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-32-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-32-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-32-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-32-10">10</a></span>
+<span class="normal"><a href="#__codelineno-32-11">11</a></span>
+<span class="normal"><a href="#__codelineno-32-12">12</a></span>
+<span class="normal"><a href="#__codelineno-32-13">13</a></span>
+<span class="normal"><a href="#__codelineno-32-14">14</a></span>
+<span class="normal"><a href="#__codelineno-32-15">15</a></span>
+<span class="normal"><a href="#__codelineno-32-16">16</a></span>
+<span class="normal"><a href="#__codelineno-32-17">17</a></span>
+<span class="normal"><a href="#__codelineno-32-18">18</a></span>
+<span class="normal"><a href="#__codelineno-32-19">19</a></span>
+<span class="normal"><a href="#__codelineno-32-20">20</a></span>
+<span class="normal"><a href="#__codelineno-32-21">21</a></span>
+<span class="normal"><a href="#__codelineno-32-22">22</a></span>
+<span class="normal"><a href="#__codelineno-32-23">23</a></span>
+<span class="normal"><a href="#__codelineno-32-24">24</a></span>
+<span class="normal"><a href="#__codelineno-32-25">25</a></span>
+<span class="normal"><a href="#__codelineno-32-26">26</a></span>
+<span class="normal"><a href="#__codelineno-32-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a>class PruebaController extends Controller
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a>{
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a>    public function index()
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a>    {
+<a id="__codelineno-32-5" name="__codelineno-32-5"></a>        return response()-&gt;json([&#39;mensaje&#39; =&gt; &#39;Accediendo a index&#39;]);
+<a id="__codelineno-32-6" name="__codelineno-32-6"></a>    }
+<a id="__codelineno-32-7" name="__codelineno-32-7"></a>
+<a id="__codelineno-32-8" name="__codelineno-32-8"></a>    public function store(Request $request)
+<a id="__codelineno-32-9" name="__codelineno-32-9"></a>    {
+<a id="__codelineno-32-10" name="__codelineno-32-10"></a>        return response()-&gt;json([&#39;mensaje&#39; =&gt; &#39;Insertando&#39;], 201);
+<a id="__codelineno-32-11" name="__codelineno-32-11"></a>    }
+<a id="__codelineno-32-12" name="__codelineno-32-12"></a>
+<a id="__codelineno-32-13" name="__codelineno-32-13"></a>    public function show($id)
+<a id="__codelineno-32-14" name="__codelineno-32-14"></a>    {
+<a id="__codelineno-32-15" name="__codelineno-32-15"></a>        return response()-&gt;json([&#39;mensaje&#39; =&gt; &#39;Ficha de &#39; . $id]);
+<a id="__codelineno-32-16" name="__codelineno-32-16"></a>    }
+<a id="__codelineno-32-17" name="__codelineno-32-17"></a>
+<a id="__codelineno-32-18" name="__codelineno-32-18"></a>    public function update(Request $request, $id)
+<a id="__codelineno-32-19" name="__codelineno-32-19"></a>    {
+<a id="__codelineno-32-20" name="__codelineno-32-20"></a>        return response()-&gt;json([&#39;mensaje&#39; =&gt; &#39;Actualizando elemento&#39;]);
+<a id="__codelineno-32-21" name="__codelineno-32-21"></a>    }
+<a id="__codelineno-32-22" name="__codelineno-32-22"></a>
+<a id="__codelineno-32-23" name="__codelineno-32-23"></a>    public function destroy($id)
+<a id="__codelineno-32-24" name="__codelineno-32-24"></a>    {
+<a id="__codelineno-32-25" name="__codelineno-32-25"></a>        return response()-&gt;json([&#39;mensaje&#39; =&gt; &#39;Borrando elemento&#39;]);
+<a id="__codelineno-32-26" name="__codelineno-32-26"></a>    }
+<a id="__codelineno-32-27" name="__codelineno-32-27"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Y añadimos las rutas correspondientes en el archivo <code>routes/api.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a>Route::apiResource(&#39;prueba&#39;, PruebaController::class);
+</code></pre></div></td></tr></table></div>
+<p>A partir de este punto, vamos a proteger el acceso a alguno de estos métodos. Escoge uno de los siguientes apartados (3 o 4) para definir el mecanismo de autenticación basado en tokens correspondiente. También puedes intentar hacerlos todos; en este caso, copia y pega otra vez el proyecto Laravel, para trabajar por separado en cada carpeta con un mecanismo diferente.</p>
+<h2 id="3-autenticacion-basada-en-tokens-nativa">3. Autenticación basada en tokens nativa</h2>
+<p>Vamos a emplear en esta sección la autenticación nativa por tokens que ofrece Laravel. Los pasos a seguir los indicamos a continuación.</p>
+<h3 id="31-configuracion-basica">3.1. Configuración básica</h3>
+<p>En primer lugar, modificamos la migración de la tabla de usuarios para añadir un nuevo campo donde almacenar el token. Dicho campo basta con que tenga 60 caracteres de longitud, y será necesario también que sea único para cada usuario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-34-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-34-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-34-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-34-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-34-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-34-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-34-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-34-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-34-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>public function up()
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a>{
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a>    Schema::create(&#39;usuarios&#39;, function (Blueprint $table) {
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a>        $table-&gt;id();
+<a id="__codelineno-34-5" name="__codelineno-34-5"></a>        $table-&gt;string(&#39;login&#39;)-&gt;unique;
+<a id="__codelineno-34-6" name="__codelineno-34-6"></a>        $table-&gt;string(&#39;password&#39;);
+<a id="__codelineno-34-7" name="__codelineno-34-7"></a>        $table-&gt;string(&#39;api_token&#39;, 60)-&gt;unique()-&gt;nullable();
+<a id="__codelineno-34-8" name="__codelineno-34-8"></a>        $table-&gt;timestamps();
+<a id="__codelineno-34-9" name="__codelineno-34-9"></a>    });
+<a id="__codelineno-34-10" name="__codelineno-34-10"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Podemos lanzar ya la migración para que se cree la tabla y se rellene con los usuarios que hayamos indicado en el <em>seeder</em>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a>php artisan migrate:fresh --seed
+</code></pre></div></td></tr></table></div>
+<p>También debemos modificar el archivo <code>config/auth.php</code> para indicar cuál es el modelo de usuarios que vamos a utilizar:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
+<span class="normal"><a href="#__codelineno-36-2">2</a></span>
+<span class="normal"><a href="#__codelineno-36-3">3</a></span>
+<span class="normal"><a href="#__codelineno-36-4">4</a></span>
+<span class="normal"><a href="#__codelineno-36-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>&#39;providers&#39; =&gt; [
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a>    &#39;users&#39; =&gt; [
+<a id="__codelineno-36-3" name="__codelineno-36-3"></a>        &#39;driver&#39; =&gt; &#39;eloquent&#39;,
+<a id="__codelineno-36-4" name="__codelineno-36-4"></a>        &#39;model&#39; =&gt; App\Models\Usuario::class,
+<a id="__codelineno-36-5" name="__codelineno-36-5"></a>    ],
+</code></pre></div></td></tr></table></div>
+<p>En este mismo fichero, también podemos modificar el <em>guard</em> por defecto, que es <em>web</em>, para que sea <em>api</em>, si nuestra aplicación no va a tener autenticación web:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
+<span class="normal"><a href="#__codelineno-37-2">2</a></span>
+<span class="normal"><a href="#__codelineno-37-3">3</a></span>
+<span class="normal"><a href="#__codelineno-37-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a>&#39;defaults&#39; =&gt; [
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a>    &#39;guard&#39; =&gt; &#39;api&#39;,
+<a id="__codelineno-37-3" name="__codelineno-37-3"></a>    ...
+<a id="__codelineno-37-4" name="__codelineno-37-4"></a>],
+</code></pre></div></td></tr></table></div>
+<p>En la sección de <code>guards</code>, añadimos el nuevo <em>guard</em> <code>api</code>, si no está ya definido:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span>
+<span class="normal"><a href="#__codelineno-38-2">2</a></span>
+<span class="normal"><a href="#__codelineno-38-3">3</a></span>
+<span class="normal"><a href="#__codelineno-38-4">4</a></span>
+<span class="normal"><a href="#__codelineno-38-5">5</a></span>
+<span class="normal"><a href="#__codelineno-38-6">6</a></span>
+<span class="normal"><a href="#__codelineno-38-7">7</a></span>
+<span class="normal"><a href="#__codelineno-38-8">8</a></span>
+<span class="normal"><a href="#__codelineno-38-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a>&#39;guards&#39; =&gt; [
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a>    &#39;web&#39; =&gt; [
+<a id="__codelineno-38-3" name="__codelineno-38-3"></a>        ... 
+<a id="__codelineno-38-4" name="__codelineno-38-4"></a>    ],
+<a id="__codelineno-38-5" name="__codelineno-38-5"></a>    &#39;api&#39; =&gt; [
+<a id="__codelineno-38-6" name="__codelineno-38-6"></a>        &#39;driver&#39; =&gt; &#39;token&#39;,
+<a id="__codelineno-38-7" name="__codelineno-38-7"></a>        &#39;provider&#39; =&gt; &#39;users&#39;
+<a id="__codelineno-38-8" name="__codelineno-38-8"></a>    ]
+<a id="__codelineno-38-9" name="__codelineno-38-9"></a>]
+</code></pre></div></td></tr></table></div>
+<h3 id="32-proteccion-de-rutas">3.2. Protección de rutas</h3>
+<p>Para proteger las rutas de acceso restringido, primero crearemos un controlador que se encargue de validar las credenciales del usuario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a>php artisan make:controller Api/LoginController
+</code></pre></div></td></tr></table></div>
+<p>Definimos un método <code>login</code>, por ejemplo, que validará las credenciales que le lleguen (login y password). Si son correctas, generará una cadena de texto aleatoria de 60 caracteres y la almacenará en el campo <code>api_token</code> del usuario validado. También devolverá dicho token como respuesta en formato JSON. En caso de que haya un error en la autenticación, enviará de vuelta un mensaje de error, con el código 401 de acceso no autorizado.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-40-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-40-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-40-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-40-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-40-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-40-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-40-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-40-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-40-10">10</a></span>
+<span class="normal"><a href="#__codelineno-40-11">11</a></span>
+<span class="normal"><a href="#__codelineno-40-12">12</a></span>
+<span class="normal"><a href="#__codelineno-40-13">13</a></span>
+<span class="normal"><a href="#__codelineno-40-14">14</a></span>
+<span class="normal"><a href="#__codelineno-40-15">15</a></span>
+<span class="normal"><a href="#__codelineno-40-16">16</a></span>
+<span class="normal"><a href="#__codelineno-40-17">17</a></span>
+<span class="normal"><a href="#__codelineno-40-18">18</a></span>
+<span class="normal"><a href="#__codelineno-40-19">19</a></span>
+<span class="normal"><a href="#__codelineno-40-20">20</a></span>
+<span class="normal"><a href="#__codelineno-40-21">21</a></span>
+<span class="normal"><a href="#__codelineno-40-22">22</a></span>
+<span class="normal"><a href="#__codelineno-40-23">23</a></span>
+<span class="normal"><a href="#__codelineno-40-24">24</a></span>
+<span class="normal"><a href="#__codelineno-40-25">25</a></span>
+<span class="normal"><a href="#__codelineno-40-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a>use App\Http\Controllers\Controller;
+<a id="__codelineno-40-2" name="__codelineno-40-2"></a>use Illuminate\Http\Request;
+<a id="__codelineno-40-3" name="__codelineno-40-3"></a>use Illuminate\Support\Str;
+<a id="__codelineno-40-4" name="__codelineno-40-4"></a>use Illuminate\Support\Facades\Hash;
+<a id="__codelineno-40-5" name="__codelineno-40-5"></a>use App\Models\Usuario;
+<a id="__codelineno-40-6" name="__codelineno-40-6"></a>
+<a id="__codelineno-40-7" name="__codelineno-40-7"></a>class LoginController extends Controller
+<a id="__codelineno-40-8" name="__codelineno-40-8"></a>{
+<a id="__codelineno-40-9" name="__codelineno-40-9"></a>    public function login(Request $request)
+<a id="__codelineno-40-10" name="__codelineno-40-10"></a>    {
+<a id="__codelineno-40-11" name="__codelineno-40-11"></a>        $usuario = Usuario::where(&#39;login&#39;, $request-&gt;login)-&gt;first();
+<a id="__codelineno-40-12" name="__codelineno-40-12"></a>
+<a id="__codelineno-40-13" name="__codelineno-40-13"></a>        if (!$usuario || 
+<a id="__codelineno-40-14" name="__codelineno-40-14"></a>            !Hash::check($request-&gt;password, $usuario-&gt;password))
+<a id="__codelineno-40-15" name="__codelineno-40-15"></a>        {
+<a id="__codelineno-40-16" name="__codelineno-40-16"></a>            return response()-&gt;json(
+<a id="__codelineno-40-17" name="__codelineno-40-17"></a>                [&#39;error&#39; =&gt; &#39;Credenciales no válidas&#39;], 401);
+<a id="__codelineno-40-18" name="__codelineno-40-18"></a>        }
+<a id="__codelineno-40-19" name="__codelineno-40-19"></a>        else
+<a id="__codelineno-40-20" name="__codelineno-40-20"></a>        {
+<a id="__codelineno-40-21" name="__codelineno-40-21"></a>            $usuario-&gt;api_token = Str::random(60);
+<a id="__codelineno-40-22" name="__codelineno-40-22"></a>            $usuario-&gt;save();
+<a id="__codelineno-40-23" name="__codelineno-40-23"></a>            return response()-&gt;json([&#39;token&#39; =&gt; $usuario-&gt;api_token]);
+<a id="__codelineno-40-24" name="__codelineno-40-24"></a>        }
+<a id="__codelineno-40-25" name="__codelineno-40-25"></a>    }
+<a id="__codelineno-40-26" name="__codelineno-40-26"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Definimos en el archivo <code>routes/api.php</code> una ruta que redirija a este método, para cuando el usuario quiera autenticarse (recuerda añadir con <code>use</code> la correspondiente clase):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a>Route::post(&#39;login&#39;, [LoginController::class, &#39;login&#39;]);
+</code></pre></div></td></tr></table></div>
+<p>También podemos eliminar en este caso la ruta predefinida de este archivo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span>
+<span class="normal"><a href="#__codelineno-42-2">2</a></span>
+<span class="normal"><a href="#__codelineno-42-3">3</a></span>
+<span class="normal"><a href="#__codelineno-42-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a>// Eliminar esta ruta:
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a>Route::middleware(&#39;auth:sanctum&#39;)-&gt;get(&#39;/user&#39;, function (Request $request) {
+<a id="__codelineno-42-3" name="__codelineno-42-3"></a>    return $request-&gt;user();
+<a id="__codelineno-42-4" name="__codelineno-42-4"></a>});
+</code></pre></div></td></tr></table></div>
+<p>Para proteger las rutas que necesitemos en los controladores API, las especificamos en el constructor del controlador. Por ejemplo, así protegeríamos todas las rutas de nuestro controlador <code>PruebaController</code>, salvo <code>index</code> y <code>show</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1">1</a></span>
+<span class="normal"><a href="#__codelineno-43-2">2</a></span>
+<span class="normal"><a href="#__codelineno-43-3">3</a></span>
+<span class="normal"><a href="#__codelineno-43-4">4</a></span>
+<span class="normal"><a href="#__codelineno-43-5">5</a></span>
+<span class="normal"><a href="#__codelineno-43-6">6</a></span>
+<span class="normal"><a href="#__codelineno-43-7">7</a></span>
+<span class="normal"><a href="#__codelineno-43-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a>class PruebaController extends Controller
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a>{
+<a id="__codelineno-43-3" name="__codelineno-43-3"></a>    public function __construct()
+<a id="__codelineno-43-4" name="__codelineno-43-4"></a>    {
+<a id="__codelineno-43-5" name="__codelineno-43-5"></a>        $this-&gt;middleware(&#39;auth:api&#39;,
+<a id="__codelineno-43-6" name="__codelineno-43-6"></a>            [&#39;except&#39; =&gt; [&#39;index&#39;, &#39;show&#39;]]);
+<a id="__codelineno-43-7" name="__codelineno-43-7"></a>    }
+<a id="__codelineno-43-8" name="__codelineno-43-8"></a>    ...
+</code></pre></div></td></tr></table></div>
+<p>Alternativamente, también podemos emplear el modificador <code>only</code> en lugar de <code>except</code> para indicar las rutas concretas que queremos proteger.</p>
+<p>Con esto ya tenemos el mecanismo de autenticación por token establecido, y las rutas protegidas. Echa un vistazo al <a href="https://nachoiborraies.github.io/laravel/md/es/07b#5-prueba-de-autenticación-basada-en-tokens">apartado 5</a> para ver cómo probarlo todo desde <em>Thunder Client</em> o Postman.</p>
+<h2 id="4-autenticacion-basada-en-tokens-usando-laravel-sanctum">4. Autenticación basada en tokens usando Laravel Sanctum</h2>
+<p>Como hemos comentado anteriormente, Laravel Sanctum es una librería que proporciona mecanismos de autenticación para SPAs (<em>Single Page Applications</em>, aplicaciones de página única), y APIs. En nuestro caso, la emplearemos para autenticarnos mediante tokens en nuestras APIs. Los pasos a seguir para la configuración son los siguientes…</p>
+<h3 id="441-configuracion-de-sanctum">4.4.1. Configuración de Sanctum</h3>
+<p>En primer lugar, debemos incorporar Laravel Sanctum a nuestro proyecto. <strong>En las últimas versiones de Laravel aparece incorporado por defecto</strong> (lo podemos comprobar en el archivo <code>composer.json</code>, en la sección de <em>require</em>). Si no es así, podemos instalarlo escribiendo este comando desde la raíz del proyecto:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a>composer require laravel/sanctum
+</code></pre></div></td></tr></table></div>
+<p>Si nos diera algún problema de incompatibilidad con la versión de proyecto que tengamos, podemos probar a ejecutar <code>composer require laravel/sanctum:*</code> para solucionarlo, e instalar la última versión compatible.</p>
+<p>Después, debemos publicar la configuración de Sanctum y su fichero de migración, que generará una tabla adicional donde almacenar los tokens. Escribimos el siguiente comando (todo en una línea, aunque aquí se divide en dos para poderlo ver completo):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1">1</a></span>
+<span class="normal"><a href="#__codelineno-45-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a>php artisan vendor:publish 
+<a id="__codelineno-45-2" name="__codelineno-45-2"></a>--provider=&quot;Laravel\Sanctum\SanctumServiceProvider&quot;
+</code></pre></div></td></tr></table></div>
+<p>Al finalizar este paso, tendremos la migración creada y un archivo de configuración <code>config/sanctum.php</code> disponible, para editar la configuración por defecto de la librería. Por ejemplo, podemos editarlo para especificar el tiempo de vida (TTL) de los tokens. El siguiente ejemplo establece un tiempo de vida de 5 minutos, por ejemplo, aunque en el caso de aplicaciones basadas en tokens es habitual dejar tiempos mucho mayores (o indefinidos, según el caso, dejando esta propiedad a <code>null</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a>&#39;expiration&#39; =&gt; 5,
+</code></pre></div></td></tr></table></div>
+<p>Después, debemos lanzar la migración que se ha creado, junto con las que tengamos pendientes (la de la tabla de usuarios, por ejemplo). Se añadirá una tabla llamada <em>personal_access_tokens</em> a nuestra base de datos.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-47-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a>php artisan migrate:fresh --seed
+</code></pre></div></td></tr></table></div>
+<p>Finalmente, debemos verificar que el modelo de usuarios (<code>App\Models\Usuario</code>) incluya el <em>trait</em> <code>HasApiTokens</code>. De este modo se vincula el modelo de usuario con los tokens que se vayan a generar para los mismos.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span>
+<span class="normal"><a href="#__codelineno-48-2">2</a></span>
+<span class="normal"><a href="#__codelineno-48-3">3</a></span>
+<span class="normal"><a href="#__codelineno-48-4">4</a></span>
+<span class="normal"><a href="#__codelineno-48-5">5</a></span>
+<span class="normal"><a href="#__codelineno-48-6">6</a></span>
+<span class="normal"><a href="#__codelineno-48-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a>...
+<a id="__codelineno-48-2" name="__codelineno-48-2"></a>use Laravel\Sanctum\HasApiTokens;
+<a id="__codelineno-48-3" name="__codelineno-48-3"></a>
+<a id="__codelineno-48-4" name="__codelineno-48-4"></a>class Usuario extends Authenticatable
+<a id="__codelineno-48-5" name="__codelineno-48-5"></a>{
+<a id="__codelineno-48-6" name="__codelineno-48-6"></a>    use HasApiTokens, HasFactory, Notifiable;
+<a id="__codelineno-48-7" name="__codelineno-48-7"></a>    ...
+</code></pre></div></td></tr></table></div>
+<h3 id="42-proteccion-de-rutas">4.2. Protección de rutas</h3>
+<p>Para proteger las rutas de acceso restringido, primero crearemos un controlador que se encargue de validar las credenciales del usuario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a>php artisan make:controller Api/LoginController
+</code></pre></div></td></tr></table></div>
+<p>Definimos un método <code>login</code>, por ejemplo, que validará las credenciales que le lleguen (login y password). Si son correctas, llamará al método <code>createToken</code> de Sanctum (incorporado al usuario a través del <em>trait</em> <code>HasApiTokens</code>), asociándolo al login del usuario entrante, y le devolverá el token en formato texto plano, como un objeto JSON. En caso de que haya un error en la autenticación, enviará de vuelta un mensaje de error, con el código 401 de acceso no autorizado.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-50-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-50-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-50-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-50-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-50-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-50-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-50-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-50-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-50-10">10</a></span>
+<span class="normal"><a href="#__codelineno-50-11">11</a></span>
+<span class="normal"><a href="#__codelineno-50-12">12</a></span>
+<span class="normal"><a href="#__codelineno-50-13">13</a></span>
+<span class="normal"><a href="#__codelineno-50-14">14</a></span>
+<span class="normal"><a href="#__codelineno-50-15">15</a></span>
+<span class="normal"><a href="#__codelineno-50-16">16</a></span>
+<span class="normal"><a href="#__codelineno-50-17">17</a></span>
+<span class="normal"><a href="#__codelineno-50-18">18</a></span>
+<span class="normal"><a href="#__codelineno-50-19">19</a></span>
+<span class="normal"><a href="#__codelineno-50-20">20</a></span>
+<span class="normal"><a href="#__codelineno-50-21">21</a></span>
+<span class="normal"><a href="#__codelineno-50-22">22</a></span>
+<span class="normal"><a href="#__codelineno-50-23">23</a></span>
+<span class="normal"><a href="#__codelineno-50-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a>use App\Http\Controllers\Controller;
+<a id="__codelineno-50-2" name="__codelineno-50-2"></a>use Illuminate\Http\Request;
+<a id="__codelineno-50-3" name="__codelineno-50-3"></a>use Illuminate\Support\Facades\Hash;
+<a id="__codelineno-50-4" name="__codelineno-50-4"></a>use App\Models\Usuario;
+<a id="__codelineno-50-5" name="__codelineno-50-5"></a>
+<a id="__codelineno-50-6" name="__codelineno-50-6"></a>class LoginController extends Controller
+<a id="__codelineno-50-7" name="__codelineno-50-7"></a>{
+<a id="__codelineno-50-8" name="__codelineno-50-8"></a>    public function login(Request $request)
+<a id="__codelineno-50-9" name="__codelineno-50-9"></a>    {
+<a id="__codelineno-50-10" name="__codelineno-50-10"></a>        $usuario = Usuario::where(&#39;login&#39;, $request-&gt;login)-&gt;first();
+<a id="__codelineno-50-11" name="__codelineno-50-11"></a>
+<a id="__codelineno-50-12" name="__codelineno-50-12"></a>        if (!$usuario || 
+<a id="__codelineno-50-13" name="__codelineno-50-13"></a>            !Hash::check($request-&gt;password, $usuario-&gt;password))
+<a id="__codelineno-50-14" name="__codelineno-50-14"></a>        {
+<a id="__codelineno-50-15" name="__codelineno-50-15"></a>            return response()-&gt;json(
+<a id="__codelineno-50-16" name="__codelineno-50-16"></a>                [&#39;error&#39; =&gt; &#39;Credenciales no válidas&#39;], 401);
+<a id="__codelineno-50-17" name="__codelineno-50-17"></a>        }
+<a id="__codelineno-50-18" name="__codelineno-50-18"></a>        else
+<a id="__codelineno-50-19" name="__codelineno-50-19"></a>        {
+<a id="__codelineno-50-20" name="__codelineno-50-20"></a>            return response()-&gt;json([&#39;token&#39; =&gt;
+<a id="__codelineno-50-21" name="__codelineno-50-21"></a>                $usuario-&gt;createToken($usuario-&gt;login)-&gt;plainTextToken]);
+<a id="__codelineno-50-22" name="__codelineno-50-22"></a>        }
+<a id="__codelineno-50-23" name="__codelineno-50-23"></a>    }
+<a id="__codelineno-50-24" name="__codelineno-50-24"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Definimos en el archivo <code>routes/api.php</code> una ruta que redirija a este método, para cuando el usuario quiera autenticarse (recuerda añadir con <code>use</code> la correspondiente clase):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a>Route::post(&#39;login&#39;, [LoginController::class, &#39;login&#39;]);
+</code></pre></div></td></tr></table></div>
+<p>También podemos eliminar en este caso la ruta predefinida de este archivo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-52-1">1</a></span>
+<span class="normal"><a href="#__codelineno-52-2">2</a></span>
+<span class="normal"><a href="#__codelineno-52-3">3</a></span>
+<span class="normal"><a href="#__codelineno-52-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a>// Eliminar esta ruta:
+<a id="__codelineno-52-2" name="__codelineno-52-2"></a>Route::middleware(&#39;auth:sanctum&#39;)-&gt;get(&#39;/user&#39;, function (Request $request) {
+<a id="__codelineno-52-3" name="__codelineno-52-3"></a>    return $request-&gt;user();
+<a id="__codelineno-52-4" name="__codelineno-52-4"></a>});
+</code></pre></div></td></tr></table></div>
+<p>Para proteger las rutas que necesitemos en los controladores API, las especificamos en el constructor del controlador. Por ejemplo, así protegeríamos todas las rutas de nuestro controlador <code>PruebaController</code>, salvo <code>index</code> y <code>show</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1">1</a></span>
+<span class="normal"><a href="#__codelineno-53-2">2</a></span>
+<span class="normal"><a href="#__codelineno-53-3">3</a></span>
+<span class="normal"><a href="#__codelineno-53-4">4</a></span>
+<span class="normal"><a href="#__codelineno-53-5">5</a></span>
+<span class="normal"><a href="#__codelineno-53-6">6</a></span>
+<span class="normal"><a href="#__codelineno-53-7">7</a></span>
+<span class="normal"><a href="#__codelineno-53-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a>class PruebaController extends Controller
+<a id="__codelineno-53-2" name="__codelineno-53-2"></a>{
+<a id="__codelineno-53-3" name="__codelineno-53-3"></a>    public function __construct()
+<a id="__codelineno-53-4" name="__codelineno-53-4"></a>    {
+<a id="__codelineno-53-5" name="__codelineno-53-5"></a>        $this-&gt;middleware(&#39;auth:sanctum&#39;,
+<a id="__codelineno-53-6" name="__codelineno-53-6"></a>            [&#39;except&#39; =&gt; [&#39;index&#39;, &#39;show&#39;]]);
+<a id="__codelineno-53-7" name="__codelineno-53-7"></a>    }
+<a id="__codelineno-53-8" name="__codelineno-53-8"></a>    ...
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA:</strong> observa cómo se invoca al middleware <code>auth:sanctum</code>, que es un mecanismo de autenticación por defecto incorporado en Laravel. Esto hace que no tengamos que tocar la configuración de <code>config/auth.php</code> para nada en este caso. Al usar <em>Sanctum</em> ya se sabe en qué tabla están los <em>tokens</em> almacenados, y vinculados a qué <em>login</em>.</p>
+</blockquote>
+<p>Alternativamente, también podemos emplear el modificador <code>only</code> en lugar de <code>except</code> para indicar las rutas concretas que queremos proteger.</p>
+<p>En el caso de Sanctum, cada vez que validemos un usuario a través de la ruta de <em>login</em>, se guardará su <em>token</em> (encriptado) en la tabla <em>personal_access_tokens</em> de nuestra base de datos MySQL. Podemos comprobarlo con <em>phpMyAdmin</em>.</p>
+<p>Echa ahora un vistazo al <a href="https://nachoiborraies.github.io/laravel/md/es/07b#5-prueba-de-autenticación-basada-en-tokens">apartado 5</a> para ver cómo probarlo todo desde <em>Thunder Client</em> o Postman.</p>
+<h2 id="5-prueba-de-autenticacion-basada-en-tokens">5. Prueba de autenticación basada en tokens</h2>
+<p>Veamos ahora cómo probar la autenticación basada en tokens desde una herramienta como <em>ThunderClient</em>, para lo que veremos cómo obtener y enviar el token de acceso desde esta herramienta. Lo primero que deberemos hacer es una petición POST para loguearnos. Recibiremos como respuesta el <em>token</em> que se haya generado:</p>
+<p><img alt="" src="/assets/ud07_7_peticion_token01.png" /></p>
+<blockquote>
+<p><strong>NOTA</strong>: en el ejemplo que hemos estado haciendo, los campos a enviar serían <em>login</em> y <em>password</em>. Echa un vistazo a <em>phpMyAdmin</em> para ver qué <em>logins</em> se han generado, y el password, siguiendo el ejemplo, debería ser 1234.</p>
+</blockquote>
+<p>Ahora, sólo nos queda adjuntar este token en la cabecera <em>Authorization</em> de las peticiones que lo necesiten. Para ello, vamos a la sección <em>Authorization</em> bajo la URL de la petición, y elegimos que queremos enviar un <em>Bearer token</em>. En el cuadro inferior nos dejará copiar dicho token:</p>
+<p><img alt="" src="/assets/ud07_7_peticion_token02.png" /></p>
+<h1 id="bibliografia">bibliografia</h1>
+<ul>
+<li><a href="https://nachoiborraies.github.io/laravel/">Nacho Iborra Baeza</a>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

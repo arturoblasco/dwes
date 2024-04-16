@@ -1,0 +1,614 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ud04 ProgramacionWeb actividades - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inicio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ud04 ProgramacionWeb actividades
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud0101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 3 PHP Orientado a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<p>unit: unidad didáctica 4
+title: Actividades
+language: ES
+author: Arturo Blasco
+subject: Desarrollo Web en Entorno Servidor
+keywords: [DWES, 2023, PHP]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (versión: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}|${pageCount}
+typora-root-url:${filename}/../
+typora-copy-images-to:${filename}/../assets</p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#inicio">inicio</a></li>
+<li><a href="#formularios">formularios</a></li>
+<li><a href="#cookies-y-sesion">cookies y sesión</a></li>
+<li><a href="#autenticacion">autenticación</a></li>
+<li><a href="#proyecto-videoclub-30">proyecto Videoclub 3.0</a></li>
+</ul>
+</div>
+<h1 id="inicio">inicio</h1>
+<p><strong>Actividad 401</strong></p>
+<ul>
+<li><code>401server.php</code>: igual que el ejemplo visto en los apuntes muestra los valores de <code>$_SERVER</code> al ejecutar un script en tu ordenador.</li>
+<li>Prueba a pasarle parámetros (p.e. <em>nombre</em> y <em>apellidos</em>) por GET desde <code>401get.html</code>.</li>
+<li>En otro ejemplo <code>401getNada.html</code> no le pases ningún parámetro.</li>
+<li>
+<p>Prepara un formulario (<code>401post.html</code>) que haga un envío por POST (p.e. <em>nombre</em> y <em>apellidos</em>) y compruébalo de nuevo.</p>
+</li>
+<li>
+<p>Crea una página (<code>401enlace.html</code>) que tenga un enlace a <code>401server.php</code> y comprueba el valor de <code>HTTP_REFERER</code>.</p>
+</li>
+</ul>
+<h1 id="formularios">formularios</h1>
+<p><strong>Actividad 402</strong></p>
+<p><code>402formulario.html</code> y <code>402formulario.php</code>: Crea un formulario que solicite:</p>
+<ul>
+<li>Nombre y apellidos.</li>
+<li>Email.</li>
+<li>URL página personal.</li>
+<li>Sexo (<em>radio</em>).</li>
+<li>Número de convivientes en el domicilio.</li>
+<li>Aficiones (<em>checkboxes</em>) – poner mínimo 4 valores.</li>
+<li>Menú favorito (<em>lista selección múltiple</em>) – poner mínimo 4 valores.</li>
+</ul>
+<p>Muestra los valores cargados en una tabla-resumen.</p>
+<p><strong>Actividad 403</strong></p>
+<p><code>403validacion.php</code>: a partir del formulario anterior, introduce validaciones en HTML mediante el atributo <code>required</code> de los campos (usa también los tipos adecuados para cada campo), y comprueba los tipos de los datos y que cumplen los valores esperados (por ejemplo, en los checkboxes que los valores recogidos forman parte de todos los posibles). </p>
+<p>Prueba a pasarle datos erroneos via URL y comprobar su comportamiento.</p>
+<blockquote>
+<p><strong>Nota</strong>: Investiga el uso de la función <code>filter_var</code>.</p>
+</blockquote>
+<p><strong>Actividad 404</strong></p>
+<p><code>404subida.html</code> y <code>404subida.php</code>: crea un formulario que permita subir un archivo al servidor. Además del fichero, debe pedir en el mismo formulario dos campos numéricos que soliciten la <em>anchura</em> y la <em>altura</em>. Comprueba que tanto el fichero como los datos llegan correctamente.</p>
+<p><strong>Actividad 405</strong></p>
+<p><code>405subidaImagen.php</code>: modifica el ejercicio anterior para que únicamente permita subir imágenes (comprueba la propiedad <code>type</code> del archivo subido). Si el usuario selecciona otro tipo de archivos, se le debe informar del error y permitir que suba un nuevo archivo.</p>
+<p>En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y altura recibido como parámetro.</p>
+<h1 id="cookies-y-sesion">cookies y sesión</h1>
+<p><strong>Actividad 406</strong></p>
+<p><code>406contadorVisitas.php</code>: Mediante el uso de cookies, informa al usuario de si es su primera visita, o si no lo es, muestre su valor (valor de un contador). Además, debes permitir que el usuario reinicialice su contador de visitas.</p>
+<p><strong>Actividad 407</strong></p>
+<p><code>407fondo.php</code>: Mediante el uso de cookies, crea una página con un desplegable con varios colores, de manera que el usuario pueda cambiar el color de fondo de la página (atributo <code>bgcolor</code>). Al cerrar la página, ésta debe recordar, al menos durante 24h, el color elegido y la próxima vez que se cargue la pagina, lo haga con el último color seleccionado.</p>
+<p><strong>Actividad 408</strong></p>
+<p><code>408fondoSesion1.php</code>: Modifica el ejercicio anterior para almacenar el color de fondo en la sesión y no emplear cookies. Además, debe contener un enlace al siguiente archivo. </p>
+<p><code>408fondoSesion2.php</code>: Debe mostrar el color y dar la posibilidad de:</p>
+<ul>
+<li>volver a la página anterior mediante un enlace</li>
+<li>y mediante otro enlace, vaciar la sesión y volver a la página anterior.</li>
+</ul>
+<p><strong>Actividad 409</strong></p>
+<p>Haciendo uso de la sesión, vamos a dividir el formulario del ejercicio <code>402formulario.php</code> en 2 subformularios:</p>
+<ul>
+<li><code>409formulario1.php</code> envía los datos (nombre y apellidos, email, url y sexo) a <code>409formulario2.php</code>.</li>
+<li><code>409formulario2.php</code> lee los datos y los mete en la sesión. A continuación, muestra el resto de campos del formulario a rellenar (convivientes, aficiones y menú). Envía estos datos a <code>409formulario3.php</code>.</li>
+<li><code>409formulario3.php</code> recoge los datos enviados en el paso anterior y junto a los que ya estaban en la sesión, se muestran todos los datos en una tabla/lista desordenada.</li>
+</ul>
+<h1 id="autenticacion">autenticación</h1>
+<p>En los siguientes ejercicios vamos a montar una estructura de inicio de sesión similar a la vista en los apuntes.</p>
+<p><strong>Actividad 410</strong></p>
+<p><code>410index.php</code>: formulario de inicio de sesión</p>
+<p><strong>Actividad 411</strong></p>
+<p><code>411login.php</code>: hace de controlador, por lo que debe comprobar los datos recibidos (solo permite la entrada de <code>usuario / usuario</code> y si todo es correcto, ceder el control a la vista del siguiente ejercicio. No contiene código HTML.</p>
+<p><strong>Actividad 412</strong></p>
+<p><code>412peliculas.php</code>: vista que muestra como título "Listado de Películas", y una lista desordenada con tres películas.</p>
+<p><strong>Actividad 413</strong></p>
+<p><code>413logout.php</code>: vacía la sesión y nos lleva de nuevo al formulario de inicio de sesión. No contiene código HTML</p>
+<p><strong>Actividad 414</strong></p>
+<p><code>414series.php</code>: Añade un nueva vista similar a <code>412peliculas.php</code> que muestra un "Listado de Series" con una lista desordenada con tres series. Tanto <code>412pelicuas.php</code> como la vista recien creadas, deben tener un pequeño menú (sencillo, mediante enlaces) que permita pasar de un listado a otro. Comprueba que si se accede directamente a cualquiera de las vistas sin tener un usuario logueado via URL del navegador, no se muestra el listado.</p>
+<p><strong>Actividad 415</strong></p>
+<p>Modifica tanto el controlador como las vistas para que:</p>
+<ul>
+<li>los datos los obtenga el controlador (almacena en la sesión un array de películas y otro de series)</li>
+<li>coloca los datos en la sesión</li>
+<li>En las vistas, los datos se recuperan de la sesión y se <em>pintan</em> en la lista desordenada recorriendo el array correspondiente.</li>
+</ul>
+<h1 id="proyecto-videoclub-30">proyecto Videoclub 3.0</h1>
+<p><strong>Actividad 420</strong></p>
+<p>Para el Videoclub, vamos a crear una página <code>index.php</code> con un formulario que contenga un formulario de login/password. Se comprobarán los datos en <code>login.php</code>. Los posibles usuarios son admin/admin o usuario/usuario</p>
+<ul>
+<li>Si el usuario es correcto, en <code>main.php</code> mostrar un mensaje de bienvenida con el nombre del usuario, junto a un enlace para cerrar la sesión, que lo llevaría de nuevo al login.</li>
+<li>Si el usuario es incorrecto, debe volver a cargar el formulario dando información al usuario de acceso incorrecto.</li>
+</ul>
+<p><strong>Actividad 421</strong></p>
+<p>Si el usuario es administrador, se cargarán en la sesión los datos de soportes y clientes del videoclub que teníamos en nuestras pruebas. En la siguiente unidad los obtendremos de la base de datos. En <code>mainAdmin.php</code>, además de la bienvenida, debe mostrar:</p>
+<ul>
+<li>Listado de clientes</li>
+<li>Listado de soportes</li>
+</ul>
+<p><strong>Actividad 422</strong></p>
+<p>Vamos a modificar la clase <code>Cliente</code> para almacenar el <code>user</code> y la <code>password</code> de cada cliente. Tras codificar los cambios, modificar el listado de clientes de <code>mainAdmin.php</code> para añadir al listado el usuario.</p>
+<p><strong>Actividad 423</strong></p>
+<p>Si el usuario que accede no es administrador y coincide con alguno de los clientes que tenemos cargados tras el login, debe cargar <code>mainCliente.php</code> donde se mostrará un listado de los alquileres del cliente. Para ello, modificaremos la clase <code>Cliente</code> para ofrecer el método <code>getAlquileres() : array</code>, el cual llamaremos y luego recorreremos para mostrar el listado solicitado.</p>
+<p><img src="/assets/act01esquemaNavegacion.png" style="zoom:70%;" /></p>
+<p>Ahora volvemos a la parte de administración:</p>
+<p><strong>Actividad 424</strong></p>
+<p>Además de mostrar el listado de clientes, vamos a ofrecer la opción de dar de alta a un nuevo cliente en <code>formCreateCliente.php</code>. Los datos se enviarán mediante POST a <code>createCliente.php</code> que los introducirá en la sesión. Una vez creado el cliente, debe volver a cargar <code>mainAdmin.php</code> donde se podrá ver el cliente insertado. Si hay algún dato incorrecto, debe volver a cargar el formulario de alta.</p>
+<p><strong>Actividad 425</strong></p>
+<p>Crea en <code>formUpdateCliente.php</code> un formulario que permita editar los datos de un cliente. Debes recoger los datos en <code>updateCliente.php</code> Los datos de cliente se deben poder modificar desde la propia página de un cliente, así como desde el listado del administrador.</p>
+<p><strong>Actividad 426</strong></p>
+<p>Desde el listado de clientes del administrador debes ofrecer la posibilidad de borrar un cliente. En el navegador, antes de redirigir al servidor, el usuario debe confirmar mediante JS que realmente desea eliminar al cliente. Finalmente, en <code>removeCliente.php</code> elimina al cliente de la sesión. Una vez eliminado, debe volver al listado de clientes.</p>
+<p><img src="/assets/act02esquemaNavegacionVideoclub.png" style="zoom:80%;" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

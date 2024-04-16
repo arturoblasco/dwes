@@ -1,0 +1,622 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ud05 HerramientasWeb actividades - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#monolog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ud05 HerramientasWeb actividades
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud0101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 3 PHP Orientado a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<p>unit: unidad didáctica 5
+title: Actividades
+language: ES
+author: Arturo Blasco
+subject: Desarrollo Web en Entorno Servidor
+keywords: [DWES, 2023, PHP]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (versión: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}|${pageCount}
+typora-root-url:${filename}/../
+typora-copy-images-to:${filename}/../assets</p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#monolog">Monolog</a></li>
+<li><a href="#proyecto-videoclub-iv">proyecto Videoclub IV</a></li>
+<li><a href="#phpdocumentor">phpDocumentor</a></li>
+<li><a href="#web-scraping">Web Scraping</a></li>
+<li><a href="#phpunit">phpUnit</a></li>
+<li><a href="#proyecto-videoclub-v">proyecto Videoclub V</a></li>
+<li><a href="#ampliacion">ampliación</a></li>
+</ul>
+</div>
+<h1 id="monolog">Monolog</h1>
+<p><strong>Actividad 501</strong></p>
+<p>Crea un nuevo proyecto con <em>Composer</em> llamado <code>Monologos</code>:</p>
+<ul>
+<li>Incluye como librería la última versión de Monolog.</li>
+<li>Crea la clase <code>Dwes\Monologos\HolaMonolog</code>.</li>
+<li>Define una propiedad privada nombrada <code>miLog</code> para guardar el log.</li>
+<li>Define en el constructor un <code>RotatingFileHandler</code> que escriba en la carpeta <code>logs</code> del proyecto, y que almacene los mensajes a partir de <em>debug</em>.</li>
+<li>Crea los métodos <code>saludar</code> y <code>despedir</code> que hagan un log de tipo <em>info</em> con la acción correspondiente.</li>
+</ul>
+<p><strong>Actividad 502</strong></p>
+<p>Siguiendo con el proyecto <code>Monologos</code>:</p>
+<ul>
+<li>Crea un archivo llamado <code>inicio.php</code> que permita probar <code>HolaMonolog</code>.</li>
+<li>Comprueba que los mensajes aparecen en el <em>log</em>.</li>
+<li>Cambia el nivel para que el manejador solo muestre los mensajes a partir de <em>warning</em>.</li>
+<li>Vuelve a ejectuar <code>inicio.php</code> y comprueba el archivo de log.</li>
+</ul>
+<p><strong>Actividad 503</strong></p>
+<p>Modifica la clase <code>HolaMonolog</code>:</p>
+<ul>
+<li>En el constructor, añade a la pila un manejador que escriba a la salida de error conjunto al procesador de introspección, mostrando mensajes desde el nivel <em>debug</em>.</li>
+<li>Añade una propiedad denominada <code>hora</code>, la cual se inicializa únicamente como parámetro del constructor. Si la <code>hora</code> es inferior a 0 o mayor de 24, debe escribir un log de <em>warning</em> con un mensaje apropiado.</li>
+<li>Modifica los métodos <code>saludar</code> y <code>despedir</code> para hacerlo acorde a la propiedad <code>hora</code> (buenos días, buenas tardes, hasta mañana, etc...)</li>
+</ul>
+<h1 id="proyecto-videoclub-iv">proyecto Videoclub IV</h1>
+<p><strong>Actividad 511</strong></p>
+<p>Como ya tenemos <em>Composer</em> instalado:</p>
+<ul>
+<li>Inicialízalo dentro de tu proyecto <em>Videoclub.</em></li>
+<li>Incluye <em>Monolog</em> y <em>PhpUnit</em>, cada una en su lugar adecuado.</li>
+<li>Añade el autoload al archivo <code>composer.json</code>, y haz los cambios necesarios en las clases para utilizar el <em>autoload</em> de <em>Composer</em>.</li>
+<li>Sube los cambios a <em>GitHub</em> y crea la etiqueta <code>v0.511</code>.</li>
+</ul>
+<p><strong>Actividad 512</strong></p>
+<p>Modifica la clase <code>Cliente</code> para introducir un <code>Logger</code> de Monolog.</p>
+<ul>
+<li>Añade el log como una propiedad de la clase e inicialízalo en el constructor, con el nombre del canal <code>VideoclubLogger</code>.</li>
+<li>Se debe almacenar en <code>logs/videoclub.log</code> mostrando todos los mensajes desde <em>debug</em>.</li>
+<li>Antes de lanzar cualquier excepción, debe escribir un log de tipo <em>warning</em>.</li>
+<li>Sustituir los <code>echo</code> que haya en el código, que ahora pasarán por el log con el nivel info, a excepción del método <code>muestraResumen</code> que seguirá haciendo <code>echo</code>.</li>
+</ul>
+<p><strong>Actividad 513</strong></p>
+<p>Vuelve a hacer lo mismo que en el ejercicio anterior, pero ahora con la clase <code>Videoclub</code>. Además:</p>
+<ul>
+<li>Siempre que se llame a un método del log, se le pasará como segundo parámetro la información que dispongamos.</li>
+<li>Ejecuta el archivo de prueba y comprueba que el log se rellena correctamente.</li>
+</ul>
+<p><strong>Actividad 514</strong></p>
+<p>Vamos a refactorizar el código común de inicialización de <em>Monolog</em> que tenemos repetidos en los constructores a una factoría de <em>Monolog</em>, la cual colocaremos en <code>\Dwes\Videoclub\Util\LogFactory</code>. Comprueba que sigue funcionando correctamente.</p>
+<p><strong>Actividad 515</strong></p>
+<p>Modifica la factoría para que devuelva <code>LogInterface</code> y comprueba que sigue funcionando. Sube los cambios a GitHub con la etiqueta <code>v0.515</code>.</p>
+<h1 id="phpdocumentor">phpDocumentor</h1>
+<p><strong>Actividad 521</strong></p>
+<p>Comprueba que en el contenedor de Docker funciona <em>phpDocumentor</em>. Ejecuta phpdoc sobre tu proyecto <em>Monolog</em> y comprueba el api que se crea. Comenta tanto la clase como los métodos, y posteriormente, vuelve a ejecutar phpdoc.</p>
+<p><strong>Actividad 522</strong></p>
+<p>Documenta el proyecto <em>Videoclub</em>, y genera la documentación. Empieza por las clases de <code>Soporte</code> y sus hijos. Comprueba el resultado. Luego sigue con <code>Cliente</code> y finalmente <code>Videoclub</code>.</p>
+<h1 id="web-scraping">Web Scraping</h1>
+<p><strong>Actividad 531</strong></p>
+<p>A partir de los datos de <a href="https://www.seleccionbaloncesto.es/inicio.aspx">http://www.seleccionbaloncesto.es</a>, calcula la altura y edad media del equipo de baloncesto masculino. Observa que tienes los datos dentro de una tabla debajo de las noticias.</p>
+<p><strong>Actividad 532</strong></p>
+<p>Volviendo al Videoclub, en <code>Soporte</code> añade una propiedad llamada <code>metacritic</code> para almacenar la URL de cada soporte. A continuación, modifica los métodos <code>incluirXXX</code> de <code>Videoclub</code> para que admitan como primer parámetro dicha URL. Tras ello, modifica el fichero <code>inicio3.php</code> para pasarle la URL de cada soporte (para ello deberás consultarlos en Metacritic haciendo búsquedas manuales). Por ejemplo, en el caso de la película Cazafantasmas, su URL es https://www.metacritic.com/movie/ghostbusters.</p>
+<p><strong>Actividad 533</strong></p>
+<p>Finalmente, añade un método abstracto en <code>Soporte</code> llamado <code>getPuntuacion</code>, que haciendo uso de <em>Web Scraping</em> se conecte a Metacritic y obtenga su puntuación. Modifica <code>inicio3.php</code> para obtener todos los alquileres de un cliente mediante <code>getAlquileres() : array</code>, y para cada uno de ellos, además del título, muestra su puntuación.</p>
+<h1 id="phpunit">phpUnit</h1>
+<p><strong>Actividad 541</strong></p>
+<p>A partir de la clase <code>HolaMonolog</code>, modifica los métodos para que además de escribir en en log, devuelvan el saludo como una cadena.</p>
+<p>Crea la clase <code>HolaMonologTest</code> y añade diferentes casos de prueba para comprobar que los saludos y despedidas son acordes a la hora con la que se crea la clase.</p>
+<p><strong>Actividad 542</strong></p>
+<p>Vamos a simular <em>Test Driven Development</em>. Queremos que nuestra aplicación almacene los últimos tres saludos que ha realizado. Para ello:</p>
+<ul>
+<li>Crea las prueba necesarias (invoca al método <code>saludar</code> varias veces y llama al método que te devuelva los saludos almacenados)</li>
+<li>Implementa el código para pasar las pruebas</li>
+<li>Refactoriza el código</li>
+</ul>
+<p><strong>Actividad 543</strong></p>
+<p>Crea una nueva prueba que utilice proveedores de datos para comprobar esta última funcionalidad, pasándole:</p>
+<ul>
+<li>Un saludo.</li>
+<li>Tres saludos.</li>
+<li>Cuatro saludos.</li>
+</ul>
+<p><strong>Actividad 544</strong></p>
+<p>¿Recuerdas que si la hora es negativa o superior a 24 escribíamos en el log un <em>warning</em>? Ahora debe lanzar una excepción de tipo <code>InvalidArgumentException</code> (como la excepción forma para de PHP, hay que poner su FQN: <code>\InvalidArgumentException</code>). Vuelve a aplicar TDD y completa tus casos de prueba.</p>
+<p><strong>Actividad 545</strong></p>
+<p>Comenta la última prueba realizada (la comprobación de las excepciones) y realiza un informe de cobertura de pruebas. Analiza los resultados obtenidos. Elimina los últimos comentarios sobre la última prueba y vuelve a generar y analizar el informe de cobertura.</p>
+<h1 id="proyecto-videoclub-v">proyecto Videoclub V</h1>
+<p>El objetivo de los siguientes ejercicios es conseguir de manera incremental una cobertura de pruebas superior al 95%.</p>
+<p><strong>Actividad 551</strong></p>
+<p>Crea pruebas dentro de la carpeta <code>tests</code> para las clases <code>Soporte</code>, <code>CintaVideo</code>, <code>Dvd</code> y <code>Juego</code>. Recuerda respetar el espacio de nombres. Los métodos <code>muestraResumen</code>, tras hacer echo de los mensajes, deben devolver una cadena con el propio mensaje.</p>
+<p><strong>Actividad 552</strong></p>
+<p>Crea pruebas para la clase <code>Cliente</code>, aprovechando todo el código que teníamos para comprobar la funcionalidad. Utiliza proveedores de datos para añadir conjuntos de datos mayores que los empleados. Comprueba que funciona con diferentes cupos, que al intentar alquilar un soporte marcado como ya alquilado debe lanzar una excepción, que no coincidan los ids de los soportes, etc...</p>
+<p><strong>Actividad 553</strong></p>
+<p>Crea las pruebas para la clase <code>Videoclub</code>. Ten en cuenta los últimos métodos añadidos que permitían alquilar y devolver soportes, tanto de manera individual como mediante un array.</p>
+<p><strong>Actividad 554</strong></p>
+<p>Crea el informe de cobertura. Una vez creado, analiza los datos de cobertura (&gt;= 90%) y comprueba el valor de CRAP, de manera que siempre sea &lt;= 5. En caso de no cumplirse, crea nuevos casos de prueba y/o refactoriza el código de tu aplicación.</p>
+<p>Sube los cambios a GitHub con la etiqueta <code>v0.554</code>.</p>
+<h1 id="ampliacion">ampliación</h1>
+<p><strong>Actividad 561</strong></p>
+<p>Queremos que en <code>Videoclub</code>, cuando un cliente no existe (tanto al alquilar como al devolver) se lance una nueva excepción: <code>ClienteNoExisteException</code>. Además, dado el número creciente de excepciones, queremos mover las excepciones al namespace <code>Dwes\Videoclub\Exception</code>.</p>
+<p>Siguiendo TDD, primero crea las pruebas, y luego modifica el código de aplicación.</p>
+<p>Vuelve a generar el informe de cobertura y comprueba la calidad de nuestras pruebas.</p>
+<p><strong>Actividad 562</strong></p>
+<p>¿Nadie se ha dado cuenta que en los Dvd no estamos almacenando su duración? Haz todos los cambios necesarios, primero en las pruebas y luego en el código.</p>
+<p><strong>Actividad 563</strong></p>
+<p>Tras años luchando contra la tecnología, decidimos introducir los Blu-ray en nuestra empresa. Hemos decido que <code>Bluray</code> herede de <code>Soporte</code>. Además del <code>título</code> y la <code>duracion</code>, nos interesa almacenar si <code>es4k</code>. Haz todos los cambios necesarios, primero en las pruebas y luego en el código.</p>
+<p>Sube los cambios a GitHub con la etiqueta <code>v0.563</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

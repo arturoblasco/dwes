@@ -1,0 +1,971 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ud08 Laravel 5 FormulariosYValidacion - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#definicion-y-uso-de-formularios" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ud08 Laravel 5 FormulariosYValidacion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud0101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 3 PHP Orientado a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-y-envio-de-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación y envío de formularios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizaciones-y-borrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizaciones y borrados
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<p>unit: unidad didáctica 8
+   title: Laravel - formularios y validación
+   language: ES
+   author: Arturo Blasco
+   subject: Desarrollo Web en Entorno Servidor
+   keywords: [DWES, 2023, PHP, Laravel]
+   IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+   header: ${unit}: ${title} - ${subject} (versión: ${today})
+   footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}|${pageCount}
+   typora-root-url:${filename}/../
+   typora-copy-images-to:${filename}/../assets</p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#definicion-y-uso-de-formularios">definición y uso de formularios</a><ul>
+<li><a href="#creacion-y-envio-de-formularios">Creación y envío de formularios</a></li>
+<li><a href="#actualizaciones-y-borrados">Actualizaciones y borrados</a></li>
+</ul>
+</li>
+<li><a href="#validacion-de-formularios">Validación de formularios</a><ul>
+<li><a href="#ejemplo-de-validacion">Ejemplo de validación</a></li>
+<li><a href="#utilizar-form-requests-para-validaciones-mas-complejas">Utilizar form requests para validaciones más complejas</a></li>
+<li><a href="#mostrar-mensajes-de-error">Mostrar mensajes de error</a></li>
+<li><a href="#recordar-valores-enviados">Recordar valores enviados</a></li>
+</ul>
+</li>
+<li><a href="#bibliografia">bibliografia</a></li>
+</ul>
+</div>
+<blockquote>
+<p>El uso de estos materiales está sujeto a una licencia Creative Commons <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>.</p>
+<p>Material extraído de https://nachoiborraies.github.io/laravel/</p>
+</blockquote>
+<h1 id="definicion-y-uso-de-formularios">definición y uso de formularios</h1>
+<p>El envío de formularios en Laravel implica, por un lado, definir un formulario, empleando HTML sencillo junto con algunas opciones ofrecidas por Blade. Por otra parte, debemos recoger los datos enviados por el formulario en algún método de algún controlador, y procesarlos adecuadamente.</p>
+<h2 id="creacion-y-envio-de-formularios">Creación y envío de formularios</h2>
+<p>Si definimos un formulario en una vista, se define con los conceptos que ya sabemos de HTML. Como único añadido, en el campo <code>action</code> del formulario podemos utilizar Blade y la función <code>route</code> para indicar el nombre de ruta a la que queremos enviar el formulario.</p>
+<p>Veamos, por ejemplo, cómo definir un formulario para dar de alta nuevos libros en nuestro proyecto de <em>biblioteca</em>. Creamos una vista llamada <code>create.blade.php</code> en la subcarpeta <code>resources/views/libros</code>, con un contenido como éste:</p>
+<p>Si definimos un formulario en una vista, se define con los conceptos que ya sabemos de HTML. Como único añadido, en el campo <code>action</code> del formulario podemos utilizar Blade y la función <code>route</code> para indicar el nombre de ruta a la que queremos enviar el formulario.</p>
+<p>Veamos, por ejemplo, cómo definir un formulario para dar de alta nuevos libros en nuestro proyecto de <em>biblioteca</em>. Creamos una vista llamada <code>create.blade.php</code> en la subcarpeta <code>resources/views/libros</code>, con un contenido como éste:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">@extends(&#39;plantilla&#39;)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x">@section(&#39;titulo&#39;, &#39;Nuevo libro&#39;)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="x">@section(&#39;contenido&#39;)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="x">  &lt;h1&gt;Nuevo libro&lt;/h1&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="x">  &lt;form action=&quot;{{ route(&#39;libros.store&#39;) }}&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="x">    &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="x">       &lt;label for=&quot;titulo&quot;&gt;Título:&lt;/label&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="x">       &lt;input type=&quot;text&quot; class=&quot;form-control&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="x">              name=&quot;titulo&quot; id=&quot;titulo&quot;&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="x">    &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="x">       &lt;label for=&quot;editorial&quot;&gt;Editorial:&lt;/label&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="x">       &lt;input type=&quot;text&quot; class=&quot;form-control&quot; </span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="x">              name=&quot;editorial&quot; id=&quot;editorial&quot;&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="x">    &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="x">       &lt;label for=&quot;precio&quot;&gt;Precio:&lt;/label&gt;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="x">       &lt;input type=&quot;text&quot; class=&quot;form-control&quot; </span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="x">              name=&quot;precio&quot; id=&quot;precio&quot;&gt;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="x">    &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="x">       &lt;label for=&quot;autor&quot;&gt;Autor:&lt;/label&gt;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="x">       &lt;select class=&quot;form-control&quot; name=&quot;autor&quot; id=&quot;autor&quot;&gt;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="x">           @foreach ($autores as $autor)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="x">              &lt;option value=&quot;{{ $autor-&gt;id }}&quot;&gt;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="x">                 {{ $autor-&gt;nombre }}</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="x">              &lt;/option&gt;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="x">           @endforeach</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="x">       &lt;/select&gt;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="x">    &lt;input type=&quot;submit&quot; class=&quot;btn btn-dark btn-block&quot;</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="x">           name=&quot;enviar&quot; value=&quot;Enviar&quot; &gt;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="x">  &lt;/form&gt;</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="x">@endsection</span>
+</code></pre></div></td></tr></table></div>
+<p>Un segundo añadido más que tenemos que tener en cuenta es que Laravel por defecto protege de ataques XSS (<em>Cross Site Scripting</em>) de suplantación de identidad, por lo que obtendremos un error de tipo 419 si enviamos un formulario no validado. Para solucionar este problema, basta con utilizar la directiva <code>@csrf</code> en el formulario, que añade un campo oculto con un token de validación:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">&lt;form action=&quot;{{ route(&#39;libros.store&#39;) }}&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="x">    @csrf</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="x">    // ...</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="x">&lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>En cualquier caso, este formulario se enviará a la ruta indicada. Dado que en nuestro proyecto hemos definido un conjunto de recursos como éste en <code>routes/web.php</code>, la ruta ya está automáticamente definida como <code>libros.store</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">Route::resource(&#39;libros&#39;, LibroController::class);</span>
+</code></pre></div></td></tr></table></div>
+<p>De lo contrario, tendríamos que añadir a mano la ruta correspondiente para recoger el formulario.</p>
+<p>Además, debemos redefinir los métodos involucrados en el controlador: por un lado, el método <code>create</code> deberá renderizar el formulario anterior. Como necesitamos mostrar el listado de autores para asociar uno al libro, le pasaremos a la vista anterior el listado de autores como parámetro (recuerda incluir el modelo <code>Autor</code> con <code>use</code>, si no lo has hecho antes):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">public function create()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="x">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="x">  $autores = Autor::get();</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="x">  return view(&#39;libros.create&#39;, compact(&#39;autores&#39;));</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Por otra parte, el método <code>store</code> se encargará de recoger los datos de la petición a través del parámetro <code>Request</code> de dicho método. Disponemos de un método <code>get</code> para acceder a cada campo del formulario a partir de su nombre:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">public function store(Request $request)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="x">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x">  $libro = new Libro();</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="x">  $libro-&gt;titulo = $request-&gt;get(&#39;titulo&#39;);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="x">  $libro-&gt;editorial = $request-&gt;get(&#39;editorial&#39;);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="x">  $libro-&gt;precio = $request-&gt;get(&#39;precio&#39;);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="x">  $libro-&gt;autor()-&gt;associate(Autor::findOrFail($request-&gt;get(&#39;autor&#39;)));</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="x">  $libro-&gt;save();</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="x">  return redirect()-&gt;route(&#39;libros.index&#39;);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Podemos emplear también algún método auxiliar de la petición, como <code>has</code>, que comprueba si existe un campo con un nombre determinado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">public function store(Request $request)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="x">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="x">  if($request-&gt;has(&#39;titulo&#39;))</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="x">  {</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="x">    // ...</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="x">  }</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Para poder lanzar esta operación de inserción, necesitamos algún enlace que muestre el formulario. Podemos añadir una nueva opción en el menú superior de navegación (archivo <code>resources/views/partials/nav.blade.php</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">&lt;nav class=&quot;navbar navbar-expand-lg navbar-dark bg-secondary&quot;&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="x">  // ...</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="x">  &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="x">     &lt;ul class=&quot;navbar-nav&quot;&gt;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="x">         ...</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="x">         &lt;li class=&quot;{{ setActivo(&#39;libros.create&#39;) }} nav-item&quot;&gt;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="x">             &lt;a class=&quot;nav-link&quot; href=&quot;{{ route(&#39;libros.create&#39;) }}&quot;&gt;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="x">                Nuevo libro</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="x">             &lt;/a&gt;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="x">         &lt;/li&gt;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="x">     &lt;/ul&gt;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="x">  &lt;/div&gt;</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="x">&lt;/nav&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="actualizaciones-y-borrados">Actualizaciones y borrados</h2>
+<p>Por defecto, el atributo <code>method</code> de un formulario sólo admite los valores GET o POST. Si queremos enviar un formulario de actualización o borrado, éste debe ir asociado a los métodos PUT o DELETE, respectivamente. Para esto, podemos emplear dentro del mismo formulario la directiva <code>@method</code>, indicando el nombre del método que queremos usar:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">&lt;form ...&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="x">  @csrf</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="x">  @method(&#39;PUT&#39;)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="x">  // ...</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="x">&lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Por ejemplo, para borrar libros en nuestra aplicación de biblioteca, podríamos añadir un formulario como este en la ficha del libro (vista <code>resources/views/libros/show.blade.php</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">&lt;form action=&quot;{{ route(&#39;libros.destroy&#39;, $libro-&gt;id) }}&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="x">  @csrf</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="x">  @method(&#39;DELETE&#39;)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="x">  &lt;input type=&quot;submit&quot; class=&quot;btn btn-danger&quot; value=&quot;Borrar libro&quot; /&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="x">&lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Observa cómo le pasamos a la ruta el <em>id</em> del libro a borrar, para que le llegue como parámetro al método <code>destroy</code> del controlador. Dentro de este método, buscamos el libro afectado, lo borramos, y mostramos el listado de libros nuevamente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="x">public function destroy($id)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="x">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="x">  $libro = Libro::findOrFail($id);</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="x">  $libro-&gt;delete();</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="x">  return redirect()-&gt;route(&#39;libros.index&#39;);</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="validacion-de-formularios">Validación de formularios</h1>
+<p>Además de aplicar una validación en el cliente a través de HTML5, que también es recomendable, se deben validar los datos en el servidor. Para hacer esto, el propio objeto <code>request</code> proporciona un método llamado <code>validate</code>, al que le pasamos un array con las reglas de validación.</p>
+<h2 id="ejemplo-de-validacion">Ejemplo de validación</h2>
+<p>Por ejemplo, así comprobaríamos que el título y la editorial de los libros de nuestra <em>biblioteca</em> se han enviado, y que el título tiene un tamaño mínimo de 3 caracteres. Además, comprobamos que el precio es un valor numérico real positivo.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="x">public function store()</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="x">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="x">  request()-&gt;validate(</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="x">    [</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="x">       &#39;titulo&#39; =&gt; &#39;required|min:3&#39;,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="x">       &#39;editorial&#39; =&gt; &#39;required&#39;,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="x">       &#39;precio&#39; =&gt; &#39;required|numeric|min:0&#39;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="x">    ]</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="x">  );</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="x">  // ... código para procesar el formulario</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>NOTA</strong>: notar que en varios campos se han añadido dos o más reglas de validación enlazadas por una barra vertical. Para el precio, por ejemplo, se comprueba que se ha enviado, que es numérico y que es mayor o igual que 0. Podéis consultar en la <a href="https://laravel.com/docs/validation">documentación de Laravel</a> sobre otras reglas de validación disponibles, especialmente en el apartado de <em>Available Validation Rules</em>.</p>
+</blockquote>
+<h2 id="utilizar-form-requests-para-validaciones-mas-complejas">Utilizar <em>form requests</em> para validaciones más complejas</h2>
+<p>Si tenemos que validar unos pocos campos, puede ser adecuado llamar al método <code>validate</code> desde el propio método del controlador, pero para formularios más grandes el código puede crecer demasiado.</p>
+<p>Una alternativa que ofrece laravel es crear un <em>form request</em>, una clase adicional que contiene la lógica de validación de una petición. Se crean con el comando <code>php artisan</code>, y la opción <code>make:request</code>, seguida del nombre de la clase a crear:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">php artisan make:request LibroPost</span>
+</code></pre></div></td></tr></table></div>
+<p>Esta clase se almacena por defecto en <code>app/Http/Requests</code>, y contiene un par de métodos predefinidos:</p>
+<ul>
+<li><code>authorize</code>: devuelve un booleano dependiendo de si el usuario actual está autorizado a enviar la petición o no. Para muchos formularios que no requieran autorización previa podemos simplemente devolver <code>true</code>. Será lo que haremos de momento en este formulario.</li>
+<li><code>rules</code>: este es el método que más nos interesa. Devuelve un array de reglas de validación como las que teníamos en el controller, así que movemos ese código aquí:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span>
+<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">public function rules()</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">  return [</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">    &#39;titulo&#39; =&gt; &#39;required|min:3&#39;,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">    &#39;editorial&#39; =&gt; &#39;required&#39;,</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="x">    &#39;precio&#39; =&gt; &#39;required|numeric|min:0&#39;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="x">  ];</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora, en el método del controlador simplemente tenemos que inyectar este <em>form request</em> como parámetro (si observamos la clase que se ha creado, es un subtipo de <code>Request</code>), y usarlo para validar. La validación es automática, es decir, no tenemos que añadir más código al controlador que el objeto inyectado como parámetro, que se encargará de validar la propia petición que contiene a través del método <code>rules</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">public function store(LibroPost $request)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">  // si entramos aquí, el formulario es válido</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="mostrar-mensajes-de-error">Mostrar mensajes de error</h2>
+<p>Si la validación es correcta, se retornará el dato del final de la función, pero si falla algún campo, se volverá a la página del formulario, con la información del error que se haya producido. Podemos acceder desde cualquier lugar de Laravel a la variable <code>$errors</code> con los errores que se hayan producido en una operación determinada. Esta variable tiene un método booleano llamado <code>any</code> que comprueba si hay algún error, y otro método llamado <code>all</code> que devuelve el array de errores producidos. Combinando estos dos métodos con Blade, podemos mostrar el listado de errores de validación antes del formulario, de esta forma:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">@if ($errors-&gt;any())</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">  &lt;ul&gt;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">  @foreach($errors-&gt;all() as $error)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">      &lt;li&gt;{{ $error }}&lt;/li&gt;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">  @endforeach</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">  &lt;/ul&gt;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">@endif</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="x">&lt;form ...&gt;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="x">  @csrf</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="x">  // ...</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="x">&lt;/form&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>También podemos emplear el método <code>first</code> del array de errores para obtener el primer error asociado a un campo, y mostrarlo bajo o sobre el campo en cuestión. Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">&lt;form action=&quot;{{ route(&#39;libros.store&#39;) }}&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">  @csrf</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="x">  &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="x">     &lt;label for=&quot;titulo&quot;&gt;Título:&lt;/label&gt;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="x">     &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;titulo&quot; </span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="x">            id=&quot;titulo&quot;&gt;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="x">     @if ($errors-&gt;has(&#39;titulo&#39;))</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="x">        &lt;div class=&quot;text-danger&quot;&gt;</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="x">           {{ $errors-&gt;first(&#39;titulo&#39;) }}</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="x">        &lt;/div&gt;</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="x">     @endif</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="x">  &lt;/div&gt;</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="x">  // ...</span>
+</code></pre></div></td></tr></table></div>
+<p>Además, podemos <strong>personalizar el mensaje de error</strong> a mostrar, redefiniendo en la clase del <em>form request</em> el método <code>messages</code>. En este método devolvemos un array con el mensaje a mostrar para cada posible error de validación. Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">public function messages()</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="x">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="x">  return [</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="x">     &#39;titulo.required&#39; =&gt; &#39;El título es obligatorio&#39;,</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="x">      // ...</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="x">  ];</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>De forma alternativa, si optamos por validar el formulario en el propio controlador, este array de mensajes se pasa como segundo parámetro en la llamada al método <code>validate</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x">request()-&gt;validate(</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="x">  [</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="x">    &#39;titulo&#39; =&gt; &#39;required|min:3&#39;,</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="x">    &#39;editorial&#39; =&gt; &#39;required&#39;,</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="x">    &#39;precio&#39; =&gt; &#39;required|numeric|min:0&#39;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="x">  ], [</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="x">    &#39;titulo.required&#39; =&gt; &#39;El título es obligatorio&#39;,</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="x">    // ...</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="x">  ]</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="x">);</span>
+</code></pre></div></td></tr></table></div>
+<p>En definitiva, conseguiremos mostrar mensajes de error para los campos que hayan dado errores al validar:</p>
+<p><img src="./assets/ud07_5_errores_validacion.png" alt="img" style="zoom: 60%;" /></p>
+<h2 id="recordar-valores-enviados">Recordar valores enviados</h2>
+<p>Un problema derivado de la validación de datos es que, al volver a la página del formulario tras un error, los campos que ya se han examinado hasta el error, aunque fueran correctos, han perdido el valor que tenían, y puede resultar engorroso tenerlos que rellenar otra vez. Para mantener su antiguo valor, podemos añadir el atributo <code>value</code> en cada campo del formulario, y utilizar con Blade una función llamada <code>old</code>, que permite acceder al anterior valor de un determinado campo, referenciado por su nombre:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">&lt;form action=&quot;{{ route(&#39;libros.store&#39;) }}&quot; method=&quot;POST&quot;&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="x">  @csrf</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="x">  &lt;div class=&quot;form-group&quot;&gt;</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="x">     &lt;label for=&quot;titulo&quot;&gt;Título:&lt;/label&gt;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="x">     &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;titulo&quot; </span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="x">           id=&quot;titulo&quot; value=&quot;{{ old(&#39;titulo&#39;) }}&quot;&gt;</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="x">     @if ($errors-&gt;has(&#39;titulo&#39;))</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="x">        &lt;div class=&quot;text-danger&quot;&gt;</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="x">            {{ $errors-&gt;first(&#39;titulo&#39;) }}</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="x">        &lt;/div&gt;</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="x">     @endif</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="x">  &lt;/div&gt;</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14"></a>
+<a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="x">  // ...</span>
+</code></pre></div></td></tr></table></div>
+<p>En el caso de áreas de texto, usamos esta expresión dentro del área (es decir, entre la etiqueta de apertura y la de cierre del <em>textarea</em>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="x">&lt;textarea name=&quot;mensaje&quot; placeholder=&quot;Mensaje...&quot;&gt;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="x">  {{ old(&#39;mensaje&#39;) }}</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="x">&lt;/textarea&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="bibliografia">bibliografia</h1>
+<ul>
+<li><a href="https://nachoiborraies.github.io/laravel/">Nacho Iborra Baeza</a>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

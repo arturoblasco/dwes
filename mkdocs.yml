@@ -1,0 +1,70 @@
+# Nom del lloc
+site_name: Desarrollo Web en Entorno Servidor (DWES)
+
+# Carpeta amb el documents font
+docs_dir: 'md'
+
+# Carpeta on es generarà el lloc web (mkdocs build)
+site_dir: 'docs'
+
+# Adreça on s'executa el server local (mkdocs serve)
+dev_addr: localhost:4001
+
+# Navegació dels documents
+# nav:
+#   - Títol: Document.md
+nav:
+  - Inicio: index.md
+  - UD 1 Arquitectura Web: ud0101.md
+  - UD 2 Lenguaje PHP: default.md
+  - UD 3 PHP Orientado a Objetos: default.md
+  - UD 4 Programación Web: default.md
+  - UD 5 Herramientas Web: default.md
+  - UD 6 Acceso a Base de Datos: default.md
+  - UD 7 Framework Laravel: default.md
+  - UD 8 Laravel avanzado: default.md
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list         # permet afegir atributs a les etiquetes html
+  # pymdownx és una col·leccio per escritura tècnica. S'instal·la per defecte
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      linenums: true
+      anchor_linenums: true
+      auto_title: true
+
+# Tema a triar
+theme:
+  name: material  # selecció del tema
+  logo: logo3.png
+  palette:
+   # Boto que canvia a mode oscur
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Canvia a mode oscur
+    # Botó que canvia a mode clar
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Canvia a mode normal
+  features:
+    # utilitats de copia de codi
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - navigation.footer       # footer de la pagina, amb navegació
+    - navigation.top    # boto flotant de tornar a dalt
+
+# Altres afegits
+plugins:
+  - search      # plugin del quadre cerca
+  #- mkdocs-awesome-pages-plugin  # per a caixe awesomebox
+  #- pdf-export  # plugin per exportar a pdf
+  #- mkdocs-pdf-export-plugin
+
+extra:
+  favicon: favicon.ico
