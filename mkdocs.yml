@@ -15,7 +15,7 @@ dev_addr: localhost:4001
 #   - Títol: Document.md
 nav:
   - Inicio: index.md
-  - UD 1 Arquitectura Web: ud0101.md
+  - UD 1 Arquitectura Web: ud01/ud0101.md
   - UD 2 Lenguaje PHP: default.md
   - UD 3 PHP Orientado a Objetos: default.md
   - UD 4 Programación Web: default.md

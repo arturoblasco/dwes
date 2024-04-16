@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../default/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Ud0101 - Desarrollo Web en Entorno Servidor (DWES)</title>
+        <title>UD 1 Arquitectura Web - Desarrollo Web en Entorno Servidor (DWES)</title>
       
     
     
@@ -103,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ud0101
+              UD 1 Arquitectura Web
             
           </span>
         </div>
@@ -238,10 +242,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ud0101.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -250,6 +274,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-instalar-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      paso 1: Instalar Docker
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -423,7 +485,7 @@
         <li class="md-nav__item">
   <a href="#introduccion" class="md-nav__link">
     <span class="md-ellipsis">
-      introducción
+      Introducción
     </span>
   </a>
   
@@ -453,48 +515,8 @@
                   
 
 
-<hr />
-<p>unit: unidad didáctica 01
-title: Docker - Manual de Supervivencia
-language: ES
-author: Arturo Blasco
-subject: Desarrollo Web en Entorno Servidor
-keywords: [DWES, 2023, PHP]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${unit}: ${title} - ${subject} (versión: ${today})
-footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}|${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets</p>
-<hr />
-<div class="toc">
-<ul>
-<li><a href="#instalar-docker">instalar Docker</a><ul>
-<li><a href="#introduccion">introducción</a></li>
-<li><a href="#paso-1-instalar-docker">paso 1: Instalar Docker</a></li>
-</ul>
-</li>
-<li><a href="#paso-2-instalar-docker-compose">paso 2: Instalar Docker Compose</a><ul>
-<li><a href="#instalar-docker-compose">instalar Docker Compose</a></li>
-<li><a href="#configurar-un-archivo-docker-composeyml">configurar un archivo docker-compose.yml</a></li>
-<li><a href="#ejecutar-docker-compose">ejecutar Docker Compose</a></li>
-<li><a href="#parar-y-eliminar-imagen-base">parar y Eliminar imagen base</a><ul>
-<li><a href="#limpieza-del-entorno-docker-prune">limpieza del entorno Docker: ¡prune!</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#paso-3-instalar-docker-desktop">paso 3. Instalar Docker Desktop</a></li>
-<li><a href="#paso-4-instalar-docker-portainer">paso 4. Instalar Docker Portainer</a><ul>
-<li><a href="#instalar">instalar</a></li>
-<li><a href="#lanzar">lanzar</a></li>
-<li><a href="#funciona-como-un-docker">funciona como un docker</a></li>
-</ul>
-</li>
-<li><a href="#bibliografia">bibliografía</a></li>
-</ul>
-</div>
-<h1 id="instalar-docker">instalar Docker</h1>
-<h2 id="introduccion">introducción</h2>
+<h1 id="instalar-docker">Instalar Docker</h1>
+<h2 id="introduccion">Introducción</h2>
 <p><a href="https://www.docker.com/">Docker</a> es una aplicación que simplifica el proceso de administración de procesos de aplicación en <em>contenedores</em>. Los contenedores le permiten ejecutar sus aplicaciones en procesos con aislamiento de recursos. Son similares a las máquinas virtuales, pero los contenedores son más portátiles, más flexibles con los recursos y más dependientes del sistema operativo host.</p>
 <p>Para hallar una introducción detallada a los distintos componentes de un contenedor de Docker, consulte <a href="https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components">El ecosistema de Docker: Introducción a los componentes comunes</a>.</p>
 <p>En este tutorial, instalará y usará Docker Community Edition (CE) en Ubuntu 20.04. Instalará Docker, trabajará con contenedores e imágenes e introducirá una imagen en un repositorio de Docker.</p>
@@ -879,6 +901,44 @@ typora-copy-images-to:${filename}/../assets</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Inicio">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Inicio
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../default/" class="md-footer__link md-footer__link--next" aria-label="Next: UD 2 Lenguaje PHP">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                UD 2 Lenguaje PHP
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
