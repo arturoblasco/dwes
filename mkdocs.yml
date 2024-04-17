@@ -28,9 +28,15 @@ nav:
      - Actividades: ud01/ud01ac.md
      - Referencias: ud01/ud0109.md
   - UD 2 Lenguaje PHP:
-     - 2.1 : ud02/ud0201.md
+     - 2.1 Introducción: ud02/ud0201.md
+     - 2.2 PHP: ud02/ud0202.md
+     - 2.3 Operadores: ud02/ud0203.md
+     - 2.4 Arrays: ud02/ud0204.md
+     - 2.5 Funciones: ud02/ud0205.md
+     - 2.6 Funciones predefinidas: ud02/ud0206.md
+     - 2.7 Expresiones regulares: ud02/ud0207.md
      - Actividades: ud02/ud02ac.md
-     - Referencias: ud02/ud0201.md
+     - Referencias: ud02/ud0208.md
   - UD 3 PHP Orientado a Objetos: default.md
   - UD 4 Programación Web: default.md
   - UD 5 Herramientas Web: default.md

@@ -1,0 +1,1571 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud0205/">
+      
+      
+        <link rel="next" href="../ud0207/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>2.6 Funciones predefinidas - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#funciones-predefinidas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.6 Funciones predefinidas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo3.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0102/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Cliente/servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0103/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Arquitectura de 3 capas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0104/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 MVC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0105/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Decisiones de diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0106/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0107/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Puesta en marcha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0108/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Manual Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01de/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descargas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0109/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Operadores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Funciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.6 Funciones predefinidas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Funciones predefinidas
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cadenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadenas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cadenas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operaciones básicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparando-y-buscando" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparando y buscando
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trabajando-con-subcadenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trabajando con subcadenas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matematicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matemáticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de datos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Expresiones regulares
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud02ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0208/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 3 PHP Orientado a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cadenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadenas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cadenas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operaciones básicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparando-y-buscando" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparando y buscando
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trabajando-con-subcadenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trabajando con subcadenas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matematicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matemáticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de datos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="funciones-predefinidas">Funciones predefinidas</h1>
+<p>El lenguaje ofrece un abanico de funciones ya definidas, agrupadas por su funcionalidad: https://www.php.net/manual/es/funcref.php.</p>
+<h2 id="cadenas">Cadenas</h2>
+<p>Ya hemos visto que se pueden crear con comillas simples (<code>''</code>, sin interpretación) o comillas dobles (<code>""</code>, interpretan el contenido y las secuencias de escape <code>\n</code>, <code>\t</code>, <code>\$</code>, <code>{</code>, … - <em>magic quotes</em>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="s2">&quot;Me llamo </span><span class="si">$nombre</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="s2">&quot;Son 30 </span><span class="si">{</span><span class="nv">$moneda</span><span class="si">}</span><span class="s2">s&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Se acceden a los caracteres como si fuera un array.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="nv">$cadena</span> <span class="o">=</span> <span class="nx">“Yo</span> <span class="nx">soy</span> <span class="nx">Batman”</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="nv">$ygriega</span> <span class="o">=</span> <span class="nv">$cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Además de echo, podemos mostrar las cadenas mediante la función <code>printf</code>. Esta función viene heredada del lenguaje C, y en la cadena se indica el tipo de dato a formatear y genera una salida formateada. Si queremos guardar el resultado en una variable, podemos utilizar <code>sprintf</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nv">$num</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Larry Bird&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;%s llevaba el número %d&quot;</span><span class="p">,</span> <span class="nv">$nombre</span><span class="p">,</span> <span class="nv">$num</span><span class="p">);</span> <span class="c1">// %d -&gt; número decimal, %s -&gt; string</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="nv">$frase</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%s llevaba el número %d&quot;</span><span class="p">,</span> <span class="nv">$nombre</span><span class="p">,</span> <span class="nv">$num</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="k">echo</span> <span class="nv">$frase</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Tenemos muchos más ejemplos en https://www.w3schools.com/php/func_string_printf.asp</p>
+<h3 id="operaciones-basicas">Operaciones básicas</h3>
+<p>Todas las funciones se pueden consultar en https://www.php.net/manual/es/ref.strings.php</p>
+<p>Las más importantes son:</p>
+<ul>
+<li><code>strlen</code>: obtiene la longitud de una cadena y devuelve un número entero.</li>
+<li><code>substr</code>: devuelve una subcadena de la cadena original.</li>
+<li><code>str_replace</code>: reemplaza caracteres en una cadena.</li>
+<li><code>strtolower</code> y <code>strtoupper</code>: Transforman una cadena de caracteres en la misma cadena en minúsculas o mayúsculas respectivamente.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot;El caballero oscuro&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="nv">$tam</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="k">echo</span> <span class="s2">&quot;La longitud de &#39;</span><span class="si">$cadena</span><span class="s2">&#39; es: </span><span class="si">$tam</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="nv">$oscuro</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span> <span class="c1">// desde 13 al final</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="nv">$caba</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// desde 3, 4 letras</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="nv">$katman</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="nv">$cadena</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$oscuro</span><span class="s2"> </span><span class="si">$caba</span><span class="s2"> ahora es </span><span class="si">$katman</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="k">echo</span> <span class="s2">&quot;Grande &quot;</span><span class="o">.</span><span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si queremos trabajar con caracteres ASCII de forma individual, son útiles las funciones:</p>
+<ul>
+<li><code>chr</code>: obtiene el carácter a partir de un ASCII.</li>
+<li><code>ord</code>: obtiene el ASCII de un carácter.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span>
+<span class="normal"><a href="#__codelineno-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">function</span> <span class="nf">despues</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$letra</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="nv">$asciiLetra</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$letra</span><span class="p">);</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$asciiLetra</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="k">echo</span> <span class="nx">despues</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si queremos limpiar cadenas, tenemos las funciones:</p>
+<ul>
+<li><code>trim</code>: elimina los espacios al principio y al final.</li>
+<li><code>ltrim</code> / <code>rtrim</code> o <code>chop</code>: Elimina los espacios iniciales / finales de una cadena.</li>
+<li><code>str_pad</code>: rellena la cadenas hasta una longitud especificada y con el carácter o caracteres especificados.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot; Programando en PHP &quot;</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="nv">$limpia</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span> <span class="c1">// &quot;Programando en PHP&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="nv">$sucia</span> <span class="o">=</span> <span class="nb">str_pad</span><span class="p">(</span><span class="nv">$limpia</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span> <span class="c1">// &quot;Programando en PHP.....&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="comparando-y-buscando">Comparando y buscando</h3>
+<p>La comparación de cadenas puede ser con conversión de tipos mediante <code>==</code> o estricta con <code>===</code>. También funcionan los operadores &lt; y &gt; si ambas son cadenas.</p>
+<p>Al comparar cadenas con valores numéricos podemos utilizar:</p>
+<ul>
+<li><code>strcmp</code>: 0 iguales, &lt;0 si <code>a&lt;b</code> o &gt;0 si <code>a&gt;b</code>.</li>
+<li><code>strcasecmp</code>: las pasa a minúsculas y compara.</li>
+<li><code>strncmp</code> / <code>strncasecmp</code>: compara los N primeros caracteres.</li>
+<li><code>strnatcmp</code>: comparaciones naturales.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="nv">$frase1</span> <span class="o">=</span> <span class="s2">&quot;Alfa&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="nv">$frase2</span> <span class="o">=</span> <span class="s2">&quot;Alfa&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="nv">$frase3</span> <span class="o">=</span> <span class="s2">&quot;Beta&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="nv">$frase4</span> <span class="o">=</span> <span class="s2">&quot;Alfa5&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="nv">$frase5</span> <span class="o">=</span> <span class="s2">&quot;Alfa10&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase1</span> <span class="o">==</span> <span class="nv">$frase2</span> <span class="p">);</span> <span class="c1">// true</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase1</span> <span class="o">===</span> <span class="nv">$frase2</span> <span class="p">);</span> <span class="c1">// true</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase1</span><span class="p">,</span> <span class="nv">$frase2</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 0</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strncmp</span><span class="p">(</span><span class="nv">$frase1</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 0</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase2</span> <span class="o">&lt;</span> <span class="nv">$frase3</span> <span class="p">);</span> <span class="c1">// true</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase2</span><span class="p">,</span> <span class="nv">$frase3</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// -1</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase4</span> <span class="o">&lt;</span> <span class="nv">$frase5</span> <span class="p">);</span> <span class="c1">// false</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase4</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 4 → f4 &gt; f5</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strnatcmp</span><span class="p">(</span><span class="nv">$frase4</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// -1 → f4 &lt; f5</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si lo que queremos es buscar dentro de una cadena, tenemos:</p>
+<ul>
+<li><code>strpos</code> / <code>strrpos</code>: busca en una cadena y devuelve la posición de la primera/última ocurrencia.</li>
+<li><code>strstr</code> / <code>strchr (alias)</code>: busca una cadena y devuelve la subcadena a partir de donde la ha encontrado.</li>
+<li><code>stristr</code>: ignora las mayúsculas.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="nv">$frase</span> <span class="o">=</span> <span class="s2">&quot;Quien busca encuentra, eso dicen, a veces&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="nv">$pos1</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// encuentra la primera coma</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="nv">$pos2</span> <span class="o">=</span> <span class="nb">strrpos</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// encuentra la última coma</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="nv">$trasComa</span> <span class="o">=</span> <span class="nb">strstr</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// &quot;, eso dicen, a veces&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si queremos averiguar qué contienen las cadenas, tenemos un conjunto de funciones de comprobaciones de tipo, se conocen como las funciones <code>ctype</code> que devuelven un <em>booleano</em>:</p>
+<ul>
+<li><code>ctype_alpha</code> → letras</li>
+<li><code>ctype_alnum</code> → alfanuméricos</li>
+<li><code>ctype_digit</code> → dígitos</li>
+<li><code>ctype_punct</code> → caracteres de puntuación, sin espacios</li>
+<li><code>ctype_space</code> → son espacios, tabulador, salto de línea</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="nv">$prueba1</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="nv">$prueba2</span> <span class="o">=</span> <span class="s2">&quot;hola33&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>    <span class="nv">$prueba3</span> <span class="o">=</span> <span class="s2">&quot;33&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="nv">$prueba4</span> <span class="o">=</span> <span class="s2">&quot;,.()[]&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>    <span class="nv">$prueba5</span> <span class="o">=</span> <span class="s2">&quot; ,.()[]&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>    <span class="k">echo</span> <span class="nb">ctype_alpha</span><span class="p">(</span><span class="nv">$prueba1</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>    <span class="k">echo</span> <span class="nb">ctype_alnum</span><span class="p">(</span><span class="nv">$prueba2</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>    <span class="k">echo</span> <span class="nb">ctype_digit</span><span class="p">(</span><span class="nv">$prueba3</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a>    <span class="k">echo</span> <span class="nb">ctype_punct</span><span class="p">(</span><span class="nv">$prueba4</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="k">echo</span> <span class="nb">ctype_space</span><span class="p">(</span><span class="nv">$prueba5</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// false</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="k">echo</span> <span class="nb">ctype_space</span><span class="p">(</span><span class="nv">$prueba5</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="trabajando-con-subcadenas"><strong>Trabajando con subcadenas</strong></h3>
+<p>Si queremos romper las cadenas en trozos, tenemos:</p>
+<ul>
+<li><code>explode</code>: convierte en array la cadena mediante un separador.</li>
+<li><code>implode</code> / <code>join</code>: pasa un array a cadena con un separador.</li>
+<li><code>str_split</code>/ <code>chunk_split</code>: pasa una cadena a una array/cadena cada X caracteres.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="nv">$frase</span> <span class="o">=</span> <span class="s2">&quot;Quien busca encuentra, eso dicen, a veces&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="nv">$partes</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="nv">$frase</span><span class="p">);</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>    <span class="c1">// SALIDA: [&quot;Quien busca encuentra&quot;,&quot;eso dicen&quot;,&quot;a veces&quot;]</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>    <span class="nv">$ciudades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Elche&quot;</span><span class="p">,</span> <span class="s2">&quot;Aspe&quot;</span><span class="p">,</span> <span class="s2">&quot;Alicante&quot;</span><span class="p">];</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>    <span class="nv">$cadenaCiudades</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="nv">$ciudades</span><span class="p">);</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="c1">// SALIDA: &quot;Elche&gt;Aspe&gt;Alicante&quot;;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>    <span class="nv">$partes3cadena</span> <span class="o">=</span> <span class="nb">chunk_split</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>    <span class="c1">// SALIDA: un string</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>    <span class="c1">// &quot;Qui en bus ca enc uen tra , e so dic en, a vec es &quot;</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a>    <span class="nv">$partes3array</span> <span class="o">=</span> <span class="nb">str_split</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a>    <span class="c1">// SALIDA: un array</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a>    <span class="c1">// [&quot;Qui&quot;, &quot;en &quot;, &quot;bus&quot;, &quot;ca &quot;, &quot;enc&quot;, …]</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si queremos trabajar con tokens:</p>
+<ul>
+<li><code>strtok(cadena, separador)</code>.</li>
+<li>y dentro del bucle: <code>strtok(separador)</code>.</li>
+</ul>
+<p>Finalmente, para separarla en base al formato:</p>
+<ul>
+<li><code>sscanf</code>: al revés que <code>sprintf</code>, crea un array a partir de la cadena y el patrón.</li>
+</ul>
+<p>Finalmente, otras operaciones que podemos realizar para trabajar con subcadenas son:</p>
+<ul>
+<li><code>substr_count</code>: número de veces que aparece la subcadena dentro de la cadena.</li>
+<li><code>substr_replace</code>: reemplaza parte de la cadena a partir de su posición, y opcionalmente, longitud.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="nv">$batman</span> <span class="o">=</span> <span class="s2">&quot;Bruce Wayne es Batman&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="nv">$empresa</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$batman</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// Wayne</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="nv">$bes</span> <span class="o">=</span> <span class="nb">substr_count</span><span class="p">(</span><span class="nv">$batman</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">);</span> <span class="c1">// 2</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>    <span class="c1">// Bruce Wayne es camarero</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="nv">$camarero1</span> <span class="o">=</span> <span class="nb">substr_replace</span><span class="p">(</span><span class="nv">$batman</span><span class="p">,</span> <span class="s2">&quot;camarero&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    <span class="nv">$camarero2</span> <span class="o">=</span> <span class="nb">substr_replace</span><span class="p">(</span><span class="nv">$batman</span><span class="p">,</span> <span class="s2">&quot;camarero&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">);</span> <span class="c1">// quita 6 desde el final</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>    <span class="c1">// Bruno es Batman</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>    <span class="nv">$bruno</span> <span class="o">=</span> <span class="nb">substr_replace</span><span class="p">(</span><span class="nv">$batman</span><span class="p">,</span> <span class="s2">&quot;Bruno&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>También disponemos de una serie de funciones que facilitan las codificaciones desde y hacia HTML:</p>
+<ul>
+<li><code>htmlentities</code>: convierte a entidades HTML, por ejemplo, <code>á</code> por <code>&amp;aacute;</code>, <code>ñ</code> por <code>&amp;ntilde;</code>, <code>&lt;</code> por <code>&amp;lt;</code>, etc..</li>
+<li><code>htmlspecialchars</code>: idem pero solo con los caracteres especiales (<code>&amp;</code>, <code>"</code>, <code>'</code>, <code>&lt;</code>, <code>&gt;</code>, ...)</li>
+<li><code>striptags</code>: elimina etiquetas HTML.</li>
+<li><code>nl2br</code>: cambia saltos de línea por <code>&lt;br /&gt;</code>.</li>
+<li><code>rawurlencode</code> / <code>rawurldecode</code>: codifica/decodifica una URL (espacios, ...).</li>
+</ul>
+<p>Estas funciones las utilizaremos en la unidad 4.- Programación Web.</p>
+<h2 id="matematicas">Matemáticas</h2>
+<p>Disponemos tanto de constantes como funciones ya definidas para trabajar con operaciones matemáticas: https://www.php.net/manual/es/ref.math.php</p>
+<ul>
+<li>Constantes ya definidas:</li>
+<li><code>M_PI</code>, <code>M_E</code>, <code>M_EULER</code>, <code>M_LN2</code>, <code>M_LOG2E</code></li>
+<li><code>PHP_INT_MAX</code>, <code>PHP_FLOAT_MAX</code></li>
+<li>Funciones de cálculo:</li>
+<li><code>pow</code>, <code>sqrt</code>, <code>log</code>, <code>decbin</code>, <code>bindec</code>, <code>decoct</code>, <code>dechex</code>, <code>base_convert</code>, <code>max</code>, <code>min</code></li>
+<li>Funciones trigonométricas:</li>
+<li><code>sin</code>, <code>cos</code>, <code>tan</code>, <code>deg2rad</code>, <code>rad2deg</code></li>
+<li>Funciones para trabajar con números aleatorios:</li>
+<li><code>rand</code>, <code>mt_rand</code> (más rápida).</li>
+</ul>
+<p>Aunque la mayoría de ellas son muy específicas de problemas matemáticos / estadísticos, es muy común que tengamos que redondear y/o formatear los cálculos antes de mostrarlos al usuario.</p>
+<p>Mediante la función <code>number_format(numero, cantidadDecimales, separadorDecimales, separadorMiles)</code> podemos pasar números a cadena con decimales y/o separadores de decimales y/o de miles.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>    <span class="nv">$nf</span> <span class="o">=</span> <span class="mf">1234.5678</span><span class="p">;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>    <span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 1,234.57</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;#&quot;</span><span class="p">);</span> <span class="c1">// 1#234M57</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Para redondear, tenemos <code>abs</code> para el valor absoluto y <code>round</code> para redondear, <code>ceil</code> para aproximación por exceso y floor por defecto.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="nv">$num</span> <span class="o">=</span> <span class="mf">7.7</span><span class="p">;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="nv">$siete</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>   <span class="c1">// SALIDA: 7</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>    <span class="nv">$ocho</span> <span class="o">=</span> <span class="nb">ceil</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>   <span class="c1">// SALIDA: 8</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="nv">$otro</span> <span class="o">=</span> <span class="mf">4.49</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>    <span class="nv">$cuatro</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">);</span>   <span class="c1">// SALIDA: 4</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="nv">$cuatrocinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>   <span class="c1">// SALIDA: 4.5</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>    <span class="nv">$cinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$cuatrocinco</span><span class="p">);</span>   <span class="c1">// SALIDA: 5</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="tipos-de-datos">Tipos de datos</h2>
+<p>Finalmente, para realizar conversiones de datos o si queremos trabajar con tipos de datos, tenemos las siguientes funciones:</p>
+<ul>
+<li><code>floatval</code>, <code>intval</code>, <code>strval</code>: devuelve una variable del tipo de la función indicada.</li>
+<li><code>settype</code>: fuerza la conversión.</li>
+<li><code>gettype</code>: obtiene el tipo.</li>
+<li><code>is_int</code>, <code>is_float</code>, <code>is_string</code>, <code>is_array</code>, <code>is_object</code>: devuelve un booleano a partir del tipo recibido.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>    <span class="nv">$uno</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a>    <span class="nv">$unofloat</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">);</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>    <span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a>    <span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_float</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nb">intval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">)));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="cp">?&gt;</span><span class="x">  </span>
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ud0205/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2.5 Funciones">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2.5 Funciones
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ud0207/" class="md-footer__link md-footer__link--next" aria-label="Next: 2.7 Expresiones regulares">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2.7 Expresiones regulares
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
