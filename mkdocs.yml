@@ -15,7 +15,17 @@ dev_addr: localhost:4001
 #   - Títol: Document.md
 nav:
   - Inicio: index.md
-  - UD 1 Arquitectura Web: ud01/ud0101.md
+  - UD 1 Arquitectura Web:
+     - 1.1 Introducción: ud01/ud0101.md
+     - 1.2 Cliente/servidor: ud01/ud0102.md
+     - 1.3 Arquitectura de 3 capas: ud01/ud0103.md
+     - 1.4 MVC: ud01/ud0104.md
+     - 1.5 Decisiones de diseño: ud01/ud0105.md
+     - 1.6 Herramientas: ud01/ud0106.md
+     - 1.7 Puesta en marcha: ud01/ud0107.md
+     - 1.8 Manual Docker: ud01/ud0108.md
+     - Actividades: ud01/ud01ac.md
+     - Referencias: ud01/ud0109.md
   - UD 2 Lenguaje PHP: default.md
   - UD 3 PHP Orientado a Objetos: default.md
   - UD 4 Programación Web: default.md
