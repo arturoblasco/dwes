@@ -24,9 +24,13 @@ nav:
      - 1.6 Herramientas: ud01/ud0106.md
      - 1.7 Puesta en marcha: ud01/ud0107.md
      - 1.8 Manual Docker: ud01/ud0108.md
+     - Descargas: ud01/ud01de.md
      - Actividades: ud01/ud01ac.md
      - Referencias: ud01/ud0109.md
-  - UD 2 Lenguaje PHP: default.md
+  - UD 2 Lenguaje PHP:
+     - 2.1 : ud02/ud0201.md
+     - Actividades: ud02/ud02ac.md
+     - Referencias: ud02/ud0201.md
   - UD 3 PHP Orientado a Objetos: default.md
   - UD 4 Programación Web: default.md
   - UD 5 Herramientas Web: default.md
