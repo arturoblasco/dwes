@@ -1,49 +1,8 @@
----
-    unit: unidad didáctica 4
-    title: Programación Web
-    language: ES
-    author: Arturo Blasco
-    subject: Desarrollo Web en Entornos Servidor
-    keywords: [2023, DWES, PHP]
-    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-    header: ${title} - ${subject} (ver: ${today}) 
-    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-    typora-root-url:${filename}/../
-    typora-copy-images-to:${filename}/../assets
-
----
+# Duración y criterios de evaluación
 
 
 
-**Índice**
-
-[TOC]
-
-# duración y criterios de evaluación
-
-**Duración estimada**: 12 sesiones
-
-------
-
-**Resultado de aprendizaje y criterios de evaluación**:
-
-4. Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.
-
-   a) *Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.*
-
-   b) *Se han utilizado sesiones para mantener el estado de las aplicaciones Web.*
-
-   c) *Se han utilizado cookies para almacenar información en el cliente Web y para recuperar su contenido.*
-
-   d) *Se han identificado y caracterizado los mecanismos disponibles para la autentificación de usuarios.*
-
-   e) *Se han escrito aplicaciones que integren mecanismos de autentificación de usuarios.*
-
-   f) *Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.*
-
-   g) *Se han utilizado herramientas y entornos para facilitar la programación, prueba y depuración del código.*
-
-# variables de servidor
+# Variables de servidor
 
 PHP almacena la información del servidor y de las peticiones HTTP en seis arrays globales:
 
@@ -84,10 +43,6 @@ Otras propiedades relacionadas:
 - `AUTH_TYPE`: tipo de autenticación (p.ej: `Basic`).
 - `REMOTE_USER`: nombre del usuario autenticado.
 
-
-
-
-
 Apache crea una clave para cada cabecera HTTP, en mayúsculas y sustituyendo los guiones por subrayados:
 
 - `HTTP_USER_AGENT`: agente (navegador).
@@ -98,7 +53,7 @@ Apache crea una clave para cada cabecera HTTP, en mayúsculas y sustituyendo los
     echo $_SERVER["HTTP_USER_AGENT"]."<br>"; // Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
 ```
 
-# formularios
+# Formularios
 
 A la hora de enviar un formulario, debemos tener claro cuando usar GET o POST:
 
@@ -140,7 +95,7 @@ Para los siguientes apartados nos vamos a basar en el siguiente ejemplo:
 </form>
 ```
 
-## validación
+## Validación
 
 Respecto a la validación, es conveniente siempre hacer **validación doble**:
 
@@ -155,11 +110,10 @@ Respecto a la validación, es conveniente siempre hacer **validación doble**:
     }
 ```
 
-> **librerías de validación**
->
-> Existen diversas librerías que facilitan la validación de los formularios, como son [respect/validation](https://respect-validation.readthedocs.io/en/latest/) o [particle/validator](https://validator.particle-php.com/en/latest/). Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa.
+!!! note "Librerías de validación"
+    Existen diversas librerías que facilitan la validación de los formularios, como son [respect/validation](https://respect-validation.readthedocs.io/en/latest/) o [particle/validator](https://validator.particle-php.com/en/latest/). Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa.
 
-## parámetros multivalor
+## Parámetros multivalor
 
 Existen elementos HTML que envían varios valores:
 
@@ -193,7 +147,7 @@ De manera que luego al recoger los datos:
     }
 ```
 
-## volviendo a rellenar un formulario
+## Volviendo a rellenar un formulario
 
 Un *sticky form* es un formulario que recuerda sus valores. Para ello, hemos de rellenar los atributos `value ` de los elementos HTML con la información que contenían:
 
@@ -228,7 +182,7 @@ Un *sticky form* es un formulario que recuerda sus valores. Para ello, hemos de 
 <?php } ?>
 ```
 
-## subiendo archivos
+## Subiendo archivos
 
 Se almacenan en el servidor en el array `$_FILES` con el nombre del campo del tipo `file` del formulario.
 
@@ -250,10 +204,6 @@ Configuración en `php.ini`:
 - `max_input_time`: tiempo máximo empleado en la carga (GET/POST y upload → normalmente se configura en 60).
 - `memory_limit`: 128M.
 - `max_execution_time`: tiempo de ejecución de un script (no tiene en cuenta el upload).
-
-
-
-
 
 Veamos de qué información disponemos en el array `$_FILES` para una imagen llamada 'saludo.jpg' subida mediante nuestro formulario:
 
@@ -299,7 +249,7 @@ Cada archivo cargado en `$_FILES` tiene:
 - `type`: tipo MIME.
 - `error`: código de error de la subida, en nuestro caso 0 o UPLOAD_ERR_OK que indica que no se ha producido error alguno. [Códigos de error subida de fichero](https://www.php.net/manual/es/features.file-upload.errors.php).
 
-### filtrado con php de tipos de ficheros subidos con html
+### Filtrado con php de tipos de ficheros subidos con html
 
 Una vez sabemos cómo acceder a la información de los ficheros subidos, vamos a centrarnos en el filtrado de los tipos de ficheros aceptados. Limitar el tipo de fichero subido es altamente recomendable para evitar posibles problemas de seguridad.
 
@@ -318,7 +268,7 @@ Una vez sabemos cómo acceder a la información de los ficheros subidos, vamos a
 ?>
 ```
 
-### escritura de imágenes en carpeta del servidor
+### Escritura de imágenes en carpeta del servidor
 
 Una vez tengamos nuestros ficheros filtrados vamos a proceder a guardarlos de forma permanente en una carpeta de nuestro servidor.
 
@@ -348,7 +298,7 @@ El siguiente ejemplo sería un script alojado en la carpeta raiz de nuestra web,
 - El nombre temporal del fichero subido, que se encuentra en la carpeta de temporales, en `$ruta_fichero_origen`.
 - La ruta completa de destino del fichero, que se compone por una parte de la ruta raiz del script donde estamos trabajando (estamos programando en *index.php*) más el nombre de la carpeta que se ha creado para guardar las imagenes (*/uploads*) y por último el nombre definitivo que tendrá el fichero (*el nombre original del fichero*).
 
-### seguridad de escritura de imagenes en carpeta del servidor
+### Seguridad de escritura de imagenes en carpeta del servidor
 
 Al guardar los archivos subidos por los usuarios en nuestro servidor, puede ocurrir que no filtremos los ficheros introducidos, o guardemos ficheros susceptibles de provocar problemas de seguridad. Para evitar problemas de este tipo lo mejor será incluir en la carpeta donde los almacenamos un pequeño *script htaccess* que evite la ejecución de código:
 
@@ -361,7 +311,7 @@ Con estas dos líneas en un fichero con extensión *.htaccess* evitaremos una po
 
 Y ya está, con esto tendríamos terminado un **formulario para subir imagenes con php** totalmente funcional, con comprobaciones de seguridad para evitar subidas de ficheros inesperadas que puedan provocar problemas o hackeos inesperados.
 
-### extra 1: mostrar imagenes subidas con html
+### Extra 1: mostrar imagenes subidas con html
 
 Mostrar las imagenes guardadas en nuestra carpeta de almacenamiento es sencillo, tan solo deberemos incluir la ruta hasta el fichero en una etiqueta IMG html:
 
@@ -369,7 +319,7 @@ Mostrar las imagenes guardadas en nuestra carpeta de almacenamiento es sencillo,
 <img src="uploads/nombreImagen.jpg" />
 ```
 
-### extra 2: descargar ficheros subidos con html
+### Extra 2: descargar ficheros subidos con html
 
 Si queremos incluir un enlace de descarga para el fichero almacenado,  en vez de utilizar una etiqueta *IMG* usaremos una etiqueta para enlaces con el atributo *HREF* la ruta al fichero:
 
@@ -385,15 +335,12 @@ Evitar la visualización de ficheros es posible gracias a HTML5 y los navegadore
 <a href="uploads/nombreImagen.jpg" download="nombreImagen">Descarga la imagen</a>
 ```
 
-
-
-# cabeceras de respuesta
+# Cabeceras de respuesta
 
 Se devuelven mediante la función `header(cadena)`. Mediante las cabeceras podemos configurar el tipo de contenido, tiempo de expiración, redireccionar el navegador, especificar errores HTTP, etc.
 
-> Debe ser **lo primero a devolver**
->
-> El motivo es que en cuando un programa genera contenido HTML, el servidor genera automáticamente la información de estado y los campos de cabecera y a continuación envía el contenido generado. Si después el programa contiene una instrucción **header()**, se produce un **error** porque las cabeceras ya se han enviado (ni siquiera deja una linea en blanco).
+!!! warning "Debe ser **lo primero a devolver**"
+    El motivo es que en cuando un programa genera contenido HTML, el servidor genera automáticamente la información de estado y los campos de cabecera y a continuación envía el contenido generado. Si después el programa contiene una instrucción **header()**, se produce un **error** porque las cabeceras ya se han enviado (ni siquiera deja una linea en blanco).
 
 ```php
 <?php header("Content-Type: text/plain"); ?>
@@ -401,10 +348,9 @@ Se devuelven mediante la función `header(cadena)`. Mediante las cabeceras podem
 exit(); 
 ```
 
-> **inspeccionando las cabeceras**
->
-> Se puede comprobar en las herramientas del desarrollador de los navegadores web mediante *Developer Tools → Network → Headers*.
-
+!!! note "Inspeccionando las cabeceras"
+	Se puede comprobar en las herramientas del desarrollador de los navegadores web mediante *Developer Tools → Network → Headers*.
+	
 Es muy común configurar las cabeceras para evitar consultas a la caché o provocar su renovación:
 
 ```php
@@ -433,11 +379,11 @@ Es muy común configurar las cabeceras para evitar consultas a la caché o provo
   header("Pragma: no-cache");
 ```
 
-# gestión de estado
+# Gestión de estado
 
 HTTP es un protocolo stateless, sin estado. Por ello, se simula el estado mediante el uso de *cookies*, *tokens* o la *sesión*. El estado es necesario para procesos tales como el carrito de la compra, operaciones asociadas a un usuario, etc... El mecanismo de PHP para gestionar la sesión emplea *cookies* de forma interna. Las *cookies* se almacenan en el navegador, y la sesión en el servidor web.
 
-## cookies
+## Cookies
 
 Las *cookies* se almacenan en el array global `$_COOKIE`. Lo que coloquemos dentro del array, se guardará en el cliente. Hay que tener presente que el cliente puede no querer almacenarlas.
 
@@ -466,65 +412,63 @@ Por ejemplo, mediante *cookies* podemos comprobar la cantidad de visitas diferen
 ?>
 ```
 
-> **inspeccionando las cookies**
->
-> Si queremos ver que contienen las *cookies* que tenemos almacenadas en el navegador, se puede comprobar su valor en **Dev Tools** → **Application** → **Storage**
+!!! note "Inspeccionando las cookies"
+	Si queremos ver que contienen las *cookies* que tenemos almacenadas en el navegador, se puede comprobar su valor en **Dev Tools** → **Application** → **Storage**
 
-Ejemplo de cookies: 
+???+ example "Ejemplo de cookies"
+	1) vamos a realizar un fichero html (`cookiesEjemplo1.html`) en el que:
 
-1) vamos a realizar un fichero html (`cookiesEjemplo1.html`) en el que:
-
-```html
-<center>
-    <h2>elige idioma:</h2>
-    <a href="cookiesEjemplo1.php?idioma=va">
-        <img src="./images/flag_valencian.png" height="70" width="70" title="valencià">
-    </a>
-    <a href="cookiesEjemplo1.php?idioma=es">
-        <img src="./images/flag_spanish.png" height="70" width="70" title="castellano">
-    </a>
-    <a href="cookiesEjemplo1.php?idioma=en">
-        <img src="./images/flag_england.png" height="70" width="70" title="inglés">
-    </a>
-</center>
-```
-
-<img src="/assets/img03_cookies1.png" style="zoom:50%;" />
-
-2) Creamos fichero `cookiesEjemplo1.php` en el que comprueba si se ha enviado el parámetro `idioma`, si es así, crea una *cookie* de nombre `idioma`, valor `$_GET['idioma']`, tiempo `1 hora` y que trabaja desde la raíz `\`. Además, se ha añadido una cabecera que redireccionará a la página `cookiesEjemplo1_b.php`:
-
-```php
-<?php
-    if (isset($_GET['idioma'])){
-        setcookie('idioma',$_GET['idioma'], time()+3600, "/");
-        header("Location:cookiesEjemplo1_b.php");
-    }
-?>
-```
-
-3) En el fichero `cookiesEjemplo1_b.php` se comprueba el valor de la *cookie* `idioma`:
-
-```php
-<?php
-    if (!$_COOKIE['idioma']){
-        header('Location:cookiesEjemplo1.html');
-    } else if ($_COOKIE['idioma']=="va"){
-        header('Location:cookiesEjemplo1Va.php');
-    } else if ($_COOKIE['idioma']=="va"){
-        header('Location:cookiesEjemplo1Es.php');
-    } else if ($_COOKIE['idioma']=="va"){
-        header('Location:cookiesEjemplo1En.php');
-    }
-?>
-```
-
-4. El fichero, por ejemplo, `cookiesEjemplo1Va.php` quedaría:
-
-   ```php
-   <h2> idioma en valencià </h2>
-   <br /> <br />
-   <a href="cookiesEjemplo2BorrarCookies.php">borrar cookies</a>
-   ```
+	```html
+	<center>
+		<h2>elige idioma:</h2>
+		<a href="cookiesEjemplo1.php?idioma=va">
+			<img src="./images/flag_valencian.png" height="70" width="70" title="valencià">
+		</a>
+		<a href="cookiesEjemplo1.php?idioma=es">
+			<img src="./images/flag_spanish.png" height="70" width="70" title="castellano">
+		</a>
+		<a href="cookiesEjemplo1.php?idioma=en">
+			<img src="./images/flag_england.png" height="70" width="70" title="inglés">
+		</a>
+	</center>
+	```
+	
+	<img src="/assets/img03_cookies1.png" style="zoom:50%;" />
+	
+	2) Creamos fichero `cookiesEjemplo1.php` en el que comprueba si se ha enviado el parámetro `idioma`, si es así, crea una *cookie* de nombre `idioma`, valor `$_GET['idioma']`, tiempo `1 hora` y que trabaja desde la raíz `\`. Además, se ha añadido una cabecera que redireccionará a la página `cookiesEjemplo1_b.php`:
+	
+	```php
+	<?php
+		if (isset($_GET['idioma'])){
+			setcookie('idioma',$_GET['idioma'], time()+3600, "/");
+			header("Location:cookiesEjemplo1_b.php");
+		}
+	?>
+	```
+	
+	3) En el fichero `cookiesEjemplo1_b.php` se comprueba el valor de la *cookie* `idioma`:
+	
+	```php
+	<?php
+		if (!$_COOKIE['idioma']){
+			header('Location:cookiesEjemplo1.html');
+		} else if ($_COOKIE['idioma']=="va"){
+			header('Location:cookiesEjemplo1Va.php');
+		} else if ($_COOKIE['idioma']=="va"){
+			header('Location:cookiesEjemplo1Es.php');
+		} else if ($_COOKIE['idioma']=="va"){
+			header('Location:cookiesEjemplo1En.php');
+		}
+	?>
+	```
+	
+	4) El fichero, por ejemplo, `cookiesEjemplo1Va.php` quedaría:
+	
+	```php
+	<h2> idioma en valencià </h2>
+	<br /> <br />
+	<a href="cookiesEjemplo2BorrarCookies.php">borrar cookies</a>
+	```
 
 El tiempo de vida de las cookies puede ser tan largo como el sitio web en el que residen. Ellas seguirán ahí, incluso si el navegador está cerrado o abierto.
 
@@ -542,34 +486,36 @@ O que caduquen dentro de un periodo de tiempo determinado:
 	setcookie(nombre, valor, time() + 3600) // Caducan dentro de una hora
 ```
 
-Ejemplo 2: Siguiendo con el ejemplo anterior de idiomas, podríamos crear el fichero `cookiesEjemplo2BorrarCookies.php` y, desde ahí, eliminar la *cookie* idioma:
+???+ example "Ejemplo 2"
+	Siguiendo con el ejemplo anterior de idiomas, podríamos crear el fichero `cookiesEjemplo2BorrarCookies.php` y, desde ahí, eliminar la *cookie* idioma:
+	
 
-```php
-<?php
-    setcookie('idioma', '', time()-1, '/');
-    header('Location:cookiesEjemplo1.html');
-?>
-```
+	```php
+	<?php
+		setcookie('idioma', '', time()-1, '/');
+		header('Location:cookiesEjemplo1.html');
+	?>
+	```
+	
+	<img src="../../img/ud04/img01comunicacionCookies.png" style="max-width:50%;" />
+	
+	Se utilizan para:
+	
+	- Recordar los inicios de sesión.
+	- Almacenar valores temporales de usuario.
+	- Si un usuario está navegando por una lista paginada de artículos, ordenados de cierta manera, podemos almacenar el ajuste de la clasificación.
+	
+	La alternativa en el cliente para almacenar información en el navegador es el objeto [LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage).
 
-<img src="/assets/img01comunicacionCookies.png" style="zoom:30%;" />
 
-Se utilizan para:
-
-- Recordar los inicios de sesión.
-- Almacenar valores temporales de usuario.
-- Si un usuario está navegando por una lista paginada de artículos, ordenados de cierta manera, podemos almacenar el ajuste de la clasificación.
-
-La alternativa en el cliente para almacenar información en el navegador es el objeto [LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage).
-
-## sesión
+​	
+## Sesión
 
 La *sesión* añade la gestión del estado a HTTP, almacenando en este caso la información en el servidor. Cada visitante tiene un ID de sesión único, el cual por defecto se almacena en una cookie denominada `PHPSESSID`. Si el cliente no tiene las *cookies* activas, el ID se propaga en cada URL dentro del mismo dominio. Cada sesión tiene asociado un almacén de datos mediante el array global `$_SESSION` en el cual podemos almacenar y recuperar información.
 
 La sesión comienza al ejecutar un script PHP. Se genera un nuevo ID y se cargan los datos del almacén:
 
-<img src="/assets/img02comunicacionSesion.png" style="zoom:30%;" />
-
-
+<img src="../../img/ud04/img02comunicacionSesion.png" style="max-width:50%;" />
 
 El trabajo con sesiones tiene tres partes:
 
@@ -619,118 +565,113 @@ Y posteriormente podemos acceder a la sesión en `sesion2.php`:
 ?>
 ```
 
-> **configurando la sesión en php.ini**
->
-> Las siguientes propiedades de `php.ini` permiten configurar algunos aspectos de la sesión:
->
-> - `session.save_handler`: controlador que gestiona cómo se almacena (valor `files`).
-> - `session.save_path`: ruta donde se almacenan los archivos con los datos (si tenemos un cluster, podríamos usar /mnt/sessions en todos los servidores de manera que apuntan a una carpeta compartida).
-> - `session.name`: nombre de la sesión (PHSESSID).
-> - `session.auto_start`: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.
-> - `session.cookie_lifetime`: tiempo de vida por defecto.
->
-> Más información en la [documentación oficial](https://www.php.net/manual/es/session.configuration.php).
+!!! note "Configurando la sesión en php.ini"
+	SiguLas siguientes propiedades de `php.ini` permiten configurar algunos aspectos de la sesión:
+	- `session.save_handler`: controlador que gestiona cómo se almacena (valor `files`).
+	- `session.save_path`: ruta donde se almacenan los archivos con los datos (si tenemos un cluster, podríamos usar /mnt/sessions en todos los servidores de manera que apuntan a una carpeta compartida).
+	- `session.name`: nombre de la sesión (PHSESSID).
+	- `session.auto_start`: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.
+	- `session.cookie_lifetime`: tiempo de vida por defecto.
+	Más información en la [documentación oficial](https://www.php.net/manual/es/session.configuration.php).
 
-> **cookie VS session**
->
-> Las *sesiones* no deben confundirse con las *cookies*. Las *cookies* es un método que permite guardar información en el ordenador del cliente para recuperarla en el futuro; mientras que en las *sesiones* la información se mantiene en el servidor hasta que se cierra la sesión (por intervención del usuario o por tiempo). En el manual de PHP se ofrece un [capítulo dedicado a las sesiones](https://www.php.net/manual/en/book.session.php).
+!!! note "Cookie VS session"
+	Las *sesiones* no deben confundirse con las *cookies*. Las *cookies* es un método que permite guardar información en el ordenador del cliente para recuperarla en el futuro; mientras que en las *sesiones* la información se mantiene en el servidor hasta que se cierra la sesión (por intervención del usuario o por tiempo). En el manual de PHP se ofrece un [capítulo dedicado a las sesiones](https://www.php.net/manual/en/book.session.php).
 
-Ejemplo: he aquí un ejemplo gráfico de utilización de sesiones. Programa de dos páginas que muestra gráficamente los votos recogidos por dos opciones.
 
-- La primera página contiene un formulario con tres botones de tipo `submit` con el mismo atributo `name`.
 
-   - Dos botones permiten votar a una u otra opción.
-   - El tercer botón pone a cero los contadores de votos.
+???+ example "Ejemplo"
+	He aquí un ejemplo gráfico de utilización de sesiones. Programa de dos páginas que muestra gráficamente los votos recogidos por dos opciones.
+	- La primera página contiene un formulario con tres botones de tipo `submit` con el mismo atributo `name`.
+	- Dos botones permiten votar a una u otra opción.
+	- El tercer botón pone a cero los contadores de votos.
+	- La segunda página recibe el dato, modifica la variable de sesión que contiene el número de votos de la opción elegida (o ambas) y redirige a la primera página.
+	- Los dos números se guardan en dos variables de sesión. Si las variables de sesión no están definidas, se les dará el valor 0.
+	- Las franjas correspondientes a los votos se alargan de 10px en 10px y no tienen límite de tamaño.
+	```php+HTML
+	<?php
+	// Accedemos a la sesión
+	session_name("sesion1");
+	session_start();
+	
 
-- La segunda página recibe el dato, modifica la variable de sesión que contiene el número de votos de la opción elegida (o ambas) y redirige a la primera página.
-
-- Los dos números se guardan en dos variables de sesión. Si las variables de sesión no están definidas, se les dará el valor 0.
-
-- Las franjas correspondientes a los votos se alargan de 10px en 10px y no tienen límite de tamaño.
-
-   ```php+HTML
-   <?php
-   // Accedemos a la sesión
-   session_name("sesion1");
-   session_start();
-   
-   // Si algún contador no está guardado en la sesión, ponemos ambos a cero
-   if (!isset($_SESSION["a"]) || !isset($_SESSION["b"])) {
-      $_SESSION["a"] = $_SESSION["b"] = 0;
-   }
-   ?>
-   
-   <!-- ... -->
-   <body>
-     <h2>Votar una opción</h2>
-     <form action="ps2.php" method="get">
-       <table>
-         <tr>
-           <td style="vertical-align: top;">
-             <button type="submit" name="accion" value="a" 
-                     style="font-size: 60px; line-height: 50px; color: hwb(200 0% 0%);">  &#x2714; </button>
-           </td>
-           <td>
-   <?php
-   // Dibujamos la primera barra
-   print " <svg width=\"$_SESSION[a]\" height=\"50\">\n";
-   print "   <line x1=\"0\" y1=\"25\" x2=\"$_SESSION[a]\" y2=\"25\" stroke=\"hwb(200 0% 0%)\" stroke-width=\"50\" />\n";
-   print " </svg>\n";
-   ?>
-           </td>
-         </tr>
-         <tr>
-           <td>
-               <button type="submit" name="accion" value="b" 
-                       style="font-size: 60px; line-height: 50px; color: hwb(35 0% 0%)">&#x2714;
-               </button>
-           </td>
-   <?php
-   // Dibujamos la segunda barra
-   print " <td>\n";
-   print " <svg width=\"$_SESSION[b]\" height=\"50\">\n";
-   print "   <line x1=\"0\" y1=\"25\" x2=\"$_SESSION[b]\" y2=\"25\" stroke=\"hwb(35 0% 0%)\" stroke-width=\"50\" />\n";
-   print " </svg>\n";
-   print " </td>\n";
-   ?>
-         </tr>
-       </table>
-       <p>
-         <button type="submit" name="accion" value="cero">Poner a cero</button>
-       </p>
-     </form>
-   </body>
-   </html>
-   ```
+	// Si algún contador no está guardado en la sesión, ponemos ambos a cero
+	if (!isset($_SESSION["a"]) || !isset($_SESSION["b"])) {
+		$_SESSION["a"] = $_SESSION["b"] = 0;
+	}
+	?>
+	
+	<!-- ... -->
+	<body>
+	<h2>Votar una opción</h2>
+	<form action="ps2.php" method="get">
+		<table>
+		<tr>
+			<td style="vertical-align: top;">
+				<button type="submit" name="accion" value="a" 
+	                 style="font-size: 60px; line-height: 50px; color: hwb(200 0% 0%);">  &#x2714; </button>
+			</td>
+			<td>
+				<?php
+					// Dibujamos la primera barra
+					print " <svg width=\"$_SESSION[a]\" height=\"50\">\n";
+					print "   <line x1=\"0\" y1=\"25\" x2=\"$_SESSION[a]\" y2=\"25\" stroke=\"hwb(200 0% 0%)\" stroke-width=\"50\" />\n";
+					print " </svg>\n";
+				?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="submit" name="accion" value="b" style="font-size: 60px; line-height: 50px; color: hwb(35 0% 0%)">&#x2714;
+				</button>
+			</td>
+		<?php
+		// Dibujamos la segunda barra
+		print " <td>\n";
+		print " <svg width=\"$_SESSION[b]\" height=\"50\">\n";
+		print "   <line x1=\"0\" y1=\"25\" x2=\"$_SESSION[b]\" y2=\"25\" stroke=\"hwb(35 0% 0%)\" stroke-width=\"50\" />\n";
+		print " </svg>\n";
+		print " </td>\n";
+		?>
+		</tr>
+	</table>
+	<p>
+		<button type="submit" name="accion" value="cero">Poner a cero</button>
+	</p>
+	</form>
+	</body>
+	</html>
+	```
 
    ```php+HTML
-   <?php
-   session_name("sesion1");
-   session_start();
-   
-   // Si alguno de los números de votos no está guardado en la sesión, redirigimos a la primera página
-   if (!isset($_SESSION["a"]) || !isset($_SESSION["b"])) {
-       header("Location:ps1.php");
-       exit;
-   }
-   
-   $accion = $_GET['accion'];
-   // Dependiendo de la acción recibida, modificamos el número correspondiente
-   if ($accion == "a") {
-       $_SESSION["a"] += 10;
-   } elseif ($accion == "b") {
-       $_SESSION["b"] += 10;
-   } elseif ($accion == "cero") {
-       $_SESSION["a"] = $_SESSION["b"] = 0;
-   }
-   
-   // Volvemos al formulario
-   header("Location:ps1.php");
+	<?php
+	session_name("sesion1");
+	session_start();
+	
+	// Si alguno de los números de votos no está guardado en la sesión, redirigimos a la primera página
+	if (!isset($_SESSION["a"]) || !isset($_SESSION["b"])) {
+		header("Location:ps1.php");
+		exit;
+	}
+	
+	$accion = $_GET['accion'];
+	// Dependiendo de la acción recibida, modificamos el número correspondiente
+	if ($accion == "a") {
+		$_SESSION["a"] += 10;
+	} elseif ($accion == "b") {
+		$_SESSION["b"] += 10;
+	} elseif ($accion == "cero") {
+		$_SESSION["a"] = $_SESSION["b"] = 0;
+	}
+	
+	// Volvemos al formulario
+	header("Location:ps1.php");
    ```
 
-   <img src="/assets/img04_session1.png" style="zoom: 60%;" />
+	<img src="../../img/ud04/img04_session1.png" style="max-width: 60%;" />
 
-# autenticación de usuarios
+
+​	
+# Autenticación de usuarios
 
 Una sesión establece una relación anónima con un usuario particular, de manera que podemos saber si es el mismo usuario entre dos peticiones distintas. Si preparamos un sistema de login, podremos saber quién utiliza nuestra aplicación.
 
@@ -841,11 +782,12 @@ Finalmente, necesitamos la opción de cerrar la sesión que colocamos en `logout
 ?>
 ```
 
-> **autenticación en producción**
->
-> En la actualidad la autenticación de usuario no se realiza gestionando la sesión directamente, sino que se realiza mediante algún framekwork que abstrae todo el proceso o la integración de mecanismos de autenticación tipo OAuth, como estudiaremos en la última unidad mediante *Laravel*.
+!!!note "Autenticación en producción""
+	En la actualidad la autenticación de usuario no se realiza gestionando la sesión directamente, sino que se realiza mediante algún framekwork que abstrae todo el proceso o la integración de mecanismos de autenticación tipo OAuth, como estudiaremos en la última unidad mediante *Laravel*.
 
-# referencias
+
+
+# Referencias
 
 - [Cookies en PHP](https://www.php.net/manual/es/features.cookies.php)
 - [Manejo de sesiones en PHP](https://www.php.net/manual/es/book.session.php)

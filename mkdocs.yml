@@ -26,7 +26,7 @@ nav:
      - 1.8 Manual Docker: ud01/ud0108.md
      - Descargas: ud01/ud01de.md
      - Actividades: ud01/ud01ac.md
-     - Referencias: ud01/ud0109.md
+     - Referencias: ud01/ud01re.md
   - UD 2 Lenguaje PHP:
      - 2.1 Introducción: ud02/ud0201.md
      - 2.2 PHP: ud02/ud0202.md
@@ -36,8 +36,8 @@ nav:
      - 2.6 Funciones predefinidas: ud02/ud0206.md
      - 2.7 Expresiones regulares: ud02/ud0207.md
      - Actividades: ud02/ud02ac.md
-     - Referencias: ud02/ud0208.md
-  - UD 3 PHP Orientado a Objetos:
+     - Referencias: ud02/ud02re.md
+  - UD 3 PHP OO:
      - 3.1 Introducción: ud03/ud0301.md
      - 3.2 Clases y objetos: ud03/ud0302.md
      - 3.3 Encapsulación: ud03/ud0303.md
@@ -55,8 +55,16 @@ nav:
      - 3.15 Excepciones: ud03/ud0315.md
      - 3.16 SPL: ud03/ud0316.md
      - Actividades: ud03/ud03ac.md
-     - Referencias: ud03/ud0317.md
-  - UD 4 Programación Web: default.md
+     - Referencias: ud03/ud03re.md
+  - UD 4 Programación Web:
+     - 4.1 Introducción: ud04/ud0401.md
+     - 4.2 Variable de servidor: ud04/ud0402.md
+     - 4.3 Formularios: ud04/ud0403.md
+     - 4.4 Cabeceras de respuesta: ud04/ud0404.md
+     - 4.5 Gestión de estado: ud04/ud0405.md
+     - 4.6 Autenticación de usuarios: ud04/ud0406.md
+     - Actividades: ud04/ud04ac.md
+     - Referencias: ud04/ud04re.md
   - UD 5 Herramientas Web: default.md
   - UD 6 Acceso a Base de Datos: default.md
   - UD 7 Framework Laravel: default.md
