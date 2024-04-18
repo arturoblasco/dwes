@@ -1,95 +1,51 @@
----
-    unit: unidad didáctica 3
-    title: Actividades
-    language: ES
-    author: Arturo Blasco
-    subject: Desarrollo Web en Entornos Servidor
-    keywords: [2023-2024, DWES, PHP]
-    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-    header: ${title} - ${subject} (ver: ${today}) 
-    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-    typora-root-url:${filename}/../
-    typora-copy-images-to:${filename}/../assets
+# Investigación
+## Actividad 301
+Investiga la diferencia entre un paradigma orientado a objetos basado en clases (*PHP*) respecto a uno basado en prototipos (*JavaScript*).<br /><br />
 
----
+<hr>
+# Objetos
 
-
-
-**Índice**
-
-[TOC]
-
-# investigación
-
-**Actividad 301**
-
-Investiga la diferencia entre un paradigma orientado a objetos basado en clases (*PHP*) respecto a uno basado en prototipos (*JavaScript*).
-
-# objetos
-
-**Actividad 302**
+## Actividad 302
 
 `302Empleado.php`: Crea una clase `Empleado` con su *nombre*, *apellidos* y *sueldo*. Encapsula las propiedades mediante *getters*/*setters* y añade métodos para:
+
 
 - Obtener su nombre completo → `getNombreCompleto(): string`
 
 - Que devuelva un booleano indicando si debe o no pagar impuestos (se pagan cuando el sueldo es superior a 3333€) → `debePagarImpuestos(): bool`
 
-  
 
-**Actividad 303**
-
+## Actividad 303
 `303EmpleadoTelefonos.php`: Copia la clase del ejercicio anterior y modifícala. Añade una propiedad privada que almacene un array de números de teléfonos. Añade los siguientes métodos:
 
 - `public function anyadirTelefono(int $telefono) : void` → Añade un teléfono al array.
 - `public function listarTelefonos(): string` → Muestra los teléfonos separados por comas.
 - `public function vaciarTelefonos(): void` → Elimina todos los teléfonos.
 
-
-
-**Actividad 304**
-
+## Actividad 304
 `304EmpleadoConstructor.php`: Copia la clase del ejercicio anterior y modifícala. Elimina los setters de `nombre` y `apellidos`, de manera que dichos datos se asignan mediante el constructor (utiliza la sintaxis de PHP7). Si el constructor recibe un tercer parámetro, será el sueldo del `Empleado`. Si no, se le asignará 1000€ como sueldo inicial.
 
 `304EmpleadoConstructor8.php`: Modifica la clase y utiliza la sintaxis de PHP 8 de promoción de las propiedades del constructor.
 
-
-
-**Actividad 305**
-
+## Actividad 305
 `305EmpleadoConstante.php`: Copia la clase del ejercicio anterior y modifícala. Añade una constante `SUELDO_TOPE` con el valor del sueldo que debe pagar impuestos, y modifica el código para utilizar la constante.
 
-
-
-
-**Actividad 306**
-
+## Actividad 306
 `306EmpleadoSueldo.php`: Copia la clase del ejercicio anterior y modifícala. Cambia la constante por una variable estática `sueldoTope`, de manera que mediante getter/setter puedas modificar su valor.
 
-
-
-
-
-**Actividad 307**
-
+## Actividad 307
 `307EmpleadoStatic.php`: Copia la clase del ejercicio anterior y modifícala. Completa el siguiente método con una cadena HTML que muestre los datos de un empleado dentro de un párrafo y todos los teléfonos mediante una lista ordenada (para ello, deberás crear un getter para los teléfonos):
 
 - `public static function toHtml(Empleado $emp): string`
 
-
-
-**Actividad 308**
-
-<img src="/assets/ejer08.png" alt="actividad 308" style="zoom:60%;" />
+## Actividad 308
+<img src="../../img/ud03/ejer08.png" alt="## Actividad 308" style="max-width:40%;" />
 
 `308Persona.php`: Copia la clase del ejercicio anterior en `308Empleado.php` y modifícala.
 
 Crea una clase `Persona` que sea padre de `Empleado`, de manera que `Persona` contenga el nombre y los apellidos, y en `Empleado` quede el salario y los teléfonos.
 
-
-
-**Actividad 309**
-
+## Actividad 309
 `309PersonaH.php`: Copia las clases del ejercicio anterior y modifícalas. Crea en `Persona` el método estático `toHtml(Persona $p)`, y modifica en `Empleado` el mismo método `toHtml(Persona $p)`, pero cambia la firma para que reciba una `Persona` como parámetro.
 
 Para acceder a las propiedades del empleado con la persona que recibimos como parámetro, comprobaremos su tipo:
@@ -108,54 +64,40 @@ class Empleado extends Persona {
 }
 ```
 
-
-
-**Actividad 310**
-
+## Actividad 310
 `310PersonaE.php`: Copia las clases del ejercicio anterior y modifícalas.
 
 Añade en `Persona` un atributo `edad`.
 
 A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuando tenga más de 21 años y dependa del valor de su sueldo. Modifica todo el código necesario para mostrar y/o editar la edad cuando sea necesario.
 
-
-
-**Actividad 311**
-
+## Actividad 311
 `311PersonaS.php`: Copia las clases del ejercicio anterior y modifícalas.
 Añade nuevos métodos que hagan una representación de todas las propiedades de las clases `Persona` y `Empleado`, de forma similar a los realizados en HTML, pero sin que sean estáticos, de manera que obtenga los datos mediante `$this`.
 
 - `function public __toString(): string`
 
-> **magic methods**
->
-> El método `__toString()` es un método mágico que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.
+!!! note "Magic method"
+    El método `__toString()` es un método mágico que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.
+    
 
-
-
-**Actividad 312**
-
+## Actividad 312
 `312PersonaA.php`: Copia las clases del ejercicio anterior y modifícalas.
 Transforma `Persona` a una clase abstracta donde su método estático `toHtml(Persona $p)` tenga que ser redefinido en todos sus hijos. 
 
-
-
-**Actividad 313**
-
+## Actividad 313
 `313Trabajador.php`: Copia las clases del ejercicio anterior y modifícalas.
 
 - Cambia la estructura de clases conforme al gráfico respetando todos los métodos que ya están hechos.
 
 - `Trabajador` es una clase abstracta que ahora almacena los `telefonos` y donde `calcularSueldo` es un método abstracto de manera que:
 
-  - El sueldo de un `Empleado` se calcula a partir de las horas trabajadas y lo que cobra por hora.
+   - El sueldo de un `Empleado` se calcula a partir de las horas trabajadas y lo que cobra por hora.
 
-  - Para los `Gerente`s, su sueldo se incrementa porcentualmente en base a su edad: `salario + salario*edad/100`
+   - Para los `Gerente`s, su sueldo se incrementa porcentualmente en base a su edad: `salario + salario*edad/100`
 
-    <img src="/assets/ejer13.png" alt="Actividad 313" style="zoom:60%;" />
-
-**Actividad 314**
-
+      <img src="../../img/ud03/ejer13.png" alt="## Actividad 313" style="max-width:50%;" />
+## Actividad 314
 `314Empresa.php`: Utilizando las clases de los ejercicios anteriores:
 
 - Crea una clase `Empresa` que además del nombre y la dirección, contenga una propiedad con un array de `Trabajador`es, ya sean `Empleado`s o `Gerente`s.
@@ -163,17 +105,15 @@ Transforma `Persona` a una clase abstracta donde su método estático `toHtml(Pe
 - Añade *getters/setters* para el nombre y dirección.
 
 - Añade métodos para añadir y listar los trabajadores.
-  - `public function anyadirTrabajador(Trabajador $t)`
-  - `public function listarTrabajadoresHtml() : string` -> utiliza `Trabajador::toHtml(Persona $p)`
-  
+
+   - `public function anyadirTrabajador(Trabajador $t)`
+   - `public function listarTrabajadoresHtml() : string` -> utiliza `Trabajador::toHtml(Persona $p)`
+
 - Añade un método para obtener el coste total en nóminas.
-  - `public function getCosteNominas(): float` -> recorre los trabajadores e invoca al método `calcularSueldo()`.
-  
-    
 
+   - `public function getCosteNominas(): float` -> recorre los trabajadores e invoca al método `calcularSueldo()`.
 
-**Actividad 315**
-
+## Actividad 315
 `315EmpresaI.php`: Copia las clases del ejercicio anterior y modifícalas.
 
  a) Crea un interfaz JSerializable, de manera que ofrezca los métodos:
@@ -196,9 +136,8 @@ public function toJSON(): string {
  b) Modifica todas las clases que no son abstractas para que implementen el interfaz creado.
 
 
-
-# proyecto Videoclub
-
+<hr>
+# Proyecto Videoclub
 En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental y siguiendo la práctica de programación en parejas (*pair programming*).
 
 Antes de nada, crea un repositorio privado en GitHub y sube el proyecto actual de Videoclub. Una vez creado, invita a tu compañero al repositorio como colaborador.
@@ -208,15 +147,13 @@ Añade y sube los cambios a tu repositorio, mediante `git add .` y luego `git co
 Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos `git remote ` y `git push`).
 Tu compañero deberá descargar el proyecto con sus credenciales.
 
-> **proyecto no real**
->
-> El siguiente proyecto está pensado desde un punto de vista formativo. Algunas de las decisiones que se toman no se deben usar (como hacer `echo` dentro de las clases) o probar el código comparando el resultado en el navegador.
+!!! note "Proyecto no real"
+    El siguiente proyecto está pensado desde un punto de vista formativo. Algunas de las decisiones que se toman no se deben usar (como hacer `echo` dentro de las clases) o probar el código comparando el resultado en el navegador.
 
 Cada clase debe ir en un archivo php separado. Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases:
 
-**Actividad 321**
-
-<img src="/assets/pro01.png" alt="img" style="zoom:80%;" />
+## Actividad 321
+<img src="../../img/ud03/pro01.png" alt="img" style="max-width:30%;" />
 
 Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clase padre de los diferentes soportes con los que trabaje nuestro videoclub (cintas de vídeo, videojuegos, etc...):
 
@@ -236,22 +173,19 @@ Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clas
     echo $soporte1->muestraResumen();
 ```
 
-En el navegador:
-
-```sh
-Tenet
-Precio: 3 €
-Precio con IVA: 3.48 €
-
-Tenet
-3 € (IVA no incluido)
-```
-
-
-
-**Actividad 322**
-
-<img src="/assets/pro02.png" alt="img" style="zoom:70%;" />
+???example "Resultado en el navegador"
+    ```sh
+    Tenet
+    Precio: 3 €
+    Precio con IVA: 3.48 €
+    
+    ```
+    
+    Tenet
+    3 € (IVA no incluido)
+    ```
+## Actividad 322
+<img src="../../img/ud03/pro02.png" alt="img" style="max-width:50%;" />
 
 Crea la clase `CintaVideo` la cual hereda de `Soporte`. Añade el atributo `duracion` y sobreescribe tanto el contructor como el método `muestraResumen` (desde `CintaVideo` deberás llamar al método `muestraResumen` del padre).
 
@@ -268,18 +202,12 @@ Añade a `inicio.php` el código para probar la clase:
 
     echo $miCinta->muestraResumen();
 ```
-
-
-
-En el navegador:
-
-<img src="/assets/pro21.png" style="zoom: 70%;" />
-
-
-
-**Actividad 323**
-
-<img src="/assets/pro03.png" alt="img" style="zoom:70%;" />
+???example "Resultado en el navegador"
+    <img src="../../img/ud03/pro21.png" style="max-width: 70%;" />
+    
+    
+## Actividad 323
+<img src="../../img/ud03/pro03.png" alt="img" style="max-width:50%;" />
 
 Crea la clase `Dvd` la cual hereda de `Soporte`. Añade los atributos `idiomas` y `formatoPantalla`. A continuación sobreescribe tanto el contructor como el método `muestraResumen`.
 
@@ -297,12 +225,12 @@ echo "<br>Precio con IVA: " . $miDvd->getPrecioConIva() . " €";
 echo $miDvd->muestraResumen();
 ```
 
-En el navegador:
+???example "Resultado en el navegador"
+    <img src="../../img/ud03/pro22.png" style="max-width:60%;" />
+    
+    
 
-<img src="/assets/pro22.png" style="zoom:60%;" />
-
-**Actividad 324**
-
+## Actividad 324
 Crea la clase `Juego` la cual hereda de `Soporte`. Añade los atributos `consola`, `minNumJugadores` y `maxNumJugadores`. A continuación añade el método `muestraJugadoresPosibles`, el cual debe mostrar *Para un jugador*, Para X jugadores o De X a Y jugadores dependiendo de los valores de las atributos creados. Finalmente, sobreescribe tanto el contructor como el método `muestraResumen`.
 
 Añade a `inicio.php` el código para probar la clase:
@@ -319,35 +247,26 @@ Añade a `inicio.php` el código para probar la clase:
     echo $miJuego->muestraResumen();
 ```
 
-En el navegador:
-
-<img src="/assets/pro23.png" style="zoom:80%;" />
+???example "Resultado en el navegador"
+    <img src="../../img/ud03/pro23.png" style="max-width:80%;" />
+    
 
 Llegados a este punto, nuestro modelo es similar al siguiente diagrama:
 
-<img src="/assets/pro05.png" alt="img" style="zoom:60%;" />
+<img src="../../img/ud03/pro05.png" alt="img" style="max-width:70%;" />
 
-
-
-**Actividad 325**
-
-<img src="/assets/pro06.png" alt="img" style="zoom:70%;" />
+## Actividad 325
+<img src="../../img/ud03/pro06.png" alt="img" style="max-width: 40%;" />
 
 Crear la clase `Cliente`. El constructor recibirá el `nombre`, `numero` y `maxAlquilerConcurrente`, este último pudiendo ser opcional y tomando como valor por defecto 3. Tras ello, añade *getter/setter* únicamente a `numero`, y un *getter* a `numSoportesAlquilados` (este campo va a almacenar un contador del total de alquileres que ha realizado). El array de soportes alquilados contedrá clases que hereden de `Soporte`. Finalmente, añade el método `muestraResumen` que muestre el nombre y la cantidad de alquileres (tamaño del array `soportesAlquilados`).
 
-
-
-**Actividad 326**
-
+## Actividad 326
 Dentro de `Cliente`, añade las siguiente operaciones:
 
 - `tieneAlquilado(Soporte $s): bool` → Recorre el array de soportes y comprueba si está el soporte
 - `alquilar(Soporte $s): bool` -→ Debe comprobar si el soporte está alquilado y si no ha superado el cupo de alquileres. Al alquilar, incrementará el `numSoportesAlquilados` y almacenará el soporte en el array. Para cada caso debe mostrar un mensaje informando de lo ocurrido.
 
-
-
-**Actividad 327**
-
+## Actividad 327
 Seguimos con `Cliente` para añadir las operaciones:
 
 - `devolver(int $numSoporte): bool` → Debe comprobar que el soporte estaba alquilado y actualizar la cantidad de soportes alquilados. Para cada caso debe mostrar un mensaje informando de lo ocurrido
@@ -398,20 +317,10 @@ $cliente1->listaAlquileres();
 $cliente2->devolver(2);
 ```
 
-En el navegador:
-
-![](/assets/pro26.png)
-
-
-
-
-
-
-
-
-
-**Actividad 328**
-
+???example "Resultado en el navegador"
+    <img src="../../img/ud03/pro26.png" alt="img" style="max-width:100%;" />
+    
+## Actividad 328
 Llegado a este punto, vamos a relacionar los clientes y los soportes mediante la clase `Videoclub`. Así pues crea la clase que representa el gráfico, teniendo en cuenta que:
 
 - `productos` es un array de `Soporte`.
@@ -420,7 +329,7 @@ Llegado a este punto, vamos a relacionar los clientes y los soportes mediante la
 
 El modelo completo quedará de la siguiente manera:
 
-<img src="/assets/pro07.png" alt="img" style="zoom:67%;" />
+<img src="../../img/ud03/pro07.png" alt="img" style="max-width:100%;" />
 
 Y para probar el proyecto, dentro inicio3.php colocaremos:
 
@@ -459,31 +368,25 @@ $vc->alquilaSocioProducto(1,6);
 $vc->listarSocios();
 ```
 
-En el navegador:
+???example "Resultado en el navegador"
+    <img src="../../img/ud03/pro28.png" alt="img" style="max-width:100%;" />
+    
 
-![](/assets/pro28.png)
-
-**Actividad 329**
-
+## Actividad 329
 Transforma `Soporte` a una clase abstracta y comprueba que todo sigue funcionando. ¿Qué conseguimos al hacerla abstracta?
 
-
-
-**Actividad 330**
+## Actividad 330
 Crea un interfaz `Resumible`, de manera que las clases que lo implementen deben ofrecer el método `muestraResumen()`. Modifica la clase `Soporte` y haz que implemente el interfaz. ¿Hace falta que también lo implementen los hijos?
 
-# proyecto Videoclub 2.0
 
+<hr>
+# Proyecto Videoclub 2.0
 Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante `git tag` con el nombre `v0.329` y sube los cambios a GitHub.
 
-**Actividad 331**
-
+## Actividad 331
 Modifica las operaciones de alquilar, tanto en `Cliente` como en `Videoclub`, para dar soporte al encadenamiento de métodos. Posteriormente, modifica el código de prueba para utilizar esta técnica.
 
-
-
-**Actividad 332**
-
+## Actividad 332
 Haciendo uso de *namespaces*:
 
 - Coloca todas las clases/interfaces en `Dwes\ProyectoVideoclub`.
@@ -492,19 +395,13 @@ Haciendo uso de *namespaces*:
 - Desde el archivo de pruebas, utiliza `use` para poder realizar accesos sin cualificar.
 - Etiqueta los cambios como `v0.331`.
 
-
-
-**Actividad 333**
-
+## Actividad 333
 Reorganiza las carpeta tal como hemos visto en los apuntes: `app`, `test` y`vendor`.
 
 - Crea un fichero `autoload.php` para registrar la ruta donde encontrar las clases
 - Modifica todo el código necesario, incluyendo `autoload.php` donde sea necesario y borrando los *includes* previos.
 
-
-
-**Actividad 334**
-
+## Actividad 334
 A continuación vamos a crear un conjunto de excepciones de aplicación. Estas excepciones son simples, no necesitan sobreescribir ningún método. Así pues, crea la excepción de aplicación `VideoclubException` en el *namespace* `Dwes\ProyectoVideoclub\Util`. Posteriormente crea los siguientes hijos (deben heredar de `VideoclubException`), cada uno en su propio archivo:
 
 - `SoporteYaAlquiladoException`.
@@ -512,41 +409,23 @@ A continuación vamos a crear un conjunto de excepciones de aplicación. Estas e
 - `SoporteNoEncontradoException`.
 - `ClienteNoEncontradoException`.
 
-
-
-
-
-
-
-
-
-**Actividad 335**
-
+## Actividad 335
 En `Cliente`, modifica los métodos `alquilar` y `devolver`, para que hagan uso de las nuevas excepciones (lanzándolas cuando sea necesario) y funcionen como métodos encadenados. Destacar que estos métodos, no se capturar estás excepciones, sólo se lanzan. En `Videoclub`, modifica `alquilarSocioPelicula `para capturar todas las excepciones que ahora lanza `Cliente` e informar al usuario en consecuencia.
 
-
-
-**Actividad 336**
-
+## Actividad 336
 Vamos a modificar el proyecto para que el videoclub sepa qué productos están o no alquilados:
 
 - En `Soporte`, crea una propiedad pública cuyo nombre sea `alquilado` que inicialmente estará a `false`. Cuando se alquile, se pondrá a `true`. Al devolver, la volveremos a poner a `false`.
 - En `Videoclub`, crea dos nuevas propiedades y sus getters:
-  - `numProductosAlquilados`
-  - `numTotalAlquileres`
+   - `numProductosAlquilados`
+   - `numTotalAlquileres`
 
-
-
-**Actividad 337**
-
+## Actividad 337
 Crea un nuevo método en `Videoclub` llamado `alquilarSocioProductos(int numSocio, array numerosProductos)`, el cual debe recibir un array con los productos a alquilar.
 
 Antes de alquilarlos, debe comprobar que todos los soportes estén disponibles, de manera que si uno no lo está, no se le alquile ninguno.
 
-
-
-**Actividad 338**
-
+## Actividad 338
 Crea dos nuevos métodos en `Videoclub`, y mediante la definición, deduce qué deben realizar:
 
 - `devolverSocioProducto(int numSocio, int numeroProducto)`

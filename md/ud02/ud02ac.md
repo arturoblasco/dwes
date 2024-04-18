@@ -2,7 +2,7 @@
 
 ## Php básico
 
-### **Actividad 201**
+### Actividad 201
 
 Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de *Jesús Amieiro* sobre PHP en 2020 a partir del minuto 3:32 (son 40 minutos aproximadamente).
 
@@ -10,15 +10,15 @@ Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de
 - Respecto al rendimiento, ¿qué versión mínima deberíamos utilizar?
 - ¿Por qué PHP tiene mala fama?
 
-### **Actividad 202**
+### Actividad 202
 
 `202tresfrases.php`: Muestra 3 frases, cada una en un párrafo utilizando las tres posibilidades que existen de mostrar contenido. Tras ello, introduce dos comentarios, uno de bloque y otro de una línea.
 
-### **Actividad 203**
+### Actividad 203
 
 `203calculos.php`: Escribe un programa que utilice las variables `$x` y `$y`. Asígnales los valores `166` y `999 `respectivamente. A continuación, muestra por pantalla el valor de cada variable, la suma, la resta, la división y la multiplicación.
 
-### **Actividad 204**
+### Actividad 204
 
 `204datosPersonales.php`: Escribe un programa que almacene en variables tu nombre, primer apellido, segundo apellido, email, año de nacimiento y teléfono. Luego muéstralos por pantalla dentro de una tabla.
 
@@ -26,11 +26,11 @@ Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de
 
 
 
-### **Actividad 205**
+### Actividad 205
 
 `205datosPersonales.html` y `205datosPersonales.php`: Es el mismo ejercicio que el anterior, pero separando la lógica. En el primer archivo crearemos el formulario para introducir los datos, y luego recogemos los datos y generamos la tabla en el segundo archivo.
 
-### **Actividad 206**
+### Actividad 206
 
 `206madlib.html` y `206madlib.php`: A partir de un nombre, un verbo, un adjetivo y un adverbio, crea una historia que contenga dichos elementos. Por ejemplo:
 
@@ -38,14 +38,14 @@ Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de
 - Salida: ¿ Te gusta caminar con tu perro azul rápidamente ?
 - `206madlib2.html` y `206madlib2.php` Crea un madlib más extenso, leyendo más datos de entrada.
 
-### **Actividad 207**
+### Actividad 207
 
 `207anyos.php`: Tras leer la edad de una persona, mostrar la edad que tendrá dentro de 10 años y hace 10 años. Además, muestra qué año será en cada uno de los casos. Finalmente, muestra el año de jubilación suponiendo que trabajarás hasta los 67 años. En este caso, no hace falta que previamente crees un formulario, puedes probar el ejercicio via URL: `207anyos.php?edad=33`.
 
 !!!note "**A tener en cuenta**"
  	`$anyoActual = date("Y");`
 
-### **Actividad 208**
+### Actividad 208
 
 `208dinero.php`: A partir de una cantidad de dinero, mostrar su descomposición en billetes (500, 200, 100, 50, 20, 10, 5) y monedas (2, 1), para que el número de elementos sea mínimo. No se utilizar ninguna instrucción condicional. Por ejemplo, al introducir `139` debe mostrar:
 
@@ -61,17 +61,17 @@ Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de
 !!!note "**A tener en cuenta**"
  	Puedes forzar a realizar la división entera mediante la función `intdiv($dividendo, $divisor) `o pasar un número flotante a entero puedes usar la función `intval()`.
 
-### **Actividad 209**
+### Actividad 209
 
 `209posnegcero.php`: A partir de un numero, muestra por pantalla si el número es `positivo`, `negativo` o `cero`.
 
-### **Actividad 210**
+### Actividad 210
 
 `210mayor3.php`: Sin hacer uso de condiciones que utilicen dentro la condición los operadores lógicos, muestra el mayor de tres números (a, b y c).
 
 `210mayor3c.php`: Utiliza en las condiciones los operadores lógicos.
 
-### **Actividad 211**
+### Actividad 211
 
 `211nombreEdad.php`: A partir de una edad muestra por pantalla:
 
@@ -81,46 +81,46 @@ Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de
 - *adulto* entre 18 y 66
 - *jubilado* a partir de 67
 
-### **Actividad 212**
+### Actividad 212
 
 `212reloj.php`: Escribe un programa que funcione similar a un reloj, de manera que a partir de los valores de *hora*, *minuto* y *segundo* muestre la hora dentro de un segundo. Tras las *23:59:59* serán las *0:0:0*.
 
-**### Actividad 213**
+### Actividad 213
 
 `213calendario.php`: Escribe un programa similar a un calendario de manera que a partir de *dia*, *mes* y *anyo* muestre la fecha dentro de un día. Debes tener en cuenta que no todos los meses tienen 30 días. En este caso, no vamos a tener en cuenta los años bisiestos.
 
-### **Actividad 214**
+### Actividad 214
 
 `214ecuacion2g.php`: Crea un programa que resuelva una ecuación de 2º grado del tipo `ax² + bx + c = 0`. Ten en cuenta que puede tener 2, 1 o no tener solución dependiendo del valor del discriminante `b²-4ac`.
 
-<img src="../../img/ud02/img01.png" style="max-width:70%;" />
+<img src="../../img/ud02/img01.png" style="max-width: 30%;" />
 
 !!!note "**A tener en cuenta**"
  	Para calcular la raíz cuadrada deberás utilizar la función `sqrt()`.
 
-### **Actividad 215**
+### Actividad 215
 
 Investiga para qué sirve el operador nave espacial, disponible desde PHP7 (https://www.php.net/manual/es/migration70.new-features.php). Explica con un par de líneas su propósito y mediante código demuestra su uso.
 
-### **Actividad 216**
+### Actividad 216
 
 Investiga para qué sirve la instrucción `match()`, disponible desde PHP8 (https://www.php.net/manual/es/control-structures.match.php). Explica con un par de lineas su propósito y mediante código demuestra su uso.
 
 ## Bucles
 
-### **Actividad 221**
+### Actividad 221
 
 `221pares050.php`: Escribe un programa que muestre los números pares del 0 al 50 (dentro de una lista desordenada).
 
 `221paresAB.php`: A partir del anterior, refactorizar para que funcione con `inicio` y `fin`.
 
-### **Actividad 222**
+### Actividad 222
 
 `222suma110.php`: Escribe un programa que sume los números del 1 al 10.
 
 `222sumaAB.php`: A partir del anterior, refactorizar para que funcione con `inicio` y `fin`.
 
-### **Actividad 223**
+### Actividad 223
 
 `223potencia.php`: A partir de una base y exponente, mediante la acumulación de productos, calcula la potencia utilizando la instrucción `for`.
 
@@ -128,7 +128,7 @@ Investiga para qué sirve la instrucción `match()`, disponible desde PHP8 (http
 
 `223potenciaDoWhile.php`: Reescribe el ejercicio anterior haciendo uso sólo de `do-while`.
 
-### **Actividad 224**
+### Actividad 224
 
 `224tablaMultiplicar.php`: Muestra dentro de una tabla HTML la tabla de multiplicar del numero que reciba como parámetro. Utiliza `<thead>` con sus respectivos `<th>` y `<tbody>` para dibujar la tabla. Por ejemplo:
 
@@ -139,7 +139,7 @@ Investiga para qué sirve la instrucción `match()`, disponible desde PHP8 (http
 | ...   |       |       |       |          |
 | 7     | *     | 10    | =     | 70       |
 
-### **Actividad 225**
+### Actividad 225
 
 `225formulario.html`: Crea un formulario que permita leer una cantidad.
 
@@ -150,19 +150,19 @@ Finalmente, en `225sumarDatos.php`: a partir de los datos de todas las cajas de 
 !!!note "**A tener en cuenta**"
  	Para guardar un dato oculto puedes utilizar un campo de formulario de tipo oculto: `<input type="hidden" name="cantidad" value="33" />`.
 
-### **Actividad 226**
+### Actividad 226
 
 `226formulario.html` y `226tabla.php`: A partir de un número de `filas` y `columnas`, crear una tabla con ese tamaño. Las celdas deben estar rellenadas con los valores de las coordenadas de cada celda.
 
-### **Actividad 227**
+### Actividad 227
 
 `227formulario.html` y `227cuadrado.php`: Basándote en el ejercicio anterior, rellena la tabla de manera que solo los bordes tengan contenido, quedándose el resto de celdas en blanco.
 
-### **Actividad 228**
+### Actividad 228
 
 `228formulario.html` y `228equis.php`: Basándote en el ejercicio anterior, ahora sólo debe aparecer el contenido de los dos diagonales.
 
-**### Actividad 229**
+### Actividad 229
 
 `229cuadradoMultiplicar.php`: Crea un programa que muestre por pantalla un cuadrado exactamente igual (fíjate bien en los encabezados, tanto de las filas como de las columnas) al de la imagen con las tablas de multiplicar.
 
@@ -170,7 +170,7 @@ Finalmente, en `225sumarDatos.php`: a partir de los datos de todas las cajas de 
 
 ## Arrays
 
-### **Actividad 231**
+### Actividad 231
 
 `231aleatorios50.php`: Rellena un array con 50 números aleatorios comprendidos entre el 0 y el 99, y luego muéstralo en una lista desordenada. Para crear un número aleatorio, utiliza la función `rand(inicio, fin)`. Por ejemplo:
 
@@ -178,7 +178,7 @@ Finalmente, en `225sumarDatos.php`: a partir de los datos de todas las cajas de 
 $num = rand(0, 99)
 ```
 
-### **Actividad 232**
+### Actividad 232
 
 `232bola8.html`: Prepara un formulario con un caja de texto que realice a una pregunta al usuario.
 
@@ -186,7 +186,7 @@ $num = rand(0, 99)
 
 Este ejercicio se basa en el juego de la [Bola 8 mágica](https://es.wikipedia.org/wiki/Magic_8-Ball).
 
-### **Actividad 233**
+### Actividad 233
 
 `233mates.php`: A partir del ejercicio 230, genera un array aleatorio de 33 elementos con números comprendidos entre el 0 y 100 y calcula:
 
@@ -194,29 +194,29 @@ Este ejercicio se basa en el juego de la [Bola 8 mágica](https://es.wikipedia.o
 - El menor
 - La media
 
-**### Actividad 234**
+### Actividad 234
 
 `234sexos.php`: Rellena un array de 100 elementos de manera aleatoria con valores `M` o `F` (por ejemplo `["M", "M", "F", "M", ...]`). Una vez completado, vuelve a recorrerlo y calcula cuantos elementos hay de cada uno de los valores almacenando el resultado en un array asociativo `['M' => 44, 'F' => 66]` (no utilices variables para contar las `M` o las `F`). Finalmente, muestra el resultado por pantalla
 
-**### Actividad 235**
+### Actividad 235
 
 `235monedas.php`: Vuelve a realizar el ejercicio 207, el de las monedas (500, 200, 100, 50, 20, 10, 5, 2, 1), pero haciendo uso de arrays y un bucle. Almacena el resultado en un array asociativo. Muestra el resultado en una lista desordenada únicamente con las cantidades que tienen algún valor.
 
-### **Actividad 236**
+### Actividad 236
 
 `236alturas.php`: Mediante un array asociativo, almacena el nombre y la altura de 5 personas (`nombre => altura`). Posteriormente, recorre el array y muéstralo en una tabla HTML. Finalmente añade una última fila a la tabla con la altura media.
 
-### **Actividad 237**
+### Actividad 237
 
 `237personas.php`: Mediante un array bidimensional, almacena el nombre, altura y email de 5 personas. Para ello, crea un array de personas, siendo cada persona un array asociativo: `[ ['nombre'=>'Aitor', 'altura'=>182, 'email'=>'aitor@correo.com'],[…],… ]` Posteriormente, recorre el array y muéstralo en una tabla HTML.
 
-### **Actividad 238**
+### Actividad 238
 
 `238leerCantidad.html` y `237leerPersonas.php`: a partir de un formulario con un campo de `cantidad` de personas, generar un nuevo formulario para leer el nombre, altura y email de `cantidad` personas.
 
 `238gestionarPersonas.php`: A partir de las personas introducidas, mostrar sus datos en una tabla, y posteriormente, destacar los datos del más alto y el del más bajo.
 
-### **Actividad 239**
+### Actividad 239
 
 `239tablaDistintos.php`: Rellena un array bidimensional de 6 filas por 9 columnas con números aleatorios comprendidos entre 100 y 999 (ambos incluidos). Todos los números deben ser distintos, es decir, no se puede repetir ninguno.
 Muestra a continuación por pantalla el contenido del array de tal forma que:
@@ -227,7 +227,7 @@ Muestra a continuación por pantalla el contenido del array de tal forma que:
 
 ## Funciones
 
-### **Actividad 241**
+### Actividad 241
 
 `241arrayPar.php`: Crea las siguientes funciones:
 
@@ -235,14 +235,14 @@ Muestra a continuación por pantalla el contenido del array de tal forma que:
 - Una función que devuelva un array de tamaño `$tam` con números aleatorios comprendido entre `$min` y `$max`: `arrayAleatorio(int $tam, int $min, int $max) : array`
 - Una función que reciba un `$array` por referencia y devuelva la cantidad de números pares que hay almacenados: `arrayPares(array &$array): int`
 
-### **Actividad 242**
+### Actividad 242
 
 `242parametrosVariables.php`: Crea las siguientes funciones:
 
 - Una función que devuelva el mayor de todos los números recibidos como parámetros: `function mayor(): int`. Utiliza las funciones `func_get_args()`, etc... No puedes usar la función `max()`.
 - Una función que concatene todos los parámetros recibidos separándolos con un espacio: `function concatenar(...$palabras) : string`. Utiliza el operador ....
 
-### **Actividad 243**
+### Actividad 243
 
 `243matematicas.php`: Añade las siguientes funciones:
 
@@ -253,13 +253,13 @@ Muestra a continuación por pantalla el contenido del array de tal forma que:
 
 Para probar las funciones, haz uso tanto de paso de argumentos posicionales como argumentos con nombre.
 
-### **Actividad 244**
+### Actividad 244
 
 `244biblioteca.php`: crea un archivo con funciones para sumar, restar, multiplicar y dividir dos números.
 
 `244arrayFunciones.php`: haciendo uso de un array que almacene el nombre de las funciones del archivo anterior, a partir de dos números recibidos por URL, recorre el array e invoca a las funciones de manera dinámica haciendo uso de funciones variable.
 
-### **Actividad 245**
+### Actividad 245
 
 `245euros.php`: Crea una biblioteca con dos funciones:
 
@@ -273,21 +273,21 @@ Cada función debe recibir dos parámetros:
 
 `245calculadoraEuros.php`: utiliza `244euros.php` y prueba las funciones pasando tanto cantidades con la cotización por defecto, como con nuevas cotizaciones. Recuerda que 1 euro son/eran 166.36 pesetas.
 
-### **Actividad 246**
+### Actividad 246
 
 `246preparaTiquetCompra.php`: A partir de una cantidad de productos, leer el nombre y coste de la cantidad de productos indicados (similar al ejercicio 237, pero esta vez no hace falta crear el formulario con la cantidad, se recibe mediante un parámetro GET via URL).
 
 `246imprimeTiquetCompra.php`: Tras leer los datos del tiquet de compra, enumera en una tabla los productos, con su precio en euros y pesetas, y finalmente, en una última fila, totalizar en ambas monedas.
 
-### **Actividad 247**
+### Actividad 247
 
 A partir de los archivos creados en el ejercicio anterior, crea una plantilla mediante includes: `247preparaCompra.php`: similar a *246preparaTiquetCompra.php*, pero separando el encabezado (Supermercado Severo en `h1`) y el pie (Tu supermercado de confianza) en ficheros externos y referenciando a ellos mediante `include`.
 
-![](../../img/ud02/img03.png)
+![](../../img/ud02/img03.png  style="max-width:100%;")
 
 `247listaCompra.php`: recibe los datos del anterior, y reutiliza parte de *246imprimeTiquetCompra.php* cambiando la tabla por una lista desordenada de los productos junto a su precio.
 
-### **Actividad 248**
+### Actividad 248
 
 Vamos a simular un formulario de acceso:
 
@@ -300,15 +300,15 @@ Vamos a simular un formulario de acceso:
 
 Todos los ejercicios se deben realizar creando nuevas funciones para encapsular el código. Además de la propia función, el ejercicio debe contener código para poder probarlo.
 
-### **Actividad 251**
+### Actividad 251
 
 `251fraseImpares.php`: Lee una frase y devuelve una nueva con solo los caracteres de las posiciones impares.
 
-### **Actividad 252**
+### Actividad 252
 
 `252vocales.php`: A partir de una frase, devuelve la cantidad de cada una de las vocales, y el total de ellas.
 
-### **Actividad 253**
+### Actividad 253
 
 `253analizador.php`: A partir de una frase con palabras sólo separadas por espacios, devolver
 
@@ -320,15 +320,15 @@ Todos los ejercicios se deben realizar creando nuevas funciones para encapsular 
 
 `253analizadorWC.php`: Investiga que hace la función `str_word_count`, y vuelve a hacer el ejercicio.
 
-### **Actividad 254**
+### Actividad 254
 
 `254cani.php`: EsCrIbE uNa FuNcIóN qUe TrAnSfOrMe UnA cAdEnA eN cAnI.
 
-### **Actividad 255**
+### Actividad 255
 
 `255palindromo.php`: Escribe una función que devuelva un booleano indicando si una palabra es palíndroma (se lee igual de izquierda a derecha que de derecha a izquierda, por ejemplo, “ligar es ser agil”).
 
-### **Actividad 256**
+### Actividad 256
 
 `256codificar.php`: Utilizando las funciones para trabajar con caracteres, a partir de una cadena y un desplazamiento:
 
@@ -337,7 +337,7 @@ Todos los ejercicios se deben realizar creando nuevas funciones para encapsular 
 - Si se sale del abecedario, debe volver a empezar
 - Hay que respetar los espacios, puntos y comas.
 
-### **Actividad 257**
+### Actividad 257
 
 `257filtrado.html`: Crea un programa que permita al usuario leer un conjunto de números separados por espacios.
 
@@ -348,21 +348,21 @@ Dame números: 1 4 7 9 23 10 8
 Los 3 números pares son: 4 10 8
 ```
 
-### **Actividad 258**
+### Actividad 258
 
 `258investiga.php`: Investiga las siguientes funciones de cadena (explica para qué sirven mediante comentarios, y programa un pequeño ejemplo de cada una de ellas): `ucwords`, `strrev`, `str_repeat` y `md5`.
 
 Los siguientes ejercicios se basan en la generación de números aleatorios.
 
-### **Actividad 259**
+### Actividad 259
 
 `259generador.php`: Crea una función que permite generar una letra aleatoria, mayúscula o minúscula.
 
-### **Actividad 260**
+### Actividad 260
 
 `260generaContrasenya.php`: Crea una función que a partir de un tamaño, genera una contraseña aleatoria compuesta de letras y dígitos de manera aleatoria.
 
-### **Actividad 261**
+### Actividad 261
 
 `261quinielas.php`: Crea las siguientes funciones:
 
@@ -402,5 +402,4 @@ Estos son 10 ejercicios para resolver de la excelente propuesta [Acepta el Reto]
 9) [Las Cartas del Abuelo](https://aceptaelreto.com/problem/statement.php?id=132)
 
 10) [Manías tenemos todos](https://aceptaelreto.com/problem/statement.php?id=175)
-
 

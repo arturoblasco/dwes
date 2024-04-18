@@ -37,7 +37,25 @@ nav:
      - 2.7 Expresiones regulares: ud02/ud0207.md
      - Actividades: ud02/ud02ac.md
      - Referencias: ud02/ud0208.md
-  - UD 3 PHP Orientado a Objetos: default.md
+  - UD 3 PHP Orientado a Objetos:
+     - 3.1 Introducción: ud03/ud0301.md
+     - 3.2 Clases y objetos: ud03/ud0302.md
+     - 3.3 Encapsulación: ud03/ud0303.md
+     - 3.4 Constructor: ud03/ud0304.md
+     - 3.5 Clases estáticas: ud03/ud0305.md
+     - 3.6 Introspección: ud03/ud0306.md
+     - 3.7 Herencia: ud03/ud0307.md
+     - 3.8 Clases abstractas: ud03/ud0308.md
+     - 3.9 Clases final: ud03/ud0309.md
+     - 3.10 Interfaces: ud03/ud0310.md
+     - 3.11 Métodos encadenados: ud03/ud0311.md
+     - 3.12 Métodos mágicos: ud03/ud0312.md
+     - 3.13 Espacio de nombres: ud03/ud0313.md
+     - 3.14 Gestión de errores: ud03/ud0314.md
+     - 3.15 Excepciones: ud03/ud0315.md
+     - 3.16 SPL: ud03/ud0316.md
+     - Actividades: ud03/ud03ac.md
+     - Referencias: ud03/ud0317.md
   - UD 4 Programación Web: default.md
   - UD 5 Herramientas Web: default.md
   - UD 6 Acceso a Base de Datos: default.md
@@ -59,7 +77,7 @@ markdown_extensions:
 # Tema a triar
 theme:
   name: material  # selecció del tema
-  logo: logo3.png
+  logo: logo.png
   palette:
    # Boto que canvia a mode oscur
     - scheme: default

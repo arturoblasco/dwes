@@ -4,19 +4,16 @@
 
 ## Índice de unidades
 
-| unidad |      |
-| ------ | ---- |
-| UD 00  |      |
-| UD 01  |      |
-| UD 02  |      |
-| UD 03  |      |
-| UD 04  |      |
-| UD 05  |      |
-| UD 06  |      |
-| UD 07  |      |
-| UD 08  |      |
-|        |      |
-|        |      |
+| unidad |                         |
+| ------ | ----------------------- |
+| UD 01  | Arquitectura Web        |
+| UD 02  | Lenguaje PHP            |
+| UD 03  | PHP Orientado a Objetos |
+| UD 04  | Programación Web        |
+| UD 05  | Herramientas Web        |
+| UD 06  | Acceso a Base de Datos  |
+| UD 07  | Framework Laravel       |
+| UD 08  | Laravel avanzado        |
 
 
 
