@@ -65,9 +65,38 @@ nav:
      - 4.6 Autenticación de usuarios: ud04/ud0406.md
      - Actividades: ud04/ud04ac.md
      - Referencias: ud04/ud04re.md
-  - UD 5 Herramientas Web: default.md
-  - UD 6 Acceso a Base de Datos: default.md
-  - UD 7 Framework Laravel: default.md
+  - UD 5 Herramientas Web:
+     - 5.1 Introducción: ud05/ud0501.md
+     - 5.2 Composer: ud05/ud0502.md
+     - 5.3 Monolog: ud05/ud0503.md
+     - 5.4 Documentación con phpDocumentor: ud05/ud0504.md
+     - 5.5 Web Scraping: ud05/ud0505.md
+     - 5.6 Pruebas con phpUnit: ud05/ud0506.md
+     - Actividades: ud05/ud05ac.md
+     - Referencias: ud05/ud05re.md
+  - UD 6 Acceso a Base de Datos:
+     - 6.1 Introducción: ud06/ud0601.md
+     - 6.2 Instalación: ud06/ud0602.md
+     - 6.3 Estructura de BD: ud06/ud0603.md
+     - 6.4 Chollometro: ud06/ud0604.md
+     - 6.5 SQL: ud06/ud0605.md
+     - 6.6 phpMyAdmin: ud06/ud0606.md
+     - 6.7 MySQLi: ud06/ud0607.md
+     - 6.8 PHP Data Objects-PDO: ud06/ud0608.md
+     - 6.9 login & password: ud06/ud0609.md
+     - 6.10 Acceso a ficheros: ud06/ud0610.md
+     - Actividades: ud06/ud06ac.md
+     - Referencias: ud06/ud6re.md
+  - UD 7 Framework Laravel:
+     - 7.1 Introducción: ud07/ud0701.md
+     - 7.1 Actividades: ud07/ud0701ac.md
+     - 7.2 Rutas y vistas: ud07/ud0702.md
+     - 7.2 Actividades: ud07/ud0702ac.md
+     - 7.3 Controladores: ud07/ud0703.md
+     - 7.3 Actividades: ud07/ud0703ac.md
+     - 7.4 Modelo de datos: ud07/ud0704.md
+     - 7.4 Actividades: ud07/ud0704ac.md
+     - Referencias: ud07/ud7re.md
   - UD 8 Laravel avanzado: default.md
 
 # Extensions
