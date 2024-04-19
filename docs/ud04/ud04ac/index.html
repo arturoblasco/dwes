@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../ud0401/">
+        <link rel="prev" href="../ud0406/">
       
       
         <link rel="next" href="../ud04re/">
@@ -1227,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0402.md" class="md-nav__link">
+      <a href="../ud0402/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1248,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0403.md" class="md-nav__link">
+      <a href="../ud0403/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1269,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0404.md" class="md-nav__link">
+      <a href="../ud0404/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0405.md" class="md-nav__link">
+      <a href="../ud0405/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0406.md" class="md-nav__link">
+      <a href="../ud0406/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1567,6 +1567,7 @@
 </li>
 </ul>
 <hr>
+
 <h1 id="formularios">Formularios</h1>
 <h2 id="actividad-402">Actividad 402</h2>
 <p><code>402formulario.html</code> y <code>402formulario.php</code>: Crea un formulario que solicite:</p>
@@ -1593,6 +1594,7 @@
 <p><code>405subidaImagen.php</code>: modifica el ejercicio anterior para que únicamente permita subir imágenes (comprueba la propiedad <code>type</code> del archivo subido). Si el usuario selecciona otro tipo de archivos, se le debe informar del error y permitir que suba un nuevo archivo.</p>
 <p>En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y altura recibido como parámetro.</p>
 <hr>
+
 <h1 id="cookies-y-sesion">Cookies y sesión</h1>
 <h2 id="actividad-406">Actividad 406</h2>
 <p><code>406contadorVisitas.php</code>: Mediante el uso de cookies, informa al usuario de si es su primera visita, o si no lo es, muestre su valor (valor de un contador). Además, debes permitir que el usuario reinicialice su contador de visitas.</p>
@@ -1613,6 +1615,7 @@
 <li><code>409formulario3.php</code> recoge los datos enviados en el paso anterior y junto a los que ya estaban en la sesión, se muestran todos los datos en una tabla/lista desordenada.</li>
 </ul>
 <hr>
+
 <h1 id="autenticacion">Autenticación</h1>
 <p>En los siguientes ejercicios vamos a montar una estructura de inicio de sesión similar a la vista en los apuntes.</p>
 <h2 id="actividad-410">Actividad 410</h2>
@@ -1650,8 +1653,10 @@
 <p>Vamos a modificar la clase <code>Cliente</code> para almacenar el <code>user</code> y la <code>password</code> de cada cliente. Tras codificar los cambios, modificar el listado de clientes de <code>mainAdmin.php</code> para añadir al listado el usuario.</p>
 <h2 id="actividad-423">Actividad 423</h2>
 <p>Si el usuario que accede no es administrador y coincide con alguno de los clientes que tenemos cargados tras el login, debe cargar <code>mainCliente.php</code> donde se mostrará un listado de los alquileres del cliente. Para ello, modificaremos la clase <code>Cliente</code> para ofrecer el método <code>getAlquileres() : array</code>, el cual llamaremos y luego recorreremos para mostrar el listado solicitado.</p>
-<p><img src="../../img/ud04/act01esquemaNavegacion.png" style="max-width: 70%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud04/act01esquemaNavegacion.png" style="max-width: 60%;" /></div>
+
 <hr>
+
 <p>Ahora volvemos a la parte de administración:</p>
 <h2 id="actividad-424">Actividad 424</h2>
 <p>Además de mostrar el listado de clientes, vamos a ofrecer la opción de dar de alta a un nuevo cliente en <code>formCreateCliente.php</code>. Los datos se enviarán mediante POST a <code>createCliente.php</code> que los introducirá en la sesión. Una vez creado el cliente, debe volver a cargar <code>mainAdmin.php</code> donde se podrá ver el cliente insertado. Si hay algún dato incorrecto, debe volver a cargar el formulario de alta.</p>
@@ -1659,7 +1664,7 @@
 <p>Crea en <code>formUpdateCliente.php</code> un formulario que permita editar los datos de un cliente. Debes recoger los datos en <code>updateCliente.php</code> Los datos de cliente se deben poder modificar desde la propia página de un cliente, así como desde el listado del administrador.</p>
 <h2 id="actividad-426">Actividad 426</h2>
 <p>Desde el listado de clientes del administrador debes ofrecer la posibilidad de borrar un cliente. En el navegador, antes de redirigir al servidor, el usuario debe confirmar mediante JS que realmente desea eliminar al cliente. Finalmente, en <code>removeCliente.php</code> elimina al cliente de la sesión. Una vez eliminado, debe volver al listado de clientes.</p>
-<p><img src="../../img/ud04/act02esquemaNavegacionVideoclub.png" style="max-width: 80%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud04/act02esquemaNavegacionVideoclub.png" style="max-width: 80%;" /></div>
 
 
 
@@ -1695,7 +1700,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ud0401/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4.1 Introducción">
+          <a href="../ud0406/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4.6 Autenticación de usuarios">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1705,7 +1710,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                4.1 Introducción
+                4.6 Autenticación de usuarios
               </div>
             </div>
           </a>

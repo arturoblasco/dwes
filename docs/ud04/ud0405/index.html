@@ -1,0 +1,2047 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud0404/">
+      
+      
+        <link rel="next" href="../ud0406/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>4.5 Gestión de estado - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestion-de-estado" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4.5 Gestión de estado
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0102/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Cliente/servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0103/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Arquitectura de 3 capas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0104/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 MVC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0105/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Decisiones de diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0106/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0107/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Puesta en marcha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0108/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Manual Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01de/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descargas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Operadores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Funciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Funciones predefinidas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Expresiones regulares
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 3 PHP OO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0301/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0302/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Clases y objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0303/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Encapsulación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0304/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Constructor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0305/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Clases estáticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0306/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introspección
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0307/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Herencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0308/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Clases abstractas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0309/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.9 Clases final
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0310/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.10 Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0311/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.11 Métodos encadenados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0312/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.12 Métodos mágicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0313/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.13 Espacio de nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0314/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.14 Gestión de errores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0315/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.15 Excepciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0316/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.16 SPL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD 4 Programación Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0401/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0402/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Variable de servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0403/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0404/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cabeceras de respuesta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4.5 Gestión de estado
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Gestión de estado
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cookies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sesión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0406/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Autenticación de usuarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud04ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud04re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 5 Herramientas Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 6 Acceso a Base de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 7 Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD 8 Laravel avanzado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cookies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sesión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="gestion-de-estado">Gestión de estado</h1>
+<p>HTTP es un protocolo stateless, sin estado. Por ello, se simula el estado mediante el uso de <em>cookies</em>, <em>tokens</em> o la <em>sesión</em>. El estado es necesario para procesos tales como el carrito de la compra, operaciones asociadas a un usuario, etc... El mecanismo de PHP para gestionar la sesión emplea <em>cookies</em> de forma interna. Las <em>cookies</em> se almacenan en el navegador, y la sesión en el servidor web.</p>
+<h2 id="cookies">Cookies</h2>
+<p>Las <em>cookies</em> se almacenan en el array global <code>$_COOKIE</code>. Lo que coloquemos dentro del array, se guardará en el cliente. Hay que tener presente que el cliente puede no querer almacenarlas.</p>
+<p>Existe una limitació de 20 <em>cookies</em> por dominio y 300 en total en el navegador.</p>
+<p>En PHP, para crear una cookie se utiliza la función <code>setcookie</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>  <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span> <span class="p">[,</span> <span class="nx">valor</span> <span class="p">[,</span> <span class="nx">expira</span> <span class="p">[,</span> <span class="nx">ruta</span> <span class="p">[,</span> <span class="nx">dominio</span> <span class="p">[,</span> <span class="nx">seguro</span> <span class="p">[,</span> <span class="nx">httponly</span> <span class="p">]]]]]]);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>  <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span> <span class="p">[,</span> <span class="nx">valor</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="p">[,</span> <span class="nx">opciones</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">]]</span> <span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Destacar que el nombre no puede contener espacios ni el caracter ;. Respecto al contenido de la cookie, no puede superar los 4 KB.</p>
+<p>Por ejemplo, mediante <em>cookies</em> podemos comprobar la cantidad de visitas diferentes que realiza un usuario:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>  <span class="nv">$accesosPagina</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>  <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;accesos&#39;</span><span class="p">]))</span> <span class="p">{</span> 
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>     <span class="nv">$accesosPagina</span> <span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;accesos&#39;</span><span class="p">];</span> <span class="c1">// recuperamos una cookie</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>     <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;accesos&#39;</span><span class="p">,</span> <span class="o">++</span><span class="nv">$accesosPagina</span><span class="p">);</span> <span class="c1">// le asignamos un valor</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>  <span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Inspeccionando las cookies</p>
+<p>Si queremos ver que contienen las <em>cookies</em> que tenemos almacenadas en el navegador, se puede comprobar su valor en <strong>Dev Tools</strong> → <strong>Application</strong> → <strong>Storage</strong></p>
+</div>
+<details class="example" open="open">
+<summary>Ejemplo de cookies</summary>
+<p>1) vamos a realizar un fichero html (<code>cookiesEjemplo1.html</code>) en el que:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>elige idioma:<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;cookiesEjemplo1.php?idioma=va&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/flag_valencian.png&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;valencià&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;cookiesEjemplo1.php?idioma=es&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/flag_spanish.png&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;castellano&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;cookiesEjemplo1.php?idioma=en&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/flag_england.png&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;inglés&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/img03_cookies1.png" style="zoom:50%;" /></p>
+<p>2) Creamos fichero <code>cookiesEjemplo1.php</code> en el que comprueba si se ha enviado el parámetro <code>idioma</code>, si es así, crea una <em>cookie</em> de nombre <code>idioma</code>, valor <code>$_GET['idioma']</code>, tiempo <code>1 hora</code> y que trabaja desde la raíz <code>\</code>. <br/>
+Además, se ha añadido una cabecera que redireccionará a la página <code>cookiesEjemplo1_b.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">])){</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>        <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;idioma&#39;</span><span class="p">,</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">],</span> <span class="nb">time</span><span class="p">()</span><span class="o">+</span><span class="mi">3600</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location:cookiesEjemplo1_b.php&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="p">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>3) En el fichero <code>cookiesEjemplo1_b.php</code> se comprueba el valor de la <em>cookie</em> <code>idioma</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]){</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1.html&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;va&quot;</span><span class="p">){</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1Va.php&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;va&quot;</span><span class="p">){</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1Es.php&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;idioma&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;va&quot;</span><span class="p">){</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1En.php&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>    <span class="p">}</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>4) El fichero, por ejemplo, <code>cookiesEjemplo1Va.php</code> quedaría:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">&lt;h2&gt; idioma en valencià &lt;/h2&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="x">&lt;br /&gt; &lt;br /&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="x">&lt;a href=&quot;cookiesEjemplo2BorrarCookies.php&quot;&gt;borrar cookies&lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>El tiempo de vida de las cookies puede ser tan largo como el sitio web en el que residen. Ellas seguirán ahí, incluso si el navegador está cerrado o abierto.</p>
+<p>Para borrar una cookie se puede poner que expiren en el pasado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// pasado</span>
+</code></pre></div></td></tr></table></div>
+<p>O que caduquen dentro de un periodo de tiempo determinado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">valor</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">)</span> <span class="c1">// Caducan dentro de una hora</span>
+</code></pre></div></td></tr></table></div>
+<details class="example" open="open">
+<summary>Ejemplo 2</summary>
+<p>Siguiendo con el ejemplo anterior de idiomas, podríamos crear el fichero <code>cookiesEjemplo2BorrarCookies.php</code> y, desde ahí, eliminar la <em>cookie</em> idioma:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;idioma&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location:cookiesEjemplo1.html&#39;</span><span class="p">);</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<div style="text-align: center;">
+<img src="../../img/ud04/img01comunicacionCookies.png" style="max-width:80%;" />
+</div></p>
+<p>Se utilizan para:</p>
+<ul>
+<li>Recordar los inicios de sesión.</li>
+<li>Almacenar valores temporales de usuario.</li>
+<li>Si un usuario está navegando por una lista paginada de artículos, ordenados de cierta manera, podemos almacenar el ajuste de la clasificación.</li>
+</ul>
+<p>La alternativa en el cliente para almacenar información en el navegador es el objeto <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage">LocalStorage</a>. </p>
+</details>
+<h2 id="sesion">Sesión</h2>
+<p>La <em>sesión</em> añade la gestión del estado a HTTP, almacenando en este caso la información en el servidor. Cada visitante tiene un ID de sesión único, el cual por defecto se almacena en una cookie denominada <code>PHPSESSID</code>. Si el cliente no tiene las <em>cookies</em> activas, el ID se propaga en cada URL dentro del mismo dominio. Cada sesión tiene asociado un almacén de datos mediante el array global <code>$_SESSION</code> en el cual podemos almacenar y recuperar información.</p>
+<p>La sesión comienza al ejecutar un script PHP. Se genera un nuevo ID y se cargan los datos del almacén:</p>
+<div style="text-align: center;">
+    <img src="../../img/ud04/img02comunicacionSesion.png" style="max-width:80%;" />
+</div>
+
+<p>El trabajo con sesiones tiene tres partes:</p>
+<ul>
+<li>Creación o apertura de la sesión:</li>
+</ul>
+<p>Cuando alguna página crea una sesión utilizando la cabecera <code>session_start();</code>(<em>recuerda que las cabeceras deben ir justo después de <code>&lt;?php</code></em>), el servidor asocia al navegador del usuario un identificador de usuario único. El identificador se guarda en el usuario en forma de cookie o, si el navegador del usuario no permite la creación de cookies, añadiendo el identificador en la dirección de la página.</p>
+<ul>
+<li>Utilización de la sesión:</li>
+</ul>
+<p>Si ya se ha creado la sesión, las páginas solicitadas por el mismo navegador pueden guardar y recuperar información en el servidor, información que se asocia al identificador de usuario, por lo que no es accesible a otros usuarios. La información se conserva hasta que el usuario o el servidor destruyan la sesión.</p>
+<ul>
+<li>Destrucción o cierre de la sesión:</li>
+</ul>
+<p>Tanto el usuario como el servidor pueden cerrar la sesión. El usuario puede destruir la sesión cerrando el navegador. El servidor puede destruir la sesión cuando alguna página utilice la función <code>session_destroy();</code> o al cabo de un tiempo determinado (definido mediante la función <strong><a href="https://www.php.net/manual/en/function.session-set-cookie-params.php">session_set_cookie_params()</a></strong>).</p>
+<p>Las operaciones que podemos realizar con la sesión son:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="nb">session_start</span><span class="p">();</span> <span class="c1">// carga la sesión</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>    <span class="nb">session_id</span><span class="p">()</span> <span class="c1">// devuelve el id</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="nx">clave</span><span class="p">]</span> <span class="o">=</span> <span class="nx">valor</span><span class="p">;</span> <span class="c1">// inserción</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>    <span class="nb">session_destroy</span><span class="p">();</span> <span class="c1">// destruye la sesión</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>    <span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="nx">clave</span><span class="p">];</span> <span class="c1">// borrado</span>
+</code></pre></div></td></tr></table></div>
+<p>Vamos a ver mediante un ejemplo cómo podemos insertar en un página datos en la <em>sesión</em> para posteriormente en otra página acceder a esos datos. Por ejemplo, en <code>sesion1.php</code> tendríamos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="nb">session_start</span><span class="p">();</span> <span class="c1">// inicializamos</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;ies&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;IES Mestre Ramon Esteve&quot;</span><span class="p">;</span> <span class="c1">// asignación</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="nv">$instituto</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;ies&quot;</span><span class="p">];</span> <span class="c1">// recuperación</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>    <span class="k">echo</span> <span class="s2">&quot;Estamos en el </span><span class="si">$instituto</span><span class="s2"> &quot;</span><span class="p">;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="cp">?&gt;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="x">    &lt;br /&gt;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="x">    &lt;a href=&quot;sesion2.php&quot;&gt;Y luego&lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Y posteriormente podemos acceder a la sesión en <code>sesion2.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>    <span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>    <span class="nv">$instituto</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;ies&quot;</span><span class="p">];</span> <span class="c1">// recuperación</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Otra vez, en el </span><span class="si">$instituto</span><span class="s2"> &quot;</span><span class="p">;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Configurando la sesión en php.ini</p>
+<p>Las siguientes propiedades de <code>php.ini</code> permiten configurar algunos aspectos de la sesión:<br/>
+- <code>session.save_handler</code>: controlador que gestiona cómo se almacena (valor <code>files</code>).<br/>
+- <code>session.save_path</code>: ruta donde se almacenan los archivos con los datos (si tenemos un cluster, podríamos usar <em>/mnt/sessions</em> en todos los servidores de manera que apuntan a una carpeta compartida).<br/>
+- <code>session.name</code>: nombre de la sesión (PHSESSID).<br/>
+- <code>session.auto_start</code>: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.<br/>
+- <code>session.cookie_lifetime</code>: tiempo de vida por defecto.<br/><br/>
+Más información en la <a href="https://www.php.net/manual/es/session.configuration.php">documentación oficial</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Cookie VS session</p>
+<p>Las <em>sesiones</em> no deben confundirse con las <em>cookies</em>. Las <em>cookies</em> es un método que permite guardar información en el ordenador del cliente para recuperarla en el futuro; mientras que en las <em>sesiones</em> la información se mantiene en el servidor hasta que se cierra la sesión (por intervención del usuario o por tiempo). En el manual de PHP se ofrece un <a href="https://www.php.net/manual/en/book.session.php">capítulo dedicado a las sesiones</a>.</p>
+</div>
+<details class="example" open="open">
+<summary>Ejemplo</summary>
+<p>He aquí un ejemplo gráfico de utilización de sesiones. Programa de dos páginas que muestra gráficamente los votos recogidos por dos opciones.<br/>
+- La primera página contiene un formulario con tres botones de tipo <code>submit</code> con el mismo atributo <code>name</code>.<br/>
+- Dos botones permiten votar a una u otra opción.<br/>
+- El tercer botón pone a cero los contadores de votos.<br/>
+- La segunda página recibe el dato, modifica la variable de sesión que contiene el número de votos de la opción elegida (o ambas) y redirige a la primera página.<br/>
+- Los dos números se guardan en dos variables de sesión. Si las variables de sesión no están definidas, se les dará el valor 0.<br/>
+- Las franjas correspondientes a los votos se alargan de 10px en 10px y no tienen límite de tamaño.
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span>
+<span class="normal"><a href="#__codelineno-12-21">21</a></span>
+<span class="normal"><a href="#__codelineno-12-22">22</a></span>
+<span class="normal"><a href="#__codelineno-12-23">23</a></span>
+<span class="normal"><a href="#__codelineno-12-24">24</a></span>
+<span class="normal"><a href="#__codelineno-12-25">25</a></span>
+<span class="normal"><a href="#__codelineno-12-26">26</a></span>
+<span class="normal"><a href="#__codelineno-12-27">27</a></span>
+<span class="normal"><a href="#__codelineno-12-28">28</a></span>
+<span class="normal"><a href="#__codelineno-12-29">29</a></span>
+<span class="normal"><a href="#__codelineno-12-30">30</a></span>
+<span class="normal"><a href="#__codelineno-12-31">31</a></span>
+<span class="normal"><a href="#__codelineno-12-32">32</a></span>
+<span class="normal"><a href="#__codelineno-12-33">33</a></span>
+<span class="normal"><a href="#__codelineno-12-34">34</a></span>
+<span class="normal"><a href="#__codelineno-12-35">35</a></span>
+<span class="normal"><a href="#__codelineno-12-36">36</a></span>
+<span class="normal"><a href="#__codelineno-12-37">37</a></span>
+<span class="normal"><a href="#__codelineno-12-38">38</a></span>
+<span class="normal"><a href="#__codelineno-12-39">39</a></span>
+<span class="normal"><a href="#__codelineno-12-40">40</a></span>
+<span class="normal"><a href="#__codelineno-12-41">41</a></span>
+<span class="normal"><a href="#__codelineno-12-42">42</a></span>
+<span class="normal"><a href="#__codelineno-12-43">43</a></span>
+<span class="normal"><a href="#__codelineno-12-44">44</a></span>
+<span class="normal"><a href="#__codelineno-12-45">45</a></span>
+<span class="normal"><a href="#__codelineno-12-46">46</a></span>
+<span class="normal"><a href="#__codelineno-12-47">47</a></span>
+<span class="normal"><a href="#__codelineno-12-48">48</a></span>
+<span class="normal"><a href="#__codelineno-12-49">49</a></span>
+<span class="normal"><a href="#__codelineno-12-50">50</a></span>
+<span class="normal"><a href="#__codelineno-12-51">51</a></span>
+<span class="normal"><a href="#__codelineno-12-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="c1">// Accedemos a la sesión</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="nb">session_name</span><span class="p">(</span><span class="s2">&quot;sesion1&quot;</span><span class="p">);</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="c1">// Si algún contador no está guardado en la sesión, ponemos ambos a cero</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="p">}</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="x">&lt;!-- ... --&gt;</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="x">&lt;h2&gt;Votar una opción&lt;/h2&gt;</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="x">&lt;form action=&quot;ps2.php&quot; method=&quot;get&quot;&gt;</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="x">    &lt;table&gt;</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="x">    &lt;tr&gt;</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="x">        &lt;td style=&quot;vertical-align: top;&quot;&gt;</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="x">            &lt;button type=&quot;submit&quot; name=&quot;accion&quot; value=&quot;a&quot; </span>
+<a id="__codelineno-12-21" name="__codelineno-12-21"></a><span class="x">                 style=&quot;font-size: 60px; line-height: 50px; color: hwb(200 0% 0%);&quot;&gt;  &amp;#x2714; &lt;/button&gt;</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22"></a><span class="x">        &lt;/td&gt;</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23"></a><span class="x">        &lt;td&gt;</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24"></a><span class="x">            </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25"></a>                <span class="c1">// Dibujamos la primera barra</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26"></a>                <span class="k">print</span> <span class="s2">&quot; &lt;svg width=</span><span class="se">\&quot;</span><span class="si">$_SESSION[a]</span><span class="se">\&quot;</span><span class="s2"> height=</span><span class="se">\&quot;</span><span class="s2">50</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27"></a>                <span class="k">print</span> <span class="s2">&quot;   &lt;line x1=</span><span class="se">\&quot;</span><span class="s2">0</span><span class="se">\&quot;</span><span class="s2"> y1=</span><span class="se">\&quot;</span><span class="s2">25</span><span class="se">\&quot;</span><span class="s2"> x2=</span><span class="se">\&quot;</span><span class="si">$_SESSION[a]</span><span class="se">\&quot;</span><span class="s2"> y2=</span><span class="se">\&quot;</span><span class="s2">25</span><span class="se">\&quot;</span><span class="s2"> stroke=</span><span class="se">\&quot;</span><span class="s2">hwb(200 0% 0%)</span><span class="se">\&quot;</span><span class="s2"> stroke-width=</span><span class="se">\&quot;</span><span class="s2">50</span><span class="se">\&quot;</span><span class="s2"> /&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28"></a>                <span class="k">print</span> <span class="s2">&quot; &lt;/svg&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29"></a>            <span class="cp">?&gt;</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30"></a><span class="x">        &lt;/td&gt;</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31"></a><span class="x">    &lt;/tr&gt;</span>
+<a id="__codelineno-12-32" name="__codelineno-12-32"></a><span class="x">    &lt;tr&gt;</span>
+<a id="__codelineno-12-33" name="__codelineno-12-33"></a><span class="x">        &lt;td&gt;</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34"></a><span class="x">            &lt;button type=&quot;submit&quot; name=&quot;accion&quot; value=&quot;b&quot; style=&quot;font-size: 60px; line-height: 50px; color: hwb(35 0% 0%)&quot;&gt;&amp;#x2714;</span>
+<a id="__codelineno-12-35" name="__codelineno-12-35"></a><span class="x">            &lt;/button&gt;</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36"></a><span class="x">        &lt;/td&gt;</span>
+<a id="__codelineno-12-37" name="__codelineno-12-37"></a><span class="x">    </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38"></a>    <span class="c1">// Dibujamos la segunda barra</span>
+<a id="__codelineno-12-39" name="__codelineno-12-39"></a>    <span class="k">print</span> <span class="s2">&quot; &lt;td&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40"></a>    <span class="k">print</span> <span class="s2">&quot; &lt;svg width=</span><span class="se">\&quot;</span><span class="si">$_SESSION[b]</span><span class="se">\&quot;</span><span class="s2"> height=</span><span class="se">\&quot;</span><span class="s2">50</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-41" name="__codelineno-12-41"></a>    <span class="k">print</span> <span class="s2">&quot;   &lt;line x1=</span><span class="se">\&quot;</span><span class="s2">0</span><span class="se">\&quot;</span><span class="s2"> y1=</span><span class="se">\&quot;</span><span class="s2">25</span><span class="se">\&quot;</span><span class="s2"> x2=</span><span class="se">\&quot;</span><span class="si">$_SESSION[b]</span><span class="se">\&quot;</span><span class="s2"> y2=</span><span class="se">\&quot;</span><span class="s2">25</span><span class="se">\&quot;</span><span class="s2"> stroke=</span><span class="se">\&quot;</span><span class="s2">hwb(35 0% 0%)</span><span class="se">\&quot;</span><span class="s2"> stroke-width=</span><span class="se">\&quot;</span><span class="s2">50</span><span class="se">\&quot;</span><span class="s2"> /&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-42" name="__codelineno-12-42"></a>    <span class="k">print</span> <span class="s2">&quot; &lt;/svg&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-43" name="__codelineno-12-43"></a>    <span class="k">print</span> <span class="s2">&quot; &lt;/td&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-44" name="__codelineno-12-44"></a>    <span class="cp">?&gt;</span>
+<a id="__codelineno-12-45" name="__codelineno-12-45"></a><span class="x">    &lt;/tr&gt;</span>
+<a id="__codelineno-12-46" name="__codelineno-12-46"></a><span class="x">&lt;/table&gt;</span>
+<a id="__codelineno-12-47" name="__codelineno-12-47"></a><span class="x">&lt;p&gt;</span>
+<a id="__codelineno-12-48" name="__codelineno-12-48"></a><span class="x">    &lt;button type=&quot;submit&quot; name=&quot;accion&quot; value=&quot;cero&quot;&gt;Poner a cero&lt;/button&gt;</span>
+<a id="__codelineno-12-49" name="__codelineno-12-49"></a><span class="x">&lt;/p&gt;</span>
+<a id="__codelineno-12-50" name="__codelineno-12-50"></a><span class="x">&lt;/form&gt;</span>
+<a id="__codelineno-12-51" name="__codelineno-12-51"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-12-52" name="__codelineno-12-52"></a><span class="x">&lt;/html&gt;</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span>
+<span class="normal"><a href="#__codelineno-13-21">21</a></span>
+<span class="normal"><a href="#__codelineno-13-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="nb">session_name</span><span class="p">(</span><span class="s2">&quot;sesion1&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="c1">// Si alguno de los números de votos no está guardado en la sesión, redirigimos a la primera página</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>    <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location:ps1.php&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>    <span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="p">}</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="nv">$accion</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;accion&#39;</span><span class="p">];</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="c1">// Dependiendo de la acción recibida, modificamos el número correspondiente</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$accion</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$accion</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$accion</span> <span class="o">==</span> <span class="s2">&quot;cero&quot;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18"></a>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="p">}</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="c1">// Volvemos al formulario</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location:ps1.php&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="../../img/ud04/img04_session1.png" style="max-width: 60%;" /></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ud0404/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4.4 Cabeceras de respuesta">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4.4 Cabeceras de respuesta
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ud0406/" class="md-footer__link md-footer__link--next" aria-label="Next: 4.6 Autenticación de usuarios">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4.6 Autenticación de usuarios
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

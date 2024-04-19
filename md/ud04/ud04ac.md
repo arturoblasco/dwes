@@ -10,6 +10,7 @@
 - Crea una página (`401enlace.html`) que tenga un enlace a `401server.php` y comprueba el valor de `HTTP_REFERER`.
 
 <hr>
+
 # Formularios
 
 ## Actividad 402
@@ -48,6 +49,7 @@ Prueba a pasarle datos erroneos via URL y comprobar su comportamiento.
 En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y altura recibido como parámetro.
 
 <hr>
+
 # Cookies y sesión
 
 ## Actividad 406
@@ -78,6 +80,7 @@ Haciendo uso de la sesión, vamos a dividir el formulario del ejercicio `402form
 - `409formulario3.php` recoge los datos enviados en el paso anterior y junto a los que ya estaban en la sesión, se muestran todos los datos en una tabla/lista desordenada.
 
 <hr>
+
 # Autenticación
 
 En los siguientes ejercicios vamos a montar una estructura de inicio de sesión similar a la vista en los apuntes.
@@ -142,9 +145,10 @@ Vamos a modificar la clase `Cliente` para almacenar el `user` y la `password` de
 
 Si el usuario que accede no es administrador y coincide con alguno de los clientes que tenemos cargados tras el login, debe cargar `mainCliente.php` donde se mostrará un listado de los alquileres del cliente. Para ello, modificaremos la clase `Cliente` para ofrecer el método `getAlquileres() : array`, el cual llamaremos y luego recorreremos para mostrar el listado solicitado.
 
-<img src="../../img/ud04/act01esquemaNavegacion.png" style="max-width: 70%;" />
+<div style="text-align: center;"><img src="../../img/ud04/act01esquemaNavegacion.png" style="max-width: 60%;" /></div>
 
 <hr>
+
 Ahora volvemos a la parte de administración:
 
 ## Actividad 424
@@ -159,4 +163,4 @@ Crea en `formUpdateCliente.php` un formulario que permita editar los datos de un
 
 Desde el listado de clientes del administrador debes ofrecer la posibilidad de borrar un cliente. En el navegador, antes de redirigir al servidor, el usuario debe confirmar mediante JS que realmente desea eliminar al cliente. Finalmente, en `removeCliente.php` elimina al cliente de la sesión. Una vez eliminado, debe volver al listado de clientes.
 
-<img src="../../img/ud04/act02esquemaNavegacionVideoclub.png" style="max-width: 80%;" />
+<div style="text-align: center;"><img src="../../img/ud04/act02esquemaNavegacionVideoclub.png" style="max-width: 80%;" /></div>

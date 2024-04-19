@@ -1221,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0402.md" class="md-nav__link">
+      <a href="../ud0402/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1242,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0403.md" class="md-nav__link">
+      <a href="../ud0403/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1263,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0404.md" class="md-nav__link">
+      <a href="../ud0404/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1284,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0405.md" class="md-nav__link">
+      <a href="../ud0405/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1305,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud0406.md" class="md-nav__link">
+      <a href="../ud0406/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1987,7 +1987,8 @@
 <a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p><img src="/assets/img03_cookies1.png" style="zoom:50%;" /></p>
-<p>2) Creamos fichero <code>cookiesEjemplo1.php</code> en el que comprueba si se ha enviado el parámetro <code>idioma</code>, si es así, crea una <em>cookie</em> de nombre <code>idioma</code>, valor <code>$_GET['idioma']</code>, tiempo <code>1 hora</code> y que trabaja desde la raíz <code>\</code>. Además, se ha añadido una cabecera que redireccionará a la página <code>cookiesEjemplo1_b.php</code>:</p>
+<p>2) Creamos fichero <code>cookiesEjemplo1.php</code> en el que comprueba si se ha enviado el parámetro <code>idioma</code>, si es así, crea una <em>cookie</em> de nombre <code>idioma</code>, valor <code>$_GET['idioma']</code>, tiempo <code>1 hora</code> y que trabaja desde la raíz <code>\</code>. <br/>
+Además, se ha añadido una cabecera que redireccionará a la página <code>cookiesEjemplo1_b.php</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
 <span class="normal"><a href="#__codelineno-23-2">2</a></span>
 <span class="normal"><a href="#__codelineno-23-3">3</a></span>
@@ -2123,12 +2124,12 @@
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Configurando la sesión en php.ini</p>
-<p>SiguLas siguientes propiedades de <code>php.ini</code> permiten configurar algunos aspectos de la sesión:
-- <code>session.save_handler</code>: controlador que gestiona cómo se almacena (valor <code>files</code>).
+<p>SiguLas siguientes propiedades de <code>php.ini</code> permiten configurar algunos aspectos de la sesión:<br/>
+- <code>session.save_handler</code>: controlador que gestiona cómo se almacena (valor <code>files</code>).<br/>
 - <code>session.save_path</code>: ruta donde se almacenan los archivos con los datos (si tenemos un cluster, podríamos usar /mnt/sessions en todos los servidores de manera que apuntan a una carpeta compartida).
-- <code>session.name</code>: nombre de la sesión (PHSESSID).
-- <code>session.auto_start</code>: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.
-- <code>session.cookie_lifetime</code>: tiempo de vida por defecto.
+- <code>session.name</code>: nombre de la sesión (PHSESSID).<br/>
+- <code>session.auto_start</code>: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.<br/>
+- <code>session.cookie_lifetime</code>: tiempo de vida por defecto.<br/>
 Más información en la <a href="https://www.php.net/manual/es/session.configuration.php">documentación oficial</a>.</p>
 </div>
 <div class="admonition note">
@@ -2472,11 +2473,6 @@ Más información en la <a href="https://www.php.net/manual/es/session.configura
 <p class="admonition-title">Autenticación en producción"</p>
 <p>En la actualidad la autenticación de usuario no se realiza gestionando la sesión directamente, sino que se realiza mediante algún framekwork que abstrae todo el proceso o la integración de mecanismos de autenticación tipo OAuth, como estudiaremos en la última unidad mediante <em>Laravel</em>.</p>
 </div>
-<h1 id="referencias">Referencias</h1>
-<ul>
-<li><a href="https://www.php.net/manual/es/features.cookies.php">Cookies en PHP</a></li>
-<li><a href="https://www.php.net/manual/es/book.session.php">Manejo de sesiones en PHP</a></li>
-</ul>
 
 
 

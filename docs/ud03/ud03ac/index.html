@@ -1276,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0402.md" class="md-nav__link">
+      <a href="../../ud04/ud0402/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1297,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0403.md" class="md-nav__link">
+      <a href="../../ud04/ud0403/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1318,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0404.md" class="md-nav__link">
+      <a href="../../ud04/ud0404/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1339,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0405.md" class="md-nav__link">
+      <a href="../../ud04/ud0405/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1360,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0406.md" class="md-nav__link">
+      <a href="../../ud04/ud0406/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1588,7 +1588,8 @@
 <li><code>public static function toHtml(Empleado $emp): string</code></li>
 </ul>
 <h2 id="actividad-308">Actividad 308</h2>
-<p><img src="../../img/ud03/ejer08.png" alt="## Actividad 308" style="max-width:40%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud03/ejer08.png" alt="## Actividad 308" style="max-width:40%;" /></div>
+
 <p><code>308Persona.php</code>: Copia la clase del ejercicio anterior en <code>308Empleado.php</code> y modifícala.</p>
 <p>Crea una clase <code>Persona</code> que sea padre de <code>Empleado</code>, de manera que <code>Persona</code> contenga el nombre y los apellidos, y en <code>Empleado</code> quede el salario y los teléfonos.</p>
 <h2 id="actividad-309">Actividad 309</h2>
@@ -1647,10 +1648,12 @@ Transforma <code>Persona</code> a una clase abstracta donde su método estático
 </li>
 <li>
 <p>Para los <code>Gerente</code>s, su sueldo se incrementa porcentualmente en base a su edad: <code>salario + salario*edad/100</code></p>
-<p><img src="../../img/ud03/ejer13.png" alt="## Actividad 313" style="max-width:50%;" /></p>
+<p><div style="text-align: center;"><img src="../../img/ud03/ejer13.png" alt="act313" style="max-width:50%;" /></div></p>
+</li>
+</ul>
 <h2 id="actividad-314">Actividad 314</h2>
 <p><code>314Empresa.php</code>: Utilizando las clases de los ejercicios anteriores:</p>
-</li>
+<ul>
 <li>
 <p>Crea una clase <code>Empresa</code> que además del nombre y la dirección, contenga una propiedad con un array de <code>Trabajador</code>es, ya sean <code>Empleado</code>s o <code>Gerente</code>s.</p>
 </li>
@@ -1713,7 +1716,8 @@ Tu compañero deberá descargar el proyecto con sus credenciales.</p>
 </div>
 <p>Cada clase debe ir en un archivo php separado. Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases:</p>
 <h2 id="actividad-321">Actividad 321</h2>
-<p><img src="../../img/ud03/pro01.png" alt="img" style="max-width:30%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud03/pro01.png" alt="img" style="max-width: 25%;" /></div>
+
 <p>Crea una clase para almacenar soportes (<code>Soporte.php</code>). Esta clase será la clase padre de los diferentes soportes con los que trabaje nuestro videoclub (cintas de vídeo, videojuegos, etc...):</p>
 <ul>
 <li>Crea el constructor que inicialice sus propiedades. Fíjate que la clase no tiene métodos <em>setters</em>.</li>
@@ -1751,7 +1755,8 @@ Tu compañero deberá descargar el proyecto con sus credenciales.</p>
 ```</p>
 </details>
 <h2 id="actividad-322">Actividad 322</h2>
-<p><img src="../../img/ud03/pro02.png" alt="img" style="max-width:50%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud03/pro02.png" alt="img" style="max-width:50%;" /></div>
+
 <p>Crea la clase <code>CintaVideo</code> la cual hereda de <code>Soporte</code>. Añade el atributo <code>duracion</code> y sobreescribe tanto el contructor como el método <code>muestraResumen</code> (desde <code>CintaVideo</code> deberás llamar al método <code>muestraResumen</code> del padre).</p>
 <p>Añade a <code>inicio.php</code> el código para probar la clase:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
@@ -1777,7 +1782,8 @@ Tu compañero deberá descargar el proyecto con sus credenciales.</p>
 <p><img src="../../img/ud03/pro21.png" style="max-width: 70%;" /></p>
 </details>
 <h2 id="actividad-323">Actividad 323</h2>
-<p><img src="../../img/ud03/pro03.png" alt="img" style="max-width:50%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud03/pro03.png" alt="img" style="max-width:50%;" /></div>
+
 <p>Crea la clase <code>Dvd</code> la cual hereda de <code>Soporte</code>. Añade los atributos <code>idiomas</code> y <code>formatoPantalla</code>. A continuación sobreescribe tanto el contructor como el método <code>muestraResumen</code>.</p>
 <p>Añade a <code>inicio.php</code> el código para probar la clase:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
@@ -1828,9 +1834,11 @@ Tu compañero deberá descargar el proyecto con sus credenciales.</p>
 <p><img src="../../img/ud03/pro23.png" style="max-width:80%;" /></p>
 </details>
 <p>Llegados a este punto, nuestro modelo es similar al siguiente diagrama:</p>
-<p><img src="../../img/ud03/pro05.png" alt="img" style="max-width:70%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud03/pro05.png" alt="img" style="max-width:70%;" /></div>
+
 <h2 id="actividad-325">Actividad 325</h2>
-<p><img src="../../img/ud03/pro06.png" alt="img" style="max-width: 40%;" /></p>
+<div style="text-align: center;"><img src="../../img/ud03/pro06.png" alt="img" style="max-width: 40%;" /></div>
+
 <p>Crear la clase <code>Cliente</code>. El constructor recibirá el <code>nombre</code>, <code>numero</code> y <code>maxAlquilerConcurrente</code>, este último pudiendo ser opcional y tomando como valor por defecto 3. Tras ello, añade <em>getter/setter</em> únicamente a <code>numero</code>, y un <em>getter</em> a <code>numSoportesAlquilados</code> (este campo va a almacenar un contador del total de alquileres que ha realizado). El array de soportes alquilados contedrá clases que hereden de <code>Soporte</code>. Finalmente, añade el método <code>muestraResumen</code> que muestre el nombre y la cantidad de alquileres (tamaño del array <code>soportesAlquilados</code>).</p>
 <h2 id="actividad-326">Actividad 326</h2>
 <p>Dentro de <code>Cliente</code>, añade las siguiente operaciones:</p>

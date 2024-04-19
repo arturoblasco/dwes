@@ -1309,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0402.md" class="md-nav__link">
+      <a href="../../ud04/ud0402/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1330,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0403.md" class="md-nav__link">
+      <a href="../../ud04/ud0403/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1351,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0404.md" class="md-nav__link">
+      <a href="../../ud04/ud0404/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1372,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0405.md" class="md-nav__link">
+      <a href="../../ud04/ud0405/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1393,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud04/ud0406.md" class="md-nav__link">
+      <a href="../../ud04/ud0406/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1621,10 +1621,10 @@
 
 <h1 id="espacio-de-nombres">Espacio de nombres</h1>
 <p>Desde PHP 5.3 y también conocidos como <em>Namespaces</em>, permiten organizar las clases/interfaces, funciones y/o constantes (de forma similar a los paquetes en Java) en un ámbito restringido; evitando colisiones o conflictos de nombre con otros elementos que se pueden crear más adelante (o con algunas librerías que utilices).</p>
-<blockquote>
-<p><strong>recomendación</strong>:</p>
-<p>Un sólo namespace por archivo y crear una estructura de carpetas respectando los niveles/subniveles (igual que se hace en Java).</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Recomendación</p>
+<p>Un sólo <em>namespace</em> por archivo y crear una estructura de carpetas respectando los niveles/subniveles (igual que se hace en Java).</p>
+</div>
 <p>Se declaran en la primera línea mediante la palabra clave <code>namespace</code> seguida del nombre del espacio de nombres asignado (cada subnivel se separa con la barra invertida <code>\</code> ):</p>
 <p>Por ejemplo, para colocar la clase <code>Producto</code> dentro del namespace <code>Dwes\Ejemplos</code> lo haríamos así:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -1709,9 +1709,10 @@
 <a id="__codelineno-1-24" name="__codelineno-1-24"></a>  <span class="nv">$p3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Dwes\Ejemplos\Producto</span><span class="p">();</span> 
 <a id="__codelineno-1-25" name="__codelineno-1-25"></a>  <span class="c1">// \Dwes\Ejemplos\Producto</span>
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p><strong><a href="https://www.youtube.com/watch?v=zhSmZyMXYLk&amp;list=PLZ2ovOgdI-kUSqWuyoGJMZL6xldXw6hIg&amp;index=32">video</a></strong></p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Puedes echar un vistazo</p>
+<p><a href="https://www.youtube.com/watch?v=zhSmZyMXYLk&amp;list=PLZ2ovOgdI-kUSqWuyoGJMZL6xldXw6hIg&amp;index=32">video</a></p>
+</div>
 <h3 id="use">Use</h3>
 <p>Para evitar la referencia cualificada podemos declarar el uso mediante <code>use</code> (similar a hacer <code>import</code> en Java). Se hace en la cabecera, tras el namespace:</p>
 <p>Los tipos posibles son:</p>
@@ -1738,16 +1739,20 @@
 <a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="k">echo</span> <span class="nx">IVA</span><span class="p">;</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="nv">$p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p><strong>to use or not to use</strong></p>
+<div class="admonition note">
+<p class="admonition-title"><em>To use</em> or <em>not to use</em></p>
 <p>En resumen, <code>use</code> permite acceder sin cualificar a recursos que están en otro <em>namespace</em>. Si estamos en el mismo espacio de nombre, no necesitamos <code>use</code>.</p>
-<p><strong><a href="https://www.youtube.com/watch?v=lP1hbkNA2uc&amp;list=PLZ2ovOgdI-kUSqWuyoGJMZL6xldXw6hIg&amp;index=34">video</a></strong></p>
-</blockquote>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Puedes echar un vistazo</p>
+<p><a href="https://www.youtube.com/watch?v=lP1hbkNA2uc&amp;list=PLZ2ovOgdI-kUSqWuyoGJMZL6xldXw6hIg&amp;index=34">video</a></p>
+</div>
 <h2 id="organizacion">Organización</h2>
 <p>Todo proyecto, conforme crece, necesita organizar su código fuente. Se plantea una organización en la que los archivos que interactuan con el navegador se colocan en el raíz, y las clases que definamos van dentro de un namespace (y dentro de su propia carpeta src o app).</p>
-<p><img src="/home/abc/Escritorio/IES/DWES/DWES23/ud03_PHPOrientadoAObjetos/assets/img02.png" style="zoom:75%;" /></p>
-<blockquote>
-<p><strong>organización, includes y usos</strong>:</p>
+<div style="text-align: center;"><img src="../../img/ud03/img02.png" style="max-width:100%;" /></div>
+
+<div class="admonition note">
+<p class="admonition-title">Organización, includes y usos</p>
 <ul>
 <li>Colocaremos cada recurso en un fichero aparte.</li>
 <li>En la primera línea indicaremos su namespace (si no está en el raíz).</li>
@@ -1755,7 +1760,7 @@
 <li>Cada recurso debe incluir todos los otros recursos que referencie: la clase de la que hereda, interfaces que implementa, clases utilizadas/recibidas como parámetros, etc...</li>
 <li>Si los recursos están en un espacio de nombres diferente al que estamos, emplearemos <code>use</code> con la ruta completa para luego utilizar referencias sin cualificar.</li>
 </ul>
-</blockquote>
+</div>
 <h2 id="autoload">Autoload</h2>
 <p>¿No es tedioso tener que hacer el <code>include</code> de las clases? El autoload viene al rescate.</p>
 <p>Así pues, permite cargar las clases (no las constantes ni las funciones) que se van a utilizar y evitar tener que hacer el <code>include_once</code> de cada una de ellas. Para ello, se utiliza la función <code>spl_autoload_register</code>.</p>
@@ -1769,12 +1774,14 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="p">}</span> <span class="p">);</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p><strong>por qué se llama autoload</strong>:</p>
+<div class="admonition note">
+<p class="admonition-title">Por qué se llama autoload</p>
 <p>Porque antes se realizaba mediante el método mágico <code>__autoload()</code>, el cual está deprecated desde PHP 7.2.</p>
-</blockquote>
+</div>
 <p>Y ¿cómo organizamos ahora nuestro código aprovechando el autoload?</p>
-<p><img src="/home/abc/Escritorio/IES/DWES/DWES23/ud03_PHPOrientadoAObjetos/assets/img03.png" style="zoom: 67%;" /></p>
+<div style="text-align: center;">
+<img src="../../img/ud03/img03.png" style="max-width: 70%;" />
+</div>
 <p>Para facilitar la búsqueda de los recursos a incluir, es recomendable colocar todas las clases dentro de una misma carpeta. Nosotros la vamos a colocar dentro de <code>app</code> (más adelante, cuando estudiemos <em>Laravel</em> veremos el motivo de esta decisión). Otras carpetas que podemos crear son <code>test</code> para colocar las pruebas PhpUnit que luego realizaremos, o la carpeta <code>vendor</code> donde se almacenarán las librerías del proyecto (esta carpeta es un estándard dentro de PHP, ya que Composer la crea automáticamente).</p>
 <p>Como hemos colocado todos nuestros recursos dentro de <code>app</code>, ahora nuestro <code>autoload.php</code> (el cual colocamos en la carpeta raíz) sólo va a buscar dentro de esa carpeta:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
@@ -1787,8 +1794,8 @@
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="p">}</span> <span class="p">);</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p><strong>autoload y rutas erróneas</strong>:</p>
+<div class="admonition note">
+<p class="admonition-title">autoload y rutas erróneas</p>
 <p>En <em>Ubuntu</em> al hacer el include de la clase que recibe como parámetro, las barras de los namespace ( \ ) son diferentes a las de las rutas ( / ). Por ello, es mejor que utilicemos el fichero autoload:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
@@ -1797,16 +1804,18 @@
 <span class="normal"><a href="#__codelineno-5-5">5</a></span>
 <span class="normal"><a href="#__codelineno-5-6">6</a></span>
 <span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="nb">spl_autoload_register</span><span class="p">(</span> <span class="k">function</span><span class="p">(</span> <span class="nv">$nombreClase</span> <span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>      <span class="nv">$ruta</span> <span class="o">=</span> <span class="s2">&quot;app</span><span class="se">\\</span><span class="s2">&quot;</span><span class="o">.</span><span class="nv">$nombreClase</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>      <span class="nv">$ruta</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="nv">$ruta</span><span class="p">);</span> <span class="c1">// Sustituimos las barras</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>      <span class="k">include_once</span> <span class="nv">$ruta</span><span class="err">&#39;</span><span class="p">;</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>      <span class="p">}</span> <span class="p">);</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">spl_autoload_register</span><span class="p">(</span> <span class="k">function</span><span class="p">(</span> <span class="nv">$nombreClase</span> <span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="nv">$ruta</span> <span class="o">=</span> <span class="s2">&quot;app</span><span class="se">\\</span><span class="s2">&quot;</span><span class="o">.</span><span class="nv">$nombreClase</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="nv">$ruta</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="nv">$ruta</span><span class="p">);</span> <span class="c1">// Sustituimos las barras</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="k">include_once</span> <span class="nv">$ruta</span><span class="err">&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span> <span class="p">);</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p><strong>video</strong></p>
-<p>Aquí encontramos un pequeño video en el que https://www.youtube.com/watch?v=lP1hbkNA2uc</p>
-</blockquote>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Puedes echar un vistazo</p>
+<p>Aquí encontramos un pequeño video en el que <a href="https://www.youtube.com/watch?v=lP1hbkNA2uc">https://www.youtube.com/watch?v=lP1hbkNA2uc</a></p>
+</div>
 
 
 

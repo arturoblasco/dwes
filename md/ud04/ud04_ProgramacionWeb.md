@@ -435,7 +435,8 @@ Por ejemplo, mediante *cookies* podemos comprobar la cantidad de visitas diferen
 	
 	<img src="/assets/img03_cookies1.png" style="zoom:50%;" />
 	
-	2) Creamos fichero `cookiesEjemplo1.php` en el que comprueba si se ha enviado el parámetro `idioma`, si es así, crea una *cookie* de nombre `idioma`, valor `$_GET['idioma']`, tiempo `1 hora` y que trabaja desde la raíz `\`. Además, se ha añadido una cabecera que redireccionará a la página `cookiesEjemplo1_b.php`:
+	2) Creamos fichero `cookiesEjemplo1.php` en el que comprueba si se ha enviado el parámetro `idioma`, si es así, crea una *cookie* de nombre `idioma`, valor `$_GET['idioma']`, tiempo `1 hora` y que trabaja desde la raíz `\`. <br/>
+	Además, se ha añadido una cabecera que redireccionará a la página `cookiesEjemplo1_b.php`:
 	
 	```php
 	<?php
@@ -566,12 +567,12 @@ Y posteriormente podemos acceder a la sesión en `sesion2.php`:
 ```
 
 !!! note "Configurando la sesión en php.ini"
-	SiguLas siguientes propiedades de `php.ini` permiten configurar algunos aspectos de la sesión:
-	- `session.save_handler`: controlador que gestiona cómo se almacena (valor `files`).
+	SiguLas siguientes propiedades de `php.ini` permiten configurar algunos aspectos de la sesión:<br/>
+	- `session.save_handler`: controlador que gestiona cómo se almacena (valor `files`).<br/>
 	- `session.save_path`: ruta donde se almacenan los archivos con los datos (si tenemos un cluster, podríamos usar /mnt/sessions en todos los servidores de manera que apuntan a una carpeta compartida).
-	- `session.name`: nombre de la sesión (PHSESSID).
-	- `session.auto_start`: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.
-	- `session.cookie_lifetime`: tiempo de vida por defecto.
+	- `session.name`: nombre de la sesión (PHSESSID).<br/>
+	- `session.auto_start`: Se puede hacer que se autocargue con cada script. Por defecto está deshabilitado.<br/>
+	- `session.cookie_lifetime`: tiempo de vida por defecto.<br/>
 	Más información en la [documentación oficial](https://www.php.net/manual/es/session.configuration.php).
 
 !!! note "Cookie VS session"
@@ -785,9 +786,3 @@ Finalmente, necesitamos la opción de cerrar la sesión que colocamos en `logout
 !!!note "Autenticación en producción""
 	En la actualidad la autenticación de usuario no se realiza gestionando la sesión directamente, sino que se realiza mediante algún framekwork que abstrae todo el proceso o la integración de mecanismos de autenticación tipo OAuth, como estudiaremos en la última unidad mediante *Laravel*.
 
-
-
-# Referencias
-
-- [Cookies en PHP](https://www.php.net/manual/es/features.cookies.php)
-- [Manejo de sesiones en PHP](https://www.php.net/manual/es/book.session.php)

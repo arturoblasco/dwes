@@ -22,7 +22,7 @@ Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de
 
 `204datosPersonales.php`: Escribe un programa que almacene en variables tu nombre, primer apellido, segundo apellido, email, año de nacimiento y teléfono. Luego muéstralos por pantalla dentro de una tabla.
 
-<img src="../../img/ud02/img00.png" style="max-width:40%;" />
+<div style="text-align: center;"><img src="../../img/ud02/img00.png" style="max-width:40%;" /></div>
 
 
 
@@ -93,7 +93,7 @@ Visualiza el [vídeo](https://youtu.be/DWEDUZgBZ8Y?si=2wF4cCrhmQfyEtAN&t=210) de
 
 `214ecuacion2g.php`: Crea un programa que resuelva una ecuación de 2º grado del tipo `ax² + bx + c = 0`. Ten en cuenta que puede tener 2, 1 o no tener solución dependiendo del valor del discriminante `b²-4ac`.
 
-<img src="../../img/ud02/img01.png" style="max-width: 30%;" />
+<div style="text-align: center;"><img src="../../img/ud02/img01.png" style="max-width: 30%;" /></div>
 
 !!!note "**A tener en cuenta**"
  	Para calcular la raíz cuadrada deberás utilizar la función `sqrt()`.
@@ -166,7 +166,7 @@ Finalmente, en `225sumarDatos.php`: a partir de los datos de todas las cajas de 
 
 `229cuadradoMultiplicar.php`: Crea un programa que muestre por pantalla un cuadrado exactamente igual (fíjate bien en los encabezados, tanto de las filas como de las columnas) al de la imagen con las tablas de multiplicar.
 
-<img src="../../img/ud02/img02.png" style="max-width:80%;" />
+<div style="text-align: center;"><img src="../../img/ud02/img02.png" style="max-width:80%;" /></div>
 
 ## Arrays
 

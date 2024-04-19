@@ -39,7 +39,7 @@ Investiga la diferencia entre un paradigma orientado a objetos basado en clases 
 - `public static function toHtml(Empleado $emp): string`
 
 ## Actividad 308
-<img src="../../img/ud03/ejer08.png" alt="## Actividad 308" style="max-width:40%;" />
+<div style="text-align: center;"><img src="../../img/ud03/ejer08.png" alt="## Actividad 308" style="max-width:40%;" /></div>
 
 `308Persona.php`: Copia la clase del ejercicio anterior en `308Empleado.php` y modifícala.
 
@@ -96,8 +96,12 @@ Transforma `Persona` a una clase abstracta donde su método estático `toHtml(Pe
 
    - Para los `Gerente`s, su sueldo se incrementa porcentualmente en base a su edad: `salario + salario*edad/100`
 
-      <img src="../../img/ud03/ejer13.png" alt="## Actividad 313" style="max-width:50%;" />
+      <div style="text-align: center;"><img src="../../img/ud03/ejer13.png" alt="act313" style="max-width:50%;" /></div>
+
+
+
 ## Actividad 314
+
 `314Empresa.php`: Utilizando las clases de los ejercicios anteriores:
 
 - Crea una clase `Empresa` que además del nombre y la dirección, contenga una propiedad con un array de `Trabajador`es, ya sean `Empleado`s o `Gerente`s.
@@ -153,7 +157,7 @@ Tu compañero deberá descargar el proyecto con sus credenciales.
 Cada clase debe ir en un archivo php separado. Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases:
 
 ## Actividad 321
-<img src="../../img/ud03/pro01.png" alt="img" style="max-width:30%;" />
+<div style="text-align: center;"><img src="../../img/ud03/pro01.png" alt="img" style="max-width: 25%;" /></div>
 
 Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clase padre de los diferentes soportes con los que trabaje nuestro videoclub (cintas de vídeo, videojuegos, etc...):
 
@@ -185,7 +189,7 @@ Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clas
     3 € (IVA no incluido)
     ```
 ## Actividad 322
-<img src="../../img/ud03/pro02.png" alt="img" style="max-width:50%;" />
+<div style="text-align: center;"><img src="../../img/ud03/pro02.png" alt="img" style="max-width:50%;" /></div>
 
 Crea la clase `CintaVideo` la cual hereda de `Soporte`. Añade el atributo `duracion` y sobreescribe tanto el contructor como el método `muestraResumen` (desde `CintaVideo` deberás llamar al método `muestraResumen` del padre).
 
@@ -206,8 +210,9 @@ Añade a `inicio.php` el código para probar la clase:
     <img src="../../img/ud03/pro21.png" style="max-width: 70%;" />
     
     
+
 ## Actividad 323
-<img src="../../img/ud03/pro03.png" alt="img" style="max-width:50%;" />
+<div style="text-align: center;"><img src="../../img/ud03/pro03.png" alt="img" style="max-width:50%;" /></div>
 
 Crea la clase `Dvd` la cual hereda de `Soporte`. Añade los atributos `idiomas` y `formatoPantalla`. A continuación sobreescribe tanto el contructor como el método `muestraResumen`.
 
@@ -253,10 +258,10 @@ Añade a `inicio.php` el código para probar la clase:
 
 Llegados a este punto, nuestro modelo es similar al siguiente diagrama:
 
-<img src="../../img/ud03/pro05.png" alt="img" style="max-width:70%;" />
+<div style="text-align: center;"><img src="../../img/ud03/pro05.png" alt="img" style="max-width:70%;" /></div>
 
 ## Actividad 325
-<img src="../../img/ud03/pro06.png" alt="img" style="max-width: 40%;" />
+<div style="text-align: center;"><img src="../../img/ud03/pro06.png" alt="img" style="max-width: 40%;" /></div>
 
 Crear la clase `Cliente`. El constructor recibirá el `nombre`, `numero` y `maxAlquilerConcurrente`, este último pudiendo ser opcional y tomando como valor por defecto 3. Tras ello, añade *getter/setter* únicamente a `numero`, y un *getter* a `numSoportesAlquilados` (este campo va a almacenar un contador del total de alquileres que ha realizado). El array de soportes alquilados contedrá clases que hereden de `Soporte`. Finalmente, añade el método `muestraResumen` que muestre el nombre y la cantidad de alquileres (tamaño del array `soportesAlquilados`).
 
