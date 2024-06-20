@@ -1,0 +1,3281 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ud08 Laravel 6 ServiciosREST actividades - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejemplo-api-rest-en-tabla-productos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ud08 Laravel 6 ServiciosREST actividades
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bloc I - PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bloc I - PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            UD 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0102/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Cliente/servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0103/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Arquitectura de 3 capas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0104/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 MVC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0105/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Decisiones de diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0106/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0107/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Puesta en marcha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0108/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Manual Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01de/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descargas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Operadores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Funciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Funciones predefinidas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Expresiones regulares
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 3 PHP OO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0301/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0302/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Clases y objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0303/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Encapsulación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0304/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Constructor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0305/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Clases estáticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0306/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introspección
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0307/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Herencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0308/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Clases abstractas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0309/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.9 Clases final
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0310/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.10 Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0311/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.11 Métodos encadenados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0312/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.12 Métodos mágicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0313/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.13 Espacio de nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0314/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.14 Gestión de errores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0315/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.15 Excepciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0316/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.16 SPL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD 4 Programación Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0401/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0402/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Variable de servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0403/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0404/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cabeceras de respuesta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0405/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Gestión de estado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0406/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Autenticación de usuarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud04ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud04re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 5 Acceso a Base de Datos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD 5 Acceso a Base de Datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0601/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0602/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Instalación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0603/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Estructura de BD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0604/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Chollometro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0605/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0606/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 phpMyAdmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0607.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 MySQLi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0608.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.8 PHP Data Objects-PDO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0609.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.9 login & password
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0610.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.10 Acceso a ficheros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud06ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud6re.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bloc II - Laravel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloc II - Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 6 Herramientas Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            UD 6 Herramientas Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0501/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0502/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.2 Composer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0503/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.3 Monolog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0504/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.4 Documentación con phpDocumentor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0505/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.5 Web Scraping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0506/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.6 Pruebas con phpUnit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud05ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud05re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 7 Framework
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 7 Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0701/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0702/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Frameworks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0703/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 Programari necessari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0704/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Primeres passes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0705/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Rutes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0706/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Vistes amb Blade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0707/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Estils i Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud07ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud07re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referències
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 8 Controladors
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 8 Controladors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud0801.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Controladors i tipus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud0802.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Injecció i dependències
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 9 Model de dades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD 9 Model de dades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0901.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Accés a base de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0902.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 Migracions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0903.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Model de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0904.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 Relacions entre models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0905.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.5 Seeders i factories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0906.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.6 Query Builder i ús de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 10 Formularis i validacions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD 10 Formularis i validacions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud1001.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Definició de formularis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud1002.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Validació de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 11 Serveis REST
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD 11 Serveis REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Concepte de servei REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1102.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Creació de serveis REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1103.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Prova de serveis REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#crear-tabla-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      crear tabla productos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-controlador-productocontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      crear controlador ProductoController
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-la-api-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      cómo funciona la API REST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="cómo funciona la API REST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listar-todos-los-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      listar todos los productos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-un-producto-en-concreto" class="md-nav__link">
+    <span class="md-ellipsis">
+      listar un producto en concreto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducir-producto-nuevo" class="md-nav__link">
+    <span class="md-ellipsis">
+      introducir producto nuevo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-un-producto-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      actualizar un producto existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      eliminar un producto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<p>unit: unidad didáctica 8
+   title: Laravel - servicios REST (actividades)
+   language: ES
+   author: Arturo Blasco
+   subject: Desarrollo Web en Entorno Servidor
+   keywords: [DWES, 2023, PHP, Laravel]
+   IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+   header: ${unit}: ${title} - ${subject} (versión: ${today})
+   footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}|${pageCount}
+   typora-root-url:${filename}/../
+   typora-copy-images-to:${filename}/../assets</p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#ejemplo-api-rest-en-tabla-productos">ejemplo API Rest en tabla productos</a><ul>
+<li><a href="#crear-tabla-productos">crear tabla productos</a></li>
+<li><a href="#crear-controlador-productocontroller">crear controlador ProductoController</a></li>
+<li><a href="#como-funciona-la-api-rest">cómo funciona la API REST</a><ul>
+<li><a href="#listar-todos-los-productos">listar todos los productos</a></li>
+<li><a href="#listar-un-producto-en-concreto">listar un producto en concreto</a></li>
+<li><a href="#introducir-producto-nuevo">introducir producto nuevo</a></li>
+<li><a href="#actualizar-un-producto-existente">actualizar un producto existente</a></li>
+<li><a href="#eliminar-un-producto">eliminar un producto</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ejercicios-propuestos">ejercicios propuestos</a><ul>
+<li><a href="#ejercicio-1">Ejercicio 1</a></li>
+</ul>
+</li>
+<li><a href="#bibliografia">bibliografia</a></li>
+</ul>
+</div>
+<blockquote>
+<p>El uso de estos materiales está sujeto a una licencia Creative Commons <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>.</p>
+<p>Material extraído de https://nachoiborraies.github.io/laravel/</p>
+</blockquote>
+<h1 id="ejemplo-api-rest-en-tabla-productos">ejemplo API Rest en tabla productos</h1>
+<h2 id="crear-tabla-productos">crear tabla productos</h2>
+<p>Antes de crear nuestra API en tabla <code>Productos</code> deberemos tener dicha tabla migrada en nuestro sistema. Para ello:</p>
+<ol>
+<li>Crear <strong>migración</strong> para la tabla <code>productos</code>:</li>
+</ol>
+<blockquote>
+<p>Recuerda que el nombre de la migración contiene palabras reservadas para como son <em>create</em> y <em>table</em>.</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">php artisan make:migration create_productos_table</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="x"># ó, si no funciona, probar:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x"># sudo docker-compose exec myapp php artisan make:migration create_productos_table</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/ud07_apirestful_001.png" style="zoom: 60%;" /></p>
+<p><img src="/assets/ud07_apirestful_002.png" style="zoom: 50%;" /></p>
+<ol>
+<li>Añadir al fichero generado (en la carpeta <code>migrations</code> y en el ejemplo anterior <em>2024_01_08_102832_create_productos_table.php</em>) el resto de campos que se requieran en la tabla <code>productos</code>:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">public function up(): void</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="x">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="x">  Schema::create(&#39;productos&#39;, function (Blueprint $table) {</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="x">    $table-&gt;id();</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="x">    $table-&gt;string(&#39;nombre&#39;);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="x">    $table-&gt;text(&#39;descripcion&#39;);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="x">    $table-&gt;decimal(&#39;precio&#39;, 8, 2);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="x">    $table-&gt;timestamps();</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="x"> });</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Ejecutar migración:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">php artisan migrate</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="x"># ó, si no funciona, probar:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="x"># sudo docker-compose exec myapp php artisan migrate</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/ud07_apirestful_003.png" style="zoom: 60%;" /></p>
+<p><img src="/assets/ud07_apirestful_004.png" style="zoom: 70%;" /></p>
+<ol>
+<li>Crear un <code>seeder</code> para realizar una carga de datos:</li>
+</ol>
+<p>Introducimos información en esta tabla nueva, creando un fichero en la carpeta <code>database/seeders</code> de nombre <code>ProductoSeeder.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>  <span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>  <span class="k">use</span> <span class="nx">Illuminate\Database\Seeder</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>  <span class="k">use</span> <span class="nx">Illuminate\Support\Facades\DB</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>  <span class="k">class</span> <span class="nc">ProductoSeeder</span> <span class="k">extends</span> <span class="nx">Seeder</span> <span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>      <span class="c1">// insertar datos prueba </span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>      <span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;productos&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>         <span class="s1">&#39;nombre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;producto prueba 1&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>         <span class="s1">&#39;descripcion&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;esta es una descripción para el producto prueba 1&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>         <span class="s1">&#39;precio&#39;</span> <span class="o">=&gt;</span> <span class="mf">19.99</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>      <span class="p">]);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>      <span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;productos&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>         <span class="s1">&#39;nombre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;producto prueba 2&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>         <span class="s1">&#39;descripcion&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;esta es una descripción para el producto prueba 2&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>         <span class="s1">&#39;precio&#39;</span> <span class="o">=&gt;</span> <span class="mf">29.99</span><span class="p">,</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>      <span class="p">]);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>    <span class="p">}</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Ejecutar el <code>seeder</code>:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">php artisan db:seed --class=ProductoSeeder</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="x"># ó, si no funciona, probar:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x"># sudo docker-compose exec myapp php artisan db:seed --class=ProductoSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/ud07_apirestful_005.png" style="zoom: 60%;" /></p>
+<p><img src="/assets/ud07_apirestful_006.png" style="zoom: 65%;" /></p>
+<h2 id="crear-controlador-productocontroller">crear controlador ProductoController</h2>
+<p>Crear un controlador donde establezcamos los métodos que nosotros queramos realizar a la hora de trabajar con los datos.</p>
+<ol>
+<li><strong>Crear</strong> desde consola un controlador para la tabla <code>productos</code>:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>ProductoController
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># ó, si no funciona, probar:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1"># sudo docker-compose exec myapp php artisan make:controller ProductoController</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/ud07_apirestful_007.png" style="zoom: 60%;" /></p>
+<p><img src="/assets/ud07_apirestful_007b.png" style="zoom: 40%;" /></p>
+<p>La estructura de este archivo es un poco diferente a los controladores que ya hemos visto anteriormente. Ahora tenemos los siguientes métodos creados de manera automática:</p>
+<ul>
+<li><code>index()</code> normalmente para listar (en nuestro caso los chollos).</li>
+<li><code>create()</code> para crear plantillas (no lo vamos a usar).</li>
+<li><code>store()</code> para guardar los datos que pasemos a la API.</li>
+<li><code>update()</code> para actualizar un dato ya existente en la BD.</li>
+<li>
+<p><code>delete()</code> para eliminar un dato ya existente en la BD.</p>
+</li>
+<li>
+<p>Como vamos a conectarnos a un modelo para traer la información de dicho modelo añadimos mediante <code>use</code>. También creamos la función <code>index</code> para listar todos los elementos de la tabla (en este caso <code>productos</code>):</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="k">use</span> <span class="nx">App\Models\Producto</span><span class="p">;</span> <span class="c1">// &lt;-- esta linea</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">class</span> <span class="nc">ProductoController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="p">{</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">(){</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nx">Producto</span><span class="o">::</span><span class="na">all</span><span class="p">());</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>    <span class="p">}</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>CUIDADO CON EL RETURN</strong> porque ahora no estamos devolviendo una vista sino un array de datos en formato JSON.</p>
+</blockquote>
+<ol>
+<li>Crear un modelo en la carpeta <code>Models</code> de nombre <code>Producto.php</code>:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Model</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="k">class</span> <span class="nc">Producto</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>        <span class="k">protected</span> <span class="nv">$fillable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;precio&#39;</span><span class="p">];</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Ir a fichero <code>web.php</code> (en la carpeta <code>routes</code>) y colocar nuestras rutas:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">// cargar el recurso del controlador ProductoController</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="x">use App\Http\Controllers\ProductoController</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="x">Route::prefix(&#39;productos&#39;)-&gt;group(function(){</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="x">  Route::get(&#39;/&#39;,[ProductoController::class, &#39;index&#39;]);</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/ud07_apirestful_008.png" style="zoom: 90%;" /></p>
+<p>La función anterior <code>index</code> nos devuelve todos los productos. Pero, qué pasa si queremos un producto en cuestión:</p>
+<ol>
+<li>En <code>ProductoController.php</code> añadimos otra función (show) en la que se le pasa por parámateros el <code>id</code> :</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="k">use</span> <span class="nx">App\Models\Producto</span><span class="p">;</span> <span class="c1">// &lt;-- esta linea</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="k">class</span> <span class="nc">ProductoController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="p">{</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">(){</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nx">Producto</span><span class="o">::</span><span class="na">all</span><span class="p">());</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>    <span class="p">}</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(</span><span class="nv">$id</span><span class="p">){</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nx">Producto</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">));</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>    <span class="p">}</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>En <code>web.php</code> añadimos otra ruta en nuestro grupo:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="x">Route::prefix(&#39;productos&#39;)-&gt;group(function(){</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="x">    Route::get(&#39;/&#39;,[ProductoController::class, &#39;index&#39;]);</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="x">    Route::get(&#39;/{id}&#39;,[ProductoController::class, &#39;show&#39;]);</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/ud07_apirestful_009.png" style="zoom: 90%;" /></p>
+<ol>
+<li>Para introducir datos utilizaremos el método <code>store</code>:</li>
+</ol>
+<p>a) en <code>ProductoController.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">    public function store(Request $request){</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="x">        $producto = Producto::create($request-&gt;all());</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="x">        return response()-&gt;json($producto, 201);</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="x">    }</span>
+</code></pre></div></td></tr></table></div>
+<p>b) en <code>web.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">Route::prefix(&#39;productos&#39;)-&gt;group(function(){</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">    Route::get(&#39;/&#39;,[ProductoController::class, &#39;index&#39;]);</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">    Route::get(&#39;/{id}&#39;,[ProductoController::class, &#39;show&#39;]);</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">    Route::post(&#39;/&#39;,[ProductoController::class, &#39;store&#39;]);</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Para actualizar datos de un producto, utilizaremos el método <code>update</code>:</li>
+</ol>
+<p>a) en <code>ProductoController.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">    public function update(Request $request, $id){</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">        $producto = Producto::findOrFail($id);</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">        $producto -&gt; update($request-&gt;all());</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="x">        return response()-&gt;json($producto, 200);</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="x">    }</span>
+</code></pre></div></td></tr></table></div>
+<p>b) en <code>web.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">Route::prefix(&#39;productos&#39;)-&gt;group(function(){</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">    Route::get(&#39;/&#39;,[ProductoController::class, &#39;index&#39;]);</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">    Route::get(&#39;/{id}&#39;,[ProductoController::class, &#39;show&#39;]);</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">    Route::post(&#39;/&#39;,[ProductoController::class, &#39;store&#39;]);</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">    Route::put(&#39;/{id}&#39;,[ProductoController::class, &#39;update&#39;]);</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Y para eliminar un producto, el método <code>delete</code>:</li>
+</ol>
+<p>a) en <code>ProductoController.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">    public function destroy($id){</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">        Producto::findOrFail($id)-&gt;delete();</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="x">        return response()-&gt;json(null, 204);</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="x">    }</span>
+</code></pre></div></td></tr></table></div>
+<p>b) en <code>web.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">Route::prefix(&#39;productos&#39;)-&gt;group(function(){</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="x">    Route::get(&#39;/&#39;,[ProductoController::class, &#39;index&#39;]);</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="x">    Route::get(&#39;/{id}&#39;,[ProductoController::class, &#39;show&#39;]);</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="x">    Route::post(&#39;/&#39;,[ProductoController::class, &#39;store&#39;]);</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="x">    Route::put(&#39;/{id}&#39;,[ProductoController::class, &#39;update&#39;]);</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="x">    Route::delete(&#39;/{id}&#39;,[ProductoController::class, &#39;destroy&#39;]);</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="como-funciona-la-api-rest">cómo funciona la API REST</h2>
+<p>Para ello vamos a utilizar un software que es una extensión de Visual Studio Code, de nombre <code>Thunder Client</code>:</p>
+<p><img src="/assets/ud07_apirestful_010.png" style="zoom: 30%;" /></p>
+<p><img src="/assets/ud07_apirestful_011.png" style="zoom: 30%;" /></p>
+<h3 id="listar-todos-los-productos">listar todos los productos</h3>
+<p><img src="/assets/ud07_apirestful_012.png" style="zoom: 35%;" /></p>
+<h3 id="listar-un-producto-en-concreto">listar un producto en concreto</h3>
+<p><img src="/assets/ud07_apirestful_013.png" style="zoom: 35%;" /></p>
+<h3 id="introducir-producto-nuevo">introducir producto nuevo</h3>
+<blockquote>
+<p>Si realizamos una nueva petición (new request) con método <code>post</code> y pasando (desde <code>body</code> y en <code>json</code>) un nuevo producto, va a mostrarnos un <strong>error</strong>. </p>
+<p>Esto se debe a que Laravel, por sus métodos de seguridad, necesita un <em>token</em> llamado <code>csrf</code>. </p>
+<p>Ya que, ahora mismo, estamos realizando pruebas, vamos a indicarle a Laravel que excluya la URL en cuestión de la verificación.</p>
+<p>Para ello accedemos al fichero <code>VerifyCsrfToken.php</code> de la carpeta <code>app\Http\Middleware</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span>
+<span class="normal"><a href="#__codelineno-17-11">11</a></span>
+<span class="normal"><a href="#__codelineno-17-12">12</a></span>
+<span class="normal"><a href="#__codelineno-17-13">13</a></span>
+<span class="normal"><a href="#__codelineno-17-14">14</a></span>
+<span class="normal"><a href="#__codelineno-17-15">15</a></span>
+<span class="normal"><a href="#__codelineno-17-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="k">namespace</span> <span class="nx">App\Http\Middleware</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="k">use</span> <span class="nx">Illuminate\Foundation\Http\Middleware\VerifyCsrfToken</span> <span class="k">as</span> <span class="nx">Middleware</span><span class="p">;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="k">class</span> <span class="nc">VerifyCsrfToken</span> <span class="k">extends</span> <span class="nx">Middleware</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="p">{</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a> <span class="sd">/**</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="sd">     * The URIs that should be excluded from CSRF verification.</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="sd">     *</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="sd">     * @var array&lt;int, string&gt;</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="sd">     */</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13"></a>    <span class="k">protected</span> <span class="nv">$except</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14"></a>        <span class="s2">&quot;http://0.0.0.0:8000/productos&quot;</span><span class="p">,</span>  <span class="c1">// &lt;-- esta excepción</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15"></a>    <span class="p">];</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</blockquote>
+<p><img src="/assets/ud07_apirestful_014.png" style="zoom: 35%;" /></p>
+<p><img src="/assets/ud07_apirestful_014b.png" style="zoom: 35%;" /></p>
+<h3 id="actualizar-un-producto-existente">actualizar un producto existente</h3>
+<blockquote>
+<p>Recuerda añadir al fichero <code>VerifyCsrfToken.php</code> de la carpeta <code>app\Http\Middleware</code> la excepción:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span>
+<span class="normal"><a href="#__codelineno-18-6">6</a></span>
+<span class="normal"><a href="#__codelineno-18-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>  <span class="c1">// [..]</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a> <span class="k">protected</span> <span class="nv">$except</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a>     <span class="s2">&quot;http://0.0.0.0:8000/productos&quot;</span><span class="p">,</span> 
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a>     <span class="s2">&quot;http://0.0.0.0:8000/productos/3&quot;</span><span class="p">,</span>  <span class="c1">// &lt;-- esta nueva excepción</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a> <span class="p">];</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</blockquote>
+<p><img src="/assets/ud07_apirestful_015.png" style="zoom: 35%;" /></p>
+<p><img src="/assets/ud07_apirestful_015b.png" style="zoom: 35%;" /></p>
+<h3 id="eliminar-un-producto">eliminar un producto</h3>
+<p><img src="/assets/ud07_apirestful_016.png" style="zoom: 35%;" /></p>
+<p><img src="./assets/ud07_apirestful_016b.png" style="zoom: 35%;" /></p>
+<h1 id="ejercicios-propuestos">ejercicios propuestos</h1>
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+<p>Sobre el proyecto <strong>blog</strong> de la sesión anterior, vamos a añadir estos cambios:</p>
+<ul>
+<li>Crea un controlador de tipo api llamado <code>PostController</code> en la carpeta <code>App\Http\Controllers\Api</code>, asociado al modelo <code>Post</code> que ya tenemos de sesiones previas. Rellena los métodos <code>index</code>, <code>show</code>, <code>store</code>, <code>update</code> y <code>destroy</code> para que, respectivamente, hagan lo siguiente:</li>
+<li><code>index</code> deberá devolver en formato JSON el listado de todos los posts, con un código 200</li>
+<li><code>show</code> deberá devolver la información del post que recibe, con un código 200</li>
+<li><code>store</code> deberá insertar un nuevo post con los datos recibidos, con un código 201, y utilizando el validador de posts que hiciste en la sesión 6. Para el usuario creador del post, pásale como parámetro JSON un usuario cualquiera de la base de datos.</li>
+<li><code>update</code> deberá modificar los campos del post recibidos, con un código 200, y empleando también el validador de posts que hiciste en la sesión 6.</li>
+<li><code>destroy</code> deberá eliminar el post recibido, devolviendo <em>null</em> con un código 204</li>
+<li>Crea una colección en <em>Thunder Client</em> llamada <code>Blog</code> que defina una petición para cada uno de los cinco servicios implementados. Comprueba que funcionan correctamente y exporta la colección a un archivo.</li>
+</ul>
+<blockquote>
+<p><strong>¿Qué entregar?</strong></p>
+<p>Como entrega de esta sesión deberás comprimir el proyecto <strong>blog</strong> con los cambios incorporados, y eliminando las carpetas <code>vendor</code> y <code>node_modules</code> como se explicó en las sesiones anteriores. Añade dentro también la colección <em>Thunder Client</em> para probar los servicios. Renombra el archivo comprimido a <code>blog_08b.zip</code>.</p>
+</blockquote>
+<h1 id="bibliografia">bibliografia</h1>
+<ul>
+<li><a href="https://nachoiborraies.github.io/laravel/">Nacho Iborra Baeza</a>.****</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+<!--     Made with -->IES
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      <!--Material for MkDocs-->
+      Mestre Ramon Esteve
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3414 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud0705/">
+      
+      
+        <link rel="next" href="../ud0707/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>7.6 Vistes amb Blade - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vistas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7.6 Vistes amb Blade
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bloc I - PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bloc I - PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            UD 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0102/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Cliente/servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0103/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Arquitectura de 3 capas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0104/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 MVC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0105/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Decisiones de diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0106/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0107/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Puesta en marcha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0108/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Manual Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01de/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descargas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Operadores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Funciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Funciones predefinidas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Expresiones regulares
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 3 PHP OO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0301/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0302/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Clases y objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0303/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Encapsulación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0304/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Constructor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0305/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Clases estáticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0306/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introspección
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0307/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Herencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0308/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Clases abstractas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0309/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.9 Clases final
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0310/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.10 Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0311/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.11 Métodos encadenados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0312/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.12 Métodos mágicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0313/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.13 Espacio de nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0314/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.14 Gestión de errores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0315/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.15 Excepciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0316/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.16 SPL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD 4 Programación Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0401/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0402/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Variable de servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0403/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0404/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cabeceras de respuesta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0405/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Gestión de estado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0406/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Autenticación de usuarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud04ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud04re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 5 Acceso a Base de Datos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD 5 Acceso a Base de Datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0601/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0602/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Instalación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0603/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Estructura de BD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0604/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Chollometro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0605/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0606/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 phpMyAdmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0607.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 MySQLi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0608.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.8 PHP Data Objects-PDO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0609.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.9 login & password
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0610.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.10 Acceso a ficheros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud06ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud6re.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bloc II - Laravel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloc II - Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 6 Herramientas Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            UD 6 Herramientas Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0501/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0502/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.2 Composer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0503/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.3 Monolog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0504/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.4 Documentación con phpDocumentor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0505/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.5 Web Scraping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0506/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.6 Pruebas con phpUnit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud05ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud05re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 7 Framework
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 7 Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0701/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0702/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Frameworks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0703/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 Programari necessari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0704/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Primeres passes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0705/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Rutes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.6 Vistes amb Blade
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Vistes amb Blade
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pasar-valores-a-las-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasar valores a las vistas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeros-pasos-con-el-motor-de-plantillas-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primeros pasos con el motor de plantillas Blade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primeros pasos con el motor de plantillas Blade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructuras-de-control-de-flujo-en-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructuras de control de flujo en Blade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobre-los-enlaces-a-otras-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre los enlaces a otras rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-plantillas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definir plantillas comunes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incluir-vistas-dentro-de-otras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluir vistas dentro de otras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructurar-vistas-en-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructurar vistas en carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vistas-para-paginas-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas para páginas de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0707/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Estils i Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud07ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud07re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referències
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 8 Controladors
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 8 Controladors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud0801.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Controladors i tipus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud0802.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Injecció i dependències
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 9 Model de dades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD 9 Model de dades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0901.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Accés a base de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0902.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 Migracions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0903.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Model de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0904.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 Relacions entre models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0905.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.5 Seeders i factories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud09/ud0906.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.6 Query Builder i ús de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 10 Formularis i validacions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD 10 Formularis i validacions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud1001.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Definició de formularis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud1002.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Validació de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 11 Serveis REST
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD 11 Serveis REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1101.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Concepte de servei REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1102.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Creació de serveis REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1103.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Prova de serveis REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pasar-valores-a-las-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasar valores a las vistas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeros-pasos-con-el-motor-de-plantillas-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primeros pasos con el motor de plantillas Blade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primeros pasos con el motor de plantillas Blade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructuras-de-control-de-flujo-en-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructuras de control de flujo en Blade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobre-los-enlaces-a-otras-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre los enlaces a otras rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-plantillas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definir plantillas comunes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incluir-vistas-dentro-de-otras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluir vistas dentro de otras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructurar-vistas-en-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructurar vistas en carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vistas-para-paginas-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas para páginas de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vistas">vistas</h1>
+<p>Hasta ahora las rutas que hemos definido devuelven un texto simple, salvo la que ya estaba creada por defecto en el proyecto, que apuntaba a la página de inicio. Si quisiéramos devolver contenido HTML, una opción (costosa) sería devolver dicho contenido generado desde el propio método de la ruta, a través de la instrucción <code>return</code>, pero en lugar de hacer esto desde dentro de la propia función de respuesta, lo más habitual (y recomendable) es generar una <strong>vista</strong> con el contenido HTML que se quiere enviar al cliente.</p>
+<p>La forma general de mostrar vistas en Laravel es hacer que las rutas devuelvan (<code>return</code>) una determinada vista. Para ello, se puede emplear la función <code>view</code> de Laravel, indicando el nombre de la vista a generar o mostrar.</p>
+<p>Por defecto, en la carpeta <strong><code>resources/views</code></strong> tenemos disponible una vista de ejemplo llamada <code>welcome.blade.php</code>. Es la que se utiliza como página de inicio en la ruta raíz en <strong><code>routes/web.php</code></strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">Route::get(&#39;/&#39;, function() {</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="x">    return view(&#39;welcome&#39;);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<p>A través de las plantillas de Laravel vamos a escribir <strong>menos código</strong> PHP y vamos a tener nuestros archivos <strong>mejor organizados</strong>.</p>
+<p><strong>Blade</strong> es el sistema de plantillas que trae Laravel, por eso los archivos de plantillas que guardamos en el directorio de <code>views</code> llevan la extensión <code>blade.php</code>.</p>
+<p>De esta manera sabemos inmediatamente que se trata de una plantilla de Laravel y que forma parte de una vista que se mostrará en el navegador.</p>
+<blockquote>
+<p><strong>nota</strong>: no es necesario indicar el <em>path</em> o ruta hacia el archivo de la vista, ni tampoco la extensión, puesto que Laravel asume que por defecto las vistas se encuentran en la carpeta <strong><code>resources/views</code></strong>, con la extensión <code>.blade.php</code> (que hace referencia al motor de plantillas Blade que veremos a continuación), o simplemente con extensión <code>.php</code> (en el caso de vistas simples que no utilicen Blade).</p>
+</blockquote>
+<p>Podemos, por ejemplo, crear una vista sencilla dentro de esta carpeta de vistas (llamémosla <code>inicio.blade.php</code>), con un contenido HTML básico:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&lt;html&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    &lt;head&gt;
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>        &lt;title&gt;Inicio&lt;/title&gt;
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    &lt;/head&gt;
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    &lt;body&gt;
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>        &lt;h1&gt;Página de inicio&lt;/h1&gt;
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    &lt;/body&gt;
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>&lt;/html&gt;
+</code></pre></div></td></tr></table></div>
+<p>Y podemos utilizar esta vista como página de inicio:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">Route::get(&#39;/&#39;, function() {</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="x">    return view(&#39;inicio&#39;);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="pasar-valores-a-las-vistas">Pasar valores a las vistas</h2>
+<p>Es muy habitual pasar cierta información a ciertas vistas, como por ejemplo, listados de datos a mostrar, o datos de un elemento en concreto. Por ejemplo, si queremos dar un mensaje de bienvenida a un nombre (supuestamente variable), debemos almacenar el nombre en una variable en la ruta, y pasárselo a la vista al cargarla. Esto puede hacerse, por ejemplo, con el método <code>with</code> tras generar la vista, indicando el nombre con que lo vamos a asociar a la vista, y el valor (variable) asociado a dicho nombre. En nuestro caso quedaría así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">Route::get(&#39;/&#39;, function() {</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="x">    $nombre = &quot;Nacho&quot;;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="x">    return view(&#39;inicio&#39;)-&gt;with(&#39;nombre&#39;, $nombre);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="x">});</span>
+</code></pre></div></td></tr></table></div>
+<p>Posteriormente, en la vista, deberemos mostrar el valor de esta variable en algún lugar del código HTML. Podemos emplear PHP tradicional para recoger esta variable:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span>
+<span class="normal"><a href="#__codelineno-4-8">8</a></span>
+<span class="normal"><a href="#__codelineno-4-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>&lt;html&gt;
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    &lt;head&gt;
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        &lt;title&gt;Inicio&lt;/title&gt;
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    &lt;/head&gt;
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    &lt;body&gt;
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>        &lt;h1&gt;Página de inicio&lt;/h1&gt;
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        &lt;p&gt;Bienvenido/a &lt;?php echo $nombre; ?&gt;&lt;/p&gt;
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    &lt;/body&gt;
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>&lt;/html&gt;
+</code></pre></div></td></tr></table></div>
+<p>Pero es más habitual y limpio emplear una sintaxis específica de Blade, como veremos a continuación.</p>
+<p>Como alternativas al uso de <code>with</code> comentado antes, también podemos utilizar un array asociativo (asignando así varios nombres a varios valores):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">return view(&#39;inicio&#39;)-&gt;with([&#39;nombre&#39; =&gt; $nombre, ...]);</span>
+</code></pre></div></td></tr></table></div>
+<p>Asimismo, podemos utilizar este mismo array como segundo parámetro de la función <code>view</code>, y prescindir así de <code>with</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">return view(&#39;inicio&#39;, [&#39;nombre&#39; =&gt; $nombre, ...]);</span>
+</code></pre></div></td></tr></table></div>
+<p>Y también podemos utilizar una función llamada <code>compact</code> como segundo parámetro de <code>view</code>. A esta función le pasamos únicamente el nombre de la variable que usaremos en la vista y, siempre que la variable asociada se llame igual, establece la asociación por nosotros:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">return view(&#39;inicio&#39;, compact(&#39;nombre&#39;));</span>
+</code></pre></div></td></tr></table></div>
+<p>La función <code>compact</code> admite tantos parámetros como datos queramos enviar a la vista por separado, cada uno con su nombre asociado.</p>
+<p>Si simplemente vamos a devolver una vista con poca información asociada, o poca lógica interna, también podemos abreviar el código anterior llamando directamente a <code>view</code>, en lugar de a <code>get</code> primero, en el archivo <code>routes/web.php</code>, y le pasamos así la información asociada a la vista:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">Route::view(&#39;/&#39;, &#39;inicio&#39;, [&#39;nombre&#39; =&gt; &#39;Nacho&#39;]);</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="primeros-pasos-con-el-motor-de-plantillas-blade">Primeros pasos con el motor de plantillas Blade</h2>
+<p>Hemos comentado en el apartado anterior que el uso de Blade permite simplificar la sintaxis y la forma de procesar algunas cosas en nuestras vistas. Siempre que creemos el archivo de la vista con la extensión <code>.blade.php</code>, nos permitirá automáticamente aprovechar la sintaxis y funcionalidades de Blade en nuestras vistas.</p>
+<p>Por ejemplo, si queremos mostrar el contenido de la variable <code>nombre</code> que hemos pasado antes a la página de inicio, en lugar de hacer un rudimentario <code>echo</code> en PHP, podemos emplear una sintaxis de dobles llaves, facilitada por Blade, para mostrar el contenido de esa variable. Con esto la línea que mostraba el nombre pasa de ser así…</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="x">Bienvenido/a </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$nombre</span> <span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>… a ser así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="x">Bienvenido/a {{ $nombre }}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>nota</strong>: Cada vez que se renderiza una vista en Laravel, se almacena el contenido PHP generado en <code>storage/framework/views</code>, y sólo se vuelve a re-generar ante un cambio en la vista, con lo que volver a llamar a una vista ya renderizada no afecta al rendimiento de la aplicación. Si echamos un vistazo a la vista generada con PHP plano y con Blade, veremos que hay una sutil diferencia entre ambas, y es que con Blade, en lugar de hacer un simple <code>echo</code> para mostrar el valor de la variable, se utiliza una función intermedia llamada <code>e</code>, que evita ataques XSS (<em>Cross Site Scripting</em>), es decir, que se inyecten <em>scripts</em> de JavaScript con la variable a mostrar. En otras palabras, el código no se interpreta, y se muestra tal cual. En algunos casos (especialmente cuando generamos contenido HTML desde dentro de la expresión Blade) nos puede interesar que no proteja contra estas inyecciones de código. En ese caso, se sustituye la segunda llave por una doble exclamación:</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">Bienvenido/a {!! $nombre !!}</span>
+</code></pre></div></td></tr></table></div>
+<p>Además de esta sintaxis básica para mostrar datos de variables en un lugar determinado de la vista, existen ciertas directivas en Blade que nos permiten realizar comprobaciones o repeticiones.</p>
+<h3 id="estructuras-de-control-de-flujo-en-blade">Estructuras de control de flujo en Blade</h3>
+<p>Para iterar sobre un conjunto de datos (array), podemos emplear la directiva <code>@foreach</code>, con una sintaxis similar al <em>foreach</em> de PHP, pero sin necesidad de llaves. Basta con finalizar el bucle con la directiva <code>@endforeach</code>, de este modo:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">&lt;ul&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">    @foreach($elementos as $elemento)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">        &lt;li&gt;{{ $elemento }}&lt;/li&gt;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">    @endforeach</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>En el caso de querer realizar alguna comprobación (por ejemplo, si el array anterior está vacío, para mostrar un mensaje pertinente), usamos la directiva <code>@if</code>, cerrada por su correspondiente pareja <code>@endif</code>. Opcionalmente, se puede intercalar una directiva <code>@else</code> para el camino alternativo, o también <code>@elseif</code> para indicar otra condición. El ejemplo anterior podría quedar así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span>
+<span class="normal"><a href="#__codelineno-13-8">8</a></span>
+<span class="normal"><a href="#__codelineno-13-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">&lt;ul&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">    @if($elementos)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">        @foreach($elementos as $elemento)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="x">            &lt;li&gt;{{ $elemento }}&lt;/li&gt;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="x">        @endforeach</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="x">    @else</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="x">        &lt;li&gt;No hay elementos que mostrar&lt;/li&gt;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="x">    @endif</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>También podemos comprobar si una variable está definida. En este caso, reemplazamos la directiva <code>@if</code> por <code>@isset</code>, con su correspondiente cierre <code>@endisset</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span>
+<span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">&lt;ul&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">    @isset($elementos)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">        @foreach($elementos as $elemento)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">            &lt;li&gt;{{ $elemento }}&lt;/li&gt;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">        @endforeach</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">    @else</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">        &lt;li&gt;No hay elementos que mostrar&lt;/li&gt;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="x">    @endisset</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Sin embargo, con cualquiera de estas opciones tenemos un problema: en el primer caso, si la variable <code>$elementos</code> no está definida, mostrará un error de PHP. En el segundo caso, si la variable sí está definida pero no contiene elementos, no se mostrará nada por pantalla. Una tercera estructura alternativa que agrupa estos dos casos (controlar a la vez que la variable esté definida y tenga elementos) es emplear la directiva <code>@forelse</code> en lugar de <code>@foreach</code>. Esta directiva permite una cláusula adicional <code>@empty</code> para indicar qué hacer si la colección no tiene elementos o está sin definir. El ejemplo anterior quedaría ahora así de abreviado:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">&lt;ul&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">    @forelse($elementos as $elemento)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="x">        &lt;li&gt;{{ $elemento }}&lt;/li&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="x">    @empty</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="x">        &lt;li&gt;No hay elementos que mostrar&lt;/li&gt;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="x">    @endforelse</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>En este tipo de iteradores (<code>@foreach</code> o <code>@forelse</code>), tenemos disponible un objeto llamado <code>$loop</code>, con una serie de propiedades sobre el bucle que estamos iterando, como por ejemplo:</p>
+<ul>
+<li><code>index</code>: posición dentro del array por la que vamos.</li>
+<li><code>count</code>: total de elementos.</li>
+<li><code>first</code> y <code>last</code>: booleanos que determinan si es el primer o último elemento, respectivamente.</li>
+<li><em>otras</em></li>
+</ul>
+<p>Podemos ver todas las propiedades disponibles en este objeto llamando a <code>var_dump</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">&lt;ul&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="x">    @forelse($elementos as $elemento)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="x">        &lt;li&gt;{{ $elemento }} {{ var_dump($loop) }} &lt;/li&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="x">    @empty</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="x">        &lt;li&gt;No hay elementos que mostrar&lt;/li&gt;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="x">    @endforelse</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Si, por ejemplo, queremos determinar si es el último elemento de la lista, y mostrar un mensaje o estilo especial, podemos hacer algo como esto:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span>
+<span class="normal"><a href="#__codelineno-17-8">8</a></span>
+<span class="normal"><a href="#__codelineno-17-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x">&lt;ul&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="x">    @forelse($elementos as $elemento)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="x">        &lt;li&gt;{{ $elemento }} </span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="x">            {{ $loop-&gt;last ? &quot;Ultimo elemento&quot; : &quot;&quot; }} </span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="x">        &lt;/li&gt;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="x">    @empty</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="x">        &lt;li&gt;No hay elementos que mostrar&lt;/li&gt;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="x">    @endforelse</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Existen otros tipos de estructuras iterativas y selectivas en Blade, como <code>@while</code>, <code>@for</code> o <code>@switch</code>, entre otras. Podéis consultar sobre su uso en la <a href="https://laravel.com/docs/blade#control-structures">documentación oficial de Blade</a>.</p>
+<p>Vamos a aplicar esto en nuestro ejemplo del proyecto <em>biblioteca</em>. Definiremos una ruta para sacar un listado de libros y, de momento, vamos a crear a mano dicho listado en el propio método de enrutamiento, y se lo pasaremos a una vista llamada <code>listado.blade.php</code>. Por un lado, la nueva ruta para el listado puede quedar así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">Route::get(&#39;/listado&#39;, function() {</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="x">    $libros = array(</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="x">        array(&quot;titulo&quot; =&gt; &quot;El juego de Ender&quot;, </span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="x">              &quot;autor&quot; =&gt; &quot;Orson Scott Card&quot;),</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="x">        array(&quot;titulo&quot; =&gt; &quot;La tabla de Flandes&quot;, </span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="x">              &quot;autor&quot; =&gt; &quot;Arturo Pérez Reverte&quot;),</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="x">        array(&quot;titulo&quot; =&gt; &quot;La historia interminable&quot;, </span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="x">              &quot;autor&quot; =&gt; &quot;Michael Ende&quot;),</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="x">        array(&quot;titulo&quot; =&gt; &quot;El Señor de los Anillos&quot;, </span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="x">              &quot;autor&quot; =&gt; &quot;J.R.R. Tolkien&quot;)</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="x">    );</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="x">    return view(&#39;listado&#39;, compact(&#39;libros&#39;));</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="x">})-&gt;name(&#39;listado_libros&#39;);</span>
+</code></pre></div></td></tr></table></div>
+<p>Por su parte, la vista <code>listado.blade.php</code> puede quedar así:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span>
+<span class="normal"><a href="#__codelineno-19-13">13</a></span>
+<span class="normal"><a href="#__codelineno-19-14">14</a></span>
+<span class="normal"><a href="#__codelineno-19-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="x">&lt;html&gt;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="x">    &lt;head&gt;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="x">        &lt;title&gt;Listado de libros&lt;/title&gt;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="x">    &lt;/head&gt;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="x">    &lt;body&gt;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="x">        &lt;h1&gt;Listado de libros&lt;/h1&gt;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="x">        &lt;ul&gt;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="x">        @forelse ($libros as $libro)</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="x">            &lt;li&gt;{{ $libro[&quot;titulo&quot;] }} ({{ $libro[&quot;autor&quot;] }})&lt;/li&gt;</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="x">        @empty</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="x">            &lt;li&gt;No se encontraron libros&lt;/li&gt;</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="x">        @endforelse</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13"></a><span class="x">        &lt;/ul&gt;</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14"></a><span class="x">    &lt;/body&gt;</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="x">&lt;/html&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="/assets/02_vista1.png" style="zoom:67%;" /></p>
+<h3 id="sobre-los-enlaces-a-otras-rutas">Sobre los enlaces a otras rutas</h3>
+<p>Hemos comentado brevemente en puntos anteriores que, gracias a Blade y a los nombres en las rutas, podemos enlazar una vista con otra de dos formas: de forma tradicional…</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="x">echo &#39;&lt;a href=&quot;/contacto&quot;&gt;Contacto&lt;/a&gt;&#39;;</span>
+</code></pre></div></td></tr></table></div>
+<p>… o bien empleando la función <code>route</code> seguida del nombre que le hemos dado a la ruta:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="x">&lt;a href=&quot;{{ route(&#39;ruta_contacto&#39;) }}&quot;&gt;Contacto&lt;/a&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Por ejemplo, podemos poner un enlace a la vista del listado de libros que hemos creado antes (y que hemos nombrado como <code>listado_libros</code> de este modo en nuestra vista de <code>inicio.blade.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="x">&lt;p&gt;Bienvenido/a {{ $nombre }}&lt;/p&gt;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="x">&lt;p&gt;&lt;a href=&quot;{{ route(&#39;listado_libros&#39;) }}&quot;&gt;Listado de libros&lt;/a&gt;&lt;/p&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="definir-plantillas-comunes">Definir plantillas comunes</h3>
+<p>A la hora de dar homogeneidad a una web, es habitual que la cabecera, el menú de navegación o el pie de página formen parte de una plantilla que se repite en todas las páginas del sitio, de modo que evitamos tener que actualizar todas las páginas ante cualquier posible cambio en estos elementos.</p>
+<p>Para crear una plantilla en Blade, creamos un archivo normal y corriente (por ejemplo, <code>plantilla.blade.php</code>), en la carpeta de vistas, con el contenido general de la plantilla. En aquellas zonas del documento donde vamos a permitir contenido variable dependiendo de la vista en sí, añadimos una sección llamada <code>@yield</code>, con un nombre asociado. Nuestra plantilla podría ser esta (notar que se permiten varios <code>@yield</code> con diferentes nombres):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>&lt;html&gt;
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>  &lt;head&gt;
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>    &lt;title&gt;
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>      @yield(&#39;titulo&#39;)
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a>    &lt;/title&gt;
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a>  &lt;/head&gt;
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a>  &lt;body&gt;
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a>    &lt;nav&gt;
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a>      &lt;!-- ... Menú de navegación --&gt;
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a>    &lt;/nav&gt;
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a>    @yield(&#39;contenido&#39;)
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a>  &lt;/body&gt;
+<a id="__codelineno-23-13" name="__codelineno-23-13"></a>&lt;/html&gt;
+</code></pre></div></td></tr></table></div>
+<p>Después, en cada vista en que queramos utilizar esta plantilla, añadimos la directiva <code>@extends</code> de Blade, indicando el nombre de plantilla que vamos a utilizar. Con la directiva <code>@section</code>, seguida del nombre de la sección, definimos el contenido para cada uno de los <code>@yield</code> que se hayan indicado en la plantilla. Finalizaremos cada sección con la directiva <code>@endsection</code>. Así, para nuestra página inicial (<code>inicio.blade.php</code>), el contenido puede ser ahora éste:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span>
+<span class="normal"><a href="#__codelineno-24-6">6</a></span>
+<span class="normal"><a href="#__codelineno-24-7">7</a></span>
+<span class="normal"><a href="#__codelineno-24-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="x">@extends(&#39;plantilla&#39;)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="x">@section(&#39;titulo&#39;, &#39;Inicio&#39;)</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="x">@section(&#39;contenido&#39;)</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="x">    &lt;h1&gt;Página de inicio&lt;/h1&gt;</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="x">    &lt;p&gt;Bienvenido/a {{ $nombre }}&lt;/p&gt;</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="x">@endsection</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>nota</strong>: a la directiva <code>@section</code> se le puede pasar un segundo parámetro con el contenido de esa sección, y en este caso no es necesario cerrarla con <code>@endsection</code>. Esta opción es útil para contenidos donde no interesen caracteres en blanco o saltos de línea innecesarios al principio o al final, como ocurre en el ejemplo anterior con el título (<em>title</em>) de la página.</p>
+<p>Del mismo modo, nuestra vista para el listado de libros quedaría de esta forma:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span>
+<span class="normal"><a href="#__codelineno-25-11">11</a></span>
+<span class="normal"><a href="#__codelineno-25-12">12</a></span>
+<span class="normal"><a href="#__codelineno-25-13">13</a></span>
+<span class="normal"><a href="#__codelineno-25-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>@extends(&#39;plantilla&#39;)
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>@section(&#39;titulo&#39;, &#39;Listado de libros&#39;)
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a>@section(&#39;contenido&#39;)
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a>    &lt;h1&gt;Listado de libros&lt;/h1&gt;
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a>    &lt;ul&gt;
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a>    @forelse ($libros as $libro)
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a>        &lt;li&gt;{{ $libro[&quot;titulo&quot;] }} ({{ $libro[&quot;autor&quot;] }})&lt;/li&gt;
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a>    @empty
+<a id="__codelineno-25-11" name="__codelineno-25-11"></a>        &lt;li&gt;No se encontraron libros&lt;/li&gt;
+<a id="__codelineno-25-12" name="__codelineno-25-12"></a>    @endforelse
+<a id="__codelineno-25-13" name="__codelineno-25-13"></a>    &lt;/ul&gt;
+<a id="__codelineno-25-14" name="__codelineno-25-14"></a>@endsection
+</code></pre></div></td></tr></table></div>
+<p>realizar <strong>ejercicio 3</strong>.</p>
+</blockquote>
+<h3 id="incluir-vistas-dentro-de-otras">Incluir vistas dentro de otras</h3>
+<p>También suele ser habitual definir contenidos parciales (se suelen definir en una subcarpeta <strong><code>partials</code></strong> dentro de <strong><code>resources/views</code></strong>), e incluirlos en las vistas. Para esto, utilizaremos la directiva <code>@include</code> de Blade.</p>
+<p>Por ejemplo, vamos a definir un menú de navegación. Supongamos que dicho menú está en el archivo <strong><code>resources/views/partials/nav.blade.php</code></strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="x">&lt;nav&gt;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="x">    &lt;a href=&quot;{{ route(&#39;inicio&#39;) }}&quot;&gt;Inicio&lt;/a&gt;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="x">    &amp;nbsp;|&amp;nbsp;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="x">    &lt;a href=&quot;{{ route(&#39;listado_libros&#39;) }}&quot;&gt;Listado de libros&lt;/a&gt;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="x">&lt;/nav&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Notar que, en este ejemplo, se supone que a cada una de las dos rutas implicadas les hemos asignado los nombres “inicio” y “libros_listado”, respectivamente, empleando el método <code>name</code> al definir la ruta. De lo contrario, las propiedades <code>href</code> de los dos enlaces deberían apuntar a <code>/</code> y <code>/listado</code>, respectivamente.</p>
+<p>Para incluir el menú en la plantilla anterior, podemos hacer esto (y eliminaríamos el elemento <code>&lt;nav&gt;</code> de la plantilla):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="x">&lt;html&gt;</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="x">    &lt;head&gt;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="x">        &lt;title&gt;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="x">        @yield(&#39;titulo&#39;)</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="x">        &lt;/title&gt;</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="x">    &lt;/head&gt;</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="x">    &lt;body&gt;</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="x">        @include(&#39;partials.nav&#39;)</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="x">        @yield(&#39;contenido&#39;)</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="x">    &lt;/body&gt;</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11"></a><span class="x">&lt;/html&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Como puede verse, podemos utilizar tanto el punto como la barra para indicar el separador de carpeta en la vista.</p>
+<h3 id="estructurar-vistas-en-carpetas">Estructurar vistas en carpetas</h3>
+<p>Cuando la aplicación es algo compleja, pueden ser necesarias varias vistas, y tenerlas todas en una misma carpeta puede ser algo difícil de gestionar. Es habitual, como iremos viendo en sesiones posteriores, estructurar las vistas de la carpeta <code>resources/views</code> en subcarpetas, de modo que, por ejemplo, cada carpeta se refiera a las vistas de una entidad o modelo de la aplicación, o a un controlador específico. De momento, en nuestro ejemplo de la biblioteca, vamos a ubicar la vista <code>listado.blade.php</code> en una subcarpeta <code>libros</code>, de modo que en la ruta que renderiza esta vista, ahora deberemos indicar también el nombre de la subcarpeta:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="x">Route::get(&#39;listado&#39;, function() {</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="x">    // ...</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="x">    return view(&#39;libros.listado&#39;, compact(&#39;libros&#39;));</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="x">})-&gt;name(&#39;listado_libros&#39;);</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>observa</strong>: la ruta o <em>path</em> que se indica será <code>carpeta.vista</code> (separación mediante un puto <code>.</code> y sin la extensión <code>blade.php</code> la vista).</p>
+</blockquote>
+<p>Ahora mismo, en nuestra carpeta <code>resources/views</code> del proyecto de la biblioteca tendremos únicamente la plantilla base y la página de inicio (y la vista <code>welcome.blade.php</code>, que de hecho ya podemos borrar si queremos). El resto de vistas las iremos estructurando en subcarpetas.</p>
+<h3 id="vistas-para-paginas-de-error">Vistas para páginas de error</h3>
+<p>A lo largo de estas sesiones, algunas acciones que hagamos provocarán páginas de error con determinados códigos, como por ejemplo 404 para páginas no encontradas. </p>
+<p>Si queremos definir el aspecto y estructura de estas páginas, basta con crear la vista correspondiente en la carpeta <code>resources/views/errors</code>, por ejemplo, <code>resources/views/errors/404.blade.php</code> para el error 404 (anteponemos el código de error al sufijo de la vista).</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span>
+<span class="normal"><a href="#__codelineno-29-6">6</a></span>
+<span class="normal"><a href="#__codelineno-29-7">7</a></span>
+<span class="normal"><a href="#__codelineno-29-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="x">@extends(&#39;plantilla&#39;)</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="x">@section(&#39;titulo&#39;, &#39;Error 404&#39;)</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="x">@section(&#39;contenido&#39;)</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="x">    &lt;h1&gt;Error&lt;/h1&gt;</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="x">    &lt;p&gt;Documento no encontrado&lt;/p&gt;</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="x">@endsection</span>
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ud0705/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7.5 Rutes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                7.5 Rutes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ud0707/" class="md-footer__link md-footer__link--next" aria-label="Next: 7.7 Estils i Javascript">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                7.7 Estils i Javascript
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+<!--     Made with -->IES
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      <!--Material for MkDocs-->
+      Mestre Ramon Esteve
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

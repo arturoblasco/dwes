@@ -1,185 +1,106 @@
-# Monolog
+# MySQLi
 
-## Actividad 501
+## Actividad 601
 
-Crea un nuevo proyecto con *Composer* llamado `Monologos`:
+Crea una nueva base de datos con el nombre `lol` y cotejamiento de datos `utf8mb4_unicode_ci`.
 
-- Incluye como librería la última versión de Monolog.
-- Crea la clase `Dwes\Monologos\HolaMonolog`.
-- Define una propiedad privada nombrada `miLog` para guardar el log.
-- Define en el constructor un `RotatingFileHandler` que escriba en la carpeta `logs` del proyecto, y que almacene los mensajes a partir de *debug*.
-- Crea los métodos `saludar` y `despedir` que hagan un log de tipo *info* con la acción correspondiente.
+## Actividad 602
 
+En nuestra base de datos `lol` que acabamos de crear, vamos a crear la tabla `campeon` con los siguientes campos (no olvides poner el tipo de datos de cada uno de los campos).
 
+- id [*]
+- nombre
+- rol
+- dificultad
+- descripcion
 
-## Actividad 502
+[*] clave primaria.
 
-Siguiendo con el proyecto `Monologos`:
+## Actividad 603
 
-- Crea un archivo llamado `inicio.php` que permita probar `HolaMonolog`.
-- Comprueba que los mensajes aparecen en el *log*.
-- Cambia el nivel para que el manejador solo muestre los mensajes a partir de *warning*.
-- Vuelve a ejectuar `inicio.php` y comprueba el archivo de log.
+Rellena la tabla `campeon` con, al menos 5 registros, con los datos que tú quieras o si lo prefieres, puedes basarte en la [página oficial del juego](https://www.leagueoflegends.com/es-es/champions) pero **¡¡ NO TE PONGAS A JUGAR !!**
 
-## Actividad 503
+## Actividad 604
 
-Modifica la clase `HolaMonolog`:
+Crea `604campeones.php` y lista todos los campeones del LOL que has metido en tu base de datos (1º conexión a BD y 2º `foreach` para cada campeón que tengas en la tabla `campeon`).
 
-- En el constructor, añade a la pila un manejador que escriba a la salida de error conjunto al procesador de introspección, mostrando mensajes desde el nivel *debug*.
+## Actividad 605
 
-- Añade una propiedad denominada `hora`, la cual se inicializa únicamente como parámetro del constructor. Si la `hora` es inferior a 0 o mayor de 24, debe escribir un log de *warning* con un mensaje apropiado.
+Modifica el archivo `604campeones.php` y guárdalo como `606campeones.php` pero pon al lado de cada uno de los campeones listados un botón para `editar` y otro para `borrar`. Cada uno de esos botones hará la correspondiente función dependiendo del id del campeón seleccionado.
 
-- Modifica los métodos `saludar` y `despedir` para hacerlo acorde a la propiedad `hora` (buenos días, buenas tardes, hasta mañana, etc...).
-
-   
-
-<hr>
-
-# Proyecto Videoclub IV
-
-## Actividad 511
-
-Como ya tenemos *Composer* instalado:
-
-- Inicialízalo dentro de tu proyecto *Videoclub.*
-- Incluye *Monolog* y *PhpUnit*, cada una en su lugar adecuado.
-- Añade el autoload al archivo `composer.json`, y haz los cambios necesarios en las clases para utilizar el *autoload* de *Composer*.
-- Sube los cambios a *GitHub* y crea la etiqueta `v0.511`.
-
-## Actividad 512
-
-Modifica la clase `Cliente` para introducir un `Logger` de Monolog.
-
-- Añade el log como una propiedad de la clase e inicialízalo en el constructor, con el nombre del canal `VideoclubLogger`.
-- Se debe almacenar en `logs/videoclub.log` mostrando todos los mensajes desde *debug*.
-- Antes de lanzar cualquier excepción, debe escribir un log de tipo *warning*.
-- Sustituir los `echo` que haya en el código, que ahora pasarán por el log con el nivel info, a excepción del método `muestraResumen` que seguirá haciendo `echo`.
-
-## Actividad 513
-
-Vuelve a hacer lo mismo que en el ejercicio anterior, pero ahora con la clase `Videoclub`. Además:
-
-- Siempre que se llame a un método del log, se le pasará como segundo parámetro la información que dispongamos.
-- Ejecuta el archivo de prueba y comprueba que el log se rellena correctamente.
-
-## Actividad 514
-
-Vamos a refactorizar el código común de inicialización de *Monolog* que tenemos repetidos en los constructores a una factoría de *Monolog*, la cual colocaremos en `\Dwes\Videoclub\Util\LogFactory`. Comprueba que sigue funcionando correctamente.
-
-## Actividad 515
-
-Modifica la factoría para que devuelva `LogInterface` y comprueba que sigue funcionando. Sube los cambios a GitHub con la etiqueta `v0.515`.
+- Al pinchar en editar, el usuario será redirigido al archivo `605editando.php` donde mostrará un formulario con los campos rellenos por los datos del campeón seleccionado. Al darle al botón de `guardar` los datos se guardarán en la base de datos y el usuario será redirigido a la lista de campones para poder ver los cambios.
+- Al pinchar en borrar, el usuario será preguntado a través de un mensaje de JavaScript (prompt) si está seguro de que quiere borrar al campeón seleccionado. En el mensaje de confirmación debe aparecer el **nombre del campeón seleccionado**. Si el usuario pincha en Aceptar el campeón será eliminado de la base de datos y el usuario será redirigido nuevamente al listado de campeones para comprobar que, efectivamente dicho campeón se ha eliminado de la lista.
 
 
 <hr>
 
-# phpDocumentor
+# Filtros y comodines
 
-## Actividad 521
+## Actividad 606
 
-Comprueba que en el contenedor de Docker funciona *phpDocumentor*. Ejecuta phpdoc sobre tu proyecto *Monolog* y comprueba el api que se crea. Comenta tanto la clase como los métodos, y posteriormente, vuelve a ejecutar phpdoc.
+Modifica el archivo `604campeones.php` y guárdalo como `606campeones.php` para que se muestre como una tabla con las columnas de la propia tabla de la base de datos, es decir; id, nombre, rol, dificultad, descripción. Al lado de cada nombre de cada columna, pon 2 iconos que sean ˄ ˅ y que cada uno de ellos ordene el listado en función de cuál se haya pinchado.
 
-## Actividad 522
+- Si se ha pulsado en Nombre el icono de ˄, el listado debe aparecer ordenado por nombre ascendente. Si por el contrario se ha pulsado ˅ tendrá que ordenarse por nombre descendente.
+- Ten en cuenta que cada icono debe llevar consigo un enlace al listado que contenga parámetros en la URL que satisfagan las opciones seleccionadas así que haced uso de $_GET para poder capturarlos y escribid las consultas SQL que sean necesarias para hacer cada uno de los filtros.
+- Puedes usar [Font Awesome](https://fontawesome.com/) para los iconos pero es algo opcional.
 
-Documenta el proyecto *Videoclub*, y genera la documentación. Empieza por las clases de `Soporte` y sus hijos. Comprueba el resultado. Luego sigue con `Cliente` y finalmente `Videoclub`.
+<hr>
+
+# PDO
+
+## Actividad 607
+
+Aprovecha lo que hiciste de los ejercicios 601 al 604 pero esta vez utilizando `PDO::FETCH_ASSOC`.
+
+## Actividad 608
+
+Crea una tabla nueva dentro de la base de datos lol que ya tienes y crea un sistema de login con usuarios. Introduce en la base de datos al menos 3 usuarios diferentes con sus contraseñas distintas. Recuerda que:
+
+- La tabla nueva ha de llamarse `usuario`.
+- Los campos a crear en la nueva tabla deben ser
+   - `id` [*]
+   - `nombre`
+   - `usuario`
+   - `password`
+   - `email`
+- Las contraseñas deben ser cifradas antes de guardar el datos en la base de datos.
+- Crea el formulario `608registro.php` donde el usuario introduzca los datos de registro y vincúlalo con `608nuevoUsuario.php` para que recoja los datos mediante POST y los inserte en la base de datos si todo ha ido bien.
+- Queda **PROHIBIDÍSIMO** acceder a `608nuevoUsuario.php` sin el formulario rellenado.
+- La sentencia de INSERT debe estar controlada para que no pueda introducirse ningún dato en blanco. Ten en cuenta que estás modificando la base de datos y no queremos campos mal rellenados.
+- Si todo ha ido bien, muestra un mensaje por pantalla diciendo `El usuario XXX ha sido introducido en el sistema con la contraseña YYY`.
 
 
 <hr>
 
-# Web Scraping
+# Ficheros
 
-## Actividad 531
+## Actividad 609
 
-A partir de los datos de [http://www.seleccionbaloncesto.es](https://www.seleccionbaloncesto.es/inicio.aspx), calcula la altura y edad media del equipo de baloncesto masculino. Observa que tienes los datos dentro de una tabla debajo de las noticias.
+Entra en [loremipsum.com](https://www.lipsum.com/) y genera un texto de 3 párrafos. Copia el texto generado y guárdalo en un archivo nuevo llamado `609loremIpsum.txt`. Genera un archivo php llamado `609loremIpsum.php` y muestra por pantalla el texto del archivo txt que acabas de crear, su tamaño en **Kilobytes** , la fecha de su última modificación y el ID de usuario que creó el archivo.
 
-## Actividad 532
+## Actividad 610
 
-Volviendo al Videoclub, en `Soporte` añade una propiedad llamada `metacritic` para almacenar la URL de cada soporte. A continuación, modifica los métodos `incluirXXX` de `Videoclub` para que admitan como primer parámetro dicha URL. Tras ello, modifica el fichero `inicio3.php` para pasarle la URL de cada soporte (para ello deberás consultarlos en Metacritic haciendo búsquedas manuales). Por ejemplo, en el caso de la película Cazafantasmas, su URL es https://www.metacritic.com/movie/ghostbusters.
-
-## Actividad 533
-
-Finalmente, añade un método abstracto en `Soporte` llamado `getPuntuacion`, que haciendo uso de *Web Scraping* se conecte a Metacritic y obtenga su puntuación. Modifica `inicio3.php` para obtener todos los alquileres de un cliente mediante `getAlquileres() : array`, y para cada uno de ellos, además del título, muestra su puntuación.
-
+Vuelve a cargar el archivo `606campeones.php` y renómbralo a `610campeones.php` pero en vez de mostrar la tabla por pantalla, genera un archivo CSV `610campeones.csv` y otro `610campeonesCSV.php` donde saques por pantalla el contenido del archivo `610campeones.csv`.
 
 <hr>
 
-# phpUnit
+# Proyecto CholloSevero
 
-## Actividad 541
+## Actividad 615
 
-A partir de la clase `HolaMonolog`, modifica los métodos para que además de escribir en en log, devuelvan el saludo como una cadena.
+Estructura el proyecto y piensa en las tablas y bases de datos que necesitéis para crear el proyecto. Crea los UML necesarios con nombres como `615UMLnombreTabla` metiendo todos los campos que se necesiten así como las relaciones que creas necesarias. Establece un sistema de archivos para el proyecto, teniendo en cuenta que van a haber imágenes, css, funciones php, constantes e incluso javaScript (pero algo básico) para controlar los eventos del usuario a lo largo de la interfaz.
 
-Crea la clase `HolaMonologTest` y añade diferentes casos de prueba para comprobar que los saludos y despedidas son acordes a la hora con la que se crea la clase.
+## Actividad 616
 
-## Actividad 542
+Crea un sistema de login/password con los roles `administrador` y `usuario`. De momento que se validen los usuarios correctamente utilizando encriptación en la contraseña.
 
-Vamos a simular *Test Driven Development*. Queremos que nuestra aplicación almacene los últimos tres saludos que ha realizado. Para ello:
+- `Administrador`: Puede ver todos los usuarios registrados así como los administradores y los chollos creados en la base de datos.
+- `Usuario`: Puede ver sus propios chollos, editarlos y borrarlos, además de crear nuevos.
 
-- Crea las prueba necesarias (invoca al método `saludar` varias veces y llama al método que te devuelva los saludos almacenados)
-- Implementa el código para pasar las pruebas
-- Refactoriza el código
+## Actividad 617
 
-## Actividad 543
+Crea la vista para poner nuevos chollos y recuerda **sólo pueden entrar a esta vista usuarios registrados o administradores**.
 
-Crea una nueva prueba que utilice proveedores de datos para comprobar esta última funcionalidad, pasándole:
+## Actividad 618
 
-- Un saludo.
-- Tres saludos.
-- Cuatro saludos.
-
-## Actividad 544
-
-¿Recuerdas que si la hora es negativa o superior a 24 escribíamos en el log un *warning*? Ahora debe lanzar una excepción de tipo `InvalidArgumentException` (como la excepción forma para de PHP, hay que poner su FQN: `\InvalidArgumentException`). Vuelve a aplicar TDD y completa tus casos de prueba.
-
-## Actividad 545
-
-Comenta la última prueba realizada (la comprobación de las excepciones) y realiza un informe de cobertura de pruebas. Analiza los resultados obtenidos. Elimina los últimos comentarios sobre la última prueba y vuelve a generar y analizar el informe de cobertura.
-
-
-<hr>
-
-# Proyecto Videoclub V
-
-El objetivo de los siguientes ejercicios es conseguir de manera incremental una cobertura de pruebas superior al 95%.
-
-## Actividad 551
-
-Crea pruebas dentro de la carpeta `tests` para las clases `Soporte`, `CintaVideo`, `Dvd` y `Juego`. Recuerda respetar el espacio de nombres. Los métodos `muestraResumen`, tras hacer echo de los mensajes, deben devolver una cadena con el propio mensaje.
-
-## Actividad 552
-
-Crea pruebas para la clase `Cliente`, aprovechando todo el código que teníamos para comprobar la funcionalidad. Utiliza proveedores de datos para añadir conjuntos de datos mayores que los empleados. Comprueba que funciona con diferentes cupos, que al intentar alquilar un soporte marcado como ya alquilado debe lanzar una excepción, que no coincidan los ids de los soportes, etc...
-
-## Actividad 553
-
-Crea las pruebas para la clase `Videoclub`. Ten en cuenta los últimos métodos añadidos que permitían alquilar y devolver soportes, tanto de manera individual como mediante un array.
-
-## Actividad 554
-
-Crea el informe de cobertura. Una vez creado, analiza los datos de cobertura (>= 90%) y comprueba el valor de CRAP, de manera que siempre sea <= 5. En caso de no cumplirse, crea nuevos casos de prueba y/o refactoriza el código de tu aplicación.
-
-Sube los cambios a GitHub con la etiqueta `v0.554`.
-
-
-<hr>
-
-# Ampliación
-
-## Actividad 561
-
-Queremos que en `Videoclub`, cuando un cliente no existe (tanto al alquilar como al devolver) se lance una nueva excepción: `ClienteNoExisteException`. Además, dado el número creciente de excepciones, queremos mover las excepciones al namespace `Dwes\Videoclub\Exception`.
-
-Siguiendo TDD, primero crea las pruebas, y luego modifica el código de aplicación.
-
-Vuelve a generar el informe de cobertura y comprueba la calidad de nuestras pruebas.
-
-## Actividad 562
-
-¿Nadie se ha dado cuenta que en los Dvd no estamos almacenando su duración? Haz todos los cambios necesarios, primero en las pruebas y luego en el código.
-
-## Actividad 563
-
-Tras años luchando contra la tecnología, decidimos introducir los Blu-ray en nuestra empresa. Hemos decido que `Bluray` herede de `Soporte`. Además del `título` y la `duracion`, nos interesa almacenar si `es4k`. Haz todos los cambios necesarios, primero en las pruebas y luego en el código.
-
-Sube los cambios a GitHub con la etiqueta `v0.563`.
-
+Crea la vista donde se muestren todos los chollos creados. Esta vista puede verla cualquier usuario, registrado o no en el sistema. Ten en cuenta que esta vista será la vista general de la web así que puedes llamarla `index.php` donde después aplicaremos filtros por $_GET.
