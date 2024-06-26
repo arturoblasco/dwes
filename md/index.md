@@ -1,7 +1,5 @@
-# módulo Desarrollo Web en Entorno Servidor (DWES)
-
-
-
+# DWES
+<div style="text-align: center;"><img src="../../img/dwes_wallpaper.png" alt="DWES" style="max-width: 70%;" /></div>
 ## Índice de unidades temáticas
 
 <table>
@@ -61,12 +59,14 @@
 </tr>   
 </table>
 
-
 ## Licencia
 
-<img src="./img/cc.png" alt="portada" style="zoom:35%;"  style="float: left;" /> <br />El uso de estos materiales está sujeto a una licencia Creative Commons CC [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es){:target="_blank"}.
-<br /><br />
+!!!note "Licencia"
+	<img src="./img/cc.png" alt="portada" style="zoom:35%;"  style="float: left;" /> <br />El uso de estos materiales está sujeto a una licencia Creative Commons CC [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es){:target="_blank"}.<br /><br />
 	*Derivado a partir de materiales:*<br />
-	*-  Curso Desarrollo Web en Entorno Servido*, de Aitor Medrano y Luis Alemañ  ([https://aitor-medrano.github.io/dwes2122/index.html](https://aitor-medrano.github.io/dwes2122/index.html)).<br />
-	*-  Curso de Laravel*, de Nacho Iborra ([https://nachoiborraies.github.io/laravel](https://nachoiborraies.github.io/laravel)).
+	- *Curso Desarrollo Web en Entorno Servido*, de Aitor Medrano y Luis Alemañ <br />
+	    ([https://aitor-medrano.github.io/dwes2122/index.html](https://aitor-medrano.github.io/dwes2122/index.html)).<br />
+	- *Curso de Laravel*, de Nacho Iborra <br />
+	    ([https://nachoiborraies.github.io/laravel](https://nachoiborraies.github.io/laravel)).
+
 
