@@ -1,5 +1,5 @@
 # DWES
-<div style="text-align: center;"><img src="../img/dwes_wallpaper.png" alt="DWES" style="max-width: 70%;" /></div>
+<div style="text-align: center;"><img src="img/dwes_wallpaper.png" alt="DWES" style="max-width: 70%;" /></div>
 ## Índice de unidades temáticas
 
 <table>
