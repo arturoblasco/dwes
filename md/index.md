@@ -1,5 +1,5 @@
 # DWES
-<div style="text-align: center;"><img src="../../img/dwes_wallpaper.png" alt="DWES" style="max-width: 70%;" /></div>
+<div style="text-align: center;"><img src="../img/dwes_wallpaper.png" alt="DWES" style="max-width: 70%;" /></div>
 ## Índice de unidades temáticas
 
 <table>
@@ -68,5 +68,4 @@
 	    ([https://aitor-medrano.github.io/dwes2122/index.html](https://aitor-medrano.github.io/dwes2122/index.html)).<br />
 	- *Curso de Laravel*, de Nacho Iborra <br />
 	    ([https://nachoiborraies.github.io/laravel](https://nachoiborraies.github.io/laravel)).
-
 
