@@ -67,28 +67,28 @@ nav:
         - Actividades: ud04/ud04ac.md
         - Referencias: ud04/ud04re.md
     - UD 5 Acceso a Base de Datos:
-        - 5.1 Introducción: ud06/ud0601.md
-        - 5.2 Instalación: ud06/ud0602.md
-        - 5.3 Estructura de BD: ud06/ud0603.md
-        - 5.4 Chollometro: ud06/ud0604.md
-        - 5.5 SQL: ud06/ud0605.md
-        - 5.6 phpMyAdmin: ud06/ud0606.md
-        - 5.7 MySQLi: ud06/ud0607.md
-        - 5.8 PHP Data Objects-PDO: ud06/ud0608.md
-        - 5.9 login & password: ud06/ud0609.md
-        - 5.10 Acceso a ficheros: ud06/ud0610.md
-        - Actividades: ud06/ud06ac.md
-        - Referencias: ud06/ud6re.md
-  - Bloc II - Laravel:
-    - UD 6 Herramientas Web:
-        - 6.1 Introducción: ud05/ud0501.md
-        - 6.2 Composer: ud05/ud0502.md
-        - 6.3 Monolog: ud05/ud0503.md
-        - 6.4 Documentación con phpDocumentor: ud05/ud0504.md
-        - 6.5 Web Scraping: ud05/ud0505.md
-        - 6.6 Pruebas con phpUnit: ud05/ud0506.md
+        - 5.1 Introducción: ud05/ud0501.md
+        - 5.2 Instalación: ud05/ud0502.md
+        - 5.3 Estructura de BD: ud05/ud0503.md
+        - 5.4 Chollometro: ud05/ud0504.md
+        - 5.5 SQL: ud05/ud0505.md
+        - 5.6 phpMyAdmin: ud05/ud0506.md
+        - 5.7 MySQLi: ud05/ud0507.md
+        - 5.8 PHP Data Objects-PDO: ud05/ud0508.md
+        - 5.9 login & password: ud05/ud0509.md
+        - 5.10 Acceso a ficheros: ud05/ud0510.md
         - Actividades: ud05/ud05ac.md
         - Referencias: ud05/ud05re.md
+  - Bloc II - Laravel:
+    - UD 6 Herramientas Web:
+        - 6.1 Introducción: ud06/ud0601.md
+        - 6.2 Composer: ud06/ud0602.md
+        - 6.3 Monolog: ud06/ud0603.md
+        - 6.4 Documentación con phpDocumentor: ud06/ud0604.md
+        - 6.5 Web Scraping: ud06/ud0605.md
+        - 6.6 Pruebas con phpUnit: ud06/ud0606.md
+        - Actividades: ud06/ud06ac.md
+        - Referencias: ud06/ud06re.md
     - UD 7 Framework:
         - 7.1 Introducció: ud07/ud0701.md
         - 7.2 Frameworks: ud07/ud0702.md
@@ -98,25 +98,36 @@ nav:
         - 7.6 Vistes amb Blade: ud07/ud0706.md
         - 7.7 Estils i Javascript: ud07/ud0707.md
         - Activitats: ud07/ud07ac.md
-        - Referències: ud07/ud07re.md
     - UD 8 Controladors:
-        - 8.1 Controladors i tipus: ud08/ud0801.md
-        - 8.2 Injecció i dependències: ud08/ud0802.md
+        - 8.1 Introducció: ud08/ud0801.md
+        - 8.2 Controladors i tipus: ud08/ud0802.md
+        - 8.3 Injecció i dependències: ud08/ud0803.md
+        - Activitats: ud08/ud08ac.md
     - UD 9 Model de dades:
-        - 9.1 Accés a base de dades: ud09/ud0901.md
-        - 9.2 Migracions: ud09/ud0902.md
-        - 9.3 Model de dades: ud09/ud0903.md
-        - 9.4 Relacions entre models: ud09/ud0904.md
-        - 9.5 Seeders i factories: ud09/ud0905.md
-        - 9.6 Query Builder i ús de dades: ud09/ud0906.md
+        - 9.1 Introducció: ud09/ud0901.md
+        - 9.2 Accés a base de dades: ud09/ud0902.md
+        - 9.3 Migracions: ud09/ud0903.md
+        - 9.4 Model de dades: ud09/ud0904.md
+        - 9.5 Relacions entre models: ud09/ud0905.md
+        - 9.6 Seeders i factories: ud09/ud0906.md
+        - 9.7 Query Builder i ús de dades: ud09/ud0907.md
+        - Activitats: ud09/ud09ac.md
     - UD 10 Formularis i validacions:
-        - 10.1 Definició de formularis: ud10/ud1001.md
-        - 10.2 Validació de dades: ud10/ud1002.md
+        - 10.1 Introducció: ud10/ud1001.md
+        - 10.2 Definició de formularis: ud10/ud1002.md
+        - 10.3 Validació de dades: ud10/ud1003.md
+        - Activitats: ud10/ud10ac.md
     - UD 11 Serveis REST:
-        - 11.1 Concepte de servei REST: ud11/ud1101.md
-        - 11.2 Creació de serveis REST: ud11/ud1102.md
-        - 11.3 Prova de serveis REST: ud11/ud1103.md
-
+        - 11.1 Introducció: ud11/ud1101.md
+        - 11.2 Concepte de servei REST: ud11/ud1102.md
+        - 11.3 Creació de serveis REST: ud11/ud1103.md
+        - Activitats: ud11/ud11ac.md
+    - UD 12 Autenticació d'usuaris:
+        - 12.1 Introducció: ud12/ud1201.md
+        - 12.2 Autenticación basada en sesiones: ud12/ud1202.md
+        - 12.3 Autenticación basada en tokens: ud12/ud1203.md
+        - Activitats: ud12/ud12ac.md
+    - Referències: bloc2re.md
 # Extensions
 markdown_extensions:
   - admonition

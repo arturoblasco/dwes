@@ -1,0 +1,3563 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud0905/">
+      
+      
+        <link rel="next" href="../ud0907/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>9.6 Seeders i factories - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#seeders-y-factories" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9.6 Seeders i factories
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bloc I - PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bloc I - PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 1 Arquitectura Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            UD 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0102/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Cliente/servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0103/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Arquitectura de 3 capas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0104/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 MVC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0105/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Decisiones de diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0106/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0107/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Puesta en marcha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud0108/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Manual Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01de/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descargas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud01/ud01re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 2 Lenguaje PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Operadores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Funciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Funciones predefinidas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud0207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Expresiones regulares
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud02/ud02re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 3 PHP OO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0301/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0302/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Clases y objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0303/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Encapsulación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0304/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Constructor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0305/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Clases estáticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0306/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introspección
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0307/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Herencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0308/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Clases abstractas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0309/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.9 Clases final
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0310/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.10 Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0311/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.11 Métodos encadenados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0312/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.12 Métodos mágicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0313/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.13 Espacio de nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0314/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.14 Gestión de errores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0315/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.15 Excepciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud0316/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.16 SPL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud03/ud03re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 4 Programación Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD 4 Programación Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0401/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0402/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Variable de servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0403/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0404/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cabeceras de respuesta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0405/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Gestión de estado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud0406/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Autenticación de usuarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud04ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud04/ud04re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 5 Acceso a Base de Datos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD 5 Acceso a Base de Datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0501/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0502/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Instalación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0503/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Estructura de BD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0504/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Chollometro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0505/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0506/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 phpMyAdmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0507/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 MySQLi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0508/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.8 PHP Data Objects-PDO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0509/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.9 login & password
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud0510/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.10 Acceso a ficheros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud05ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud05/ud05re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bloc II - Laravel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloc II - Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 6 Herramientas Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            UD 6 Herramientas Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0601/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0602/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.2 Composer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0603/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.3 Monolog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0604/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.4 Documentación con phpDocumentor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0605/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.5 Web Scraping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud0606/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.6 Pruebas con phpUnit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud06ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actividades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud06/ud06re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 7 Framework
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD 7 Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0701/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0702/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Frameworks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0703/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 Programari necessari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0704/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Primeres passes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0705/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Rutes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0706/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Vistes amb Blade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud0707/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Estils i Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud07/ud07ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 8 Controladors
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD 8 Controladors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud0801/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud0802/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Controladors i tipus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud0803/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Injecció i dependències
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud08/ud08ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 9 Model de dades
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD 9 Model de dades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0901/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0902/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 Accés a base de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0903/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Migracions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0904/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 Model de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0905/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.5 Relacions entre models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9.6 Seeders i factories
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    9.6 Seeders i factories
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#seeders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seeders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seeders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadiendo-los-seeders-a-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadiendo los seeders a la aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lanzar-los-seeders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lanzar los seeders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Factories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generar-factories-y-asociarlos-a-su-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generar factories y asociarlos a su modelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fakers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacionando-los-modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relacionando los modelos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0907/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.7 Query Builder i ús de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud09ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 10 Formularis i validacions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD 10 Formularis i validacions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud1001/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud1002/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Definició de formularis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud1003/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 Validació de dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud10/ud10ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 11 Serveis REST
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD 11 Serveis REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1102/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Concepte de servei REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud1103/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Creació de serveis REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud11/ud11ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD 12 Autenticació d'usuaris
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD 12 Autenticació d'usuaris
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud12/ud1201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.1 Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud12/ud1202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.2 Autenticación basada en sesiones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud12/ud1203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.3 Autenticación basada en tokens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud12/ud12ac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc2re/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referències
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#seeders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seeders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seeders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadiendo-los-seeders-a-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadiendo los seeders a la aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lanzar-los-seeders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lanzar los seeders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Factories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generar-factories-y-asociarlos-a-su-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generar factories y asociarlos a su modelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fakers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacionando-los-modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relacionando los modelos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="seeders-y-factories">Seeders y factories</h1>
+<p>En las pruebas que hemos hecho hasta ahora, para tener datos con que probar la aplicación, nos hemos limitado a añadirlos a mano desde <em>phpMyAdmin</em>, o bien desde el código con algunos datos simples como “Título de prueba 1” o cosas similares.</p>
+<p>Dado que los datos de inicio son necesarios para probar algunas funcionalidades básicas de la aplicación, como son las búsquedas y filtrados, y dado que los formularios para dar de alta y gestionar estos datos normalmente no se tienen listos hasta etapas más tardías, puede resultar conveniente disponer de algún mecanismo que genere estos datos de prueba al inicio, sin preocuparnos de tocar la base de datos a mano o alterar el código de la aplicación para ello. En este aspecto, los <em>seeders</em> y <em>factories</em> juegan un papel importante.</p>
+<h2 id="seeders"><em>Seeders</em></h2>
+<p>Los <em>seeders</em> son clases especiales que permiten sembrar (<em>seed</em>) de contenido una aplicación. Para crearlos, utilizamos el comando <code>php artisan</code> como sigue:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">php artisan make:seeder NombreSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto creará una clase llamada <code>NombreSeeder</code> en la carpeta <code>database/seeds</code> (hasta Laravel 7) o <code>database/seeders</code> (desde Laravel 8). En el método <code>run</code> de dicha clase podemos crear los elementos que necesitemos añadir a la base de datos.</p>
+<p>Por ejemplo, vamos a crear en nuestro proyecto <em>biblioteca</em> un seeder llamado <code>LibrosSeeder</code> para crear libros, y otro llamado <code>AutoresSeeder</code> para autores:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">php artisan make:seeder LibrosSeeder</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="x">php artisan make:seeder AutoresSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p>Editamos el método <code>run</code> del <em>seeder</em> que hemos creado (el de libros, por ejemplo), y definimos este código para crear un autor con un libro asociado (deberemos incorporar con <code>use</code> los modelos de <code>Autor</code> y <code>Libro</code> previamente):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">public function run()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="x">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="x">    $autor = new Autor();</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="x">    $autor-&gt;nombre = &quot;Juan Seeder&quot;;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="x">    $autor-&gt;nacimiento = 1960;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="x">    $autor-&gt;save();</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="x">    $libro = new Libro();</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="x">    $libro-&gt;titulo = &quot;El libro del Seeder&quot;;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="x">    $libro-&gt;editorial = &quot;Seeder S.A.&quot;;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="x">    $libro-&gt;precio = 10;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="x">    $libro-&gt;autor()-&gt;associate($autor);</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="x">    $libro-&gt;save();</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>De forma similar, podríamos editar el método <code>run</code> de <code>AutoresSeeder</code> para crear, en este caso, un autor (sin libro asociado, normalmente).</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">public function run()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="x">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="x">    $autor = new Autor();</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="x">    $autor-&gt;nombre = &quot;Autor Suelto&quot;;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="x">    $autor-&gt;nacimiento = 1951;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="x">    $autor-&gt;save();</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="anadiendo-los-seeders-a-la-aplicacion">Añadiendo los <em>seeders</em> a la aplicación</h3>
+<p>Por defecto, los <em>seeders</em> que creamos no forman parte de la aplicación aún, en el sentido de que aún no los podemos ejecutar. Para ello, debemos darlos de alta en el <em>seeder</em> general, llamado <code>DatabaseSeeder</code>, ubicado en la misma carpeta que los <em>seeders</em> que definimos:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span>
+<span class="normal"><a href="#__codelineno-4-8">8</a></span>
+<span class="normal"><a href="#__codelineno-4-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">class DatabaseSeeder extends Seeder</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="x">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x">    public function run()</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="x">    {</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="x">        ...</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="x">        $this-&gt;call(AutoresSeeder::class);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="x">        $this-&gt;call(LibrosSeeder::class);</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="x">    }</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title"> </p>
+<p>Es importante el orden en que colocamos los <em>seeders</em> dentro de este método, como veremos después, ya que esto indicará en qué orden se crean los datos de prueba en la aplicación.</p>
+</div>
+<h3 id="lanzar-los-seeders">Lanzar los <em>seeders</em></h3>
+<p>Si queremos ejecutar los <em>seeders</em> para que añadan los datos, emplearemos este comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">php artisan db:seed</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto lanzará todos los <em>seeders</em> que tengamos declarados en la clase <code>DatabaseSeeder</code>. Si sólo queremos lanzar uno en concreto, podemos hacer lo siguiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">php artisan db:seed --class=LibrosSeeder</span>
+</code></pre></div></td></tr></table></div>
+<p>También puede ser necesario (y a veces conveniente) limpiar la base de datos y llenarla desde cero con los datos de los seeds para empezar a probar la aplicación. En este caso, el comando es el siguiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">php artisan migrate:fresh --seed</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="factories"><em>Factories</em></h2>
+<p>Los <em>seeders</em> son una herramienta útil para poblar nuestra aplicación con datos al inicio. Podemos, por ejemplo, dar de alta una serie de usuarios iniciales con acceso a la aplicación, para que con ellos se puedan rellenar el resto de datos. También podemos dar de alta una serie de datos predefinidos en ciertas tablas, o datos de prueba que luego poder borrar.</p>
+<p>Sin embargo, los <em>seeders</em> por sí solos se quedan algo “cojos”. ¿Qué tendríamos que hacer para dar de alta 10 o 20 libros en nuestra base de datos de <em>biblioteca</em>? Tendríamos que definir algún tipo de bucle en el <em>seeder</em>, y definir datos diferentes (por ejemplo, con identificadores o contadores aleatorios) para cada libro. Para facilitar esta tarea, podemos echar mano de los <em>factories</em>.</p>
+<p>Los <em>factories</em> son clases que permiten generar datos por lotes. Se crean con el siguiente comando, almacenándose la clase en la carpeta <code>database/factories</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">php artisan make:factory NombreFactory --model=NombreModelo</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="generar-factories-y-asociarlos-a-su-modelo">Generar <em>factories</em> y asociarlos a su modelo</h3>
+<p>Si recordamos, cuando creamos los modelos de <code>Autor</code> y <code>Libro</code> la clase se crea con una cláusula <code>use</code> que alude al <em>trait</em> <code>HasFactory</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="x">class Libro extends Model</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="x">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="x">    use HasFactory;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="x">    ...</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Un <em>trait</em> básicamente es un conjunto de métodos que se puede emplear por cualquier clase que quiera utilizarlos. De este modo, se amortigua en parte la limitación de sólo poder heredar de una clase, y mediante estos <em>traits</em> podemos incorporar la funcionalidad de otras. En este caso, indicamos que el modelo de <em>Libro</em> puede usar los métodos de su <em>factory</em> asociado.</p>
+<p>Por ejemplo, vamos a crear un <em>factory</em> para generar autores y otro para libros, indicando con el parámetro <code>--model</code> el modelo asociado a cada <em>factory</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="x">php artisan make:factory AutorFactory --model=Autor</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="x">php artisan make:factory LibroFactory --model=Libro</span>
+</code></pre></div></td></tr></table></div>
+<p>Esto generará dos clases donde, en una anotación <code>@extends</code> se especificará el modelo asociado. Por ejemplo, así quedaría el <em>factory</em> de autores:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span>
+<span class="normal"><a href="#__codelineno-11-19">19</a></span>
+<span class="normal"><a href="#__codelineno-11-20">20</a></span>
+<span class="normal"><a href="#__codelineno-11-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">namespace Database\Factories;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="x">use Illuminate\Database\Eloquent\Factories\Factory;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="x">/**</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="x"> * @extends Illuminate\Database\Eloquent\Factories\Factory&lt;\App\Models\Autor&gt;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="x"> */ </span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="x">class AutorFactory extends Factory</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="x">{</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="x">    /**</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="x">     * Define the model&#39;s default state.</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="x">     *</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="x">     * @return array&lt;string, mixed&gt;</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="x">     */</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="x">    public function definition()</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="x">    {</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="x">        return [</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="x">            //</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="x">        ];</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="x">    }</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En Laravel 8, en lugar de la anotación <code>@extends</code>, la relación entre el modelo y el <em>factory</em> se daba a través de un atributo protegido llamado <code>model</code>. Esta opción sigue estando permitida en Laravel 9:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">...</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">class AutorFactory extends Factory</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">    /**</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">     * The name of the factory&#39;s corresponding model.</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="x">     *</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="x">     * @var string</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="x">     */</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="x">    protected $model = Autor::class;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="x">    ...</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En cualquiera de los dos casos, el método <code>definition</code> es el que se va a ejecutar cuando utilicemos el <em>factory</em>, para generar los datos del modelo asociado. Podemos devolver datos manualmente generados (por ejemplo, <em>Autor 1</em>, <em>Autor 2</em>, etc):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">public function definition()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">    return [</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="x">        &#39;nombre&#39; =&gt; &quot;Autor &quot; . rand(1, 100),</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="x">        &#39;nacimiento&#39; =&gt; rand(1950, 1990)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="x">    ];</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Para crear autores usando este <em>factory</em>, lo invocamos desde el <em>seeder</em> correspondiente (<code>AutoresSeeder</code>, en este caso), en su método <code>run</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">...</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">class AutoresSeeder extends Seeder</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">{</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">    public function run()</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">    {</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">        return Autor::factory()-&gt;count(5)-&gt;create();</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">    }</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Notar cómo acudimos al <em>factory</em> a través del modelo, con <code>Autor::factory()</code>, gracias al <em>trait</em> <code>HasFactory</code>. Esto generará 5 autores con datos distintos y aleatorios.</p>
+<h3 id="fakers"><em>Fakers</em></h3>
+<p>Estaremos de acuerdo en que generar datos del tipo “<em>Autor 1</em>”, “<em>Autor 2</em>”, etc, no queda demasiado “real” en una aplicación, por mucho que sean datos de prueba. Por ello, Laravel nos proporciona los <em>fakers</em> para generar datos al azar con una apariencia determinada. Así, podemos generar nombres reales aleatorios, o direcciones de correo electrónico, o frases, o textos largos.</p>
+<p>Para generar estos datos de prueba, Laravel cuenta con una clase llamada <code>Faker</code>, cuyo objeto está automáticamente incorporado en el <em>factory</em> a través de la propiedad <code>$this-&gt;faker</code>. Internamente dispone de métodos para generar datos de distintos tipos.Algunos de los más habituales son:</p>
+<ul>
+<li><strong><code>name</code></strong>: genera un nombre de persona. Admite como parámetro opcional “male” o “female” para generar nombres masculinos o femeninos, respectivamente.</li>
+<li><strong><code>sentence</code></strong>: genera una frase corta. Admite como parámetro opcional un número, indicando cuántas palabras generar.</li>
+<li><strong><code>word</code></strong>: genera una palabra aleatoria.</li>
+<li><strong><code>text</code></strong>: genera un texto largo.</li>
+<li><strong><code>phoneNumber</code></strong>: genera un número de teléfono.</li>
+<li><strong><code>email</code></strong>: genera un e-mail aleatorio.</li>
+<li><strong><code>randomNumber</code></strong>: genera un número aleatorio. Como alternativa, también se tiene <code>numberBetween</code>, que genera un número aleatorio entre un mínimo y un máximo pasados como parámetro.</li>
+<li>… etc (<a href="https://github.com/fzaninotto/Faker" target="_blank">aquí</a> podéis consultar más posibilidades al respecto).</li>
+</ul>
+<p>Además, también tenemos disponible el método <code>unique()</code> para asegurarnos de que alguno de los campos que generemos no se repita entre registros.</p>
+<p>Vamos a generar los datos de autores usando este <em>faker</em> en el método <code>definition</code> de nuestra <code>AutorFactory</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">public function definition()</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="x">    return [</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="x">        &#39;nombre&#39; =&gt; $this-&gt;faker-&gt;name,</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="x">        &#39;nacimiento&#39; =&gt; $this-&gt;faker-&gt;numberBetween(1950, 1990)</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="x">    ];</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Como podemos intuir, generamos un nombre al azar (de hombre o mujer) y un año de nacimiento entre 1950 y 1990.</p>
+<p>Del mismo modo, completamos la información del método <code>definition</code> para el <em>factory</em> de libros (<code>LibroFactory</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span>
+<span class="normal"><a href="#__codelineno-16-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">public function definition()</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="x">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="x">    return [</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="x">        &#39;titulo&#39; =&gt; $this-&gt;faker-&gt;sentence,</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="x">        &#39;editorial&#39; =&gt; $this-&gt;faker-&gt;sentence(2),</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="x">        &#39;precio&#39; =&gt; $this-&gt;faker-&gt;randomFloat(2, 5, 20)</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="x">    ];</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="relacionando-los-modelos">Relacionando los modelos</h2>
+<p>Finalmente, en los <em>seeder</em> correspondientes, podemos utilizar estos <em>factory</em> para generar N objetos del modelo asociado. Por ejemplo, para el caso de los autores, generamos 5 autores aleatorios:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x">class AutoresSeeder extends Seeder</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="x">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="x">    public function run()</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="x">    {</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="x">        Autor::factory()-&gt;count(5)-&gt;create();</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="x">    }</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>En el caso de los libros, recorremos los autores y, para cada uno, le generamos 2 libros al azar:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">class LibrosSeeder extends Seeder</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="x">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="x">    public function run()</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="x">    {</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="x">        $autores = Autor::all();</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="x">        $autores-&gt;each(function($autor) {</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="x">            Libro::factory()-&gt;count(2)-&gt;create([</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="x">                &#39;autor_id&#39; =&gt; $autor-&gt;id</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="x">            ]);</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="x">        });</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="x">    }</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title"> </p>
+<p>Es IMPORTANTE el orden en que se declaran los <em>seeders</em> en la clase <code>DatabaseSeeder</code>. Si primero colocamos el de libros y luego el de autores, aún no habrá autores con los que generar los libros. Por eso es importante generar primero los autores y así, usarlos para recorrerlos y generar los libros.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ud0905/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9.5 Relacions entre models">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9.5 Relacions entre models
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ud0907/" class="md-footer__link md-footer__link--next" aria-label="Next: 9.7 Query Builder i ús de dades">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                9.7 Query Builder i ús de dades
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+<!--     Made with -->IES
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      <!--Material for MkDocs-->
+      Mestre Ramon Esteve
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
