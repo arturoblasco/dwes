@@ -2124,18 +2124,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usando-el-comando-laravel" class="md-nav__link">
+  <a href="#a-usando-el-comando-laravel" class="md-nav__link">
     <span class="md-ellipsis">
-      Usando el comando laravel
+      a) Usando el comando laravel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#usando-el-comando-composer" class="md-nav__link">
+  <a href="#b-usando-el-comando-composer" class="md-nav__link">
     <span class="md-ellipsis">
-      Usando el comando composer
+      b) Usando el comando composer
     </span>
   </a>
   
@@ -3208,18 +3208,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usando-el-comando-laravel" class="md-nav__link">
+  <a href="#a-usando-el-comando-laravel" class="md-nav__link">
     <span class="md-ellipsis">
-      Usando el comando laravel
+      a) Usando el comando laravel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#usando-el-comando-composer" class="md-nav__link">
+  <a href="#b-usando-el-comando-composer" class="md-nav__link">
     <span class="md-ellipsis">
-      Usando el comando composer
+      b) Usando el comando composer
     </span>
   </a>
   
@@ -3425,16 +3425,14 @@
 <h1 id="primeros-pasos-con-laravel">Primeros pasos con Laravel</h1>
 <p>Ahora que ya tenemos todo el sistema preparado para desarrollar proyectos Laravel, veamos los primeros pasos que debemos dar para crear estos proyectos.</p>
 <div class="admonition note">
-<p class="admonition-title">Importante</p>
+<p class="admonition-title">Documentación oficial</p>
 <p>En este <a href="https://laravel.com/docs/10.x" target="_blank">enlace</a> podremos encontrar la documentación oficial de Laravel (en este caso, la versión 10.x). No dudes en consultarlo cuando tengas dudas!</p>
 </div>
 <h2 id="crear-proyectos-laravel">Crear proyectos Laravel</h2>
 <p>Para crear proyectos Laravel, tenemos dos alternativas:</p>
-<ul>
-<li>Emplear el comando <code>laravel</code> que hemos instalado en sesiones anteriores mediante <em>composer</em></li>
-<li>Utilizar el propio comando <code>composer</code> para crear el proyecto. Esta opción será la recomendada si queremos crear proyectos con versiones de Laravel que no sean la última, o si por algún motivo no funciona la opción anterior.</li>
-</ul>
-<h3 id="usando-el-comando-laravel">Usando el comando <em>laravel</em></h3>
+<p>​   a) Emplear el comando <code>laravel</code> que hemos instalado en sesiones anteriores mediante <em>composer</em></p>
+<p>​   b) Utilizar el propio comando <code>composer</code> para crear el proyecto. Esta opción será la recomendada si queremos crear proyectos con versiones de Laravel que no sean la última, o si por algún motivo no funciona la opción anterior.</p>
+<h3 id="a-usando-el-comando-laravel">a) Usando el comando <em>laravel</em></h3>
 <p>Si empleamos el comando <code>laravel</code> para crear proyectos (asumiendo que ya lo tendremos instalado de la sesión de <a href="https://nachoiborraies.github.io/laravel/md/es/01b" target="_blank">software necesario</a>), nos deberemos ubicar en la carpeta donde queramos crear el proyecto y escribir este comando:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">laravel new nombre_proyecto</span>
 </code></pre></div></td></tr></table></div>
@@ -3442,7 +3440,7 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">laravel new biblioteca</span>
 </code></pre></div></td></tr></table></div>
 <p>Esto creará un proyecto <code>biblioteca</code> en una subcarpeta con el mismo nombre.</p>
-<h3 id="usando-el-comando-composer">Usando el comando <em>composer</em></h3>
+<h3 id="b-usando-el-comando-composer">b) Usando el comando <em>composer</em></h3>
 <p>Alternativamente, también se puede emplear la herramienta <code>composer</code> para crear el proyecto, usando la siguiente sintaxis (también desde la carpeta donde queramos ubicar el proyecto):</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">composer create-project --prefer-dist laravel/laravel nombre_proyecto</span>
 </code></pre></div></td></tr></table></div>
@@ -3469,7 +3467,7 @@
 <div style="text-align: center;"><img src="../../img/ud07/01_vscode_laravel_proyecto.png" alt="vscode laravel proyecto" style="max-width: 90%;" /></div>
 
 <p>Para facilitar aún más la gestión de proyectos Laravel, podemos instalar alguna extensión adicional a Visual Studio Code. Una de las más populares es <em>Laravel Extension Pack</em>, que a su vez contiene una serie de extensiones para resaltar sintaxis, editar vistas, etc:</p>
-<div style="text-align: center;"><img src="../../img/ud07/01_vscode_laravel_extension.png" alt="vscode laravel extension" style="max-width: 70%;" /></div>
+<div style="text-align: center;"><img src="../../img/ud07/01_vscode_laravel_extension.png" alt="vscode laravel extension" style="max-width: 80%;" /></div>
 
 <h2 id="estructura-de-un-proyecto-laravel">Estructura de un proyecto Laravel</h2>
 <p>Los proyectos Laravel se pueden gestionar abriendo la carpeta directamente desde nuestro IDE (Visual Studio Code). Cuando creamos un proyecto Laravel, se crea una estructura de carpetas y archivos predefinida. Explicamos ahora brevemente en qué consisten las principales carpetas y archivos que se generan, de acuerdo a la versión actualizada de estos apuntes.</p>
@@ -3590,7 +3588,7 @@ Sin embargo, es posible que en algunas situaciones esta subcarpeta se cree a pos
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">Starting Laravel development server: http://127.0.0.1:8000</span>
 </code></pre></div></td></tr></table></div>
 <p>Conectando a la URL que se nos facilita, veremos la pantalla de inicio de nuestro proyecto, que será algo así (aunque el diseño de la página de inicio puede variar dependiendo de la versión de Laravel que usemos):</p>
-<div style="text-align: center;"><img src="../../img/ud07/01_laravel_welcome.png" alt="img" style="max-width: 80%;" /></div>
+<div style="text-align: center;"><img src="../../img/ud07/01_laravel_welcome.png" alt="img" style="max-width: 90%;" /></div>
 
 <p>Más adelante aprenderemos a modificar esta página de inicio, obviamente, y a ir añadiendo otras.</p>
 <div class="admonition note">
