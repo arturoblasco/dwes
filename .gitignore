@@ -7,15 +7,3 @@ code/*
 !code/APM5/
 !!code/APM5/src/**
 
-# Entornos virtuales Python
-venv/
-myenv/
-
-# MkDocs generado
-site/
-
-# Cachés Python
-__pycache__/
-*.pyc
-*.pyo
-
