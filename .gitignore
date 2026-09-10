@@ -1,0 +1,21 @@
+# Ignorar todo dentro de code
+code/*
+
+# Excepto la carpeta src y su contenido
+!code/APM/
+!!code/APM/src/**
+!code/APM5/
+!!code/APM5/src/**
+
+# Entornos virtuales Python
+venv/
+myenv/
+
+# MkDocs generado
+site/
+
+# Cachés Python
+__pycache__/
+*.pyc
+*.pyo
+

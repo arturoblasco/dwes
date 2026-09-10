@@ -1,0 +1,238 @@
+# Nom del lloc
+site_name: Desarrollo Web en Entorno Servidor (DWES)
+
+# Carpeta amb el documents font
+docs_dir: 'md'
+
+# Carpeta on es generarà el lloc web (mkdocs build)
+site_dir: 'docs'
+
+# Adreça on s'executa el server local (mkdocs serve)
+dev_addr: localhost:8027
+
+# Navegació dels lloc DWES25
+nav:
+  - "Inicio": index.md
+  - "Curso 26-27": course26.md  
+  - "Contenidos": contents.md
+  - 🔵 PHP:
+    - U01 Arquitectura Web:
+        - up01/ut0101.md
+        - up01/ut0102.md
+        - up01/ut0103.md
+        - up01/ut0104.md
+        - up01/ut0105.md
+        - up01/ut0106.md
+        - up01/ut0107.md
+        - up01/ut0108.md
+        - up01/ut0109.md
+        - up01/ut0110.md
+        - up01/ut01de.md   
+        - up01/ut01ac.md        
+    - U02 Lenguaje PHP:
+        - up02/ut0201.md
+        - up02/ut0202.md
+        - up02/ut0203.md
+        - up02/ut0204.md
+        - up02/ut0205.md
+        - up02/ut0206.md
+        - up02/ut0207.md
+        - up02/ut02ac.md    
+    - U03 PHP OO:
+        - up03/ut0301.md
+        - up03/ut0302.md
+        - up03/ut0303.md
+        - up03/ut0304.md
+        - up03/ut0305.md
+        - up03/ut0306.md
+        - up03/ut0307.md
+        - up03/ut0308.md
+        - up03/ut0309.md
+        - up03/ut0310.md
+        - up03/ut0311.md
+        - up03/ut0312.md
+        - up03/ut0313.md
+        - up03/ut0314.md
+        - up03/ut0315.md
+        - up03/ut0316.md
+        - up03/ut03ac.md
+    - U04 Programación web:
+        - up04/ut0401.md
+        - up04/ut0402.md
+        - up04/ut0403.md
+        - up04/ut0404.md
+        - up04/ut0405.md
+        - up04/ut0406.md
+        - up04/ut04ac.md
+    - U05 Acceso a Base de Datos:
+        - up05/ut0501.md
+        - up05/ut0502.md
+        - up05/ut0503.md
+        - up05/ut0504.md
+        - up05/ut0505.md
+        - up05/ut0506.md
+        - up05/ut0507.md
+        - up05/ut0508.md
+        - up05/ut0509.md
+        - up05/ut05ac.md
+  - 🔴 Laravel:
+    - U06 ED profesional:
+        - ul01/100.md
+        - ul01/101.md
+        - ul01/102.md
+        - ul01/103.md
+        - ul01/104.md
+        - ul01/105.md
+        - ul01/106.md
+        - ul01/10p.md
+    - U07 Fundamentos:
+        - ul02/200.md
+        - ul02/201.md
+        - ul02/202.md
+        - ul02/203.md
+        - ul02/204.md
+        - ul02/205.md
+        - ul02/206.md
+        - ul02/20p.md
+    - U08 Gestión de datos:
+        - ul03/300.md
+        - ul03/301.md
+        - ul03/302.md
+        - ul03/303.md
+        - ul03/304.md
+        - ul03/305.md
+        - ul03/30p.md
+    - U09 Interacción con usuario:
+        - ul04/400.md
+        - ul04/401.md
+        - ul04/402.md
+        - ul04/403.md
+        - ul04/404.md
+        - ul04/405.md
+        - ul04/406.md
+        - ul04/407.md
+        - ul04/40p.md
+    - U10 Autenticación básica:
+        - ul05/500.md
+    - U11 Despliegue:
+        - ul06/600.md
+        - ul06/601.md
+        - ul06/602.md
+        - ul06/603.md                        
+    - Actividades:
+        - activities/examen2.md
+        - activities/act02.md
+        - activities/pru07.md
+  - 🟢 Proyecto:
+    - U12 Proyecto:
+        - ul12/100.md
+
+theme:
+  name: material      # selección del tema
+  language: es        # idioma del tema per defecte (ABC)
+  logo: img/logo.png
+  favicon: img/favicon.png
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    alternate: fontawesome/solid/flag-usa
+    language: material/translate   # cambia el icono de idioma
+    alternate: material/translate  # o material/translate, material/web, etc.
+
+  palette:
+   # Boto que canvia a mode oscur
+    - scheme: default
+      primary: '#1d4975'      # colores: amber, orange, lime. Otros: teal, red, pink, purple, deep purple, cyan, green, light green, blue grey
+      accent: '#1d4975'
+      toggle:
+        icon: material/weather-night
+        name: Cambia a modo oscuro
+    # Botó que canvia a mode clar
+    - scheme: slate
+      primary: '#1d4975'
+      accent: '#1d4975'
+      toggle:
+        icon: material/white-balance-sunny
+        name: Cambia a modo normal
+  features:
+    # utilitats de copia de codi
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - navigation.footer       # footer de la pagina, amb navegació
+    - navigation.top          # boto flotant de tornar a dalt
+
+# Traduccions dels titols del menu per a la UI (ABC)
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/arturoblasco
+      text: "Github de Arturo BC"
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - attr_list         # permet afegir atributs a les etiquetes html
+  # Bloques de código modernos con colores y nombre de lenguaje
+  - pymdownx.highlight:
+      linenums: false
+      anchor_linenums: false
+      auto_title: false      # ❌ evita título arriba del bloque
+      use_pygments: true     # ✅ activa resaltado de sintaxis
+      pygments_style: default
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+  # Extensiones útiles adicionales
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+# Altres afegits
+plugins:
+  - search      # plugin del quadre cerca
+  # - i18n:
+  #     docs_structure: folder
+  #     reconfigure: true   # <<--- IMPRESCINDIBLE per canviar site_name per idioma
+  #     languages:
+  #       - locale: es
+  #         name: Castellano
+  #         default: true
+  #         build: true
+  #         config:
+  #           site_name: "Desarrollo Web en Entorno Servidor (DWES)"
+  #           theme:
+  #             language: es
+  #       - locale: ca
+  #         name: Valencià
+  #         build: true
+  #         config:
+  #           site_name: "Desenvolupament Web en Entorn Servidor (DWES)"
+  #           theme:
+  #             language: ca
+  #     nav_translations:          
+  #       ca:
+  #         "UT 1 Arquitectura Web": "UT 1 Arquitectura Web"
+  #         "UT 2 Lenguaje PHP": "UT 2 Llenguatge PHP"
+          
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/calendario.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
+  - javascripts/calendario.js
+
+copyright: Arturo Blasco - Creative Commons CC BY-NC-SA
