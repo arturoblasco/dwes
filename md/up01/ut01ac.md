@@ -3,6 +3,16 @@ title: Ejercicios
 ---
 # <img src="../../img/php_azul.svg" width="40"> Ejercicios
 
+## Ejercicio 100
+
+Puesta en marcha de nuestro repositorio de prácticas.
+
+Para ello:
+
+1.  Crea un repositorio en local de nombre **DWES_tunombre**.
+2.  Crea un repositorio github, de nombre **DWES_tunombre**, y sincronízalo con el tuyo local.
+
+
 ## Ejercicio 101
 
 Busca en Internet cuáles son los tres *frameworks PHP* más utilizados, e indica:
