@@ -1,0 +1,39 @@
+# Laravel / PHP 
+/vendor 
+/node_modules 
+
+# Variables de entorno 
+.env 
+.env.* 
+!.env.example 
+
+# Laravel generated 
+/storage/*.key 
+/storage/framework/cache/* /storage/framework/sessions/* /storage/framework/testing/* /storage/framework/views/* /bootstrap/cache/* 
+
+# Logs 
+*.log 
+
+# Frontend build 
+/public/build 
+/public/hot 
+
+# Vite 
+npm-debug.log 
+yarn-error.log 
+pnpm-debug.log 
+
+# IDE 
+/.idea 
+/.vscode 
+
+# Sistema 
+.DS_Store 
+Thumbs.db 
+
+# Composer / PHPUnit 
+.phpunit.result.cache 
+.phpunit.cache 
+
+# Laravel Sail 
+docker-compose.override.yml

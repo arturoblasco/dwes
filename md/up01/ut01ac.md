@@ -10,10 +10,9 @@ Puesta en marcha de nuestro repositorio de prácticas.
 Para ello:
 
 1. Crea un repositorio en local de nombre **DWES_tunombre**.
-2. Crea tu fichero **.gitignore** (para ello copia este [Cfichero](./sources/.gitignore){:target="blank"}).
+2. Crea tu fichero **.gitignore** (para ello copia este [fichero](./sources/gitignore.txt){:target="blank"}).
 3. Crea un repositorio github, de nombre **DWES_tunombre**, y sincronízalo con el tuyo local.
 4. Asigna a tu tutor, **arturoblasco@iesmre.com**, como colaborador de tu repositorio github.
-5. 
 
 
 ## Ejercicio 101
