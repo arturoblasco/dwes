@@ -549,8 +549,16 @@
   font-size: 0.9em;
   border-inline-start: 6px solid var(--abc-primary) !important;
   background-color: var(--abc-primary-softer);
-  padding: 10px 16px;
-  margin: 1em 0;
+  padding: 2px 2px;
+  margin: .4em 0;
+}
+
+.md-typeset blockquote > :first-child {
+    margin-top: 1;
+}
+
+.md-typeset blockquote > :last-child {
+    margin-bottom: 0;
 }
 
 .md-typeset blockquote strong {

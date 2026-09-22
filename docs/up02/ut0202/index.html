@@ -4138,7 +4138,7 @@
 <li>El cliente recibe el resultado generado tras interpretar el código en el servidor.</li>
 <li>El código se almacena en archivo con extensión <strong><code>.php</code></strong>.</li>
 </ul>
-<p>La versión actual (<em>a fecha de octubre de 2025</em>) es la <strong>8.4</strong>. Además de numerosas nuevas funcionalidades que iremos viendo durante el curso, tiene más de dos veces mejor rendimiento que PHP5.</p>
+<p>La versión actual (<em>a fecha de septiembre de 2026</em>) es la <strong>8.5.10</strong>. Además de numerosas nuevas funcionalidades que iremos viendo durante el curso, tiene más de dos veces mejor rendimiento que PHP5.</p>
 <p>Su documentación es extensa y está traducida: <a href="https://www.php.net/manual/es/" target="_blank"><strong>https://www.php.net/manual/es/</strong></a>.</p>
 <blockquote>
 <p><strong>Versión de php</strong></p>
@@ -4281,6 +4281,7 @@
     <span class="nv">$sinValor</span><span class="p">;</span>
     <span class="nv">$_1</span> <span class="o">=</span> <span class="s2">&quot;el primero&quot;</span><span class="p">;</span>
 
+
     <span class="k">echo</span> <span class="nv">$sinValor</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div>
@@ -4322,11 +4323,10 @@
 <li>local</li>
 <li>global</li>
 <li>estático</li>
-<li></li>
 </ul>
 <div class="admonition examplephp">
 <p class="admonition-title">Ejemplo de alcances</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Alcance global</label><label for="__tabbed_5_2">Alcance local</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Alcance global</label><label for="__tabbed_5_2">Alcance local</label><label for="__tabbed_5_3">Estática</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Una variable declarada <strong>fuera de</strong> una función tiene un <strong>ámbito global</strong> y solo se puede acceder a ella fuera de una función:</p>
@@ -4355,6 +4355,29 @@
 <span class="c1">// usar x fuera de la función generará un error</span>
 <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Variable x fuera de función es: </span><span class="si">$x</span><span class="s2">&lt;/p&gt;&quot;</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">contador</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="nv">$numero</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="nv">$numero</span><span class="o">++</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="nv">$numero</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">contador</span><span class="p">();</span>
+<span class="nx">contador</span><span class="p">();</span>
+<span class="nx">contador</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span>
+<span class="x">El resultado sería:</span>
+<span class="x">```bash</span>
+<span class="x">1</span>
+<span class="x">2</span>
+<span class="x">3</span>
 </code></pre></div>
 </div>
 </div>

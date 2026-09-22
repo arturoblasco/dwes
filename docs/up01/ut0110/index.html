@@ -4877,13 +4877,17 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 <p>En este curso vamos a emplear <strong><em>Visual Studio Code</em></strong> (<a href="https://code.visualstudio.com/" target="_blank"><strong>https://code.visualstudio.com</strong></a>) como editor de código fuente. Existen otras alternativas, siendo <em>PhpStorm</em> el IDE  más conocido (pero de pago). Otra posibilidad es utilizar <em>Eclipse</em>, aunque es un entorno bastante pesado.</p>
 <p><em>VSCode</em> es un editor de código fuente que se complementa mediante extensiones. Para facilitar el trabajo a lo largo del curso vamos a utilizar las siguientes <strong>extensiones</strong>:</p>
 <ul>
-<li><strong>PHP Debug</strong>: para la depuración de código PHP. Permite conectar VSCode a un servidor de depuración PHP y proporciona herramientas para inspeccionar variables, establecer puntos de interrupción y realizar un seguimiento detallado del flujo de ejecución.</li>
-<li><strong>PHP IntelliSense</strong>: extensión fundamental, aporta mucha velocidad de escritura gracias al «<em>intellisense</em>». Mejora la codificación al proporcionar sugerencias inteligentes de código y completar automáticamente fragmentos de código mientras escribes en PHP.</li>
 <li><strong>Php Intelephense</strong>: ofrece características avanzadas para desarrolladores PHP, como autocompletado inteligente, análisis estático y soporte para PHPDoc. Ayuda a detectar errores y a escribir código más eficiente.</li>
-<li><strong>PHP DocBlocker</strong>: simplifica la creación de comentarios tipo <em>DocBlock</em> para sus funciones y métodos PHP. Con solo presionar un atajo de teclado, puede generar rápidamente documentación legible y útil para tu código.</li>
-<li><strong>PHP Code Sniffer</strong>: asegura que el código PHP cumpla con los estándares de codificación establecidos. Puedes personalizar las reglas según las necesidades de tu proyecto.</li>
-<li><strong>PHP CS Fixer</strong>: automatiza la corrección de problemas de formato en tu código PHP, manteniéndolo limpio y coherente con facilidad.</li>
-<li><strong>PHP Namespace Resolver</strong></li>
+<li><strong>PHP Debug</strong>: para la depuración de código PHP. Permite conectar VSCode a un servidor de depuración PHP y proporciona herramientas para inspeccionar variables, establecer puntos de interrupción y realizar un seguimiento detallado del flujo de ejecución.</li>
+<li><strong>PHP Sniffer</strong>: asegura que el código PHP cumpla con los estándares de codificación establecidos. Puedes personalizar las reglas según las necesidades de tu proyecto.</li>
+<li><strong>Laravel Intelephense</strong> (mamadou-diallo) - extiende Inetelephense con helpers de Laravel.</li>
+<li><strong>Laravel Extra Intelephense</strong> (amiralizadeh9480) - sugiere rutas, vistas, config, modelos.</li>
+<li><strong>Laravel Artisan</strong> (ryannaddy) - ejecuta comandos artisan desde la paleta.</li>
+<li><strong>Prettier</strong> (shufo.vscode-blade-formatter) - formatea ficheros .blade.</li>
+<li><strong>Database Client</strong> (cweijan.vscode-database-client) o <strong>MySQL</strong> - para base de datos.</li>
+<li><strong>GitHub Pull Requests and Issues</strong> (github.vscode-pull-request-github).</li>
+<li><strong>GitLens</strong> (eamodio.gitlens) - historial, blame, diffs.</li>
+<li><strong>PHP IntelliSense</strong>: extensión fundamental, aporta mucha velocidad de escritura gracias al «<em>intellisense</em>». Mejora la codificación al proporcionar sugerencias inteligentes de código y completar automáticamente fragmentos de código mientras escribes en PHP.</li>
 <li><strong>Docker</strong></li>
 </ul>
 <p>En la siguiente sesión comenzaremos a utilizar <strong>Intelephense pero en esta sesión nos vamos a centrar en Docker</strong> (más adelante instalaremos nuevas extensiones).</p>
@@ -4891,7 +4895,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 <div style="text-align: center;"><figure><img src="../../img/ut01/vscodedocker.png" alt="vscodedocker" style="zoom:65%;" /><figcaption class="figure-caption-small">🖼️ Figura 1.35: Extensión Docker en Visual Studio Code</figcaption></figure></div>
 
 <h3 id="31-configurar-llaves-php-en-vs-code">3.1. Configurar llaves PHP en VS Code<a class="headerlink" href="#31-configurar-llaves-php-en-vs-code" title="Permanent link">&para;</a></h3>
-<p>Ir a <em>Archivo → Preferencias → Configurar fragmentos de usuario</em> (<em>File → Preferences → User Snippets</em>) seleccionar la opción <strong>html</strong> y agregar el <em>snippet</em> en el fichero <code>html.json</code>:</p>
+<p>Ir a <strong>Archivo</strong> → <strong>Preferencias</strong> → <strong>Configurar fragmentos de código</strong> (<em>File → Preferences → User Snippets</em>) seleccionar la opción <strong>html</strong> y agregar el <em>snippet</em> en el fichero <strong><code>html.json</code></strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;php&quot;</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="s2">&quot;prefix&quot;</span>:<span class="w"> </span><span class="s2">&quot;php&quot;</span>,
 <span class="w">    </span><span class="s2">&quot;body&quot;</span>:<span class="w"> </span><span class="o">[</span>
