@@ -219,7 +219,7 @@ Vamos a utilizar una imagen para cada proyecto. Para poder hacer esto hemos de a
 
 > NOTA: si has de descargar imágenes de Internet, asegúrate que la licencia de dichas imágenes te lo permite. Utiliza, si es necesario, un sitio como [pixabay.com](http://pixabay.com/){target=_blank rel="noopener noreferrer"} para descargar imágenes con licencia libre.
 
-Descárgate una imagen en la carpeta *images*, renómbrala a **projecte1.png** (aquí tienes la imagen del ejemplo <a download="projecte1.png" href="../../sources/">projecte1.png</a> si deseas utilizar la misma) y completa el fichero *index.php* con el siguiente código:
+Descárgate una imagen en la carpeta *images*, renómbrala a **projecte1.png** (aquí tienes la imagen del ejemplo <a download="projecte1.png" href="../../sources/projecte1.png">projecte1.png</a> si deseas utilizar la misma) y completa el fichero *index.php* con el siguiente código:
 
 ```php
 <?php include("templates/header.php"); ?>
@@ -271,7 +271,7 @@ Para consultar el resultado, introducimos en la barra de navegación la URL **lo
 
 #### **contacto.php**
 
-Descargamos esta <a download="contacte.png" href="../../sources/">contacte.png</a> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:
+Descargamos esta <a download="contacte.png" href="../../sources/contacte.png">contacte.png</a> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:
 
 ```php
 <?php include("templates/header.php"); ?>
