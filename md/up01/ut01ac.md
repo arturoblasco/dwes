@@ -156,8 +156,6 @@ Ahora, con el contenedor *Docker* iniciado, si refrescamos la página, volveremo
 
 Parece que no haya cambiado nada, pero PHP ya está trabajando para nosotros. Hemos pasado de una página web estática, recogida en un solo documento, a una página modular generada con PHP. En un sitio web con multitud de páginas esto puede ser una gran ventaja.
 
-> ATENCIÓN: el orden en que han sido cargados los ficheros es importante. Si escribiésemos el siguiente fichero index.php:
-
 Ahora, como buenos programadores, nos preguntamos ¿*`include` nos sirve para todos los casos o existen otras posibilidades para incluir ficheros en PHP*? Lo vemos en el siguiente apartado.
 
 ### c) Inclusión de ficheros en PHP
@@ -207,7 +205,7 @@ Y posteriormente en otro archivo incluimos el anterior:
 
 En este apartado vamos a completar las páginas y las plantillas de la aplicación para poder añadirles posteriormente código PHP.
 
-#### **index.php**
+#### d.1. **index.php**
 
 Vamos a introducir un proyecto de prueba para que se pueda visualizar en la página de inicio, quedaría del siguiente modo:
 
@@ -241,7 +239,7 @@ Descárgate una imagen en la carpeta *images*, renómbrala a **projecte1.png** (
 
 Ahora debería aparecer un proyecto en la página principal.
 
-#### **proyecto.php**
+#### d.2. **proyecto.php**
 
 Creamos este nuevo fichero a la altura de *index.php* y añadimos el siguiente contenido:
 
@@ -269,7 +267,7 @@ Para consultar el resultado, introducimos en la barra de navegación la URL **lo
 
 <div style="text-align: center;"><img src="../../img/ut01/ejercicio107f.png" alt="Estructura del proyecto" style="zoom:45%; border: 2px solid #83abd4;" /><figcaption class="figure-caption-small">🖼️ Figura 1.42: Página proyecto.php del Ejercicio 107</figcaption></div>
 
-#### **contacto.php**
+#### d.3. **contacto.php**
 
 Descargamos esta <a download="contacte.png" href="../../sources/contacte.png">contacte.png</a> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:
 

@@ -915,10 +915,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#indexphp" class="md-nav__link">
+  <a href="#d1-indexphp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        index.php
+        d.1. index.php
       
     </span>
   </a>
@@ -926,10 +926,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proyectophp" class="md-nav__link">
+  <a href="#d2-proyectophp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        proyecto.php
+        d.2. proyecto.php
       
     </span>
   </a>
@@ -937,10 +937,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#contactophp" class="md-nav__link">
+  <a href="#d3-contactophp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        contacto.php
+        d.3. contacto.php
       
     </span>
   </a>
@@ -4234,10 +4234,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#indexphp" class="md-nav__link">
+  <a href="#d1-indexphp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        index.php
+        d.1. index.php
       
     </span>
   </a>
@@ -4245,10 +4245,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proyectophp" class="md-nav__link">
+  <a href="#d2-proyectophp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        proyecto.php
+        d.2. proyecto.php
       
     </span>
   </a>
@@ -4256,10 +4256,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#contactophp" class="md-nav__link">
+  <a href="#d3-contactophp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        contacto.php
+        d.3. contacto.php
       
     </span>
   </a>
@@ -4407,9 +4407,6 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <div style="text-align: center;"><img src="../../img/ut01/ejercicio107c.png" alt="Fichero index.php" style="zoom:45%; border: 2px solid #83abd4;" /><figcaption class="figure-caption-small">🖼️ Figura 1.39: Página principal dinámica Ejercicio 107</figcaption></div>
 
 <p>Parece que no haya cambiado nada, pero PHP ya está trabajando para nosotros. Hemos pasado de una página web estática, recogida en un solo documento, a una página modular generada con PHP. En un sitio web con multitud de páginas esto puede ser una gran ventaja.</p>
-<blockquote>
-<p>ATENCIÓN: el orden en que han sido cargados los ficheros es importante. Si escribiésemos el siguiente fichero index.php:</p>
-</blockquote>
 <p>Ahora, como buenos programadores, nos preguntamos ¿<em><code>include</code> nos sirve para todos los casos o existen otras posibilidades para incluir ficheros en PHP</em>? Lo vemos en el siguiente apartado.</p>
 <h3 id="c-inclusion-de-ficheros-en-php">c) Inclusión de ficheros en PHP<a class="headerlink" href="#c-inclusion-de-ficheros-en-php" title="Permanent link">&para;</a></h3>
 <p>La idea de utilizar diferentes ficheros es la reutilización del código, lo que conlleva una mayor modularidad y un mejor mantenimiento del mismo. Un fichero no tiene por qué ser una plantilla, como hemos visto hasta ahora, sino que también podría ser código PHP que pudiésemos llegar a utilizar en diferentes partes de la aplicación. También se pueden dar diferentes circunstancias, y es por ello que disponemos de varias opciones:</p>
@@ -4450,7 +4447,7 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 </code></pre></div>
 <h3 id="d-completamos-el-resto-de-paginas">d) Completamos el resto de páginas<a class="headerlink" href="#d-completamos-el-resto-de-paginas" title="Permanent link">&para;</a></h3>
 <p>En este apartado vamos a completar las páginas y las plantillas de la aplicación para poder añadirles posteriormente código PHP.</p>
-<h4 id="indexphp"><strong>index.php</strong><a class="headerlink" href="#indexphp" title="Permanent link">&para;</a></h4>
+<h4 id="d1-indexphp">d.1. <strong>index.php</strong><a class="headerlink" href="#d1-indexphp" title="Permanent link">&para;</a></h4>
 <p>Vamos a introducir un proyecto de prueba para que se pueda visualizar en la página de inicio, quedaría del siguiente modo:</p>
 <div style="text-align: center;"><img src="../../img/ut01/ejercicio107d.png" alt="Fichero index.php" style="zoom:45%; border: 2px solid #83abd4;" /><figcaption class="figure-caption-small">🖼️ Figura 1.40: Página index.php del Ejercicio 107</figcaption></div>
 
@@ -4478,7 +4475,7 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="s2">&quot;templates/footer.php&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </code></pre></div>
 <p>Ahora debería aparecer un proyecto en la página principal.</p>
-<h4 id="proyectophp"><strong>proyecto.php</strong><a class="headerlink" href="#proyectophp" title="Permanent link">&para;</a></h4>
+<h4 id="d2-proyectophp">d.2. <strong>proyecto.php</strong><a class="headerlink" href="#d2-proyectophp" title="Permanent link">&para;</a></h4>
 <p>Creamos este nuevo fichero a la altura de <em>index.php</em> y añadimos el siguiente contenido:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="s2">&quot;templates/header.php&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
@@ -4501,7 +4498,7 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <p>Para consultar el resultado, introducimos en la barra de navegación la URL <strong>localhost:8081/proyecto.php</strong>:</p>
 <div style="text-align: center;"><img src="../../img/ut01/ejercicio107f.png" alt="Estructura del proyecto" style="zoom:45%; border: 2px solid #83abd4;" /><figcaption class="figure-caption-small">🖼️ Figura 1.42: Página proyecto.php del Ejercicio 107</figcaption></div>
 
-<h4 id="contactophp"><strong>contacto.php</strong><a class="headerlink" href="#contactophp" title="Permanent link">&para;</a></h4>
+<h4 id="d3-contactophp">d.3. <strong>contacto.php</strong><a class="headerlink" href="#d3-contactophp" title="Permanent link">&para;</a></h4>
 <p>Descargamos esta <a download="contacte.png" href="../../sources/contacte.png">contacte.png</a> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="s2">&quot;templates/header.php&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
