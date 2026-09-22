@@ -4362,7 +4362,7 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <p>En el docker del <em>Ejercicio 103</em>:</p>
 <ul>
 <li>Crea una carpeta de nombre <strong><code>up01</code></strong></li>
-<li>Descarga el siguiente fichero <a download="index.html" href="../../sources/">index.html</a> en la carpeta <code>src</code>.</li>
+<li>Descarga el siguiente fichero <strong><a download="index.html" href="../../sources/">index.html</a></strong> en la carpeta <code>src/up01</code>.</li>
 </ul>
 <blockquote>
 <p>En el fichero <em>index.html</em> descargado se han utilizado las siguientes librerías para conformar la interfaz de usuario:</p>
@@ -4392,7 +4392,7 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>¿<em>Cómo podemos ahora volver a estructurar la página de inicio con las plantillas</em>? Esto se verá en el siguiente apartado.</p>
+<p>¿<em>Cómo podemos ahora volver a estructurar la página de inicio con las plantillas</em>? Lo vemos a continuación.</p>
 <h3 id="b-conformacion-de-las-paginas-de-la-aplicacion">b) Conformación de las páginas de la aplicación<a class="headerlink" href="#b-conformacion-de-las-paginas-de-la-aplicacion" title="Permanent link">&para;</a></h3>
 <p>Para poder estructurar las páginas de la aplicación basándonos en las plantillas, podemos utilizar la instrucción <a href="https://www.php.net/manual/es/function.include.php" rel="noopener noreferrer" target="_blank">include</a>. Modificando el fichero <em>index.php</em>, quedaría del siguiente modo:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>  <span class="k">include</span><span class="p">(</span><span class="s2">&quot;templates/header.php&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
@@ -4411,8 +4411,10 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <h3 id="c-inclusion-de-ficheros-en-php">c) Inclusión de ficheros en PHP<a class="headerlink" href="#c-inclusion-de-ficheros-en-php" title="Permanent link">&para;</a></h3>
 <p>La idea de utilizar diferentes ficheros es la reutilización del código, lo que conlleva una mayor modularidad y un mejor mantenimiento del mismo. Un fichero no tiene por qué ser una plantilla, como hemos visto hasta ahora, sino que también podría ser código PHP que pudiésemos llegar a utilizar en diferentes partes de la aplicación. También se pueden dar diferentes circunstancias, y es por ello que disponemos de varias opciones:</p>
 <ul>
-<li><code>include(ruta/archivo);</code>   <code>include\_once(ruta/archivo);</code></li>
-<li><code>require(ruta/archivo);</code>   <code>require\_once(ruta/archivo);</code></li>
+<li><code>include(ruta/archivo);</code></li>
+<li><strong><code>include_once(ruta/archivo);</code></strong></li>
+<li><code>require(ruta/archivo);</code></li>
+<li><code>require_once(ruta/archivo);</code></li>
 </ul>
 <blockquote>
 <p>NOTA: Si el archivo se encuentra a la misma altura (en el sistema de archivos) que el fichero en el cual se incluye, entonces solo es necesario especificar el nombre del archivo a incluir; si los dos archivos no se encuentran a la misma altura, entonces es posible especificar la ruta (<a href="https://desktop.arcgis.com/es/arcmap/latest/tools/supplement/pathnames-explained-absolute-relative-unc-and-url.htm" rel="noopener noreferrer" target="_blank">absoluta o relativa</a>) del fichero a incluir.</p>
@@ -4423,28 +4425,39 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <li><strong>include</strong>: si no encuentra el archivo, emite una advertencia (warning).</li>
 <li>Las funciones <strong>_once</strong> sólo se cargan una vez, si ya ha sido incluida previamente, no lo vuelve a hacer, evitando bucles.</li>
 </ul>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo inclusión de código</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">biblioteca.php</label><label for="__tabbed_1_2">ficheroEjemplo.php</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Por ejemplo, colocamos las siguientes funciones en el archivo biblioteca.php:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-  <span class="k">function</span> <span class="nf">suma</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
-  <span class="p">}</span>
+<span class="k">function</span> <span class="nf">suma</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="p">}</span>
 
-  <span class="k">function</span> <span class="nf">resta</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nv">$a</span> <span class="o">-</span> <span class="nv">$b</span><span class="p">;</span>
-  <span class="p">}</span>
+<span class="k">function</span> <span class="nf">resta</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$a</span> <span class="o">-</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>Y posteriormente en otro archivo incluimos el anterior:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
-  <span class="k">include_once</span><span class="p">(</span><span class="s2">&quot;biblioteca.php&quot;</span><span class="p">);</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s2">&quot;biblioteca.php&quot;</span><span class="p">);</span>
 
-  <span class="k">echo</span> <span class="nx">suma</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nx">suma</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
 
-  <span class="k">echo</span> <span class="nx">resta</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nx">resta</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h3 id="d-completamos-el-resto-de-paginas">d) Completamos el resto de páginas<a class="headerlink" href="#d-completamos-el-resto-de-paginas" title="Permanent link">&para;</a></h3>
 <p>En este apartado vamos a completar las páginas y las plantillas de la aplicación para poder añadirles posteriormente código PHP.</p>
 <h4 id="d1-indexphp">d.1) <strong>index.php</strong><a class="headerlink" href="#d1-indexphp" title="Permanent link">&para;</a></h4>
@@ -4457,7 +4470,7 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <blockquote>
 <p>NOTA: si has de descargar imágenes de Internet, asegúrate que la licencia de dichas imágenes te lo permite. Utiliza, si es necesario, un sitio como <a href="http://pixabay.com/" rel="noopener noreferrer" target="_blank">pixabay.com</a> para descargar imágenes con licencia libre.</p>
 </blockquote>
-<p>Descárgate una imagen en la carpeta <em>images</em>, renómbrala a <strong>projecte1.png</strong> (aquí tienes la imagen del ejemplo <a download="projecte1.png" href="../../sources/projecte1.png">projecte1.png</a> si deseas utilizar la misma) y completa el fichero <em>index.php</em> con el siguiente código:</p>
+<p>Descárgate una imagen en la carpeta <em>images</em>, renómbrala a <strong>projecte1.png</strong> (aquí tienes la imagen del ejemplo <strong><a download="projecte1.png" href="../../sources/projecte1.png">projecte1.png</a></strong> si deseas utilizar la misma) y completa el fichero <em>index.php</em> con el siguiente código:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="s2">&quot;templates/header.php&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
 <span class="x">&lt;div class=&quot;container&quot;&gt;</span>
@@ -4499,7 +4512,7 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <div style="text-align: center;"><img src="../../img/ut01/ejercicio107f.png" alt="Estructura del proyecto" style="zoom:45%; border: 2px solid #83abd4;" /><figcaption class="figure-caption-small">🖼️ Figura 1.42: Página proyecto.php del Ejercicio 107</figcaption></div>
 
 <h4 id="d3-contactophp">d.3) <strong>contacto.php</strong><a class="headerlink" href="#d3-contactophp" title="Permanent link">&para;</a></h4>
-<p>Descargamos esta <a download="contacte.png" href="../../sources/contacte.png">contacte.png</a> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:</p>
+<p>Descargamos esta <strong><a download="contacte.png" href="../../sources/contacte.png">contacte.png</a></strong> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="s2">&quot;templates/header.php&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
 <span class="x">&lt;div class=&quot;container&quot;&gt;</span>

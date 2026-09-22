@@ -96,7 +96,7 @@ Anota los valores de:
 En el docker del *Ejercicio 103*:
 
 * Crea una carpeta de nombre **`up01`**
-* Descarga el siguiente fichero <a download="index.html" href="../../sources/">index.html</a> en la carpeta `src`.
+* Descarga el siguiente fichero **<a download="index.html" href="../../sources/">index.html</a>** en la carpeta `src/up01`.
 
 > En el fichero *index.html* descargado se han utilizado las siguientes librerías para conformar la interfaz de usuario:
 > 
@@ -134,7 +134,7 @@ El fichero *index.php* quedaría del siguiente modo:
 </div>
 ```
 
-¿*Cómo podemos ahora volver a estructurar la página de inicio con las plantillas*? Esto se verá en el siguiente apartado.
+¿*Cómo podemos ahora volver a estructurar la página de inicio con las plantillas*? Lo vemos a continuación.
 
 ### b) Conformación de las páginas de la aplicación
 
@@ -162,8 +162,10 @@ Ahora, como buenos programadores, nos preguntamos ¿*`include` nos sirve para to
 
 La idea de utilizar diferentes ficheros es la reutilización del código, lo que conlleva una mayor modularidad y un mejor mantenimiento del mismo. Un fichero no tiene por qué ser una plantilla, como hemos visto hasta ahora, sino que también podría ser código PHP que pudiésemos llegar a utilizar en diferentes partes de la aplicación. También se pueden dar diferentes circunstancias, y es por ello que disponemos de varias opciones:
 
-* `include(ruta/archivo);`   `include\_once(ruta/archivo);`
-* `require(ruta/archivo);`   `require\_once(ruta/archivo);`
+* `include(ruta/archivo);`
+* **`include_once(ruta/archivo);`**
+* `require(ruta/archivo);`
+* `require_once(ruta/archivo);`
 
 > NOTA: Si el archivo se encuentra a la misma altura (en el sistema de archivos) que el fichero en el cual se incluye, entonces solo es necesario especificar el nombre del archivo a incluir; si los dos archivos no se encuentran a la misma altura, entonces es posible especificar la ruta ([absoluta o relativa](https://desktop.arcgis.com/es/arcmap/latest/tools/supplement/pathnames-explained-absolute-relative-unc-and-url.htm){target=_blank rel="noopener noreferrer"}) del fichero a incluir.
 
@@ -173,33 +175,38 @@ Las particularidades de cada instrucción son:
 * **include**: si no encuentra el archivo, emite una advertencia (warning).
 * Las funciones **\_once** sólo se cargan una vez, si ya ha sido incluida previamente, no lo vuelve a hacer, evitando bucles.
 
-Por ejemplo, colocamos las siguientes funciones en el archivo biblioteca.php:
+!!!examplephp "Ejemplo inclusión de código"
+    === "biblioteca.php"
 
-```php
-<?php
-  function suma(int $a, int $b) : int {
-      return $a + $b;
-  }
+        Por ejemplo, colocamos las siguientes funciones en el archivo biblioteca.php:
 
-  function resta(int $a, int $b) : int {
-      return $a - $b;
-  }
-?>
-```
+        ```php
+        <?php
+        function suma(int $a, int $b) : int {
+            return $a + $b;
+        }
 
-Y posteriormente en otro archivo incluimos el anterior:
+        function resta(int $a, int $b) : int {
+            return $a - $b;
+        }
+        ?>
+        ```
 
-```php
-<?php
+    === "ficheroEjemplo.php"
 
-  include_once("biblioteca.php");
+        Y posteriormente en otro archivo incluimos el anterior:
 
-  echo suma(10,20);
+        ```php
+        <?php
 
-  echo resta(40,20);
+        include_once("biblioteca.php");
 
-?>
-```
+        echo suma(10,20);
+
+        echo resta(40,20);
+
+        ?>
+        ```
 
 ### d) Completamos el resto de páginas
 
@@ -217,7 +224,7 @@ Vamos a utilizar una imagen para cada proyecto. Para poder hacer esto hemos de a
 
 > NOTA: si has de descargar imágenes de Internet, asegúrate que la licencia de dichas imágenes te lo permite. Utiliza, si es necesario, un sitio como [pixabay.com](http://pixabay.com/){target=_blank rel="noopener noreferrer"} para descargar imágenes con licencia libre.
 
-Descárgate una imagen en la carpeta *images*, renómbrala a **projecte1.png** (aquí tienes la imagen del ejemplo <a download="projecte1.png" href="../../sources/projecte1.png">projecte1.png</a> si deseas utilizar la misma) y completa el fichero *index.php* con el siguiente código:
+Descárgate una imagen en la carpeta *images*, renómbrala a **projecte1.png** (aquí tienes la imagen del ejemplo **<a download="projecte1.png" href="../../sources/projecte1.png">projecte1.png</a>** si deseas utilizar la misma) y completa el fichero *index.php* con el siguiente código:
 
 ```php
 <?php include("templates/header.php"); ?>
@@ -269,7 +276,7 @@ Para consultar el resultado, introducimos en la barra de navegación la URL **lo
 
 #### d.3) **contacto.php**
 
-Descargamos esta <a download="contacte.png" href="../../sources/contacte.png">contacte.png</a> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:
+Descargamos esta **<a download="contacte.png" href="../../sources/contacte.png">contacte.png</a>** en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:
 
 ```php
 <?php include("templates/header.php"); ?>
