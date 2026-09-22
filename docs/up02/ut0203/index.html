@@ -4452,32 +4452,32 @@
 </thead>
 <tbody>
 <tr>
-<td><code>+</code></td>
+<td><strong><code>+</code></strong></td>
 <td>Suma</td>
 <td><code>$x + $y</code></td>
 </tr>
 <tr>
-<td><code>-</code></td>
+<td><strong><code>-</code></strong></td>
 <td>Resta</td>
 <td><code>$x - $y</code></td>
 </tr>
 <tr>
-<td><code>*</code></td>
+<td><strong><code>*</code></strong></td>
 <td>Multiplicación</td>
 <td><code>$x * $y</code></td>
 </tr>
 <tr>
-<td><code>/</code></td>
+<td><strong><code>/</code></strong></td>
 <td>División</td>
 <td><code>$x / $y</code></td>
 </tr>
 <tr>
-<td><code>%</code></td>
+<td><strong><code>%</code></strong></td>
 <td>Módulo (resto)</td>
 <td><code>$x % $y</code></td>
 </tr>
 <tr>
-<td><code>**</code></td>
+<td><strong><code>**</code></strong></td>
 <td>Potencia</td>
 <td><code>$x ** $y</code></td>
 </tr>
@@ -4495,32 +4495,32 @@
 </thead>
 <tbody>
 <tr>
-<td><code>=</code></td>
+<td><strong><code>=</code></strong></td>
 <td>Asigna un valor</td>
 <td><code>$x = 10</code></td>
 </tr>
 <tr>
-<td><code>+=</code></td>
+<td><strong><code>+=</code></strong></td>
 <td><code>$x = $x + y</code></td>
 <td><code>$x += 5</code></td>
 </tr>
 <tr>
-<td><code>-=</code></td>
+<td><strong><code>-=</code></strong></td>
 <td><code>$x = $x - y</code></td>
 <td><code>$x -= 2</code></td>
 </tr>
 <tr>
-<td><code>*=</code></td>
+<td><strong><code>*=</code></strong></td>
 <td><code>$x = $x * y</code></td>
 <td><code>$x *= 3</code></td>
 </tr>
 <tr>
-<td><code>/=</code></td>
+<td><strong><code>/=</code></strong></td>
 <td><code>$x = $x / y</code></td>
 <td><code>$x /= 4</code></td>
 </tr>
 <tr>
-<td><code>%=</code></td>
+<td><strong><code>%=</code></strong></td>
 <td><code>$x = $x % y</code></td>
 <td><code>$x %= 2</code></td>
 </tr>
@@ -4538,52 +4538,77 @@
 </thead>
 <tbody>
 <tr>
-<td><code>==</code></td>
+<td><strong><code>==</code></strong></td>
 <td>Igual a (valor)</td>
 <td><code>$x == $y</code></td>
 </tr>
 <tr>
-<td><code>===</code></td>
+<td><strong><code>===</code></strong></td>
 <td>Idéntico (valor y tipo)</td>
 <td><code>$x === $y</code></td>
 </tr>
 <tr>
-<td><code>!=</code> o <code>&lt;&gt;</code></td>
+<td><strong><code>!=</code></strong> o <strong><code>&lt;&gt;</code></strong></td>
 <td>Distinto</td>
 <td><code>$x != $y</code></td>
 </tr>
 <tr>
-<td><code>!==</code></td>
+<td><strong><code>!==</code></strong></td>
 <td>No idéntico</td>
 <td><code>$x !== $y</code></td>
 </tr>
 <tr>
-<td><code>&gt;</code></td>
+<td><strong><code>&gt;</code></strong></td>
 <td>Mayor que</td>
 <td><code>$x &gt; $y</code></td>
 </tr>
 <tr>
-<td><code>&lt;</code></td>
+<td><strong><code>&lt;</code></strong></td>
 <td>Menor que</td>
 <td><code>$x &lt; $y</code></td>
 </tr>
 <tr>
-<td><code>&gt;=</code></td>
+<td><strong><code>&gt;=</code></strong></td>
 <td>Mayor o igual</td>
 <td><code>$x &gt;= $y</code></td>
 </tr>
 <tr>
-<td><code>&lt;=</code></td>
+<td><strong><code>&lt;=</code></strong></td>
 <td>Menor o igual</td>
 <td><code>$x &lt;= $y</code></td>
 </tr>
 <tr>
-<td><code>&lt;=&gt;</code></td>
+<td><strong><code>&lt;=&gt;</code></strong></td>
 <td>Nave espacial (compara 3 valores posibles: -1, 0, 1)</td>
 <td><code>$x &lt;=&gt; $y</code></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition examplephp">
+<p class="admonition-title">Diferencia entre <code>==</code> y <code>===</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="s2">&quot;5&quot;</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$a</span> <span class="o">==</span> <span class="nv">$b</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$a</span> <span class="o">===</span> <span class="nv">$b</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Devuelve:
+<div class="highlight"><pre><span></span><code>bool<span class="o">(</span><span class="nb">true</span><span class="o">)</span>
+bool<span class="o">(</span><span class="nb">false</span><span class="o">)</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+</div>
 <h3 id="14-operadores-de-incrementodecremento">1.4. Operadores de incremento/decremento<a class="headerlink" href="#14-operadores-de-incrementodecremento" title="Permanent link">&para;</a></h3>
 <p>Permiten aumentar o disminuir valores de forma rápida.</p>
 <table>
@@ -4596,27 +4621,56 @@
 </thead>
 <tbody>
 <tr>
-<td><code>++$x</code></td>
+<td><strong><code>++$x</code></strong></td>
 <td>Pre-incremento</td>
 <td>Aumenta $x antes de usarlo</td>
 </tr>
 <tr>
-<td><code>$x++</code></td>
+<td><strong><code>$x++</code></strong></td>
 <td>Post-incremento</td>
 <td>Usa $x y luego lo aumenta</td>
 </tr>
 <tr>
-<td><code>--$x</code></td>
+<td><strong><code>--$x</code></strong></td>
 <td>Pre-decremento</td>
 <td>Disminuye $x antes de usarlo</td>
 </tr>
 <tr>
-<td><code>$x--</code></td>
+<td><strong><code>$x--</code></strong></td>
 <td>Post-decremento</td>
 <td>Usa $x y luego lo disminuye</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition examplephp">
+<p class="admonition-title">Diferencia entre <code>++$x</code> y <code>$x++</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo <code>++$x</code></label><label for="__tabbed_2_2">Ejemplo <code>++$x</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="nv">$y</span> <span class="o">=</span> <span class="o">++</span><span class="nv">$x</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="nv">$x</span><span class="p">;</span>   <span class="c1">// retorna 6</span>
+    <span class="k">echo</span> <span class="nv">$y</span><span class="p">;</span>   <span class="c1">// retorna 6</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="nv">$y</span> <span class="o">=</span> <span class="o">++</span><span class="nv">$x</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="nv">$x</span><span class="p">;</span>   <span class="c1">// retorna 6</span>
+    <span class="k">echo</span> <span class="nv">$y</span><span class="p">;</span>   <span class="c1">// retorna 5</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h3 id="15-operadores-logicos">1.5. Operadores lógicos<a class="headerlink" href="#15-operadores-logicos" title="Permanent link">&para;</a></h3>
 <p>Se emplean en expresiones condicionales.</p>
 <table>
@@ -4629,22 +4683,22 @@
 </thead>
 <tbody>
 <tr>
-<td><code>and</code> / <code>&amp;&amp;</code></td>
+<td><strong><code>and</code></strong> / <strong><code>&amp;&amp;</code></strong></td>
 <td>Verdadero si ambas condiciones son ciertas</td>
 <td><code>$x &amp;&amp; $y</code></td>
 </tr>
 <tr>
-<td><code>or</code> / <code>||</code></td>
+<td><strong><code>or</code></strong> / <code>||</code></td>
 <td>Verdadero si al menos una condición es cierta</td>
 <td><code>$x || $y</code></td>
 </tr>
 <tr>
-<td><code>xor</code></td>
+<td><strong><code>xor</code></strong></td>
 <td>Verdadero si solo una condición es cierta</td>
 <td><code>$x xor $y</code></td>
 </tr>
 <tr>
-<td><code>!</code></td>
+<td><strong><code>!</code></strong></td>
 <td>Negación</td>
 <td><code>!$x</code></td>
 </tr>
@@ -4757,7 +4811,7 @@
 </table>
 <div class="admonition examplephp">
 <p class="admonition-title">Ejemplo operador ternario</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -4776,7 +4830,7 @@
 <blockquote>
 <p><strong>Operador Elvis</strong></p>
 <p>Si queremos comprobar si una variable tiene valor y si no darle un valor determinado, usaremos el operador <strong><code>?:</code></strong> (se conoce como el <strong>operador Elvis</strong> - <a href="https://en.wikipedia.org/wiki/Elvis_operator" target="_blank"><strong>https://en.wikipedia.org/wiki/Elvis_operator</strong></a>) con la sintáxis <strong><code>expresión ?: valorSiVacio</code>.</strong></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo op. elvis</label><label for="__tabbed_2_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Ejemplo op. elvis</label><label for="__tabbed_4_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -4806,7 +4860,7 @@
 <p>Vamos a separar siempre que podamos el código HTML del código PHP. Por ejemplo, el formulario se coloca en <code>saluda.html</code> y se recogen los datos en <code>saluda.php</code>:</p>
 <div class="admonition examplephp">
 <p class="admonition-title">Ejemplo formulario y paso de variables</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">saluda.html</label><label for="__tabbed_3_2">saluda.php</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">saluda.html</label><label for="__tabbed_5_2">saluda.php</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;saluda.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span>
@@ -4857,7 +4911,7 @@
 <p><strong>Siempre llaves</strong></p>
 <p>Es recomendable poner llaves siempre aunque en el momento de codificar sólo haya una única instrucción. De este modo, se queda preparado para añadir más contenido en el futuro sin provocar <em>bugs</em>.</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Ejemplo if</label><label for="__tabbed_4_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Ejemplo if</label><label for="__tabbed_6_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -4877,7 +4931,7 @@
 </div>
 </div>
 <p>Las condiciones compuestas mediante <strong><code>if-else</code></strong>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Ejemplo if-else</label><label for="__tabbed_5_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Ejemplo if-else</label><label for="__tabbed_7_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -4896,7 +4950,7 @@
 </div>
 </div>
 <p>Las condiciones anidadas mediante <strong><code>if-else if-else</code></strong>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Ejemplo if-else if-else</label><label for="__tabbed_6_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Ejemplo if-else if-else</label><label for="__tabbed_8_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -4920,7 +4974,7 @@
 </div>
 <h3 id="32-switch">3.2. switch<a class="headerlink" href="#32-switch" title="Permanent link">&para;</a></h3>
 <p>La sentencia <strong><code>switch</code></strong> también permite trabajar con condiciones múltiples:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Ejemplo switch</label><label for="__tabbed_7_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Ejemplo switch</label><label for="__tabbed_9_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -4957,7 +5011,7 @@
 <li>No requiere usar <code>break</code> al final de cada caso.</li>
 <li>Utiliza comparaciones estrictas (<code>===</code>), lo que significa que tanto el tipo como el valor deben coincidir.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Ejemplo match</label><label for="__tabbed_8_2">Ejemplo con números</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Ejemplo match</label><label for="__tabbed_10_2">Ejemplo con números</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -5016,7 +5070,7 @@
 <p>La instrucción <strong><code>while</code></strong> recorre un bloque de código siempre que la condición especificada sea <em>verdadera</em>.</p>
 <p>El bucle no se ejecutará un número concreto de veces, pero verifica después de cada iteración si la condición sigue siendo <em>verdadera</em>.</p>
 <p>La condición no tiene que ser un contador, podría ser el estado de una operación o cualquier condición que evalúe como <em>verdadera</em> o <em>falsa</em>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Ejemplo while</label><label for="__tabbed_9_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Ejemplo while</label><label for="__tabbed_11_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -5038,7 +5092,7 @@
 </blockquote>
 <h3 id="42-do-while">4.2. do-while<a class="headerlink" href="#42-do-while" title="Permanent link">&para;</a></h3>
 <p>El bucle <strong><code>do-while</code></strong> siempre ejecutará el bloque de código al menos una vez, luego verificará la condición y repetirá el bucle mientras la condición especificada sea <em>verdadera</em>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Ejemplo do-while</label><label for="__tabbed_10_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Ejemplo do-while</label><label for="__tabbed_12_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -5060,7 +5114,7 @@
 </div>
 <h3 id="43-for">4.3. for<a class="headerlink" href="#43-for" title="Permanent link">&para;</a></h3>
 <p>El bucle <strong><code>for</code></strong> se utiliza cuando se sabe cuántas veces debe ejecutarse el script.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Ejemplo for</label><label for="__tabbed_11_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Ejemplo for</label><label for="__tabbed_13_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -5086,7 +5140,7 @@
 <h3 id="44-foreach">4.4. foreach<a class="headerlink" href="#44-foreach" title="Permanent link">&para;</a></h3>
 <p>El bucle <strong><code>foreach</code></strong> recorre un bloque de código para cada elemento de una matriz o cada propiedad de un objeto.</p>
 <p>Un ejemplo común de este tipo de bucles es para recorrer arrays.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Ejemplo foreach</label><label for="__tabbed_12_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Ejemplo foreach</label><label for="__tabbed_14_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -5112,7 +5166,7 @@
 <blockquote>
 <p><strong>Si puedes, evita <code>break</code> y <code>continue</code></strong></p>
 <p>No es desable su uso. Es más preferible el uso de variables <em>flag</em> para controlar la salida de los bucles. </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Ejemplo de variable <em>flag</em></label><label for="__tabbed_13_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Ejemplo de variable <em>flag</em></label><label for="__tabbed_15_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
