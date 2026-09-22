@@ -205,7 +205,7 @@ Y posteriormente en otro archivo incluimos el anterior:
 
 En este apartado vamos a completar las páginas y las plantillas de la aplicación para poder añadirles posteriormente código PHP.
 
-#### d.1. **index.php**
+#### d.1) **index.php**
 
 Vamos a introducir un proyecto de prueba para que se pueda visualizar en la página de inicio, quedaría del siguiente modo:
 
@@ -239,7 +239,7 @@ Descárgate una imagen en la carpeta *images*, renómbrala a **projecte1.png** (
 
 Ahora debería aparecer un proyecto en la página principal.
 
-#### d.2. **proyecto.php**
+#### d.2) **proyecto.php**
 
 Creamos este nuevo fichero a la altura de *index.php* y añadimos el siguiente contenido:
 
@@ -267,7 +267,7 @@ Para consultar el resultado, introducimos en la barra de navegación la URL **lo
 
 <div style="text-align: center;"><img src="../../img/ut01/ejercicio107f.png" alt="Estructura del proyecto" style="zoom:45%; border: 2px solid #83abd4;" /><figcaption class="figure-caption-small">🖼️ Figura 1.42: Página proyecto.php del Ejercicio 107</figcaption></div>
 
-#### d.3. **contacto.php**
+#### d.3) **contacto.php**
 
 Descargamos esta <a download="contacte.png" href="../../sources/contacte.png">contacte.png</a> en el directorio correspondiente (con el nombre businessman.png), creamos contacto.php a la altura de index.php, e insertamos el siguiente código:
 
