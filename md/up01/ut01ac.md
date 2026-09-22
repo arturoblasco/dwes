@@ -95,7 +95,7 @@ Anota los valores de:
 
 En el docker del *Ejercicio 103*:
 
-* Modifica el fichero `index.php` a **`index_old.php`**.
+* Crea una carpeta de nombre **`up01`**
 * Descarga el siguiente fichero <a download="index.html" href="../../sources/">index.html</a> en la carpeta `src`.
 
 > En el fichero *index.html* descargado se han utilizado las siguientes librerías para conformar la interfaz de usuario:
