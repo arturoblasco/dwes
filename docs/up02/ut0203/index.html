@@ -4454,32 +4454,32 @@
 <tr>
 <td><strong><code>+</code></strong></td>
 <td>Suma</td>
-<td><code>$x + $y</code></td>
+<td>$x + $y</td>
 </tr>
 <tr>
 <td><strong><code>-</code></strong></td>
 <td>Resta</td>
-<td><code>$x - $y</code></td>
+<td>$x - $y</td>
 </tr>
 <tr>
 <td><strong><code>*</code></strong></td>
 <td>Multiplicación</td>
-<td><code>$x * $y</code></td>
+<td>$x * $y</td>
 </tr>
 <tr>
 <td><strong><code>/</code></strong></td>
 <td>División</td>
-<td><code>$x / $y</code></td>
+<td>$x / $y</td>
 </tr>
 <tr>
 <td><strong><code>%</code></strong></td>
 <td>Módulo (resto)</td>
-<td><code>$x % $y</code></td>
+<td>`$x % $y</td>
 </tr>
 <tr>
 <td><strong><code>**</code></strong></td>
 <td>Potencia</td>
-<td><code>$x ** $y</code></td>
+<td>$x ** $y</td>
 </tr>
 </tbody>
 </table>
@@ -4497,32 +4497,32 @@
 <tr>
 <td><strong><code>=</code></strong></td>
 <td>Asigna un valor</td>
-<td><code>$x = 10</code></td>
+<td>$x = 10</td>
 </tr>
 <tr>
 <td><strong><code>+=</code></strong></td>
 <td><code>$x = $x + y</code></td>
-<td><code>$x += 5</code></td>
+<td>$x += 5</td>
 </tr>
 <tr>
 <td><strong><code>-=</code></strong></td>
 <td><code>$x = $x - y</code></td>
-<td><code>$x -= 2</code></td>
+<td>$x -= 2</td>
 </tr>
 <tr>
 <td><strong><code>*=</code></strong></td>
 <td><code>$x = $x * y</code></td>
-<td><code>$x *= 3</code></td>
+<td>$x *= 3</td>
 </tr>
 <tr>
 <td><strong><code>/=</code></strong></td>
 <td><code>$x = $x / y</code></td>
-<td><code>$x /= 4</code></td>
+<td>$x /= 4</td>
 </tr>
 <tr>
 <td><strong><code>%=</code></strong></td>
 <td><code>$x = $x % y</code></td>
-<td><code>$x %= 2</code></td>
+<td>$x %= 2</td>
 </tr>
 </tbody>
 </table>
@@ -4540,47 +4540,47 @@
 <tr>
 <td><strong><code>==</code></strong></td>
 <td>Igual a (valor)</td>
-<td><code>$x == $y</code></td>
+<td>$x == $y</td>
 </tr>
 <tr>
 <td><strong><code>===</code></strong></td>
 <td>Idéntico (valor y tipo)</td>
-<td><code>$x === $y</code></td>
+<td>$x === $y</td>
 </tr>
 <tr>
 <td><strong><code>!=</code></strong> o <strong><code>&lt;&gt;</code></strong></td>
 <td>Distinto</td>
-<td><code>$x != $y</code></td>
+<td>$x != $y</td>
 </tr>
 <tr>
 <td><strong><code>!==</code></strong></td>
 <td>No idéntico</td>
-<td><code>$x !== $y</code></td>
+<td>$x !== $`</td>
 </tr>
 <tr>
 <td><strong><code>&gt;</code></strong></td>
 <td>Mayor que</td>
-<td><code>$x &gt; $y</code></td>
+<td>$x &gt; $y</td>
 </tr>
 <tr>
 <td><strong><code>&lt;</code></strong></td>
 <td>Menor que</td>
-<td><code>$x &lt; $y</code></td>
+<td>$x &lt; $y</td>
 </tr>
 <tr>
 <td><strong><code>&gt;=</code></strong></td>
 <td>Mayor o igual</td>
-<td><code>$x &gt;= $y</code></td>
+<td>$x &gt;= $y</td>
 </tr>
 <tr>
 <td><strong><code>&lt;=</code></strong></td>
 <td>Menor o igual</td>
-<td><code>$x &lt;= $y</code></td>
+<td>$x &lt;= $y</td>
 </tr>
 <tr>
 <td><strong><code>&lt;=&gt;</code></strong></td>
 <td>Nave espacial (compara 3 valores posibles: -1, 0, 1)</td>
-<td><code>$x &lt;=&gt; $y</code></td>
+<td>$x &lt;=&gt; $y</td>
 </tr>
 </tbody>
 </table>
@@ -4685,22 +4685,22 @@ bool<span class="o">(</span><span class="nb">false</span><span class="o">)</span
 <tr>
 <td><strong><code>and</code></strong> / <strong><code>&amp;&amp;</code></strong></td>
 <td>Verdadero si ambas condiciones son ciertas</td>
-<td><code>$x &amp;&amp; $y</code></td>
+<td>cond1 &amp;&amp; cond2</td>
 </tr>
 <tr>
 <td><strong><code>or</code></strong> / <code>||</code></td>
 <td>Verdadero si al menos una condición es cierta</td>
-<td><code>$x || $y</code></td>
+<td>cond1</td>
 </tr>
 <tr>
 <td><strong><code>xor</code></strong></td>
 <td>Verdadero si solo una condición es cierta</td>
-<td><code>$x xor $y</code></td>
+<td>cond1 xor cond2</td>
 </tr>
 <tr>
 <td><strong><code>!</code></strong></td>
 <td>Negación</td>
-<td><code>!$x</code></td>
+<td><code>!cond1</code></td>
 </tr>
 </tbody>
 </table>
@@ -4741,27 +4741,27 @@ bool<span class="o">(</span><span class="nb">false</span><span class="o">)</span
 <tr>
 <td><code>+</code></td>
 <td>Unión de arrays</td>
-<td><code>$x + $y</code></td>
+<td>$x + $y</td>
 </tr>
 <tr>
 <td><code>==</code></td>
 <td>Igualdad de elementos (mismo par clave/valor)</td>
-<td><code>$x == $y</code></td>
+<td>$x == $y</td>
 </tr>
 <tr>
 <td><code>===</code></td>
 <td>Igualdad estricta (mismo orden y tipo)</td>
-<td><code>$x === $y</code></td>
+<td>$x === $`</td>
 </tr>
 <tr>
 <td><code>!=</code> / <code>&lt;&gt;</code></td>
 <td>Diferente</td>
-<td><code>$x != $y</code></td>
+<td>$x != $y</td>
 </tr>
 <tr>
 <td><code>!==</code></td>
 <td>No idéntico</td>
-<td><code>$x !== $y</code></td>
+<td>$x !== $y</td>
 </tr>
 </tbody>
 </table>
@@ -4798,13 +4798,13 @@ bool<span class="o">(</span><span class="nb">false</span><span class="o">)</span
 <tr>
 <td><code>?:</code></td>
 <td>Ternario</td>
-<td><code>$x = expr1 ? expr2 : expr3</code></td>
+<td>$x = expr1 ? expr2 : expr3</td>
 <td>Asigna a <code>$x</code> el valor de <code>expr2</code> si <code>expr1</code> es <code>TRUE</code>; en caso contrario, le asigna <code>expr3</code>.</td>
 </tr>
 <tr>
 <td><code>??</code></td>
 <td>Fusión nula</td>
-<td><code>$x = expr1 ?? expr2</code></td>
+<td>$x = expr1 ?? expr2</td>
 <td>Asigna a <code>$x</code> el valor de <code>expr1</code> si este existe y no es <code>NULL</code>. Si <code>expr1</code> no existe o es <code>NULL</code>, se asigna <code>expr2</code>. <em>(Disponible desde PHP 7)</em></td>
 </tr>
 </tbody>
