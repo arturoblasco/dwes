@@ -4718,12 +4718,12 @@ bool<span class="o">(</span><span class="nb">false</span><span class="o">)</span
 <tr>
 <td><code>.</code></td>
 <td>Concatenación</td>
-<td><code>$txt1 . $txt2</code></td>
+<td>$txt1 . $txt2</td>
 </tr>
 <tr>
 <td><code>.=</code></td>
 <td>Concatenación con asignación</td>
-<td><code>$txt1 .= $txt2</code></td>
+<td>$txt1 .= $txt2</td>
 </tr>
 </tbody>
 </table>
@@ -5076,10 +5076,10 @@ bool<span class="o">(</span><span class="nb">false</span><span class="o">)</span
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
     <span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">while</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">&quot;Línea &quot;</span> <span class="o">.</span> <span class="nv">$i</span> <span class="o">.</span> <span class="s2">&quot;&lt;br/&gt;;</span>
-<span class="s2">        </span><span class="si">$i</span><span class="s2">++;</span>
-<span class="s2">    }</span>
-<span class="s2">?&gt;</span>
+        <span class="k">echo</span> <span class="s2">&quot;Línea &quot;</span> <span class="o">.</span> <span class="nv">$i</span> <span class="o">.</span> <span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
+        <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="cp">?&gt;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">

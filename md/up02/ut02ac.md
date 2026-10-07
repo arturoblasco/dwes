@@ -175,23 +175,29 @@ Finalmente, en `225sumarDatos.php`: a partir de los datos de todas las cajas de 
 
 ### Ejercicio 231
 
-`231aleatorios50.php`: Rellena un array con 50 números aleatorios comprendidos entre el 0 y el 99, y luego muéstralo en una lista desordenada. Para crear un número aleatorio, utiliza la función `rand(inicio, fin)`. Por ejemplo:
+`231aleatorios50.php`: Rellena un array con 50 números aleatorios comprendidos entre el 0 y el 99.
 
-```php
-$num = rand(0, 99)
-```
+Luego muéstralo en una lista desordenada. 
+
+> Para crear un número aleatorio, utiliza la función `rand(inicio, fin)`. 
+> 
+> Por ejemplo:
+> 
+> ```php
+> $num = rand(0, 99);
+> ```
 
 ### Ejercicio 232
 
-`232bola8.html`: Prepara un formulario con un caja de texto que realice a una pregunta al usuario.
+`232bola8.html`: Prepara un formulario con un caja de texto que realice una pregunta al usuario.
 
-`232bola8.php`: A partir del anterior, crea un programa que muestre la pregunta recibida y genere una respuesta de manera aleatoria entre un conjunto de respuestas predefinidas, almacenadas en un array: *Si, no, quizás, claro que sí, por supuesto que no, no lo tengo claro, seguro, yo diría que sí, ni de coña, etc...*
+`232bola8.php`: A partir del anterior, crea un programa que muestre la pregunta recibida y genere una respuesta de manera aleatoria entre un conjunto de respuestas predefinidas, almacenadas en un array: *Si, no, quizás, claro que sí, por supuesto que no, no lo tengo claro, seguro, yo diría que sí, ni de coña, etc...*.
 
-Este ejercicio se basa en el juego de la [**Bola 8 mágica**](https://es.wikipedia.org/wiki/Magic_8-Ball){:target="_blank"}.
+> Este ejercicio se basa en el juego de la [**Bola 8 mágica**](https://es.wikipedia.org/wiki/Magic_8-Ball){:target="_blank"}.
 
 ### Ejercicio 233
 
-`233mates.php`: A partir del ejercicio 230, genera un array aleatorio de 33 elementos con números comprendidos entre el 0 y 100 y calcula:
+`233mates.php`: A partir del ejercicio 231, genera un array aleatorio de 33 elementos con números comprendidos entre el 0 y 100 y calcula:
 
 - El mayor
 - El menor
@@ -215,7 +221,7 @@ Este ejercicio se basa en el juego de la [**Bola 8 mágica**](https://es.wikiped
 
 ### Ejercicio 238
 
-`238leerCantidad.html` y `237leerPersonas.php`: a partir de un formulario con un campo de `cantidad` de personas, generar un nuevo formulario para leer el nombre, altura y email de `cantidad` personas.
+`238leerCantidad.html` y `238leerPersonas.php`: a partir de un formulario con un campo de `cantidad` de personas, generar un nuevo formulario para leer el nombre, altura y email de `cantidad` personas.
 
 `238gestionarPersonas.php`: A partir de las personas introducidas, mostrar sus datos en una tabla, y posteriormente, destacar los datos del más alto y el del más bajo.
 
