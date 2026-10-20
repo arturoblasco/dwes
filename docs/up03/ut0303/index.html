@@ -3962,7 +3962,7 @@
 
 
 <h1 id="33-encapsulacion"><img src="../../img/php_azul.svg" width="40"> 3.3. Encapsulación<a class="headerlink" href="#33-encapsulacion" title="Permanent link">&para;</a></h1>
-<p>Los atributos se definen <strong><em>privados</em></strong> o <strong><em>protegidos</em></strong> (este último si queremos que las clases heredadas puedan acceder).</p>
+<p>Los atributos se definen <strong><em>privados</em></strong> o <strong><em>protegidos</em></strong> (estos últimos si queremos que las clases heredadas puedan acceder).</p>
 <p>Para <strong>cada atributo</strong>, se añaden <strong>métodos públicos</strong> (<em>getter</em>/<em>setter</em>):</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getAtributo</span> <span class="p">()</span> <span class="o">:</span> <span class="nx">tipo</span><span class="p">;</span>
@@ -3972,11 +3972,14 @@
 <p>Las <strong>constantes</strong> se definen <em>públicas</em> para que sean accesibles por todos los recursos.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
   <span class="k">class</span> <span class="nc">MayorMenor</span> <span class="p">{</span>
+    <span class="c1">// constantes</span>
     <span class="k">const</span> <span class="no">LIMITE_MAXIMO</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 
+    <span class="c1">// atributos</span>
     <span class="k">private</span> <span class="nx">int</span> <span class="nv">$mayor</span><span class="p">;</span>
     <span class="k">private</span> <span class="nx">int</span> <span class="nv">$menor</span><span class="p">;</span>
 
+    <span class="c1">// métodos setters</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">setMayor</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$may</span><span class="p">)</span> <span class="p">{</span>
       <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mayor</span> <span class="o">=</span> <span class="nv">$may</span><span class="p">;</span>
     <span class="p">}</span>
@@ -3985,6 +3988,7 @@
       <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">menor</span> <span class="o">=</span> <span class="nv">$men</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// métodos getters</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getMayor</span><span class="p">()</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mayor</span><span class="p">;</span>
     <span class="p">}</span>
@@ -3993,6 +3997,7 @@
       <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">menor</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// resto de métodos</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarLimite</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
       <span class="k">echo</span> <span class="s2">&quot;El límite máximo permitido es &quot;</span> <span class="o">.</span> <span class="nx">self</span><span class="o">::</span><span class="na">LIMITE_MAXIMO</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
     <span class="p">}</span>
