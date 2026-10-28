@@ -3896,8 +3896,9 @@
 
 <h1 id="39-clases-final"><img src="../../img/php_azul.svg" width="40"> 3.9. Clases final<a class="headerlink" href="#39-clases-final" title="Permanent link">&para;</a></h1>
 <p>Son clases opuestas a las clases abstractas, ya que evitan que se pueda heredar una clase o método para sobreescribirlo. </p>
-<p>Se define mediante <strong><code>final class NombreClase {</code></strong>.</p>
+<p>Se define mediante <strong><code>final</code></strong><code>class NombreClase {}</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+  <span class="c1">// clase Producto</span>
   <span class="k">class</span> <span class="nc">Producto</span> <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$codigo</span><span class="p">;</span>
 
@@ -3910,6 +3911,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
+  <span class="c1">// clase Microondas</span>
   <span class="c1">// No podremos heredar de Microondas</span>
   <span class="k">final</span> <span class="k">class</span> <span class="nc">Microondas</span> <span class="k">extends</span> <span class="nx">Producto</span> <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$potencia</span><span class="p">;</span>

@@ -4768,10 +4768,10 @@
 <h3 id="ejercicio-308">Ejercicio 308<a class="headerlink" href="#ejercicio-308" title="Permanent link">&para;</a></h3>
 <div style="text-align: center;"><figure><img src="../../img/ut03/ejer08.png" alt="ejer08" style="zoom:95%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.4: La clase Empleado hereda de la clase Persona (ejercicio308)</figcaption></figure></div>
 
-<p><code>308Persona.php</code>: copia la clase del ejercicio anterior en <code>308Empleado.php</code> y modifícala.</p>
-<p>Crea una clase <code>Persona</code> que sea padre de <code>Empleado</code>, de manera que <code>Persona</code> contenga el nombre y los apellidos, y en <code>Empleado</code> quede el salario y los teléfonos.</p>
+<p>Copia la clase del ejercicio anterior en <strong><code>308Empleado.php</code></strong> y modifícala.</p>
+<p>Crea una clase <code>Persona</code> (en <strong><code>308Persona.php</code></strong>) que sea madre de la clase <code>Empleado</code>, de manera que <code>Persona</code> contenga el <em>nombre</em> y los <em>apellidos</em>, y en <code>Empleado</code> quede el <em>salario</em> y los <em>teléfonos</em>.</p>
 <h3 id="ejercicio-309">Ejercicio 309<a class="headerlink" href="#ejercicio-309" title="Permanent link">&para;</a></h3>
-<p><code>309PersonaH.php</code>: copia las clases del ejercicio anterior y modifícalas. Crea en <code>Persona</code> el método estático <code>toHtml(Persona $p)</code>, y modifica en <code>Empleado</code> el mismo método <code>toHtml(Persona $p)</code>, pero cambia la firma para que reciba una <code>Persona</code> como parámetro.</p>
+<p>Copia las clases del ejercicio anterior y modifícalas (<strong><code>309PersonaH.php</code></strong> y <strong><code>309EmpleadoH.php</code></strong>). Crea en <code>Persona</code> el método estático <em><code>toHtml(Persona $p)</code></em> y modifica en <code>Empleado</code> el mismo método <em><code>toHtml(Persona $p)</code></em>, pero cambia la firma para que reciba una <code>Persona</code> como parámetro.</p>
 <p>Para acceder a las propiedades del empleado con la persona que recibimos como parámetro, comprobaremos su tipo:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Empleado</span> <span class="k">extends</span> <span class="nx">Persona</span> <span class="p">{</span>
@@ -4785,31 +4785,30 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="ejercicio-310">Ejercicio 310<a class="headerlink" href="#ejercicio-310" title="Permanent link">&para;</a></h3>
-<p><code>310PersonaE.php</code>: copia las clases del ejercicio anterior y modifícalas.</p>
-<p>Añade en <code>Persona</code> un atributo <code>edad</code>.</p>
+<p>Copia las clases del ejercicio anterior y modifícalas (<strong><code>310PersonaE.php</code></strong> y <strong><code>310EmpleadoE.php</code></strong>).</p>
+<p>Añade en <code>Persona</code> un atributo <em><code>edad</code></em>.</p>
 <p>A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuando tenga más de <em>21 años</em> y dependa del valor de su sueldo. Modifica todo el código necesario para mostrar y/o editar la edad cuando sea necesario.</p>
 <h3 id="ejercicio-311">Ejercicio 311<a class="headerlink" href="#ejercicio-311" title="Permanent link">&para;</a></h3>
-<p><code>311PersonaS.php</code>: copia las clases del ejercicio anterior y modifícalas.
-Añade nuevos métodos que hagan una representación de todas las propiedades de las clases <code>Persona</code> y <code>Empleado</code>, de forma similar a los realizados en HTML, pero sin que sean estáticos, de manera que obtenga los datos mediante <code>$this</code>:</p>
+<p>Copia las clases del ejercicio anterior y modifícalas (<strong><code>311PersonaS.php</code></strong> y <strong><code>311EmpleadoS.php</code></strong>).
+Añade nuevos métodos que hagan una representación de todas las propiedades de las clases <code>Persona</code> y <code>Empleado</code>, de forma similar a los realizados en HTML, pero sin que sean estáticos, de manera que obtenga los datos mediante <em><code>$this</code></em>:</p>
 <ul>
 <li><code>function public __toString(): string</code></li>
 </ul>
 <blockquote>
-<p><strong>Magic method</strong></p>
-<p>El método <code>__toString()</code> es un método mágico que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.</p>
+<p>El método <code>__toString()</code> es un método mágico (<strong>magic method</strong>) que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.</p>
 </blockquote>
 <h3 id="ejercicio-312">Ejercicio 312<a class="headerlink" href="#ejercicio-312" title="Permanent link">&para;</a></h3>
-<p><code>312PersonaA.php</code>: copia las clases del ejercicio anterior y modifícalas.</p>
-<p>Transforma <code>Persona</code> a una clase abstracta donde su método estático <code>toHtml(Persona $p)</code> tenga que ser redefinido en todos sus hijos. </p>
+<p>Copia las clases del ejercicio anterior y modifícalas (<strong><code>312PersonaA.php</code></strong> y <strong><code>312EmpleadoA.php</code></strong>).</p>
+<p>Transforma <code>Persona</code> a una clase abstracta donde su método estático <em><code>toHtml(Persona $p)</code></em> tenga que ser redefinido en todos sus hijos. </p>
 <h3 id="ejercicio-313">Ejercicio 313<a class="headerlink" href="#ejercicio-313" title="Permanent link">&para;</a></h3>
-<p><code>313Trabajador.php</code>: copia las clases del ejercicio anterior y modifícalas.</p>
+<p>Copia las clases del ejercicio anterior y modifícalas (<strong><code>313PersonaX.php</code></strong> y <strong><code>313EmpleadoX.php</code></strong>) y crea las clases <code>Trabajador</code> (<strong><code>313TrabajadorX.php</code></strong>) y <code>Gerente</code>(<strong><code>313GerenteX.php</code></strong>) tal como se muestra en la figura.</p>
 <ul>
 <li>
 <p>Cambia la estructura de clases conforme al gráfico respetando todos los métodos que ya están hechos.</p>
 </li>
 <li>
-<p><code>Trabajador</code> es una clase abstracta que ahora almacena los <code>telefonos</code> y donde <code>calcularSueldo</code> es un método abstracto de manera que:</p>
-</li>
+<p><code>Trabajador</code> es una clase abstracta que ahora almacena los <em><code>telefonos</code></em> y donde <em><code>calcularSueldo()</code></em> y <em><code>debePagarImpuestos(): bool</code></em> son métodos abstractos de manera que:</p>
+<ul>
 <li>
 <p>El sueldo de un <code>Empleado</code> se calcula a partir de las horas trabajadas y lo que cobra por hora.</p>
 </li>
@@ -4817,41 +4816,43 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <p>Para los <code>Gerente</code><em>s</em>, su sueldo se incrementa porcentualmente en base a su edad: <code>salario + salario*edad/100</code></p>
 </li>
 </ul>
+</li>
+</ul>
 <div style="text-align: center;"><figure><img src="../../img/ut03/ejer13.png" alt="ejer13" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.5: Estructura de herencia de clases del ejercicio 313</figcaption></figure></div>
 
 <h3 id="ejercicio-314">Ejercicio 314<a class="headerlink" href="#ejercicio-314" title="Permanent link">&para;</a></h3>
-<p><code>314Empresa.php</code>: utilizando las clases de los ejercicios anteriores:</p>
+<p>Utilizando las clases de los ejercicios anteriores (para una mejor comprensión copia las clases anteriores a <strong><code>314PersonaY.php</code></strong>, <strong><code>314TrabajadorY.php</code></strong>, <strong><code>314EmpleadoY.php</code></strong> y <strong><code>314GerenteY.php</code></strong>):</p>
 <ul>
 <li>
-<p>Crea una clase <code>Empresa</code> que además del nombre y la dirección, contenga una propiedad con un array de <code>Trabajador</code>es, ya sean <code>Empleado</code>s o <code>Gerente</code>s.</p>
+<p>Crea una clase <code>Empresa</code> (<strong><code>314EmpresaY.php</code></strong>) que además del <em>nombre</em> y la <em>dirección</em>, contenga una propiedad con un array de <code>Trabajador</code><em>es</em>, ya sean <code>Empleado</code><em>s</em> o <code>Gerente</code><em>s</em>.</p>
 </li>
 <li>
 <p>Añade <em>getters/setters</em> para el nombre y dirección.</p>
 </li>
 <li>
-<p>Añade métodos para añadir y listar los trabajadores.</p>
-</li>
-<li>
-<p><code>public function anyadirTrabajador(Trabajador $t)</code></p>
-</li>
-<li>
-<p><code>public function listarTrabajadoresHtml() : string</code> -&gt; utiliza <code>Trabajador::toHtml(Persona $p)</code></p>
+<p>Añade métodos para añadir y listar los trabajadores:</p>
+<ul>
+<li><code>public function anyadirTrabajador(Trabajador $t)</code></li>
+<li><code>public function listarTrabajadoresHtml() : string</code> (utiliza <code>Trabajador::toHtml(Persona $p)</code>).</li>
+</ul>
 </li>
 <li>
 <p>Añade un método para obtener el coste total en nóminas.</p>
-</li>
-<li>
-<p><code>public function getCosteNominas(): float</code> -&gt; recorre los trabajadores e invoca al método <code>calcularSueldo()</code>.</p>
+<ul>
+<li><code>public function getCosteNominas(): float</code> (recorre los trabajadores e invoca al método <code>calcularSueldo()</code>).</li>
+</ul>
 </li>
 </ul>
 <h3 id="ejercicio-315">Ejercicio 315<a class="headerlink" href="#ejercicio-315" title="Permanent link">&para;</a></h3>
-<p><code>315EmpresaI.php</code>: copia las clases del ejercicio anterior y modifícalas.</p>
-<p>a) Crea un interfaz <code>JSerializable</code>, de manera que ofrezca los métodos:</p>
+<p>Copia las clases del ejercicio anterior y modifícalas (para una mejor comprensión copia las clases anteriores a <strong><code>315PersonaI.php</code></strong>, <strong><code>315TrabajadorI.php</code></strong>, <strong><code>315EmpleadoI.php</code></strong> y <strong><code>315GerenteI.php</code></strong>):</p>
+<p>a) Crea un interfaz <code>JSerializable</code> (<strong><code>315jSerializable.php</code></strong>), de manera que ofrezca los métodos:</p>
 <ul>
-<li><code>toJSON(): string</code> → utiliza la función <a href="https://www.php.net/manual/es/function.json-encode.php"><strong>json_encode(mixed)</strong></a>. Ten en cuenta que como tenemos las propiedades de los objetos privados, debes recorrer las propiedades y colocarlas en un mapa. Por ejemplo:</li>
+<li><code>toJSON(): string</code> → utiliza la función <a href="https://www.php.net/manual/es/function.json-encode.php" target="_blank"><strong>json_encode(mixed)</strong></a>. Ten en cuenta que como tenemos las propiedades de los objetos privados, debes recorrer las propiedades y colocarlas en un mapa. Por ejemplo:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">toJSON</span><span class="p">()</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
+        <span class="nv">$mapa</span> <span class="o">=</span> <span class="p">[];</span>
+
         <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span> <span class="k">as</span> <span class="nv">$clave</span> <span class="o">=&gt;</span> <span class="nv">$valor</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$mapa</span><span class="o">-&gt;</span><span class="nv">$clave</span> <span class="o">=</span> <span class="nv">$valor</span><span class="p">;</span>
         <span class="p">}</span>
@@ -4860,7 +4861,7 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <span class="cp">?&gt;</span>
 </code></pre></div>
 <ul>
-<li><code>toSerialize(): string</code> → utiliza la función <a href="https://www.php.net/manual/es/function.serialize.php"><strong>serialize(mixed)</strong></a></li>
+<li><code>toSerialize(): string</code> → utiliza la función <a href="https://www.php.net/manual/es/function.serialize.php" target="_blank"><strong>serialize(mixed)</strong></a></li>
 </ul>
 <p>b) Modifica todas las clases que no son abstractas para que implementen el interfaz creado.</p>
 <hr>

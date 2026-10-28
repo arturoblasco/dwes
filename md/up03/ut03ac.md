@@ -45,12 +45,12 @@ Completa la clase con el siguiente método que muestre los datos de un empleado 
 ### Ejercicio 308
 <div style="text-align: center;"><figure><img src="../../img/ut03/ejer08.png" alt="ejer08" style="zoom:95%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.4: La clase Empleado hereda de la clase Persona (ejercicio308)</figcaption></figure></div>
 
-`308Persona.php`: copia la clase del ejercicio anterior en `308Empleado.php` y modifícala.
+Copia la clase del ejercicio anterior en **`308Empleado.php`** y modifícala.
 
-Crea una clase `Persona` que sea padre de `Empleado`, de manera que `Persona` contenga el nombre y los apellidos, y en `Empleado` quede el salario y los teléfonos.
+Crea una clase `Persona` (en **`308Persona.php`**) que sea madre de la clase `Empleado`, de manera que `Persona` contenga el *nombre* y los *apellidos*, y en `Empleado` quede el *salario* y los *teléfonos*.
 
 ### Ejercicio 309
-`309PersonaH.php`: copia las clases del ejercicio anterior y modifícalas. Crea en `Persona` el método estático `toHtml(Persona $p)`, y modifica en `Empleado` el mismo método `toHtml(Persona $p)`, pero cambia la firma para que reciba una `Persona` como parámetro.
+Copia las clases del ejercicio anterior y modifícalas (**`309PersonaH.php`** y **`309EmpleadoH.php`**). Crea en `Persona` el método estático *`toHtml(Persona $p)`* y modifica en `Empleado` el mismo método *`toHtml(Persona $p)`*, pero cambia la firma para que reciba una `Persona` como parámetro.
 
 Para acceder a las propiedades del empleado con la persona que recibimos como parámetro, comprobaremos su tipo:
 
@@ -68,67 +68,68 @@ class Empleado extends Persona {
 ```
 
 ### Ejercicio 310
-`310PersonaE.php`: copia las clases del ejercicio anterior y modifícalas.
+Copia las clases del ejercicio anterior y modifícalas (**`310PersonaE.php`** y **`310EmpleadoE.php`**).
 
-Añade en `Persona` un atributo `edad`.
+Añade en `Persona` un atributo *`edad`*.
 
 A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuando tenga más de *21 años* y dependa del valor de su sueldo. Modifica todo el código necesario para mostrar y/o editar la edad cuando sea necesario.
 
 ### Ejercicio 311
-`311PersonaS.php`: copia las clases del ejercicio anterior y modifícalas.
-Añade nuevos métodos que hagan una representación de todas las propiedades de las clases `Persona` y `Empleado`, de forma similar a los realizados en HTML, pero sin que sean estáticos, de manera que obtenga los datos mediante `$this`:
+Copia las clases del ejercicio anterior y modifícalas (**`311PersonaS.php`** y **`311EmpleadoS.php`**).
+Añade nuevos métodos que hagan una representación de todas las propiedades de las clases `Persona` y `Empleado`, de forma similar a los realizados en HTML, pero sin que sean estáticos, de manera que obtenga los datos mediante *`$this`*:
 
 - `function public __toString(): string`
 
-> **Magic method**
-> 
-> El método `__toString()` es un método mágico que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.
+> El método `__toString()` es un método mágico (**magic method**) que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.
     
 
 ### Ejercicio 312
-`312PersonaA.php`: copia las clases del ejercicio anterior y modifícalas.
+Copia las clases del ejercicio anterior y modifícalas (**`312PersonaA.php`** y **`312EmpleadoA.php`**).
 
-Transforma `Persona` a una clase abstracta donde su método estático `toHtml(Persona $p)` tenga que ser redefinido en todos sus hijos. 
+Transforma `Persona` a una clase abstracta donde su método estático *`toHtml(Persona $p)`* tenga que ser redefinido en todos sus hijos. 
 
 ### Ejercicio 313
-`313Trabajador.php`: copia las clases del ejercicio anterior y modifícalas.
+Copia las clases del ejercicio anterior y modifícalas (**`313PersonaX.php`** y **`313EmpleadoX.php`**) y crea las clases `Trabajador` (**`313TrabajadorX.php`**) y `Gerente`(**`313GerenteX.php`**) tal como se muestra en la figura.
 
 - Cambia la estructura de clases conforme al gráfico respetando todos los métodos que ya están hechos.
 
-- `Trabajador` es una clase abstracta que ahora almacena los `telefonos` y donde `calcularSueldo` es un método abstracto de manera que:
-- El sueldo de un `Empleado` se calcula a partir de las horas trabajadas y lo que cobra por hora.
+- `Trabajador` es una clase abstracta que ahora almacena los *`telefonos`* y donde *`calcularSueldo()`* y *`debePagarImpuestos(): bool`* son métodos abstractos de manera que:
+
+    - El sueldo de un `Empleado` se calcula a partir de las horas trabajadas y lo que cobra por hora.
   
-- Para los `Gerente`*s*, su sueldo se incrementa porcentualmente en base a su edad: `salario + salario*edad/100`
+    - Para los `Gerente`*s*, su sueldo se incrementa porcentualmente en base a su edad: `salario + salario*edad/100`
 
 <div style="text-align: center;"><figure><img src="../../img/ut03/ejer13.png" alt="ejer13" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.5: Estructura de herencia de clases del ejercicio 313</figcaption></figure></div>
 
 ### Ejercicio 314
 
-`314Empresa.php`: utilizando las clases de los ejercicios anteriores:
+Utilizando las clases de los ejercicios anteriores (para una mejor comprensión copia las clases anteriores a **`314PersonaY.php`**, **`314TrabajadorY.php`**, **`314EmpleadoY.php`** y **`314GerenteY.php`**):
 
-- Crea una clase `Empresa` que además del nombre y la dirección, contenga una propiedad con un array de `Trabajador`es, ya sean `Empleado`s o `Gerente`s.
+- Crea una clase `Empresa` (**`314EmpresaY.php`**) que además del *nombre* y la *dirección*, contenga una propiedad con un array de `Trabajador`*es*, ya sean `Empleado`*s* o `Gerente`*s*.
 
 - Añade *getters/setters* para el nombre y dirección.
 
-- Añade métodos para añadir y listar los trabajadores.
+- Añade métodos para añadir y listar los trabajadores:
 
-   - `public function anyadirTrabajador(Trabajador $t)`
-   - `public function listarTrabajadoresHtml() : string` -> utiliza `Trabajador::toHtml(Persona $p)`
+    - `public function anyadirTrabajador(Trabajador $t)`
+    - `public function listarTrabajadoresHtml() : string` (utiliza `Trabajador::toHtml(Persona $p)`).
 
 - Añade un método para obtener el coste total en nóminas.
 
-   - `public function getCosteNominas(): float` -> recorre los trabajadores e invoca al método `calcularSueldo()`.
+    - `public function getCosteNominas(): float` (recorre los trabajadores e invoca al método `calcularSueldo()`).
 
 ### Ejercicio 315
-`315EmpresaI.php`: copia las clases del ejercicio anterior y modifícalas.
+Copia las clases del ejercicio anterior y modifícalas (para una mejor comprensión copia las clases anteriores a **`315PersonaI.php`**, **`315TrabajadorI.php`**, **`315EmpleadoI.php`** y **`315GerenteI.php`**):
 
- a) Crea un interfaz `JSerializable`, de manera que ofrezca los métodos:
+ a) Crea un interfaz `JSerializable` (**`315jSerializable.php`**), de manera que ofrezca los métodos:
 
-- `toJSON(): string` → utiliza la función [**json_encode(mixed)**](https://www.php.net/manual/es/function.json-encode.php). Ten en cuenta que como tenemos las propiedades de los objetos privados, debes recorrer las propiedades y colocarlas en un mapa. Por ejemplo:
+- `toJSON(): string` → utiliza la función [**json_encode(mixed)**](https://www.php.net/manual/es/function.json-encode.php){target="_blank"}. Ten en cuenta que como tenemos las propiedades de los objetos privados, debes recorrer las propiedades y colocarlas en un mapa. Por ejemplo:
 
 ```php
 <?php
     public function toJSON(): string {
+        $mapa = [];
+        
         foreach ($this as $clave => $valor) {
             $mapa->$clave = $valor;
         }
@@ -137,7 +138,7 @@ Transforma `Persona` a una clase abstracta donde su método estático `toHtml(Pe
 ?>
 ```
 
-- `toSerialize(): string` → utiliza la función [**serialize(mixed)**](https://www.php.net/manual/es/function.serialize.php)
+- `toSerialize(): string` → utiliza la función [**serialize(mixed)**](https://www.php.net/manual/es/function.serialize.php){target="_blank"}
 
  b) Modifica todas las clases que no son abstractas para que implementen el interfaz creado.
 

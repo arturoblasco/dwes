@@ -3906,19 +3906,19 @@
 <span class="k">class</span> <span class="nc">Coche</span> <span class="p">{</span>
         <span class="k">public</span> <span class="k">function</span> <span class="nf">lavar</span><span class="p">(){</span>
             <span class="k">echo</span> <span class="s2">&quot;Coche lavado.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-            <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="hll">            <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>  <span class="c1">// retorna el mismo objeto Coche</span>
+</span>        <span class="p">}</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">encerar</span><span class="p">(){</span>
             <span class="k">echo</span> <span class="s2">&quot;Coche encerado.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-            <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="hll">            <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>  <span class="c1">// retorna el mismo objeto Coche</span>
+</span>        <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// ejemplo llamada a los métodos encadenados    </span>
 <span class="nv">$coche</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Coche</span><span class="p">;</span>
-<span class="nv">$coche</span><span class="o">-&gt;</span><span class="na">lavar</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">encerar</span><span class="p">();</span>
-</code></pre></div>
+<span class="hll"><span class="nv">$coche</span><span class="o">-&gt;</span><span class="na">lavar</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">encerar</span><span class="p">();</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>//<span class="w"> </span>mostrará
@@ -3941,16 +3941,16 @@ Coche<span class="w"> </span>encerado.
     <span class="p">}</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">setNombre</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$nombre</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Libro</span> <span class="p">{</span> 
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nombre</span> <span class="o">=</span> <span class="nv">$nombre</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="hll">        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+</span>    <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getAutor</span><span class="p">()</span> <span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">autor</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">setAutor</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$autor</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Libro</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">autor</span> <span class="o">=</span> <span class="nv">$autor</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="hll">        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+</span>    <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__toString</span><span class="p">()</span> <span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nombre</span><span class="o">.</span><span class="s2">&quot; de &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">autor</span><span class="p">;</span>
@@ -3967,11 +3967,11 @@ Coche<span class="w"> </span>encerado.
 <span class="k">echo</span> <span class="s2">&quot;&lt;br/&gt;################&lt;br/&gt;&quot;</span><span class="p">;</span>
 
 <span class="k">echo</span> <span class="s2">&quot;USO DE MÉTODOS ENCADENADOS:&lt;br/&gt;&quot;</span>
-<span class="nv">$libro</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Libro</span><span class="p">())</span>
-        <span class="o">-&gt;</span><span class="na">setNombre</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">setAutor</span><span class="p">(</span><span class="s2">&quot;George Orwell&quot;</span><span class="p">);</span>
-
-<span class="k">echo</span> <span class="nv">$libro</span><span class="p">;</span> <span class="c1">// 1984 de George Orwell</span>
+<span class="hll"><span class="nv">$libro</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Libro</span><span class="p">())</span>
+</span><span class="hll">        <span class="o">-&gt;</span><span class="na">setNombre</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">)</span>
+</span><span class="hll">        <span class="o">-&gt;</span><span class="na">setAutor</span><span class="p">(</span><span class="s2">&quot;George Orwell&quot;</span><span class="p">);</span>
+</span>
+<span class="k">echo</span> <span class="nv">$libro</span><span class="p">;</span> <span class="c1">// Retorna el método __toString() . Resultado: 1984 de George Orwell</span>
 </code></pre></div>
 </details>
 
