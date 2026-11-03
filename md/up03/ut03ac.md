@@ -186,8 +186,9 @@ Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clas
             echo "<strong>" . $soporte1->titulo . "</strong>"; 
             echo "<br>Precio: " . $soporte1->getPrecio() . " €"; 
             echo "<br>Precio con IVA: " . $soporte1->getPrecioConIVA() . " €";
-    		echo "<br/>";
-            echo $soporte1->muestraResumen();
+    		echo "<br/><br/><br/>";
+
+            $soporte1->muestraResumen();
         ```
     === "Resultado"
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e321.png" alt="e321" style="zoom:90%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.7: Resultado página inicio.php</figcaption></figure></div>
@@ -208,9 +209,9 @@ Añade a `inicio.php` el código para probar la clase:
             echo "<strong>" . $miCinta->titulo . "</strong>"; 
             echo "<br>Precio: " . $miCinta->getPrecio() . " €"; 
             echo "<br>Precio con IVA: " . $miCinta->getPrecioConIva() . " €";
-            echo "<br/>";
+            echo "<br/><br/><br/>";
     
-            echo $miCinta->muestraResumen();
+            $miCinta->muestraResumen();
         ```
     === "Resultado"
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e322.png" alt="e322" style="zoom:90%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.9: Resultado página inicio.php</figcaption></figure></div>
@@ -233,9 +234,9 @@ Añade a `inicio.php` el código para probar la clase:
             echo "<strong>" . $miDvd->titulo . "</strong>"; 
             echo "<br>Precio: " . $miDvd->getPrecio() . " €"; 
             echo "<br>Precio con IVA: " . $miDvd->getPrecioConIva() . " €";
-    		echo "<br/>";
+    		echo "<br/><br/><br/>";
     		
-            echo $miDvd->muestraResumen();
+            $miDvd->muestraResumen();
         ```
     === "Resultado"
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e323.png" alt="e323" style="zoom:90%;" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.11: Resultado página inicio.php</figcaption></figure></div>
@@ -260,9 +261,9 @@ Añade a `inicio.php` el código para probar la clase:
             echo "<strong>" . $miJuego->titulo . "</strong>"; 
             echo "<br>Precio: " . $miJuego->getPrecio() . " €"; 
             echo "<br>Precio con IVA: " . $miJuego->getPrecioConIva() . " €";
-    		echo "<br/>";
+    		echo "<br/><br/><br/>";
     		
-            echo $miJuego->muestraResumen();
+            $miJuego->muestraResumen();
         ```
     === "Resultado"
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e324.png" alt="e324" style="zoom:90%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.12: Resultado página inicio.php</figcaption></figure></div>

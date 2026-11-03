@@ -1456,6 +1456,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.14. Gestión de errores
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1472,6 +1490,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3141-niveles-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.1. Niveles de error
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3142-notificar-mostrar-y-registrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.2. Notificar, mostrar y registrar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3143-configuracion-mediante-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.3. Configuración mediante código
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3144-manejadores-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.4. Manejadores personalizados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3145-diferencia-con-las-excepciones-y-los-objetos-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.5. Diferencia con las excepciones y los objetos Error
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3879,6 +3971,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3141-niveles-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.1. Niveles de error
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3142-notificar-mostrar-y-registrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.2. Notificar, mostrar y registrar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3143-configuracion-mediante-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.3. Configuración mediante código
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3144-manejadores-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.4. Manejadores personalizados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3145-diferencia-con-las-excepciones-y-los-objetos-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14.5. Diferencia con las excepciones y los objetos Error
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3895,65 +4050,217 @@
 
 
 <h1 id="314-gestion-de-errores"><img src="../../img/php_azul.svg" width="40"> 3.14. Gestión de errores<a class="headerlink" href="#314-gestion-de-errores" title="Permanent link">&para;</a></h1>
-<p>PHP clasifica los errores que ocurren en diferentes niveles. Cada nivel se identifica con una constante. Por ejemplo:</p>
-<ul>
-<li><code>E_ERROR</code>: errores fatales, no recuperables. Se interrumpe el script.</li>
-<li><code>E_WARNING</code>: advertencias en tiempo de ejecución. El script no se interrumpe.</li>
-<li><code>E_NOTICE</code>: avisos en tiempo de ejecución.</li>
-</ul>
+<p>Durante la ejecución de una aplicación pueden aparecer problemas: intentar abrir un archivo que no existe, utilizar una variable sin inicializar o realizar una operación no válida.</p>
+<p><strong>Gestionar estos problemas implica detectarlos, conocer su causa y decidir cómo debe responder la aplicación.</strong> Ocultar un mensaje no soluciona el error que lo ha provocado.</p>
+<p>Conviene distinguir <strong>qué errores se notifican, dónde se muestran y cómo reaccionamos ante ellos</strong>.</p>
+<h2 id="3141-niveles-de-error">3.14.1. Niveles de error<a class="headerlink" href="#3141-niveles-de-error" title="Permanent link">&para;</a></h2>
+<p>PHP clasifica sus mensajes de error mediante constantes. Algunas de las más habituales son:</p>
+<table>
+<thead>
+<tr>
+<th>Constante</th>
+<th>Significado</th>
+<th>¿Continúa el programa?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>E_ERROR</code></td>
+<td>Error fatal durante la ejecución, como agotar la memoria disponible.</td>
+<td>No.</td>
+</tr>
+<tr>
+<td><code>E_WARNING</code></td>
+<td>Advertencia: una operación ha fallado, pero PHP puede continuar.</td>
+<td>Sí.</td>
+</tr>
+<tr>
+<td><code>E_NOTICE</code></td>
+<td>Aviso sobre una situación que puede indicar un problema.</td>
+<td>Sí.</td>
+</tr>
+<tr>
+<td><code>E_PARSE</code></td>
+<td>Error de sintaxis detectado al analizar el código.</td>
+<td>El archivo afectado no llega a ejecutarse.</td>
+</tr>
+<tr>
+<td><code>E_DEPRECATED</code></td>
+<td>Aviso de uso de una característica obsoleta que conviene sustituir.</td>
+<td>Sí.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>E_ALL</code> representa todos los niveles</strong>, por lo que se utiliza para configurar el reporte completo de errores.</p>
 <blockquote>
-<p><strong>Listado completo de constantes de error</strong></p>
-<p>Podéis comprobar el listado completo de constantes de <a href="https://www.php.net/manual/es/errorfunc.constants.php" target="_blank">https://www.php.net/manual/es/errorfunc.constants.php</a>.</p>
+<p><strong>Atención a los ejemplos antiguos</strong></p>
+<p>En PHP 8, utilizar una variable no definida genera un <code>E_WARNING</code>; anteriormente generaba un <code>E_NOTICE</code>.</p>
 </blockquote>
-<p>Para la configuración de los errores podemos hacerlo de dos formas:</p>
-<p>A nivel de <code>php.ini</code>:</p>
-<ul>
-<li><strong><code>error_reporting</code></strong>: indica los niveles de errores a notificar.<br/>
-      <code>error_reporting = E_ALL &amp; ~E_NOTICE</code> -&gt; Todos los errores menos los avisos en tiempo de ejecución.</li>
-<li><strong><code>display_errors</code></strong>: indica si mostrar o no los errores por pantalla. En entornos de producción es común ponerlo a <code>off</code>.</li>
-</ul>
-<p>Mediante código con las siguientes funciones:</p>
-<ul>
-<li><strong><code>error_reporting(codigo)</code></strong> -&gt; Controla qué errores notificar.</li>
-<li><strong><code>set_error_handler(nombreManejador)</code></strong> -&gt; Indica qué función se invocará cada vez que se encuentre un error. El manejador recibe como parámetros el nivel del error y el mensaje.</li>
-</ul>
+<p>Podéis consultar el <a href="https://www.php.net/manual/es/errorfunc.constants.php" target="_blank">listado completo de constantes en el manual de PHP</a> y los <a href="https://www.php.net/manual/es/migration80.incompatible.php" target="_blank">cambios introducidos en PHP 8</a>.</p>
+<h2 id="3142-notificar-mostrar-y-registrar">3.14.2. Notificar, mostrar y registrar<a class="headerlink" href="#3142-notificar-mostrar-y-registrar" title="Permanent link">&para;</a></h2>
+<p>Son decisiones distintas:</p>
+<table>
+<thead>
+<tr>
+<th>Configuración</th>
+<th>Pregunta que responde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error_reporting</code></td>
+<td>¿Qué niveles de error queremos notificar?</td>
+</tr>
+<tr>
+<td><code>display_errors</code></td>
+<td>¿Se incluyen sus mensajes en la salida enviada al usuario?</td>
+</tr>
+<tr>
+<td><code>log_errors</code></td>
+<td>¿Se guardan los errores en un registro?</td>
+</tr>
+<tr>
+<td><code>error_log</code></td>
+<td>¿En qué archivo o destino se registran?</td>
+</tr>
+</tbody>
+</table>
 <details class="examplephp">
 <summary>Ejemplo</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">código</label><label for="__tabbed_1_2">resultado</label></div>
+<p>Por ejemplo, podemos <strong>registrar los errores sin mostrarlos en la página web</strong>. Así, el equipo de desarrollo dispone de información para investigarlos y el visitante no ve detalles internos del servidor.</p>
+<p>Estas opciones pueden configurarse en <code>php.ini</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Durante el desarrollo</label><label for="__tabbed_1_2">En producción</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><strong>Funciones para la gestión de errores</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-    <span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span> <span class="o">&amp;</span> <span class="o">~</span><span class="nx">E_NOTICE</span> <span class="o">&amp;</span> <span class="o">~</span><span class="k">E_WARNING</span><span class="p">);</span>
-    <span class="nv">$resultado</span> <span class="o">=</span> <span class="nv">$dividendo</span> <span class="o">/</span> <span class="nv">$divisor</span><span class="p">;</span>
-
-    <span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span> <span class="o">&amp;</span> <span class="o">~</span><span class="nx">E_NOTICE</span><span class="p">);</span>
-    <span class="nb">set_error_handler</span><span class="p">(</span><span class="s2">&quot;miManejadorErrores&quot;</span><span class="p">);</span>
-    <span class="nv">$resultado</span> <span class="o">=</span> <span class="nv">$dividendo</span> <span class="o">/</span> <span class="nv">$divisor</span><span class="p">;</span>
-
-    <span class="nb">restore_error_handler</span><span class="p">();</span> <span class="c1">// restaura el manejador de errores predeterminado de PHP</span>
-
-    <span class="k">function</span> <span class="nf">miManejadorErrores</span><span class="p">(</span><span class="nv">$nivel</span><span class="p">,</span> <span class="nv">$mensaje</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">switch</span><span class="p">(</span><span class="nv">$nivel</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">case</span> <span class="k">E_WARNING</span><span class="o">:</span>
-                <span class="k">echo</span> <span class="s2">&quot;&lt;strong&gt;Warning&lt;/strong&gt;: </span><span class="si">$mensaje</span><span class="s2">.&lt;br/&gt;&quot;</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">default</span><span class="o">:</span>
-                <span class="k">echo</span> <span class="s2">&quot;Error de tipo no especificado: </span><span class="si">$mensaje</span><span class="s2">.&lt;br/&gt;&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<p>Una configuración útil es:</p>
+<div class="highlight"><pre><span></span><code><span class="na">error_reporting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">E_ALL</span>
+<span class="na">display_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">On</span>
+<span class="na">log_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">On</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><strong>Consola</strong>:</p>
-<div class="highlight"><pre><span></span><code>Error de tipo no especificado: Undefined variable: dividendo.
-Error de tipo no especificado: Undefined variable: divisor.
-Error de tipo Warning: Division by zero.
+<p>Una configuración habitual es:</p>
+<div class="highlight"><pre><span></span><code><span class="na">error_reporting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">E_ALL</span>
+<span class="na">display_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Off</span>
+<span class="na">log_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">On</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 </details>
+<blockquote>
+<p><strong>Mostrar y registrar son cosas diferentes</strong></p>
+<p>Desactivar <code>display_errors</code> no evita que el problema ocurra ni impide registrarlo.</p>
+</blockquote>
+<p>Más información: <a href="https://www.php.net/manual/es/errorfunc.configuration.php" target="_blank">configuración de errores en el manual de PHP</a>.</p>
+<h2 id="3143-configuracion-mediante-codigo">3.14.3. Configuración mediante código<a class="headerlink" href="#3143-configuracion-mediante-codigo" title="Permanent link">&para;</a></h2>
+<p>También podemos cambiar determinadas opciones durante la ejecución:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span><span class="p">);</span>
+
+<span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">);</span>
+<span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;log_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Estos cambios afectan a la ejecución actual; no modifican permanentemente <code>php.ini</code>. Además, una instrucción del propio archivo no puede ejecutarse si un error de sintaxis impide analizarlo.</p>
+<p>Para seleccionar niveles utilizamos <strong>operadores a nivel de bits</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">// Notificar todos los niveles.</span>
+<span class="x">error_reporting(E_ALL);</span>
+
+<span class="x">// Notificar todos excepto los avisos E_NOTICE.</span>
+<span class="x">error_reporting(E_ALL &amp; ~E_NOTICE);</span>
+
+<span class="x">// Notificar únicamente errores fatales y advertencias.</span>
+<span class="x">error_reporting(E_ERROR | E_WARNING);</span>
+
+<span class="x">// Desactivar el reporte del manejador estándar.</span>
+<span class="x">error_reporting(0);</span>
+</code></pre></div>
+<p>En estas expresiones:</p>
+<ul>
+<li><strong><code>|</code></strong> incluye varios niveles.</li>
+<li><strong><code>~</code></strong> invierte una máscara; junto con <code>&amp;</code>, permite excluir niveles.</li>
+<li><strong><code>&amp;</code></strong> conserva los niveles que coinciden en ambas máscaras.</li>
+</ul>
+<details class="examplephp">
+<summary>Ejemplo</summary>
+<div class="highlight"><pre><span></span><code><span class="x">E_ALL &amp; ~E_NOTICE</span>
+</code></pre></div>
+<p>Significa: <strong>todos los niveles excepto <code>E_NOTICE</code></strong>. No debe confundirse <code>&amp;</code> con el operador lógico <code>&amp;&amp;</code>.</p>
+</details>
+<p>Durante el desarrollo conviene utilizar <code>E_ALL</code> para detectar también los problemas que no interrumpen el programa.</p>
+<p>Más información: <a href="https://www.php.net/manual/es/function.error-reporting.php" target="_blank"><code>error_reporting()</code> en el manual de PHP</a>.</p>
+<h2 id="3144-manejadores-personalizados">3.14.4. Manejadores personalizados<a class="headerlink" href="#3144-manejadores-personalizados" title="Permanent link">&para;</a></h2>
+<p>PHP dispone de un manejador estándar para sus errores. Con <strong><code>set_error_handler()</code></strong> podemos registrar una función propia para determinados niveles, por ejemplo, para cambiar el formato del mensaje o registrarlo de otra manera.</p>
+<details class="examplephp">
+<summary>Ejemplo didáctico para desarrollo</summary>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="nf">miManejadorErrores</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$nivel</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$mensaje</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+<span class="p">{</span>
+    <span class="c1">// Respetar los niveles seleccionados en error_reporting().</span>
+    <span class="k">if</span> <span class="p">((</span><span class="nb">error_reporting</span><span class="p">()</span> <span class="o">&amp;</span> <span class="nv">$nivel</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">echo</span> <span class="s2">&quot;&lt;strong&gt;Advertencia:&lt;/strong&gt; &quot;</span>
+        <span class="o">.</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$mensaje</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span>
+        <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Utilizar nuestra función para las advertencias E_WARNING.</span>
+<span class="nb">set_error_handler</span><span class="p">(</span><span class="s2">&quot;miManejadorErrores&quot;</span><span class="p">,</span> <span class="k">E_WARNING</span><span class="p">);</span>
+
+<span class="c1">// Si el archivo no existe, se genera una advertencia.</span>
+<span class="nv">$archivo</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s2">&quot;archivo_inexistente.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$archivo</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;No se ha podido abrir el archivo.&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">&quot;El programa continúa.&lt;br&gt;&quot;</span><span class="p">;</span>
+
+<span class="c1">// Recuperar el manejador anterior.</span>
+<span class="nb">restore_error_handler</span><span class="p">();</span>
+</code></pre></div>
+<p>En este ejemplo:</p>
+<ol>
+<li><code>set_error_handler()</code> registra la función; <strong>no la ejecuta inmediatamente</strong>.</li>
+<li>Si <code>fopen()</code> genera un <code>E_WARNING</code>, PHP llama a la función.</li>
+<li><code>$nivel</code> contiene el tipo de error y <code>$mensaje</code>, su descripción.</li>
+<li><code>return true</code> indica que lo hemos gestionado; <code>return false</code> deja actuar al manejador estándar.</li>
+<li><code>restore_error_handler()</code> recupera el manejador anterior.</li>
+</ol>
+</details>
+<p>La comprobación de <code>error_reporting()</code> es necesaria si queremos respetar ese filtro: <strong>un manejador personalizado puede recibir niveles excluidos del reporte estándar</strong>. Tampoco puede gestionar todos los errores; por ejemplo, no gestiona <code>E_ERROR</code> ni <code>E_PARSE</code>.</p>
+<blockquote>
+<p><strong>Manejadores personalizados y producción</strong></p>
+<p>El <code>echo</code> del manejador es una salida escrita por nuestro código: <code>display_errors = Off</code> no lo oculta. En producción, podemos utilizar <code>error_log()</code> para registrar el detalle y mostrar al usuario un mensaje general.</p>
+</blockquote>
+<p>Más información: <a href="https://www.php.net/manual/es/function.set-error-handler.php"><code>set_error_handler()</code></a>, <a href="https://www.php.net/manual/es/function.restore-error-handler.php"><code>restore_error_handler()</code></a> y <a href="https://www.php.net/manual/es/function.error-log.php"><code>error_log()</code></a> en el manual de PHP.</p>
+<h2 id="3145-diferencia-con-las-excepciones-y-los-objetos-error">3.14.5. Diferencia con las excepciones y los objetos <code>Error</code><a class="headerlink" href="#3145-diferencia-con-las-excepciones-y-los-objetos-error" title="Permanent link">&para;</a></h2>
+<p><strong><code>set_error_handler()</code> no sustituye a <code>try/catch</code>.</strong> En PHP moderno, algunos problemas se comunican mediante objetos lanzados que debemos capturar.</p>
+<p>Por ejemplo, en PHP 8, dividir mediante <code>/</code> entre cero lanza un <strong><code>DivisionByZeroError</code></strong>, que no pasa por nuestro manejador de advertencias:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$dividendo</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nv">$divisor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$resultado</span> <span class="o">=</span> <span class="nv">$dividendo</span> <span class="o">/</span> <span class="nv">$divisor</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;Resultado: </span><span class="si">$resultado</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">DivisionByZeroError</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;No se puede dividir entre cero.&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;El programa continúa.&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Capturar el problema permite decidir cómo continuar.</strong> En cambio, cambiar <code>error_reporting()</code> solo configura su reporte: no convierte una operación incorrecta en una operación válida.</p>
+<p>Más información: <a href="https://www.php.net/manual/es/class.divisionbyzeroerror.php"><code>DivisionByZeroError</code> en el manual de PHP</a>.</p>
 
 
 
