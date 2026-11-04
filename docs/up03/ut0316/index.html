@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#316-spl" class="md-skip">
+        <a href="#316-spl-herramientas-que-php-ya-nos-ofrece" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1512,6 +1512,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.16. SPL
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1528,6 +1546,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-podemos-encontrar-en-spl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ¿Qué podemos encontrar en SPL?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-excepciones-que-ya-estan-creadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Excepciones que ya están creadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-de-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentación de consulta
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3879,6 +3949,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-podemos-encontrar-en-spl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ¿Qué podemos encontrar en SPL?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-excepciones-que-ya-estan-creadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Excepciones que ya están creadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-de-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentación de consulta
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3894,34 +4005,136 @@
 
 
 
-<h1 id="316-spl"><img src="../../img/php_azul.svg" width="40"> 3.16. SPL<a class="headerlink" href="#316-spl" title="Permanent link">&para;</a></h1>
-<p>Standard <em>PHP Library</em> es el conjunto de funciones y utilidades que ofrece PHP, como:</p>
+<h1 id="316-spl-herramientas-que-php-ya-nos-ofrece"><img src="../../img/php_azul.svg" width="40"> 3.16. SPL: herramientas que PHP ya nos ofrece<a class="headerlink" href="#316-spl-herramientas-que-php-ya-nos-ofrece" title="Permanent link">&para;</a></h1>
+<p><strong>SPL</strong> significa <em>Standard PHP Library</em> o <strong>Biblioteca Estándar de PHP</strong>. Incluye clases, interfaces y funciones para resolver problemas habituales sin tener que programarlo todo desde cero.</p>
+<p>No es necesario conocer toda la biblioteca. En este apartado veremos qué ofrece y cómo aprovechar algunas de sus clases.</p>
+<h2 id="1-que-podemos-encontrar-en-spl">1. ¿Qué podemos encontrar en SPL?<a class="headerlink" href="#1-que-podemos-encontrar-en-spl" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Herramientas</th>
+<th>¿Para qué sirven?</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Estructuras de datos</strong></td>
+<td>Organizar elementos con reglas concretas.</td>
+<td>Pilas (<code>SplStack</code>) y colas (<code>SplQueue</code>).</td>
+</tr>
+<tr>
+<td><strong>Iteradores</strong></td>
+<td>Recorrer colecciones o directorios de forma uniforme.</td>
+<td><code>ArrayIterator</code> y <code>DirectoryIterator</code>.</td>
+</tr>
+<tr>
+<td><strong>Excepciones</strong></td>
+<td>Identificar problemas mediante tipos ya definidos.</td>
+<td><code>DomainException</code> y <code>RuntimeException</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Además, <strong><code>spl_autoload_register()</code></strong>, que ya utilizamos para cargar clases automáticamente, también forma parte de SPL.</p>
+<details class="examplephp" open="open">
+<summary>Ejemplo</summary>
+<p>Una cola de clientes</p>
+<p>Una <strong>cola</strong> funciona como la fila de atención del videoclub: <strong>el primero que llega es el primero que sale</strong>. Este comportamiento se conoce como <strong>FIFO</strong> (<em>First In, First Out</em>).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PHP</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$clientes</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SplQueue</span><span class="p">();</span>
+
+<span class="nv">$clientes</span><span class="o">-&gt;</span><span class="na">enqueue</span><span class="p">(</span><span class="s2">&quot;Ana&quot;</span><span class="p">);</span>
+<span class="nv">$clientes</span><span class="o">-&gt;</span><span class="na">enqueue</span><span class="p">(</span><span class="s2">&quot;Luis&quot;</span><span class="p">);</span>
+<span class="nv">$clientes</span><span class="o">-&gt;</span><span class="na">enqueue</span><span class="p">(</span><span class="s2">&quot;Marta&quot;</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="s2">&quot;Atendemos a: &quot;</span> <span class="o">.</span> <span class="nv">$clientes</span><span class="o">-&gt;</span><span class="na">dequeue</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">&quot;Clientes pendientes: &quot;</span> <span class="o">.</span> <span class="nv">$clientes</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>Atendemos a: Ana
+Clientes pendientes: 2
+</code></pre></div>
+</div>
+</div>
+</div>
 <ul>
-<li>Estructuras de datos:</li>
-<li>pila, cola, cola de prioridad, lista doblemente enlazada, etc...</li>
-<li>Conjunto de iteradores diseñados para recorrer estructuras agregadas:</li>
-<li>arrays, resultados de bases de datos, árboles XML, listados de directorios, etc.</li>
+<li><strong><code>enqueue()</code></strong> añade un elemento al final de la cola.</li>
+<li><strong><code>dequeue()</code></strong> obtiene y elimina el primero.</li>
+<li><strong><code>count()</code></strong> indica cuántos elementos quedan.</li>
 </ul>
-<p>Podéis consultar la documentación en <a href="https://www.php.net/manual/es/book.spl.php" target="_blank">https://www.php.net/manual/es/book.spl.php</a> o ver algunos ejemplos en <a href="https://diego.com.es/tutorial-de-la-libreria-spl-de-php" target="_blank">https://diego.com.es/tutorial-de-la-libreria-spl-de-php</a>.</p>
-<p>También define un conjunto de excepciones que podemos utilizar para que las lancen nuestras aplicaciones:</p>
+</details>
+<h2 id="2-excepciones-que-ya-estan-creadas">2. Excepciones que ya están creadas<a class="headerlink" href="#2-excepciones-que-ya-estan-creadas" title="Permanent link">&para;</a></h2>
+<p>En el apartado anterior creamos excepciones propias. SPL también ofrece excepciones generales que podemos utilizar directamente.</p>
+<p>Estas se agrupan en dos familias que heredan de <code>Exception</code>:</p>
 <ul>
-<li><code>LogicException (extends Exception)</code></li>
-<li><code>BadFunctionCallException</code></li>
-<li><code>BadMethodCallException</code></li>
-<li><code>DomainException</code></li>
-<li><code>InvalidArgumentException</code></li>
-<li><code>LengthException</code></li>
-<li><code>OutOfRangeException</code></li>
-<li><code>RuntimeException (extends Exception)</code></li>
-<li><code>OutOfBoundsException</code></li>
-<li><code>OverflowException</code></li>
-<li><code>RangeException</code></li>
-<li><code>UnderflowException</code></li>
-<li><code>UnexpectedValueException</code></li>
+<li><strong><code>LogicException</code></strong>: representa problemas en la lógica o en las condiciones necesarias para realizar una operación.</li>
+<li><strong><code>RuntimeException</code></strong>: representa problemas detectados durante la ejecución de una operación.</li>
 </ul>
-<p>También podéis consultar la documentación de estas excepciones en <a href="https://www.php.net/manual/es/spl.exceptions.php" target="_blank">https://www.php.net/manual/es/spl.exceptions.php</a>.</p>
+<p>Algunos tipos más específicos son:</p>
+<table>
+<thead>
+<tr>
+<th>Excepción</th>
+<th>Ejemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DomainException</code></td>
+<td>Rechazar un precio negativo porque está fuera de los valores admitidos.</td>
+</tr>
+<tr>
+<td><code>OutOfBoundsException</code></td>
+<td>Informar de que una posición solicitada no existe en una colección.</td>
+</tr>
+<tr>
+<td><code>UnderflowException</code></td>
+<td>Informar de que se intenta extraer un elemento de una estructura vacía.</td>
+</tr>
+</tbody>
+</table>
+<details class="examplephp" open="open">
+<summary>Ejemplo</summary>
+<p>Validar el precio de un alquiler</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">calcularImporte</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$precioDiario</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$dias</span><span class="p">)</span><span class="o">:</span> <span class="nx">float</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$precioDiario</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nv">$dias</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">DomainException</span><span class="p">(</span>
+            <span class="s2">&quot;El precio no puede ser negativo y la duración debe ser de al menos un día.&quot;</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nv">$precioDiario</span> <span class="o">*</span> <span class="nv">$dias</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$importe</span> <span class="o">=</span> <span class="nx">calcularImporte</span><span class="p">(</span><span class="mf">2.50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="s2">&quot;Importe: &quot;</span> <span class="o">.</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$importe</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot; €&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">DomainException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;No se puede calcular: &quot;</span> <span class="o">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong><code>DomainException</code> ya existe en PHP</strong>: podemos crearla con <code>new</code> sin definir nuestra propia clase. El funcionamiento de <code>throw</code> y <code>catch</code> es el mismo que ya conocemos.</p>
+</details>
+<blockquote>
+<p><strong>Elegir un tipo no sustituye la comprobación</strong></p>
+<p>En este ejemplo somos nosotros quienes comprobamos los datos y lanzamos la excepción. Escribir una operación con datos no válidos no implica que PHP lance automáticamente el tipo de excepción que hemos elegido.</p>
+</blockquote>
+<details class="questionphp">
+<summary>Prueba rápida</summary>
+<p>Cambia la llamada por <code>calcularImporte(2.50, 3)</code>. ¿Qué se muestra? ¿Se ejecuta el <code>catch</code>?</p>
+<p><strong>Respuesta:</strong> se muestra <code>Importe: 7,50 €</code> y no se ejecuta el <code>catch</code>, porque los datos son válidos.</p>
+</details>
 <details class="ies">
 <summary>Actividad Proyecto Videoclub 2.0</summary>
+<p>Continúa con los <a href="https://arturoblasco.github.io/dwes/up03/ut03ac/">ejercicios 331 a 338 del proyecto Videoclub</a>.</p>
+<p>Las excepciones de SPL describen problemas generales. Para situaciones específicas del proyecto, como superar el cupo de alquileres, crearemos los tipos propios que solicita el enunciado.</p>
 <ul>
 <li>Ejercicios 331</li>
 <li>Ejercicios 332</li>
@@ -3933,6 +4146,12 @@
 <li>Ejercicios 338</li>
 </ul>
 </details>
+<h2 id="documentacion-de-consulta">Documentación de consulta<a class="headerlink" href="#documentacion-de-consulta" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.php.net/manual/es/book.spl.php">Biblioteca SPL</a>.</li>
+<li><a href="https://www.php.net/manual/es/class.splqueue.php">Clase <code>SplQueue</code></a>.</li>
+<li><a href="https://www.php.net/manual/es/spl.exceptions.php">Excepciones de SPL y su jerarquía</a>.</li>
+</ul>
 
 
 
