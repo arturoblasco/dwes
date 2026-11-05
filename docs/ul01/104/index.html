@@ -4293,9 +4293,7 @@
 <p>Docker Desktop en Windows <strong>requiere WSL2</strong> para funcionar. WSL2 actúa como motor para ejecutar contenedores de forma nativa. Por eso se introduce desde el principio del curso.</p>
 <p>En macOS y Linux, Docker funciona directamente sobre el sistema operativo sin necesidad de WSL.</p>
 <h4 id="gestores-de-paquetes">Gestores de Paquetes<a class="headerlink" href="#gestores-de-paquetes" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Gestores de Paquetes (<code>apt</code>, <code>Homebrew</code>, <code>winget</code>)</strong>: Son herramientas de línea de comandos que automatizan la instalación, actualización y eliminación de software. Cada sistema operativo tiene el suyo: <code>apt</code> (en Ubuntu/WSL), <code>Homebrew</code> (en macOS) o <code>winget</code> (en Windows).</li>
-</ul>
+<p><code>apt</code>, <code>Homebrew</code>, <code>winget</code>: Son herramientas de línea de comandos que automatizan la instalación, actualización y eliminación de software. Cada sistema operativo tiene el suyo: <code>apt</code> (en Ubuntu/WSL), <code>Homebrew</code> (en macOS) o <code>winget</code> (en Windows).</p>
 <h2 id="42-el-editor-de-codigo">4.2. El editor de código<a class="headerlink" href="#42-el-editor-de-codigo" title="Permanent link">&para;</a></h2>
 <p>Un editor de código moderno o un <strong>Entorno de Desarrollo Integrado (IDE)</strong> es indispensable. Las dos opciones estándar en la industria para el desarrollo con PHP y Laravel son:</p>
 <ul>
@@ -4319,7 +4317,7 @@ composer<span class="w"> </span>require<span class="w"> </span>nombre/paquete
 <span class="c1"># Actualizar todas las dependencias a sus últimas versiones compatibles</span>
 composer<span class="w"> </span>update
 </code></pre></div>
-<p>El archivo <code>composer.json</code> en la raíz del proyecto Laravel define todas las dependencias de PHP que la aplicación necesita. Composer las descarga del repositorio central <a href="https://packagist.org/"><strong>Packagist</strong></a>.</p>
+<p>El archivo <code>composer.json</code> en la raíz del proyecto Laravel define todas las dependencias de PHP que la aplicación necesita. Composer las descarga del repositorio central <a TARGET="Blank" href="https://packagist.org/"><strong>Packagist</strong></a>.</p>
 <h4 id="nodejs-npm-y-gestion-de-assets-frontend">Node.js, Npm y gestión de assets frontend<a class="headerlink" href="#nodejs-npm-y-gestion-de-assets-frontend" title="Permanent link">&para;</a></h4>
 <p>Para el frontend (CSS, JavaScript), Laravel utiliza herramientas del ecosistema Node.js. <strong>npm (Node Package Manager)</strong> es el gestor de paquetes que viene incluido con Node.js y permite instalar librerías JavaScript.</p>
 <p>Algunos comandos esenciales:</p>
@@ -4336,7 +4334,7 @@ npm<span class="w"> </span>run<span class="w"> </span>dev
 npm<span class="w"> </span>run<span class="w"> </span>build
 </code></pre></div>
 <p>El archivo <code>package.json</code> define todas las dependencias de JavaScript/Node.js del proyecto. npm las descarga del repositorio <a href="https://www.npmjs.com/"><strong>npm registry</strong></a>.</p>
-<p>¿Por qué Laravel necesita Node.js si es PHP?</p>
+<p><strong>¿Por qué Laravel necesita Node.js si es PHP?</strong></p>
 <p>Laravel (backend) está escrito en PHP, pero las herramientas modernas de frontend (Vite, Tailwind CSS, etc.) están construidas con JavaScript/Node.js. npm gestiona estas herramientas y librerías de frontend que compilan y optimizan los assets (CSS, JS) de la aplicación.</p>
 <h2 id="44-control-de-versiones-con-git">4.4. Control de versiones con Git<a class="headerlink" href="#44-control-de-versiones-con-git" title="Permanent link">&para;</a></h2>
 <p>El control de versiones es un sistema que registra los cambios en los archivos a lo largo del tiempo, permitiendo volver a una versión anterior si algo sale mal. Es la red de seguridad de todo desarrollador.</p>

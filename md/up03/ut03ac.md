@@ -167,7 +167,7 @@ En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclu
 
 Cada clase debe ir en un archivo php separado. Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases:
 
-### Ejercicio 321
+### Ejercicio 320
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro01.png" alt="pro01" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.6: Estructura de la clase Soporte del ejercicio 321</figcaption></figure></div>
 
 Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clase madre de los diferentes soportes con los que trabaje nuestro videoclub (*cintas de vídeo*, *videojuegos*, etc...):
@@ -193,7 +193,7 @@ Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clas
     === "Resultado"
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e321.png" alt="e321" style="zoom:90%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.7: Resultado página inicio.php</figcaption></figure></div>
 
-### Ejercicio 322
+### Ejercicio 321
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro02.png" alt="pro02" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.8: La clase CintaVideo hereda de la clase Soporte (ejercicio322)</figcaption></figure></div>
 
 Crea la clase `CintaVideo` la cual hereda de `Soporte`. Añade el atributo `duracion` y sobreescribe tanto el constructor como el método `muestraResumen` (desde `CintaVideo` deberás llamar al método `muestraResumen` del padre).
@@ -218,7 +218,7 @@ Añade a `inicio.php` el código para probar la clase:
 
 
 
-### Ejercicio 323
+### Ejercicio 322
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro03.png" alt="pro03" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.10: Las clases CintaVideo y Dvd heredan de la clase Soporte (ejercicio323)</figcaption></figure></div>
 
 Crea la clase `Dvd` la cual hereda de `Soporte`. Añade los atributos `idiomas` (que se un array como "es", "en", ...) y `formatoPantalla`. A continuación sobreescribe tanto el constructor como el método `muestraResumen`.
@@ -243,7 +243,7 @@ Añade a `inicio.php` el código para probar la clase:
 
 
 
-### Ejercicio 324
+### Ejercicio 323
 Crea la clase `Juego` la cual hereda de `Soporte`. Añade los atributos `consola`, `minNumJugadores` y `maxNumJugadores`. 
 
 A continuación añade el método `muestraJugadoresPosibles`, el cual debe mostrar *Para un jugador*, *Para X jugadores* o *De X a Y jugadores* dependiendo de los valores de las atributos creados. 
@@ -272,7 +272,7 @@ Llegados a este punto, nuestro modelo es similar al siguiente diagrama:
 
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro05.png" alt="pro05" style="zoom:85%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.13: Estructura de herencia para el ejercicio 324</figcaption></figure></div>
 
-### Ejercicio 325
+### Ejercicio 324
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro06.png" alt="pro06" style="zoom:95%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.14: Estructura de la clase Cliente para el ejercicio 325</figcaption></figure></div>
 
 Crear la clase `Cliente`. El constructor recibirá el `nombre`, `numero` y `maxAlquilerConcurrente`, este último pudiendo ser opcional y tomando como valor por defecto *3*. 
@@ -283,13 +283,13 @@ El array de soportes alquilados `$soportesAlquilados` contedrá clases que hered
 
 Finalmente, añade el método `muestraResumen` que muestre el *nombre* y la *cantidad de alquileres* (tamaño del array `soportesAlquilados`).
 
-### Ejercicio 326
+### Ejercicio 325
 Dentro de `Cliente`, añade las siguiente operaciones:
 
 - `tieneAlquilado(Soporte $s): bool` : recorre el array de soportes y comprueba si está el soporte alquilado.
 - `alquilar(Soporte $s): bool` : debe comprobar si el soporte está alquilado y si no ha superado el cupo de alquileres. Al alquilar, incrementará el `numSoportesAlquilados` y almacenará el soporte en el array. Para cada caso debe mostrar un mensaje informando de lo ocurrido.
 
-### Ejercicio 327
+### Ejercicio 326
 Seguimos con `Cliente` para añadir las operaciones:
 
 - `devolver(int $numSoporte): bool` : debe comprobar que el soporte estaba alquilado y actualizar la cantidad de soportes alquilados. Para cada caso debe mostrar un mensaje informando de lo ocurrido.
@@ -344,7 +344,7 @@ Crea el archivo `inicio2.php` con el siguiente código fuente para probar la cla
     === "Resultado"
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e327.png" alt="e327" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.15: Resultado página inicio2.php</figcaption></figure></div>
 
-### Ejercicio 328
+### Ejercicio 327
 Llegado a este punto, vamos a relacionar los clientes y los soportes mediante la clase `Videoclub`. Así pues crea la clase que representa la imagen posterior, teniendo en cuenta que:
 
 - `productos` es un array de `Soporte`.
@@ -396,10 +396,10 @@ Y para probar el proyecto, dentro inicio3.php colocaremos:
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e328.png" alt="e328" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.17: Resultado página inicio3.php</figcaption></figure></div>
 
 
-### Ejercicio 329
+### Ejercicio 328
 Transforma `Soporte` a una clase abstracta y comprueba que todo sigue funcionando. ¿Qué conseguimos al hacerla abstracta?
 
-### Ejercicio 330
+### Ejercicio 329
 Crea un interfaz `Resumible` de manera que las clases que lo implementen deben ofrecer el método `muestraResumen()`.
 
 Modifica la clase `Soporte` y haz que implemente el interfaz. ¿Hace falta que también lo implementen los hijos?
@@ -412,7 +412,7 @@ Modifica la clase `Soporte` y haz que implemente el interfaz. ¿Hace falta que t
 > 
 > Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante `git tag` con el nombre `v0.330` y sube los cambios a GitHub.
 
-### Ejercicio 331
+### Ejercicio 330
 Modifica las operaciones de alquilar, tanto en `Cliente` (métodos `alquilar`, `devolver`) como en `Videoclub`  (métodos `incluirProducto`, `incluirCintaVideo`, `incluirDvd`, `incluirJuego`, `incluirSocio`, `listarProductos`, `listarSocios`, `alquilarSocioProducto`) , para dar soporte al encadenamiento de métodos. 
 
 Posteriormente, modifica el código de prueba para utilizar esta técnica.
@@ -442,7 +442,7 @@ $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
 ```
 
 
-### Ejercicio 332
+### Ejercicio 331
 Haciendo uso de *namespaces*:
 
 - Coloca todas las clases/interfaces en `Dwes\ProyectoVideoclub`.
@@ -483,13 +483,13 @@ $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
 > 
 > Etiqueta los cambios como `v0.331`.
 
-### Ejercicio 333
+### Ejercicio 332
 Reorganiza las carpeta tal como hemos visto en los apuntes: `app`, `test` y`vendor`.
 
 - Crea un fichero `autoload.php` para registrar la ruta donde encontrar las clases
 - Modifica todo el código necesario, incluyendo `autoload.php` donde sea necesario y borrando los *includes* previos.
 
-### Ejercicio 334
+### Ejercicio 333
 A continuación vamos a crear un conjunto de excepciones de aplicación. Estas excepciones son simples, no necesitan sobreescribir ningún método. Así pues, crea la excepción de aplicación `VideoclubException` en el *namespace* `Dwes\ProyectoVideoclub\Util`. Posteriormente crea los siguientes hijos (deben heredar de `VideoclubException`), cada uno en su propio archivo:
 
 - `SoporteYaAlquiladoException`.
@@ -497,10 +497,10 @@ A continuación vamos a crear un conjunto de excepciones de aplicación. Estas e
 - `SoporteNoEncontradoException`.
 - `ClienteNoEncontradoException`.
 
-### Ejercicio 335
+### Ejercicio 334
 En `Cliente`, modifica los métodos `alquilar` y `devolver`, para que hagan uso de las nuevas excepciones (lanzándolas cuando sea necesario) y funcionen como métodos encadenados. Destacar que estos métodos, no se capturar estás excepciones, sólo se lanzan. En `Videoclub`, modifica `alquilarSocioPelicula `para capturar todas las excepciones que ahora lanza `Cliente` e informar al usuario en consecuencia.
 
-### Ejercicio 336
+### Ejercicio 335
 Vamos a modificar el proyecto para que el videoclub sepa qué productos están o no alquilados:
 
 - En `Soporte`, crea una propiedad pública cuyo nombre sea `alquilado` que inicialmente estará a `false`. Cuando se alquile, se pondrá a `true`. Al devolver, la volveremos a poner a `false`.
@@ -509,12 +509,12 @@ Vamos a modificar el proyecto para que el videoclub sepa qué productos están o
 	_ `numProductosAlquilados`<br />
 	_ `numTotalAlquileres`
 
-### Ejercicio 337
+### Ejercicio 336
 Crea un nuevo método en `Videoclub` llamado `alquilarSocioProductos(int numSocio, array numerosProductos)`, el cual debe recibir un array con los productos a alquilar.
 
 Antes de alquilarlos, debe comprobar que todos los soportes estén disponibles, de manera que si uno no lo está, no se le alquile ninguno.
 
-### Ejercicio 338
+### Ejercicio 337
 Crea dos nuevos métodos en `Videoclub`, y mediante la definición, deduce qué deben realizar:
 
 - `devolverSocioProducto(int numSocio, int numeroProducto)`
