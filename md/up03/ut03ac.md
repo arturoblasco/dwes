@@ -153,15 +153,16 @@ Copia las clases del ejercicio anterior y modifícalas (para una mejor comprensi
 
 En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental y siguiendo la práctica de programación en parejas (*pair programming*).
 
-> **Git del proyecto**
-> 
-> Antes de nada, crea un repositorio privado en GitHub y sube el proyecto actual de `Videoclub`. Una vez creado, invita a tu compañero al repositorio como colaborador.
-> 
-> 1. Inicializa en local tu repositorio de *g*it, mediante `git init`.
-> 2. Añade y sube los cambios a tu repositorio, mediante `git add .` y luego `git commit -m 'Inicializando proyecto'`.
-> 3.Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos `git remote` y `git push`).
-> 
-> Tu compañero deberá descargar el proyecto con sus credenciales.
+???+ies "Git del proyecto"
+    Antes de nada, crea un repositorio privado en *GitHub* y sube el proyecto actual de **`Videoclub`**. Una vez creado, invita a *tu profesor* al repositorio como *colaborador*.
+    
+    Recuerda los pasos a seguir para crear un repositorio:
+    
+    1. Inicializa en local tu repositorio de *git*, mediante **`git init`**.
+    2. Añade y sube los cambios a tu repositorio, mediante **`git add .`** y luego **`git commit -m 'Inicializando proyecto'`**.
+    3. Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos `git remote` y `git push`).
+    
+    A partir de este momento, a cada ejercicio deberás realizar un *commit* con el nombre del ejercicio (por ejemplo, cuando termines el *Ejercicio 320* deberás realizar la orden *git commit -m "ejercicio 320"*).
 
 
 
@@ -257,7 +258,7 @@ Añade a `inicio.php` el código para probar la clase:
         <?php
             include_once "Juego.php";
 
-            $miJuego = new Juego("The Last of Us Part II", 26, 49.99, "PS4", 1, 1); 
+            $miJuego = new Juego("The Last of Us Part II", 49.99, "PS4", 1, 1); 
             echo "<strong>" . $miJuego->titulo . "</strong>"; 
             echo "<br>Precio: " . $miJuego->getPrecio() . " €"; 
             echo "<br>Precio con IVA: " . $miJuego->getPrecioConIva() . " €";
@@ -315,10 +316,10 @@ Crea el archivo `inicio2.php` con el siguiente código fuente para probar la cla
             echo "<br>El identificador del cliente 2 es: " . $cliente2->getNumero();
     
             //instancio algunos soportes 
-            $soporte1 = new CintaVideo("Los cazafantasmas", 23, 3.5, 107);
-            $soporte2 = new Juego("The Last of Us Part II", 26, 49.99, "PS4", 1, 1);  
-            $soporte3 = new Dvd("Origen", 24, 15, ["es","en","fr"], "16:9");
-            $soporte4 = new Dvd("El Imperio Contraataca", 4, 3, ["es","en"],"16:9");
+            $soporte1 = new CintaVideo("Los cazafantasmas", 3.5, 107);
+            $soporte2 = new Juego("The Last of Us Part II", 49.99, "PS4", 1, 1);  
+            $soporte3 = new Dvd("Origen", 15, ["es","en","fr"], "16:9");
+            $soporte4 = new Dvd("El Imperio Contraataca", 3, ["es","en"],"16:9");
     
             //alquilo algunos soportes
             $cliente1->alquilar($soporte1);
@@ -362,9 +363,9 @@ Y para probar el proyecto, dentro inicio3.php colocaremos:
         <?php
            include_once "Videoclub.php"; // No incluimos nada más
 	
-           $vc = new Videoclub("Severo 8A"); 
+           $vc = new Videoclub("Videoclub CataDAW"); 
     
-           //voy a incluir unos cuantos soportes de prueba 
+           //Incluir unos cuantos soportes de prueba 
            $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1); 
            $vc->incluirJuego("The Last of Us Part II", 49.99, "PS4", 1, 1);
            $vc->incluirDvd("Torrente", 4.5, ["es"],"16:9"); 
@@ -373,23 +374,26 @@ Y para probar el proyecto, dentro inicio3.php colocaremos:
            $vc->incluirCintaVideo("Los cazafantasmas", 3.5, 107); 
            $vc->incluirCintaVideo("El nombre de la Rosa", 1.5, 140); 
     
-           //listo los productos 
+           //Listar los productos 
            $vc->listarProductos(); 
     
-           //voy a crear algunos socios 
-           $vc->incluirSocio("Amancio Ortega"); 
-           $vc->incluirSocio("Pablo Picasso", 2); 
-    
+           //Crear algunos socios 
+           $vc->incluirSocio("Elsa Pato"); 
+           $vc->incluirSocio("Lola Mento", 2); 
+
+           $vc->alquilarSocioProducto(1,1);     
            $vc->alquilarSocioProducto(1,2); 
            $vc->alquilarSocioProducto(1,3); 
-           //alquilo otra vez el soporte 2 al socio 1. 
+
+           //Alquilar otra vez el soporte 2 al socio 1. 
            // no debe dejarme porque ya lo tiene alquilado 
            $vc->alquilarSocioProducto(1,2); 
-           //alquilo el soporte 6 al socio 1. 
+
+           //Alquilar el soporte 6 al socio 1. 
            //no se puede porque el socio 1 tiene 2 alquileres como máximo 
            $vc->alquilarSocioProducto(1,6); 
     
-           //listo los socios 
+           //Listar los socios 
            $vc->listarSocios();
         ```
     === "Resultado"
@@ -416,31 +420,53 @@ Modifica la clase `Soporte` y haz que implemente el interfaz. ¿Hace falta que t
 Modifica las operaciones de alquilar, tanto en `Cliente` (métodos `alquilar`, `devolver`) como en `Videoclub`  (métodos `incluirProducto`, `incluirCintaVideo`, `incluirDvd`, `incluirJuego`, `incluirSocio`, `listarProductos`, `listarSocios`, `alquilarSocioProducto`) , para dar soporte al encadenamiento de métodos. 
 
 Posteriormente, modifica el código de prueba para utilizar esta técnica.
-```php
-<?php
-include_once "Videoclub.php"; // No incluimos nada más
 
-$vc = new Videoclub("Severo 8A");
+Y para probar el proyecto, dentro inicio4.php colocaremos:
+???examplephp "Ejemplo"
+	=== "inicio4.php"
+        ```php
+        <?php
+        include_once "Videoclub.php"; // No incluimos nada más
 
-// Incluir soportes de prueba y crear algunos socios con encadenamiento de métodos
-$vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
-   ->incluirJuego("The Last of Us Part II", 49.99, "PS4", 1, 1)
-   ->incluirDvd("Torrente", 4.5, ["es"], "16:9")
-   ->incluirDvd("Origen", 4.5, ["es", "en", "fr"], "16:9")
-   ->incluirDvd("El Imperio Contraataca", 3, ["es", "en"], "16:9")
-   ->incluirCintaVideo("Los cazafantasmas", 3.5, 107)
-   ->incluirCintaVideo("El nombre de la Rosa", 1.5, 140)
-   ->listarProductos() // Listar productos después de añadirlos
-   ->incluirSocio("Amancio Ortega") 
-   ->incluirSocio("Pablo Picasso", 2)
-   ->alquilarSocioProducto(1, 2)
-   ->alquilarSocioProducto(1, 3)
-   ->alquilarSocioProducto(1, 2) // Intento de alquilar un soporte ya alquilado
-   ->alquilarSocioProducto(2, 6) // Intento de alquilar más de lo permitido
-   ->listarSocios(); // Listar socios después de realizar las operaciones de alquiler
-?>
-```
+        $vc = new Videoclub("Videoclub CataDAW");
 
+        echo "VIDEOCLUB 2.0:<br/><br/>";
+
+        // Incluir soportes y crear socios mediante encadenamiento
+        $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
+        ->incluirJuego("The Last of Us Part II", 49.99, "PS4", 1, 1)
+        ->incluirDvd("Torrente", 4.5, ["es"], "16:9")
+        ->incluirDvd("Origen", 4.5, ["es", "en", "fr"], "16:9")
+        ->incluirDvd("El Imperio Contraataca", 3, ["es", "en"], "16:9")
+        ->incluirCintaVideo("Los cazafantasmas", 3.5, 107)
+        ->incluirCintaVideo("El nombre de la Rosa", 1.5, 140)
+
+        // Mostrar los productos registrados
+        ->listarProductos()
+
+        // Registrar socios
+        ->incluirSocio("Elsa Pato")
+        ->incluirSocio("Lola Mento", 2)
+
+        // Alquileres del socio 1
+        ->alquilarSocioProducto(1, 2)
+        ->alquilarSocioProducto(1, 3)
+        ->alquilarSocioProducto(1, 2) // Soporte ya alquilado
+
+        // Alquileres del socio 2 (máximo 2)
+        ->alquilarSocioProducto(2, 5)
+        ->alquilarSocioProducto(2, 6)
+        ->alquilarSocioProducto(2, 7) // Supera el límite
+
+        // Comprobar cliente y soporte inexistentes
+        ->alquilarSocioProducto(99, 1)
+        ->alquilarSocioProducto(1, 99)
+
+        // Mostrar socios
+        ->listarSocios();
+        ```
+    === "Resultado"
+    	<div style="text-align: center;"><figure><img src="../../img/ut03/e329.png" alt="e328" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.18: Resultado página inicio4.php</figcaption></figure></div>
 
 ### Ejercicio 331
 Haciendo uso de *namespaces*:
@@ -452,11 +478,11 @@ Haciendo uso de *namespaces*:
 
 ```php
 <?php
-use Dwes\ProyectoVideoclub\Videoclub;
-
 include_once "Videoclub.php";
 
-$vc = new Videoclub("Severo 8A");
+use Dwes\ProyectoVideoclub\Videoclub;
+
+$vc = new Videoclub("Videoclub CataDAW");
 
 // Incluir soportes de prueba y crear algunos socios con encadenamiento de métodos
 $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
@@ -467,8 +493,8 @@ $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
    ->incluirCintaVideo("Los cazafantasmas", 3.5, 107)
    ->incluirCintaVideo("El nombre de la Rosa", 1.5, 140)
    ->listarProductos() // Listar productos después de añadirlos
-   ->incluirSocio("Amancio Ortega") 
-   ->incluirSocio("Pablo Picasso", 2)
+   ->incluirSocio(Elsa Pato") 
+   ->incluirSocio("Lola Mento", 2)
    ->alquilarSocioProducto(1, 2)
    ->alquilarSocioProducto(1, 3)
    ->alquilarSocioProducto(1, 2) // Intento de alquilar un soporte ya alquilado
@@ -476,8 +502,6 @@ $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
    ->listarSocios(); // Listar socios después de realizar las operaciones de alquiler
 ?>
 ```
-
-
 
 > **Git del proyecto**
 > 
@@ -498,16 +522,15 @@ A continuación vamos a crear un conjunto de excepciones de aplicación. Estas e
 - `ClienteNoEncontradoException`.
 
 ### Ejercicio 334
-En `Cliente`, modifica los métodos `alquilar` y `devolver`, para que hagan uso de las nuevas excepciones (lanzándolas cuando sea necesario) y funcionen como métodos encadenados. Destacar que estos métodos, no se capturar estás excepciones, sólo se lanzan. En `Videoclub`, modifica `alquilarSocioPelicula `para capturar todas las excepciones que ahora lanza `Cliente` e informar al usuario en consecuencia.
+En `Cliente`, modifica los métodos `alquilar` y `devolver`, para que hagan uso de las nuevas excepciones (lanzándolas cuando sea necesario) y funcionen como métodos encadenados. Destacar que en estos métodos, no se capturan estás excepciones, **sólo se lanzan**. 
+
+En `Videoclub`, modifica `alquilarSocioProducto` para **capturar todas las excepciones** que ahora lanza `Cliente` e informar al usuario en consecuencia.
 
 ### Ejercicio 335
 Vamos a modificar el proyecto para que el videoclub sepa qué productos están o no alquilados:
 
 - En `Soporte`, crea una propiedad pública cuyo nombre sea `alquilado` que inicialmente estará a `false`. Cuando se alquile, se pondrá a `true`. Al devolver, la volveremos a poner a `false`.
-- En `Videoclub`, crea dos nuevas propiedades y sus getters:<br />
-
-	_ `numProductosAlquilados`<br />
-	_ `numTotalAlquileres`
+- En `Videoclub`, crea dos nuevas propiedades `numProductosAlquilados` y `numTotalAlquileres` y sus métodos *getters*.<br />
 
 ### Ejercicio 336
 Crea un nuevo método en `Videoclub` llamado `alquilarSocioProductos(int numSocio, array numerosProductos)`, el cual debe recibir un array con los productos a alquilar.

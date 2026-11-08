@@ -4872,16 +4872,17 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <p>El siguiente proyecto está pensado desde un punto de vista formativo. Algunas de las decisiones que se toman no se deben usar (como hacer <code>echo</code> dentro de las clases) o probar el código comparando el resultado en el navegador.</p>
 </blockquote>
 <p>En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental y siguiendo la práctica de programación en parejas (<em>pair programming</em>).</p>
-<blockquote>
-<p><strong>Git del proyecto</strong></p>
-<p>Antes de nada, crea un repositorio privado en GitHub y sube el proyecto actual de <code>Videoclub</code>. Una vez creado, invita a tu compañero al repositorio como colaborador.</p>
+<details class="ies" open="open">
+<summary>Git del proyecto</summary>
+<p>Antes de nada, crea un repositorio privado en <em>GitHub</em> y sube el proyecto actual de <strong><code>Videoclub</code></strong>. Una vez creado, invita a <em>tu profesor</em> al repositorio como <em>colaborador</em>.</p>
+<p>Recuerda los pasos a seguir para crear un repositorio:</p>
 <ol>
-<li>Inicializa en local tu repositorio de <em>g</em>it, mediante <code>git init</code>.</li>
-<li>Añade y sube los cambios a tu repositorio, mediante <code>git add .</code> y luego <code>git commit -m 'Inicializando proyecto'</code>.
-3.Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos <code>git remote</code> y <code>git push</code>).</li>
+<li>Inicializa en local tu repositorio de <em>git</em>, mediante <strong><code>git init</code></strong>.</li>
+<li>Añade y sube los cambios a tu repositorio, mediante <strong><code>git add .</code></strong> y luego <strong><code>git commit -m 'Inicializando proyecto'</code></strong>.</li>
+<li>Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos <code>git remote</code> y <code>git push</code>).</li>
 </ol>
-<p>Tu compañero deberá descargar el proyecto con sus credenciales.</p>
-</blockquote>
+<p>A partir de este momento, a cada ejercicio deberás realizar un <em>commit</em> con el nombre del ejercicio (por ejemplo, cuando termines el <em>Ejercicio 320</em> deberás realizar la orden <em>git commit -m "ejercicio 320"</em>).</p>
+</details>
 <p>Cada clase debe ir en un archivo php separado. Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases:</p>
 <h3 id="ejercicio-320">Ejercicio 320<a class="headerlink" href="#ejercicio-320" title="Permanent link">&para;</a></h3>
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro01.png" alt="pro01" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.6: Estructura de la clase Soporte del ejercicio 321</figcaption></figure></div>
@@ -4984,7 +4985,7 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
     <span class="k">include_once</span> <span class="s2">&quot;Juego.php&quot;</span><span class="p">;</span>
 
-    <span class="nv">$miJuego</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Juego</span><span class="p">(</span><span class="s2">&quot;The Last of Us Part II&quot;</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> 
+    <span class="nv">$miJuego</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Juego</span><span class="p">(</span><span class="s2">&quot;The Last of Us Part II&quot;</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> 
     <span class="k">echo</span> <span class="s2">&quot;&lt;strong&gt;&quot;</span> <span class="o">.</span> <span class="nv">$miJuego</span><span class="o">-&gt;</span><span class="na">titulo</span> <span class="o">.</span> <span class="s2">&quot;&lt;/strong&gt;&quot;</span><span class="p">;</span> 
     <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;Precio: &quot;</span> <span class="o">.</span> <span class="nv">$miJuego</span><span class="o">-&gt;</span><span class="na">getPrecio</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot; €&quot;</span><span class="p">;</span> 
     <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;Precio con IVA: &quot;</span> <span class="o">.</span> <span class="nv">$miJuego</span><span class="o">-&gt;</span><span class="na">getPrecioConIva</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot; €&quot;</span><span class="p">;</span>
@@ -5043,10 +5044,10 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
     <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;El identificador del cliente 2 es: &quot;</span> <span class="o">.</span> <span class="nv">$cliente2</span><span class="o">-&gt;</span><span class="na">getNumero</span><span class="p">();</span>
 
     <span class="c1">//instancio algunos soportes </span>
-    <span class="nv">$soporte1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CintaVideo</span><span class="p">(</span><span class="s2">&quot;Los cazafantasmas&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">107</span><span class="p">);</span>
-    <span class="nv">$soporte2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Juego</span><span class="p">(</span><span class="s2">&quot;The Last of Us Part II&quot;</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  
-    <span class="nv">$soporte3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dvd</span><span class="p">(</span><span class="s2">&quot;Origen&quot;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span><span class="s2">&quot;en&quot;</span><span class="p">,</span><span class="s2">&quot;fr&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">);</span>
-    <span class="nv">$soporte4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dvd</span><span class="p">(</span><span class="s2">&quot;El Imperio Contraataca&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span><span class="s2">&quot;en&quot;</span><span class="p">],</span><span class="s2">&quot;16:9&quot;</span><span class="p">);</span>
+    <span class="nv">$soporte1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CintaVideo</span><span class="p">(</span><span class="s2">&quot;Los cazafantasmas&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">107</span><span class="p">);</span>
+    <span class="nv">$soporte2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Juego</span><span class="p">(</span><span class="s2">&quot;The Last of Us Part II&quot;</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  
+    <span class="nv">$soporte3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dvd</span><span class="p">(</span><span class="s2">&quot;Origen&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span><span class="s2">&quot;en&quot;</span><span class="p">,</span><span class="s2">&quot;fr&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">);</span>
+    <span class="nv">$soporte4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dvd</span><span class="p">(</span><span class="s2">&quot;El Imperio Contraataca&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span><span class="s2">&quot;en&quot;</span><span class="p">],</span><span class="s2">&quot;16:9&quot;</span><span class="p">);</span>
 
     <span class="c1">//alquilo algunos soportes</span>
     <span class="nv">$cliente1</span><span class="o">-&gt;</span><span class="na">alquilar</span><span class="p">(</span><span class="nv">$soporte1</span><span class="p">);</span>
@@ -5095,9 +5096,9 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
    <span class="k">include_once</span> <span class="s2">&quot;Videoclub.php&quot;</span><span class="p">;</span> <span class="c1">// No incluimos nada más</span>
 
-   <span class="nv">$vc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Videoclub</span><span class="p">(</span><span class="s2">&quot;Severo 8A&quot;</span><span class="p">);</span> 
+   <span class="nv">$vc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Videoclub</span><span class="p">(</span><span class="s2">&quot;Videoclub CataDAW&quot;</span><span class="p">);</span> 
 
-   <span class="c1">//voy a incluir unos cuantos soportes de prueba </span>
+   <span class="c1">//Incluir unos cuantos soportes de prueba </span>
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirJuego</span><span class="p">(</span><span class="s2">&quot;God of War&quot;</span><span class="p">,</span> <span class="mf">19.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> 
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirJuego</span><span class="p">(</span><span class="s2">&quot;The Last of Us Part II&quot;</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirDvd</span><span class="p">(</span><span class="s2">&quot;Torrente&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">],</span><span class="s2">&quot;16:9&quot;</span><span class="p">);</span> 
@@ -5106,23 +5107,26 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;Los cazafantasmas&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">107</span><span class="p">);</span> 
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;El nombre de la Rosa&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">140</span><span class="p">);</span> 
 
-   <span class="c1">//listo los productos </span>
+   <span class="c1">//Listar los productos </span>
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">listarProductos</span><span class="p">();</span> 
 
-   <span class="c1">//voy a crear algunos socios </span>
-   <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Amancio Ortega&quot;</span><span class="p">);</span> 
-   <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Pablo Picasso&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> 
+   <span class="c1">//Crear algunos socios </span>
+   <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Elsa Pato&quot;</span><span class="p">);</span> 
+   <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Lola Mento&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> 
 
+   <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>     
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> 
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> 
-   <span class="c1">//alquilo otra vez el soporte 2 al socio 1. </span>
+
+   <span class="c1">//Alquilar otra vez el soporte 2 al socio 1. </span>
    <span class="c1">// no debe dejarme porque ya lo tiene alquilado </span>
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> 
-   <span class="c1">//alquilo el soporte 6 al socio 1. </span>
+
+   <span class="c1">//Alquilar el soporte 6 al socio 1. </span>
    <span class="c1">//no se puede porque el socio 1 tiene 2 alquileres como máximo </span>
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span> 
 
-   <span class="c1">//listo los socios </span>
+   <span class="c1">//Listar los socios </span>
    <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">listarSocios</span><span class="p">();</span>
 </code></pre></div>
 </div>
@@ -5146,30 +5150,60 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 </blockquote>
 <h3 id="ejercicio-330">Ejercicio 330<a class="headerlink" href="#ejercicio-330" title="Permanent link">&para;</a></h3>
 <p>Modifica las operaciones de alquilar, tanto en <code>Cliente</code> (métodos <code>alquilar</code>, <code>devolver</code>) como en <code>Videoclub</code>  (métodos <code>incluirProducto</code>, <code>incluirCintaVideo</code>, <code>incluirDvd</code>, <code>incluirJuego</code>, <code>incluirSocio</code>, <code>listarProductos</code>, <code>listarSocios</code>, <code>alquilarSocioProducto</code>) , para dar soporte al encadenamiento de métodos. </p>
-<p>Posteriormente, modifica el código de prueba para utilizar esta técnica.
+<p>Posteriormente, modifica el código de prueba para utilizar esta técnica.</p>
+<p>Y para probar el proyecto, dentro inicio4.php colocaremos:</p>
+<details class="examplephp">
+<summary>Ejemplo</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">inicio4.php</label><label for="__tabbed_7_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">include_once</span> <span class="s2">&quot;Videoclub.php&quot;</span><span class="p">;</span> <span class="c1">// No incluimos nada más</span>
 
-<span class="nv">$vc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Videoclub</span><span class="p">(</span><span class="s2">&quot;Severo 8A&quot;</span><span class="p">);</span>
+<span class="nv">$vc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Videoclub</span><span class="p">(</span><span class="s2">&quot;Videoclub CataDAW&quot;</span><span class="p">);</span>
 
-<span class="c1">// Incluir soportes de prueba y crear algunos socios con encadenamiento de métodos</span>
+<span class="k">echo</span> <span class="s2">&quot;VIDEOCLUB 2.0:&lt;br/&gt;&lt;br/&gt;&quot;</span><span class="p">;</span>
+
+<span class="c1">// Incluir soportes y crear socios mediante encadenamiento</span>
 <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirJuego</span><span class="p">(</span><span class="s2">&quot;God of War&quot;</span><span class="p">,</span> <span class="mf">19.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">incluirJuego</span><span class="p">(</span><span class="s2">&quot;The Last of Us Part II&quot;</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">incluirDvd</span><span class="p">(</span><span class="s2">&quot;Torrente&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">incluirDvd</span><span class="p">(</span><span class="s2">&quot;Origen&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="s2">&quot;fr&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">incluirDvd</span><span class="p">(</span><span class="s2">&quot;El Imperio Contraataca&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;en&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;Los cazafantasmas&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">107</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;El nombre de la Rosa&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">listarProductos</span><span class="p">()</span> <span class="c1">// Listar productos después de añadirlos</span>
-   <span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Amancio Ortega&quot;</span><span class="p">)</span> 
-   <span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Pablo Picasso&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// Intento de alquilar un soporte ya alquilado</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// Intento de alquilar más de lo permitido</span>
-   <span class="o">-&gt;</span><span class="na">listarSocios</span><span class="p">();</span> <span class="c1">// Listar socios después de realizar las operaciones de alquiler</span>
-<span class="cp">?&gt;</span>
-</code></pre></div></p>
+<span class="o">-&gt;</span><span class="na">incluirJuego</span><span class="p">(</span><span class="s2">&quot;The Last of Us Part II&quot;</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">incluirDvd</span><span class="p">(</span><span class="s2">&quot;Torrente&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">incluirDvd</span><span class="p">(</span><span class="s2">&quot;Origen&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="s2">&quot;fr&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">incluirDvd</span><span class="p">(</span><span class="s2">&quot;El Imperio Contraataca&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;en&quot;</span><span class="p">],</span> <span class="s2">&quot;16:9&quot;</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;Los cazafantasmas&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">107</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;El nombre de la Rosa&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
+
+<span class="c1">// Mostrar los productos registrados</span>
+<span class="o">-&gt;</span><span class="na">listarProductos</span><span class="p">()</span>
+
+<span class="c1">// Registrar socios</span>
+<span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Elsa Pato&quot;</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Lola Mento&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">// Alquileres del socio 1</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// Soporte ya alquilado</span>
+
+<span class="c1">// Alquileres del socio 2 (máximo 2)</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1">// Supera el límite</span>
+
+<span class="c1">// Comprobar cliente y soporte inexistentes</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+
+<span class="c1">// Mostrar socios</span>
+<span class="o">-&gt;</span><span class="na">listarSocios</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="text-align: center;"><figure><img src="../../img/ut03/e329.png" alt="e328" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.18: Resultado página inicio4.php</figcaption></figure></div></p>
+</div>
+</div>
+</div>
+</details>
 <h3 id="ejercicio-331">Ejercicio 331<a class="headerlink" href="#ejercicio-331" title="Permanent link">&para;</a></h3>
 <p>Haciendo uso de <em>namespaces</em>:</p>
 <ul>
@@ -5179,11 +5213,11 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <li>Desde el archivo de pruebas, utiliza <code>use</code> para poder realizar accesos sin cualificar:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="k">use</span> <span class="nx">Dwes\ProyectoVideoclub\Videoclub</span><span class="p">;</span>
-
 <span class="k">include_once</span> <span class="s2">&quot;Videoclub.php&quot;</span><span class="p">;</span>
 
-<span class="nv">$vc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Videoclub</span><span class="p">(</span><span class="s2">&quot;Severo 8A&quot;</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">Dwes\ProyectoVideoclub\Videoclub</span><span class="p">;</span>
+
+<span class="nv">$vc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Videoclub</span><span class="p">(</span><span class="s2">&quot;Videoclub CataDAW&quot;</span><span class="p">);</span>
 
 <span class="c1">// Incluir soportes de prueba y crear algunos socios con encadenamiento de métodos</span>
 <span class="nv">$vc</span><span class="o">-&gt;</span><span class="na">incluirJuego</span><span class="p">(</span><span class="s2">&quot;God of War&quot;</span><span class="p">,</span> <span class="mf">19.99</span><span class="p">,</span> <span class="s2">&quot;PS4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -5194,14 +5228,14 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
    <span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;Los cazafantasmas&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">107</span><span class="p">)</span>
    <span class="o">-&gt;</span><span class="na">incluirCintaVideo</span><span class="p">(</span><span class="s2">&quot;El nombre de la Rosa&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
    <span class="o">-&gt;</span><span class="na">listarProductos</span><span class="p">()</span> <span class="c1">// Listar productos después de añadirlos</span>
-   <span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Amancio Ortega&quot;</span><span class="p">)</span> 
-   <span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="s2">&quot;Pablo Picasso&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// Intento de alquilar un soporte ya alquilado</span>
-   <span class="o">-&gt;</span><span class="na">alquilarSocioProducto</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// Intento de alquilar más de lo permitido</span>
-   <span class="o">-&gt;</span><span class="na">listarSocios</span><span class="p">();</span> <span class="c1">// Listar socios después de realizar las operaciones de alquiler</span>
-<span class="cp">?&gt;</span>
+   <span class="o">-&gt;</span><span class="na">incluirSocio</span><span class="p">(</span><span class="nx">Elsa</span> <span class="nx">Pato</span><span class="s2">&quot;) </span>
+<span class="s2">   -&gt;incluirSocio(&quot;</span><span class="nx">Lola</span> <span class="nx">Mento</span><span class="s2">&quot;, 2)</span>
+<span class="s2">   -&gt;alquilarSocioProducto(1, 2)</span>
+<span class="s2">   -&gt;alquilarSocioProducto(1, 3)</span>
+<span class="s2">   -&gt;alquilarSocioProducto(1, 2) // Intento de alquilar un soporte ya alquilado</span>
+<span class="s2">   -&gt;alquilarSocioProducto(2, 6) // Intento de alquilar más de lo permitido</span>
+<span class="s2">   -&gt;listarSocios(); // Listar socios después de realizar las operaciones de alquiler</span>
+<span class="s2">?&gt;</span>
 </code></pre></div>
 <blockquote>
 <p><strong>Git del proyecto</strong></p>
@@ -5222,16 +5256,13 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <li><code>ClienteNoEncontradoException</code>.</li>
 </ul>
 <h3 id="ejercicio-334">Ejercicio 334<a class="headerlink" href="#ejercicio-334" title="Permanent link">&para;</a></h3>
-<p>En <code>Cliente</code>, modifica los métodos <code>alquilar</code> y <code>devolver</code>, para que hagan uso de las nuevas excepciones (lanzándolas cuando sea necesario) y funcionen como métodos encadenados. Destacar que estos métodos, no se capturar estás excepciones, sólo se lanzan. En <code>Videoclub</code>, modifica <code>alquilarSocioPelicula</code>para capturar todas las excepciones que ahora lanza <code>Cliente</code> e informar al usuario en consecuencia.</p>
+<p>En <code>Cliente</code>, modifica los métodos <code>alquilar</code> y <code>devolver</code>, para que hagan uso de las nuevas excepciones (lanzándolas cuando sea necesario) y funcionen como métodos encadenados. Destacar que en estos métodos, no se capturan estás excepciones, <strong>sólo se lanzan</strong>. </p>
+<p>En <code>Videoclub</code>, modifica <code>alquilarSocioProducto</code> para <strong>capturar todas las excepciones</strong> que ahora lanza <code>Cliente</code> e informar al usuario en consecuencia.</p>
 <h3 id="ejercicio-335">Ejercicio 335<a class="headerlink" href="#ejercicio-335" title="Permanent link">&para;</a></h3>
 <p>Vamos a modificar el proyecto para que el videoclub sepa qué productos están o no alquilados:</p>
 <ul>
 <li>En <code>Soporte</code>, crea una propiedad pública cuyo nombre sea <code>alquilado</code> que inicialmente estará a <code>false</code>. Cuando se alquile, se pondrá a <code>true</code>. Al devolver, la volveremos a poner a <code>false</code>.</li>
-<li>
-<p>En <code>Videoclub</code>, crea dos nuevas propiedades y sus getters:<br /></p>
-<p>_ <code>numProductosAlquilados</code><br />
-_ <code>numTotalAlquileres</code></p>
-</li>
+<li>En <code>Videoclub</code>, crea dos nuevas propiedades <code>numProductosAlquilados</code> y <code>numTotalAlquileres</code> y sus métodos <em>getters</em>.<br /></li>
 </ul>
 <h3 id="ejercicio-336">Ejercicio 336<a class="headerlink" href="#ejercicio-336" title="Permanent link">&para;</a></h3>
 <p>Crea un nuevo método en <code>Videoclub</code> llamado <code>alquilarSocioProductos(int numSocio, array numerosProductos)</code>, el cual debe recibir un array con los productos a alquilar.</p>
