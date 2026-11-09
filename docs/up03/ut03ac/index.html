@@ -4867,23 +4867,34 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 <hr>
 
 <h2 id="proyecto-videoclub">Proyecto Videoclub<a class="headerlink" href="#proyecto-videoclub" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><strong>Proyecto no real</strong></p>
-<p>El siguiente proyecto está pensado desde un punto de vista formativo. Algunas de las decisiones que se toman no se deben usar (como hacer <code>echo</code> dentro de las clases) o probar el código comparando el resultado en el navegador.</p>
-</blockquote>
-<p>En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental y siguiendo la práctica de programación en parejas (<em>pair programming</em>).</p>
 <details class="ies" open="open">
 <summary>Git del proyecto</summary>
 <p>Antes de nada, crea un repositorio privado en <em>GitHub</em> y sube el proyecto actual de <strong><code>Videoclub</code></strong>. Una vez creado, invita a <em>tu profesor</em> al repositorio como <em>colaborador</em>.</p>
 <p>Recuerda los pasos a seguir para crear un repositorio:</p>
 <ol>
 <li>Inicializa en local tu repositorio de <em>git</em>, mediante <strong><code>git init</code></strong>.</li>
-<li>Añade y sube los cambios a tu repositorio, mediante <strong><code>git add .</code></strong> y luego <strong><code>git commit -m 'Inicializando proyecto'</code></strong>.</li>
+<li>Añade y sube los cambios a tu repositorio, mediante <strong><code>git add .</code></strong> y luego <strong><code>git commit -m 'Iniciar proyecto'</code></strong>.</li>
 <li>Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos <code>git remote</code> y <code>git push</code>).</li>
+<li>Antes de comenzar con este proyecto, crea una etiqueta mediante <strong><code>git tag Videoclub</code></strong> y sube los cambios a GitHub.</li>
 </ol>
 <p>A partir de este momento, a cada ejercicio deberás realizar un <em>commit</em> con el nombre del ejercicio (por ejemplo, cuando termines el <em>Ejercicio 320</em> deberás realizar la orden <em>git commit -m "ejercicio 320"</em>).</p>
 </details>
-<p>Cada clase debe ir en un archivo php separado. Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases:</p>
+<blockquote>
+<ul>
+<li>
+<p>El siguiente proyecto <strong>Videoclub</strong> está pensado desde un punto de vista formativo (no es un <strong>proyecto real</strong>). Algunas de las decisiones que se toman no se deben usar (como hacer <code>echo</code> dentro de las clases) o probar el código comparando el resultado en el navegador.</p>
+</li>
+<li>
+<p>En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental.</p>
+</li>
+<li>
+<p>Cada clase debe ir en un archivo php separado. </p>
+</li>
+<li>
+<p>Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases.</p>
+</li>
+</ul>
+</blockquote>
 <h3 id="ejercicio-320">Ejercicio 320<a class="headerlink" href="#ejercicio-320" title="Permanent link">&para;</a></h3>
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro01.png" alt="pro01" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.6: Estructura de la clase Soporte del ejercicio 321</figcaption></figure></div>
 
@@ -5145,8 +5156,14 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 
 <h2 id="proyecto-videoclub-20">Proyecto Videoclub 2.0<a class="headerlink" href="#proyecto-videoclub-20" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>Git del proyecto</strong></p>
-<p>Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante <code>git tag</code> con el nombre <code>v0.330</code> y sube los cambios a GitHub.</p>
+<ul>
+<li>
+<p>Para empezar con este segundo proyecto (que a la postre es la continuación del anterior), copia la carpeta Videoclub con el nombre <strong>Videoclub2</strong>. </p>
+</li>
+<li>
+<p>Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante <strong><code>git tag Videoclub2</code></strong> y sube los cambios a GitHub.</p>
+</li>
+</ul>
 </blockquote>
 <h3 id="ejercicio-330">Ejercicio 330<a class="headerlink" href="#ejercicio-330" title="Permanent link">&para;</a></h3>
 <p>Modifica las operaciones de alquilar, tanto en <code>Cliente</code> (métodos <code>alquilar</code>, <code>devolver</code>) como en <code>Videoclub</code>  (métodos <code>incluirProducto</code>, <code>incluirCintaVideo</code>, <code>incluirDvd</code>, <code>incluirJuego</code>, <code>incluirSocio</code>, <code>listarProductos</code>, <code>listarSocios</code>, <code>alquilarSocioProducto</code>) , para dar soporte al encadenamiento de métodos. </p>
@@ -5203,6 +5220,10 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 </div>
 </div>
 </div>
+</details>
+<details class="ies" open="open">
+<summary>Git del proyecto</summary>
+<p>Recuerda, para cada ejercicio, realizar un <em>commit</em> con el nombre de este (por ejemplo, cuando termines este último ejercicio deberás realizar la orden <em>git commit -m "ejercicio 330"</em>).</p>
 </details>
 <h3 id="ejercicio-331">Ejercicio 331<a class="headerlink" href="#ejercicio-331" title="Permanent link">&para;</a></h3>
 <p>Haciendo uso de <em>namespaces</em>:</p>

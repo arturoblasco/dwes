@@ -147,26 +147,26 @@ Copia las clases del ejercicio anterior y modifícalas (para una mejor comprensi
 
 ## Proyecto Videoclub
 
-> **Proyecto no real**
-> 
-> El siguiente proyecto está pensado desde un punto de vista formativo. Algunas de las decisiones que se toman no se deben usar (como hacer `echo` dentro de las clases) o probar el código comparando el resultado en el navegador.
-
-En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental y siguiendo la práctica de programación en parejas (*pair programming*).
-
 ???+ies "Git del proyecto"
     Antes de nada, crea un repositorio privado en *GitHub* y sube el proyecto actual de **`Videoclub`**. Una vez creado, invita a *tu profesor* al repositorio como *colaborador*.
     
     Recuerda los pasos a seguir para crear un repositorio:
     
     1. Inicializa en local tu repositorio de *git*, mediante **`git init`**.
-    2. Añade y sube los cambios a tu repositorio, mediante **`git add .`** y luego **`git commit -m 'Inicializando proyecto'`**.
+    2. Añade y sube los cambios a tu repositorio, mediante **`git add .`** y luego **`git commit -m 'Iniciar proyecto'`**.
     3. Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos `git remote` y `git push`).
+    4. Antes de comenzar con este proyecto, crea una etiqueta mediante **`git tag Videoclub`** y sube los cambios a GitHub.
     
     A partir de este momento, a cada ejercicio deberás realizar un *commit* con el nombre del ejercicio (por ejemplo, cuando termines el *Ejercicio 320* deberás realizar la orden *git commit -m "ejercicio 320"*).
 
 
-
-Cada clase debe ir en un archivo php separado. Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases:
+> - El siguiente proyecto **Videoclub** está pensado desde un punto de vista formativo (no es un **proyecto real**). Algunas de las decisiones que se toman no se deben usar (como hacer `echo` dentro de las clases) o probar el código comparando el resultado en el navegador.
+> 
+> - En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental.
+> 
+> - Cada clase debe ir en un archivo php separado. 
+> 
+> - Para facilitar su implementación, se muestra la estructura UML del modelo y un fragmento de código para probar las clases.
 
 ### Ejercicio 320
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro01.png" alt="pro01" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.6: Estructura de la clase Soporte del ejercicio 321</figcaption></figure></div>
@@ -412,9 +412,10 @@ Modifica la clase `Soporte` y haz que implemente el interfaz. ¿Hace falta que t
 
 ## Proyecto Videoclub 2.0
 
-> **Git del proyecto**
+> - Para empezar con este segundo proyecto (que a la postre es la continuación del anterior), copia la carpeta Videoclub con el nombre **Videoclub2**. 
 > 
-> Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante `git tag` con el nombre `v0.330` y sube los cambios a GitHub.
+> - Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante **`git tag Videoclub2`** y sube los cambios a GitHub.
+
 
 ### Ejercicio 330
 Modifica las operaciones de alquilar, tanto en `Cliente` (métodos `alquilar`, `devolver`) como en `Videoclub`  (métodos `incluirProducto`, `incluirCintaVideo`, `incluirDvd`, `incluirJuego`, `incluirSocio`, `listarProductos`, `listarSocios`, `alquilarSocioProducto`) , para dar soporte al encadenamiento de métodos. 
@@ -467,6 +468,10 @@ Y para probar el proyecto, dentro inicio4.php colocaremos:
         ```
     === "Resultado"
     	<div style="text-align: center;"><figure><img src="../../img/ut03/e329.png" alt="e328" style="zoom:100%;" /><figcaption class="figure-caption-small">🖼️ Figura 3.18: Resultado página inicio4.php</figcaption></figure></div>
+
+
+???+ies "Git del proyecto"
+    Recuerda, para cada ejercicio, realizar un *commit* con el nombre de este (por ejemplo, cuando termines este último ejercicio deberás realizar la orden *git commit -m "ejercicio 330"*).
 
 ### Ejercicio 331
 Haciendo uso de *namespaces*:
