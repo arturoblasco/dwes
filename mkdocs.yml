@@ -15,6 +15,7 @@ nav:
   - "Inicio": index.md
   - "Curso 26-27": course26.md  
   - "Contenidos": contents.md
+  - "Qué debo saber hacer": ra-ce.md
   - 🔵 PHP:
     - U01 Arquitectura Web:
         - up01/ut0101.md
@@ -230,9 +231,15 @@ plugins:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/calendario.css
+  - stylesheets/ra_ce.css
 
 extra_javascript:
   - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
   - javascripts/calendario.js
+  - javascripts/ra_ce.js
+
+# Mapa de RA i CE exportat des del Gestor de RA i CE (ra_ce.json)
+hooks:
+  - hooks/ra_ce.py
 
 copyright: Arturo Blasco - Creative Commons CC BY-NC-SA

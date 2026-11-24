@@ -1,0 +1,49 @@
+/* Mapa de RA i CE i autoevaluació (hooks/ra_ce.py, javascripts/ra_ce.js) */
+
+.race-intro { font-size: .8rem; }
+.race-note { color: var(--md-default-fg-color--light); font-size: .7rem; }
+.race-code { font-weight: 700; white-space: nowrap; }
+.race-key { font-weight: 700; margin-right: .2em; }
+.race-weight { font-size: .65rem; color: var(--md-default-fg-color--light); margin: 0 .3em; }
+.race-none { color: var(--md-default-fg-color--light); font-style: italic; }
+.race-tag {
+  font-size: .6rem; padding: 0 .4em; border-radius: .2rem;
+  background: var(--md-accent-fg-color--transparent); color: var(--md-accent-fg-color);
+}
+
+/* Barra de progrés */
+.race-progress { display: flex; align-items: center; gap: .6em; margin: .4em 0; font-size: .7rem; }
+.race-bar {
+  flex: 0 1 16rem; height: .5rem; border-radius: .25rem; overflow: hidden;
+  background: var(--md-default-fg-color--lightest);
+}
+.race-bar > span { display: block; height: 100%; background: var(--md-primary-fg-color); transition: width .25s; }
+.race-full .race-bar > span { background: #2e9b48; }
+.race-pct { font-weight: 700; min-width: 3em; font-variant-numeric: tabular-nums; }
+.race-label { color: var(--md-default-fg-color--light); }
+
+/* Un bloc per RA (details de Material) */
+.md-typeset details.race-ra > summary { line-height: 1.5; }
+.md-typeset details.race-ra > summary .race-progress { margin: .3em 0 0; font-weight: 400; }
+
+.md-typeset .race-table { font-size: .7rem; display: table; width: 100%; margin: 0; }
+.md-typeset .race-table td { vertical-align: top; }
+.md-typeset .race-table ul { margin: 0; padding-left: 1em; }
+.md-typeset .race-table li { margin: 0 0 .3em; }
+.md-typeset .race-table small { color: var(--md-default-fg-color--light); }
+.md-typeset tr.race-done td { background: rgba(46, 155, 72, .08); }
+
+.race-check { display: inline-flex; align-items: center; gap: .3em; white-space: nowrap; cursor: pointer; font-size: .65rem; }
+.race-check input { width: 1rem; height: 1rem; accent-color: var(--md-primary-fg-color); }
+
+.md-typeset a.race-chip {
+  display: inline-block; margin: 0 .2em .2em 0; padding: 0 .45em; border-radius: .2rem; font-size: .65rem;
+  border: 1px solid var(--md-default-fg-color--lighter); color: var(--md-default-fg-color);
+}
+.md-typeset a.race-chip.race-done { border-color: #2e9b48; background: rgba(46, 155, 72, .12); }
+
+/* Caixa a dalt de cada pàgina amb tasques */
+.md-typeset details.race-box ul { list-style: none; margin: .3em 0; padding: 0; }
+.md-typeset details.race-box li { margin: 0 0 .4em; padding: .2em 0; }
+.md-typeset details.race-box li.race-done .race-code { color: #2e9b48; }
+.md-typeset details.race-box small { color: var(--md-default-fg-color--light); }

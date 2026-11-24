@@ -1,0 +1,1713 @@
+{
+    "format": "gestor-ra-ce/mapa-material",
+    "version": 1,
+    "generated": "2026-11-24T14:15:17+00:00",
+    "module": {
+        "code": "0613",
+        "name": "Desenvolupament web en entorn servidor",
+        "cycle": "DAW",
+        "cycle_name": "Desenvolupament d'Aplicacions Web"
+    },
+    "ras": [
+        {
+            "code": "RA1",
+            "description": "Selecciona les arquitectures i tecnologies de programació Web en entorn servidor, analitzant les seues capacitats i característiques pròpies",
+            "weight": 5,
+            "ces": [
+                {
+                    "code": "RA1.a",
+                    "letter": "a",
+                    "description": "S'han caracteritzat i diferenciat els models d'execució de codi en servidor i en client web.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA1.b",
+                    "letter": "b",
+                    "description": "S'han reconegut els avantatges que proporciona la generació dinàmica de pàgines.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA1.c",
+                    "letter": "c",
+                    "description": "S'han identificat els mecanismes d'execució de codi en els servidors web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA1.d",
+                    "letter": "d",
+                    "description": "S'han reconegut les funcionalitats que aporten els servidors d'aplicacions i la seu integració amb els servidors web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA1.e",
+                    "letter": "e",
+                    "description": "S'han identificat i caracteritzat els principals llenguatges i tecnologies relacionats amb la programació web en entorn servidor.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA1.f",
+                    "letter": "f",
+                    "description": "S'han verificat els mecanismes d'integració dels llenguatges de marques amb els llenguatges de programació en entorn servidor.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA1.g",
+                    "letter": "g",
+                    "description": "S'han reconegut i avaluat les ferramentes i frameworks de programació en entorn servidor.",
+                    "weight": 15
+                }
+            ]
+        },
+        {
+            "code": "RA2",
+            "description": "Escriu sentències executables per un servidor web reconeixent i aplicant procediments d'integració del codi en llenguatges de marques",
+            "weight": 5,
+            "ces": [
+                {
+                    "code": "RA2.a",
+                    "letter": "a",
+                    "description": "S'han reconegut els mecanismes de generació de pàgines web a partir de llenguatges de marques amb codi embegut.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA2.b",
+                    "letter": "b",
+                    "description": "S'han identificat les principals tecnologies associades.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA2.c",
+                    "letter": "c",
+                    "description": "S'han utilitzat etiquetes per a la inclusió de codi en el llenguatge de marques.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA2.d",
+                    "letter": "d",
+                    "description": "S'ha reconegut la sintaxi del llenguatge de programació que s'ha d'utilitzar.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA2.e",
+                    "letter": "e",
+                    "description": "S'han escrit sentències simples i s'han comprovat els seus efectes en el document resultant.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA2.f",
+                    "letter": "f",
+                    "description": "S'han utilitzat directives per a modificar el comportament predeterminat.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA2.g",
+                    "letter": "g",
+                    "description": "S'han utilitzat els diferents tipus de variables i operadors disponibles en el llenguatge.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA2.h",
+                    "letter": "h",
+                    "description": "S'han identificat els àmbits d'utilització de les variables.",
+                    "weight": 10
+                }
+            ]
+        },
+        {
+            "code": "RA3",
+            "description": "Escriu blocs de sentències embeguts en llenguatges de marques, seleccionant i utilitzant les estructures de programació",
+            "weight": 10,
+            "ces": [
+                {
+                    "code": "RA3.a",
+                    "letter": "a",
+                    "description": "S'han utilitzat mecanismes de decisió en la creació de blocs de sentències.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA3.b",
+                    "letter": "b",
+                    "description": "S'han utilitzat bucles i s'ha verificat el seu funcionament.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA3.c",
+                    "letter": "c",
+                    "description": "S'han utilitzat matrius (arrays) per a emmagatzemar i recuperar conjunts de dades.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA3.d",
+                    "letter": "d",
+                    "description": "S'han creat i utilitzat funcions.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA3.e",
+                    "letter": "e",
+                    "description": "S'han utilitzat formularis web per a interactuar amb l'usuari del navegador web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA3.f",
+                    "letter": "f",
+                    "description": "S'han emprat mètodes per a recuperar la informació introduïda en el formulari.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA3.g",
+                    "letter": "g",
+                    "description": "S'han afegit comentaris al codi.",
+                    "weight": 10
+                }
+            ]
+        },
+        {
+            "code": "RA4",
+            "description": "Desenvolupa aplicacions web embegudes en llenguatges de marques analitzant i incorporant funcionalitats segons especificacions",
+            "weight": 15,
+            "ces": [
+                {
+                    "code": "RA4.a",
+                    "letter": "a",
+                    "description": "S'han identificat els mecanismes disponibles per al manteniment de la informació que concernix un client web concret i s'han assenyalat els seus avantatges.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA4.b",
+                    "letter": "b",
+                    "description": "S'han utilitzat mecanismes per a mantenir l'estat de les aplicacions web.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA4.c",
+                    "letter": "c",
+                    "description": "S'han utilitzat mecanismes per a emmagatzemar informació en el client web i per a recuperar el seu contingut.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA4.d",
+                    "letter": "d",
+                    "description": "S'han identificat i caracteritzat els mecanismes disponibles per a l'autenticació d'usuaris.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA4.e",
+                    "letter": "e",
+                    "description": "S'han escrit aplicacions que integren mecanismes d'autenticació d'usuaris.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA4.f",
+                    "letter": "f",
+                    "description": "S'han utilitzat ferramentes i entorns per a facilitar la programació, prova i depuració del codi.",
+                    "weight": 20
+                }
+            ]
+        },
+        {
+            "code": "RA5",
+            "description": "Desenvolupa aplicacions web identificant i aplicant mecanismes per a separar el codi de presentació de la lògica de negoci",
+            "weight": 15,
+            "ces": [
+                {
+                    "code": "RA5.a",
+                    "letter": "a",
+                    "description": "S'han identificat els avantatges de separar la lògica de negoci dels aspectes de presentació de l'aplicació.",
+                    "weight": 5
+                },
+                {
+                    "code": "RA5.b",
+                    "letter": "b",
+                    "description": "S'han analitzat i utilitzat mecanismes i frameworks que permeten realitzar esta separació i les seues característiques principals.",
+                    "weight": 5
+                },
+                {
+                    "code": "RA5.c",
+                    "letter": "c",
+                    "description": "S'han utilitzat objectes i controls en el servidor per a generar l'aspecte visual de l'aplicació web en el client.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA5.d",
+                    "letter": "d",
+                    "description": "S'han utilitzat formularis generats de manera dinàmica per a respondre als esdeveniments de l'aplicació web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA5.e",
+                    "letter": "e",
+                    "description": "S'han identificat i aplicat els paràmetres relatius a la configuració de l'aplicació web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA5.f",
+                    "letter": "f",
+                    "description": "S'han escrit aplicacions web amb manteniment d'estat i separació de la lògica de negoci.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA5.g",
+                    "letter": "g",
+                    "description": "S'han aplicat els principis i patrons de disseny de la programació orientada a objectes.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA5.h",
+                    "letter": "h",
+                    "description": "S'ha provat i documentat el codi.",
+                    "weight": 15
+                }
+            ]
+        },
+        {
+            "code": "RA6",
+            "description": "Desenvolupa aplicacions d'accés a magatzems de dades, aplicant mesures per a mantindre la seguretat i la integritat de la informació",
+            "weight": 15,
+            "ces": [
+                {
+                    "code": "RA6.a",
+                    "letter": "a",
+                    "description": "S'han analitzat les tecnologies que permeten l'accés mitjançant programació a la informació disponible en magatzems de dades.",
+                    "weight": 5
+                },
+                {
+                    "code": "RA6.b",
+                    "letter": "b",
+                    "description": "S'han creat aplicacions que establisquen connexions amb bases de dades.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA6.c",
+                    "letter": "c",
+                    "description": "S'ha recuperat informació emmagatzemada en bases de dades.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA6.d",
+                    "letter": "d",
+                    "description": "S'ha publicat en aplicacions web la informació recuperada.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA6.e",
+                    "letter": "e",
+                    "description": "S'han utilitzat conjunts de dades per a emmagatzemar la informació.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA6.f",
+                    "letter": "f",
+                    "description": "S'han creat aplicacions web que permeten l'actualització i l'eliminació d'informació disponible en una base de dades",
+                    "weight": 15
+                },
+                {
+                    "code": "RA6.h",
+                    "letter": "h",
+                    "description": "S'han provat i documentat les aplicacions web.",
+                    "weight": 10
+                }
+            ]
+        },
+        {
+            "code": "RA7",
+            "description": "Desenvolupa servicis web reutilitzables i accessibles mitjançant protocols web, verificant el seu funcionament",
+            "weight": 10,
+            "ces": [
+                {
+                    "code": "RA7.a",
+                    "letter": "a",
+                    "description": "S'han reconegut les característiques pròpies i l'àmbit d'aplicació dels servicis web.",
+                    "weight": 5
+                },
+                {
+                    "code": "RA7.b",
+                    "letter": "b",
+                    "description": "S'han reconegut els avantatges d'utilitzar servicis web per a proporcionar accés a funcionalitats incorporades a la lògica de negoci d'una aplicació.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA7.c",
+                    "letter": "c",
+                    "description": "S'han identificat les tecnologies i els protocols implicats en el consum de servicis web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA7.d",
+                    "letter": "d",
+                    "description": "S'han utilitzat els estàndards i arquitectures més difosos i implicats en el desenvolupament de servicis web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA7.e",
+                    "letter": "e",
+                    "description": "S'ha programat un servici web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA7.f",
+                    "letter": "f",
+                    "description": "S'ha verificat el funcionament del servici web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA7.g",
+                    "letter": "g",
+                    "description": "S'ha consumit el servici web.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA7.h",
+                    "letter": "h",
+                    "description": "S'ha documentat un servici web.",
+                    "weight": 10
+                }
+            ]
+        },
+        {
+            "code": "RA8",
+            "description": "Genera pàgines web dinàmiques analitzant i utilitzant tecnologies i frameworks del servidor web que afigen codi al llenguatge de marques",
+            "weight": 15,
+            "ces": [
+                {
+                    "code": "RA8.a",
+                    "letter": "a",
+                    "description": "S'han identificat les diferències entre l'execució de codi en el servidor i en el client web.",
+                    "weight": 5
+                },
+                {
+                    "code": "RA8.b",
+                    "letter": "b",
+                    "description": "S'han reconegut els avantatges d'unir totes dues tecnologies en el procés de desenvolupament de programes.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA8.c",
+                    "letter": "c",
+                    "description": "S'han identificat les tecnologies i frameworks relacionades amb la generació per part del servidor de pàgines web amb guions embeguts.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA8.d",
+                    "letter": "d",
+                    "description": "S'han utilitzat estes tecnologies i frameworks per a generar pàgines web que incloguen interacció amb l'usuari.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA8.e",
+                    "letter": "e",
+                    "description": "S'han utilitzat estes tecnologies i frameworks, per a generar pàgines web que incloguen verificació de formularis.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA8.f",
+                    "letter": "f",
+                    "description": "S'han utilitzat estes tecnologies i frameworks per a generar pàgines web que incloguen modificació dinàmica del seu contingut i la seua estructura.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA8.g",
+                    "letter": "g",
+                    "description": "S'han aplicat estes tecnologies i frameworks en la programació d'aplicacions web.",
+                    "weight": 15
+                }
+            ]
+        },
+        {
+            "code": "RA9",
+            "description": "Desenvolupa aplicacions web híbrides seleccionant i utilitzant tecnologies, frameworks servidor i repositoris heterogenis d'informació",
+            "weight": 10,
+            "ces": [
+                {
+                    "code": "RA9.a",
+                    "letter": "a",
+                    "description": "S'han reconegut els avantatges que proporciona la reutilització de codi i l'aprofitament d'informació ja existent.",
+                    "weight": 5
+                },
+                {
+                    "code": "RA9.b",
+                    "letter": "b",
+                    "description": "S'han identificat tecnologies i frameworks aplicables en la creació d'aplicacions web híbrides.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA9.c",
+                    "letter": "c",
+                    "description": "S'ha creat una aplicació web que recupere i processe repositoris d'informació ja existents.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA9.d",
+                    "letter": "d",
+                    "description": "S'han creat repositoris específics a partir d'informació existent en magatzems d'informació.",
+                    "weight": 20
+                },
+                {
+                    "code": "RA9.e",
+                    "letter": "e",
+                    "description": "S'han utilitzat llibreries de codi i frameworks per a incorporar funcionalitats específiques a una aplicació web.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA9.f",
+                    "letter": "f",
+                    "description": "S'han programat servicis i aplicacions web utilitzant com a base informació i codi generats per tercers.",
+                    "weight": 15
+                },
+                {
+                    "code": "RA9.g",
+                    "letter": "g",
+                    "description": "S’han analitzat i utilitzat llibreries de codi relacionades amb Big Data i intel·ligència de negocis, per a incorporar anàlisi i intel·ligència de dades provenint de repositoris.",
+                    "weight": 10
+                },
+                {
+                    "code": "RA9.h",
+                    "letter": "h",
+                    "description": "S'han provat, depurat i documentat les aplicacions generades.",
+                    "weight": 10
+                }
+            ]
+        }
+    ],
+    "tasks": [
+        {
+            "key": "T01.1",
+            "unit": "U01",
+            "unit_name": "Arquitectura web",
+            "title": "Qüestionari d'arrancada sobre la web",
+            "type": "Qüestionari",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up01/ut0101/",
+            "summary": "Respon el qüestionari inicial sobre Internet, TCP/IP, IP i ports, web estàtica i dinàmica, front-end i back-end.",
+            "deliver": "Qüestionari contestat.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA1.a",
+                    "weight": 100,
+                    "evidence": "Explica què s'executa en el client i què en el servidor."
+                },
+                {
+                    "code": "RA1.b",
+                    "weight": 100,
+                    "evidence": "Justifica quan aporta valor una pàgina dinàmica."
+                }
+            ]
+        },
+        {
+            "key": "T01.2",
+            "unit": "U01",
+            "unit_name": "Arquitectura web",
+            "title": "Git i contenidors amb PHP",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up01/ut01ac/",
+            "summary": "Exercicis 100, 103, 104 i 105: repositori amb .gitignore, Apache i Nginx amb PHP en Docker, i Portainer.",
+            "deliver": "Enllaç al repositori i captures dels dos servidors funcionant.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA1.c",
+                    "weight": 100,
+                    "evidence": "Compara com executen PHP Apache i Nginx."
+                },
+                {
+                    "code": "RA1.d",
+                    "weight": 100,
+                    "evidence": "Integra el servidor web amb PHP en contenidors."
+                },
+                {
+                    "code": "RA4.f",
+                    "weight": 100,
+                    "evidence": "Usa Git, Docker i Portainer per a treballar."
+                }
+            ]
+        },
+        {
+            "key": "T01.3",
+            "unit": "U01",
+            "unit_name": "Arquitectura web",
+            "title": "Frameworks i mercat laboral",
+            "type": "Investigació",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up01/ut01ac/",
+            "summary": "Exercicis 101 i 102: tres frameworks PHP amb les seues dades i tres ofertes de treball reals.",
+            "deliver": "Document breu amb la comparativa i les ofertes.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA1.e",
+                    "weight": 100,
+                    "evidence": "Caracteritza llenguatges i tecnologies demandats."
+                },
+                {
+                    "code": "RA1.g",
+                    "weight": 100,
+                    "evidence": "Valora frameworks a partir de dades concretes."
+                }
+            ]
+        },
+        {
+            "key": "T01.4",
+            "unit": "U01",
+            "unit_name": "Arquitectura web",
+            "title": "Configuració de PHP amb phpinfo",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up01/ut01ac/",
+            "summary": "Exercici 106: localitza amb phpinfo la versió, el fitxer de configuració, memory_limit i DOCUMENT_ROOT.",
+            "deliver": "Fitxer phpinfo.php i captura amb els valors.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA2.b",
+                    "weight": 100,
+                    "evidence": "Identifica la versió, els mòduls i la configuració."
+                },
+                {
+                    "code": "RA2.f",
+                    "weight": 100,
+                    "evidence": "Canvia una directiva i comprova l'efecte."
+                }
+            ]
+        },
+        {
+            "key": "T01.5",
+            "unit": "U01",
+            "unit_name": "Arquitectura web",
+            "title": "Maquetació amb plantilles PHP",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up01/ut01ac/",
+            "summary": "Exercici 107: aplicació amb capçalera i peu reutilitzables mitjançant include i require.",
+            "deliver": "Projecte amb index.php, proyecto.php i contacto.php.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA1.f",
+                    "weight": 100,
+                    "evidence": "Comprova la integració d'HTML i PHP."
+                },
+                {
+                    "code": "RA2.a",
+                    "weight": 100,
+                    "evidence": "Genera pàgines a partir de codi embegut."
+                },
+                {
+                    "code": "RA2.c",
+                    "weight": 100,
+                    "evidence": "Usa etiquetes PHP i inclusions."
+                }
+            ]
+        },
+        {
+            "key": "T02.1",
+            "unit": "U02",
+            "unit_name": "Llenguatge PHP",
+            "title": "PHP bàsic",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up02/ut02ac/",
+            "summary": "Exercicis 201 a 216: sintaxi, variables, operadors i condicionals, incloent-hi l'operador nau espacial i match.",
+            "deliver": "Fitxers PHP dels exercicis.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA2.d",
+                    "weight": 100,
+                    "evidence": "Aplica correctament la sintaxi de PHP."
+                },
+                {
+                    "code": "RA2.e",
+                    "weight": 100,
+                    "evidence": "Escriu sentències i comprova el resultat."
+                },
+                {
+                    "code": "RA2.g",
+                    "weight": 100,
+                    "evidence": "Usa tipus de variables i operadors."
+                },
+                {
+                    "code": "RA3.a",
+                    "weight": 100,
+                    "evidence": "Resol decisions amb if, switch o match."
+                }
+            ]
+        },
+        {
+            "key": "T02.2",
+            "unit": "U02",
+            "unit_name": "Llenguatge PHP",
+            "title": "Bucles",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up02/ut02ac/",
+            "summary": "Exercicis 221 a 229 amb estructures repetitives.",
+            "deliver": "Fitxers PHP dels exercicis.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA3.b",
+                    "weight": 100,
+                    "evidence": "Tria el bucle adequat i verifica que acaba bé."
+                }
+            ]
+        },
+        {
+            "key": "T02.3",
+            "unit": "U02",
+            "unit_name": "Llenguatge PHP",
+            "title": "Arrays",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up02/ut02ac/",
+            "summary": "Exercicis 231 a 239 amb arrays.",
+            "deliver": "Fitxers PHP dels exercicis.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA3.c",
+                    "weight": 100,
+                    "evidence": "Guarda, recorre i recupera conjunts de dades."
+                }
+            ]
+        },
+        {
+            "key": "T02.4",
+            "unit": "U02",
+            "unit_name": "Llenguatge PHP",
+            "title": "Funcions",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up02/ut02ac/",
+            "summary": "Exercicis 241 a 247: creació i ús de funcions.",
+            "deliver": "Fitxers PHP dels exercicis.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA2.h",
+                    "weight": 100,
+                    "evidence": "Distingix variables locals, globals i estàtiques."
+                },
+                {
+                    "code": "RA3.d",
+                    "weight": 100,
+                    "evidence": "Crea funcions amb paràmetres i retorn."
+                }
+            ]
+        },
+        {
+            "key": "T02.5",
+            "unit": "U02",
+            "unit_name": "Llenguatge PHP",
+            "title": "Login amb funcions",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up02/ut02ac/",
+            "summary": "Exercici 248: formulari d'accés amb les pàgines login, compruebaLogin, ok i ko.",
+            "deliver": "Projecte amb les quatre pàgines.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA3.d",
+                    "weight": 100,
+                    "evidence": "Separa la comprovació en una funció."
+                },
+                {
+                    "code": "RA3.e",
+                    "weight": 100,
+                    "evidence": "Crea el formulari d'accés."
+                },
+                {
+                    "code": "RA3.f",
+                    "weight": 100,
+                    "evidence": "Recupera les dades enviades pel formulari."
+                }
+            ]
+        },
+        {
+            "key": "T02.6",
+            "unit": "U02",
+            "unit_name": "Llenguatge PHP",
+            "title": "Funcions predefinides i quinieles",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up02/ut02ac/",
+            "summary": "Exercicis 251 a 261: funcions de cadenes i l'exercici de quinieles.",
+            "deliver": "Fitxers PHP dels exercicis.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA2.e",
+                    "weight": 100,
+                    "evidence": "Comprova l'efecte de les funcions predefinides."
+                },
+                {
+                    "code": "RA3.c",
+                    "weight": 100,
+                    "evidence": "Combina arrays i funcions de cadena."
+                },
+                {
+                    "code": "RA3.g",
+                    "weight": 100,
+                    "evidence": "Comenta el codi de manera útil."
+                }
+            ]
+        },
+        {
+            "key": "T03.1",
+            "unit": "U03",
+            "unit_name": "PHP orientat a objectes",
+            "title": "Classes, herència i interfícies",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up03/ut03ac/",
+            "summary": "Exercicis 301 a 315: Empleat, Persona, classes abstractes, Empresa i interfície de serialització.",
+            "deliver": "Classes PHP i fitxers de prova.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA5.g",
+                    "weight": 100,
+                    "evidence": "Aplica encapsulació, herència, abstracció i interfícies."
+                }
+            ]
+        },
+        {
+            "key": "T03.2",
+            "unit": "U03",
+            "unit_name": "PHP orientat a objectes",
+            "title": "Projecte Videoclub",
+            "type": "Projecte",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up03/ut03ac/",
+            "summary": "Exercicis 320 a 329: Suport, CintaVideo, Dvd, Joc, Client, Videoclub i la interfície Resumible.",
+            "deliver": "Repositori amb el projecte.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA5.a",
+                    "weight": 100,
+                    "evidence": "Justifica per què la lògica va en classes i no en la vista."
+                },
+                {
+                    "code": "RA5.g",
+                    "weight": 100,
+                    "evidence": "Modela el domini amb objectes."
+                }
+            ]
+        },
+        {
+            "key": "T03.3",
+            "unit": "U03",
+            "unit_name": "PHP orientat a objectes",
+            "title": "Videoclub 2.0",
+            "type": "Projecte",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up03/ut03ac/",
+            "summary": "Exercicis 330 a 337: mètodes encadenats, espais de noms, autocàrrega, excepcions pròpies i lloguer de productes.",
+            "deliver": "Repositori amb l'etiqueta de versió indicada.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.f",
+                    "weight": 100,
+                    "evidence": "Gestiona versions amb etiquetes Git."
+                },
+                {
+                    "code": "RA5.g",
+                    "weight": 100,
+                    "evidence": "Aplica espais de noms i excepcions."
+                },
+                {
+                    "code": "RA9.e",
+                    "weight": 100,
+                    "evidence": "Incorpora l'autocàrrega amb Composer."
+                }
+            ]
+        },
+        {
+            "key": "T04.1",
+            "unit": "U04",
+            "unit_name": "Programació web",
+            "title": "Variables de servidor i peticions",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up04/ut04ac/",
+            "summary": "Exercici 401: $_SERVER, GET, POST i HTTP_REFERER.",
+            "deliver": "Fitxers PHP de l'exercici.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA3.f",
+                    "weight": 100,
+                    "evidence": "Recupera dades per GET i POST."
+                },
+                {
+                    "code": "RA8.a",
+                    "weight": 100,
+                    "evidence": "Distingix què decidix el servidor i què envia el client."
+                }
+            ]
+        },
+        {
+            "key": "T04.2",
+            "unit": "U04",
+            "unit_name": "Programació web",
+            "title": "Formularis, validació i fitxers",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up04/ut04ac/",
+            "summary": "Exercicis 402 a 405: formulari, validació amb filter_var i pujada d'imatges.",
+            "deliver": "Projecte amb el formulari funcionant.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA3.e",
+                    "weight": 100,
+                    "evidence": "Construïx el formulari."
+                },
+                {
+                    "code": "RA3.f",
+                    "weight": 100,
+                    "evidence": "Tracta les dades i els fitxers rebuts."
+                },
+                {
+                    "code": "RA8.e",
+                    "weight": 100,
+                    "evidence": "Valida les dades en el servidor."
+                }
+            ]
+        },
+        {
+            "key": "T04.3",
+            "unit": "U04",
+            "unit_name": "Programació web",
+            "title": "Cookies i sessió",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up04/ut04ac/",
+            "summary": "Exercicis 406 a 409: comptador de visites, color de fons i formulari en tres passos.",
+            "deliver": "Projecte amb els quatre exercicis.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.a",
+                    "weight": 100,
+                    "evidence": "Compara cookies i sessions."
+                },
+                {
+                    "code": "RA4.b",
+                    "weight": 100,
+                    "evidence": "Manté l'estat entre pàgines."
+                },
+                {
+                    "code": "RA4.c",
+                    "weight": 100,
+                    "evidence": "Guarda i recupera dades en el client."
+                }
+            ]
+        },
+        {
+            "key": "T04.4",
+            "unit": "U04",
+            "unit_name": "Programació web",
+            "title": "Autenticació amb controlador i vistes",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up04/ut04ac/",
+            "summary": "Exercicis 410 a 415: login, vistes de pel·lícules i sèries, i controlador amb dades en sessió.",
+            "deliver": "Projecte amb accés restringit.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.d",
+                    "weight": 100,
+                    "evidence": "Caracteritza el mecanisme d'autenticació triat."
+                },
+                {
+                    "code": "RA4.e",
+                    "weight": 100,
+                    "evidence": "Integra l'autenticació en l'aplicació."
+                },
+                {
+                    "code": "RA5.a",
+                    "weight": 100,
+                    "evidence": "Separa controlador i vistes."
+                },
+                {
+                    "code": "RA5.f",
+                    "weight": 100,
+                    "evidence": "Manté l'estat amb la lògica separada."
+                }
+            ]
+        },
+        {
+            "key": "T04.5",
+            "unit": "U04",
+            "unit_name": "Programació web",
+            "title": "Videoclub 3.0",
+            "type": "Projecte",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up04/ut04ac/",
+            "summary": "Exercicis 416 a 422: login d'administració i client, i alta, edició i esborrat de clients en sessió.",
+            "deliver": "Repositori amb el projecte.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.b",
+                    "weight": 100,
+                    "evidence": "Conserva els clients en sessió."
+                },
+                {
+                    "code": "RA4.e",
+                    "weight": 100,
+                    "evidence": "Diferencia l'accés per rol."
+                },
+                {
+                    "code": "RA5.c",
+                    "weight": 100,
+                    "evidence": "Genera la interfície des d'objectes."
+                },
+                {
+                    "code": "RA5.d",
+                    "weight": 100,
+                    "evidence": "Reutilitza formularis dinàmics d'alta i edició."
+                },
+                {
+                    "code": "RA5.f",
+                    "weight": 100,
+                    "evidence": "Combina estat i lògica separada."
+                },
+                {
+                    "code": "RA8.d",
+                    "weight": 100,
+                    "evidence": "Demana confirmació abans d'esborrar."
+                }
+            ]
+        },
+        {
+            "key": "T05.1",
+            "unit": "U05",
+            "unit_name": "Accés a bases de dades",
+            "title": "Base de dades lol",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up05/ut05ac/",
+            "summary": "Exercicis 501 a 503: base de dades lol i taula campeon amb almenys 10 registres.",
+            "deliver": "Script SQL.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA6.a",
+                    "weight": 100,
+                    "evidence": "Prepara i analitza el magatzem de dades."
+                }
+            ]
+        },
+        {
+            "key": "T05.2",
+            "unit": "U05",
+            "unit_name": "Accés a bases de dades",
+            "title": "CRUD amb PDO",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up05/ut05ac/",
+            "summary": "Exercicis 504 i 505: llistat, edició i esborrat amb PDO.",
+            "deliver": "Projecte PHP i script SQL.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA6.b",
+                    "weight": 100,
+                    "evidence": "Establix la connexió amb PDO."
+                },
+                {
+                    "code": "RA6.c",
+                    "weight": 100,
+                    "evidence": "Recupera registres."
+                },
+                {
+                    "code": "RA6.d",
+                    "weight": 100,
+                    "evidence": "Publica els resultats en una pàgina."
+                },
+                {
+                    "code": "RA6.f",
+                    "weight": 100,
+                    "evidence": "Actualitza i elimina registres."
+                },
+                {
+                    "code": "RA8.d",
+                    "weight": 100,
+                    "evidence": "Confirma les accions amb JavaScript."
+                }
+            ]
+        },
+        {
+            "key": "T05.3",
+            "unit": "U05",
+            "unit_name": "Accés a bases de dades",
+            "title": "Filtres i login xifrat",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up05/ut05ac/",
+            "summary": "Exercicis 506 a 508: ordenació per GET, FETCH_ASSOC i login amb contrasenya xifrada.",
+            "deliver": "Projecte PHP i script SQL.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.e",
+                    "weight": 100,
+                    "evidence": "Autentica amb contrasenyes xifrades."
+                },
+                {
+                    "code": "RA6.e",
+                    "weight": 100,
+                    "evidence": "Treballa amb conjunts de resultats."
+                },
+                {
+                    "code": "RA8.f",
+                    "weight": 100,
+                    "evidence": "Canvia el contingut segons els paràmetres."
+                }
+            ]
+        },
+        {
+            "key": "T05.4",
+            "unit": "U05",
+            "unit_name": "Accés a bases de dades",
+            "title": "Fitxers TXT i CSV",
+            "type": "Exercicis",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up05/ut05ac/",
+            "summary": "Exercicis 509 i 510: lectura i tractament de fitxers de text i CSV.",
+            "deliver": "Fitxers PHP i de dades.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA9.c",
+                    "weight": 100,
+                    "evidence": "Recupera i processa un repositori existent."
+                },
+                {
+                    "code": "RA9.d",
+                    "weight": 100,
+                    "evidence": "Crea un repositori propi a partir de les dades."
+                }
+            ]
+        },
+        {
+            "key": "T05.5",
+            "unit": "U05",
+            "unit_name": "Accés a bases de dades",
+            "title": "Projecte CholloCenter",
+            "type": "Projecte",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/up05/ut05ac/",
+            "summary": "Exercicis 515 a 518: UML, login amb rols, alta de xollos i portada pública amb filtres.",
+            "deliver": "Repositori, diagrama UML i script SQL.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.e",
+                    "weight": 100,
+                    "evidence": "Controla l'accés per rols."
+                },
+                {
+                    "code": "RA5.f",
+                    "weight": 100,
+                    "evidence": "Organitza l'aplicació amb la lògica separada."
+                },
+                {
+                    "code": "RA6.d",
+                    "weight": 100,
+                    "evidence": "Publica els xollos amb filtres."
+                },
+                {
+                    "code": "RA6.f",
+                    "weight": 100,
+                    "evidence": "Gestiona les dades des de l'aplicació."
+                },
+                {
+                    "code": "RA6.h",
+                    "weight": 100,
+                    "evidence": "Documenta el disseny amb UML."
+                }
+            ]
+        },
+        {
+            "key": "T06.1",
+            "unit": "U06",
+            "unit_name": "Laravel: entorn professional",
+            "title": "Tenda: entorn professional",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul01/10p/",
+            "summary": "Pràctica guiada: projecte Laravel amb Sail o Laragon, Vite, Tailwind, Telescope, PHPStan, PHP_CodeSniffer i Pint.",
+            "deliver": "PDF amb les captures indicades en la pràctica.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA1.g",
+                    "weight": 100,
+                    "evidence": "Avalua i configura les ferramentes del framework."
+                },
+                {
+                    "code": "RA4.f",
+                    "weight": 100,
+                    "evidence": "Usa ferramentes de prova, anàlisi i depuració."
+                },
+                {
+                    "code": "RA5.e",
+                    "weight": 100,
+                    "evidence": "Configura l'aplicació amb el fitxer .env."
+                }
+            ]
+        },
+        {
+            "key": "T07.1",
+            "unit": "U07",
+            "unit_name": "Laravel: fonaments",
+            "title": "Tenda: rutes, controladors i Blade",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul02/20p/",
+            "summary": "Pràctica guiada: catàleg amb dades mock, controladors, layouts, parcials i components Blade.",
+            "deliver": "Projecte i captures de la pràctica.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA5.b",
+                    "weight": 100,
+                    "evidence": "Usa el framework per a separar capes."
+                },
+                {
+                    "code": "RA5.c",
+                    "weight": 100,
+                    "evidence": "Genera la interfície amb components."
+                },
+                {
+                    "code": "RA8.c",
+                    "weight": 100,
+                    "evidence": "Identifica Blade, Vite i Tailwind."
+                },
+                {
+                    "code": "RA8.g",
+                    "weight": 100,
+                    "evidence": "Aplica estes tecnologies a una aplicació real."
+                }
+            ]
+        },
+        {
+            "key": "T08.1",
+            "unit": "U08",
+            "unit_name": "Laravel: gestió de dades",
+            "title": "Tenda: dades amb Eloquent",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul03/30p/",
+            "summary": "Pràctica guiada: migracions, models, relacions, seeders, CRUD amb Tinker i càrrega anticipada.",
+            "deliver": "Projecte i les 13 captures indicades.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA6.a",
+                    "weight": 100,
+                    "evidence": "Analitza l'accés a dades amb un ORM."
+                },
+                {
+                    "code": "RA6.b",
+                    "weight": 100,
+                    "evidence": "Configura la connexió amb MySQL."
+                },
+                {
+                    "code": "RA6.c",
+                    "weight": 100,
+                    "evidence": "Recupera dades amb relacions."
+                },
+                {
+                    "code": "RA6.d",
+                    "weight": 100,
+                    "evidence": "Publica les dades en les vistes."
+                },
+                {
+                    "code": "RA6.e",
+                    "weight": 100,
+                    "evidence": "Treballa amb col·leccions de models."
+                },
+                {
+                    "code": "RA6.f",
+                    "weight": 100,
+                    "evidence": "Actualitza i elimina en cascada."
+                }
+            ]
+        },
+        {
+            "key": "T09.1",
+            "unit": "U09",
+            "unit_name": "Laravel: interacció amb l'usuari",
+            "title": "Tenda: formularis, sessió i autenticació",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul04/40p/",
+            "summary": "Pràctica guiada: Breeze, imatges, missatges flash, CRUD d'administració, carret en sessió, llista de desitjos i middleware.",
+            "deliver": "Projecte amb els requisits d'entrega de la pràctica.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.b",
+                    "weight": 100,
+                    "evidence": "Implementa el carret en sessió."
+                },
+                {
+                    "code": "RA4.e",
+                    "weight": 100,
+                    "evidence": "Protegix rutes amb autenticació."
+                },
+                {
+                    "code": "RA5.d",
+                    "weight": 100,
+                    "evidence": "Crea formularis dinàmics."
+                },
+                {
+                    "code": "RA5.f",
+                    "weight": 100,
+                    "evidence": "Manté l'estat amb arquitectura MVC."
+                },
+                {
+                    "code": "RA8.d",
+                    "weight": 100,
+                    "evidence": "Afig interacció amb l'usuari."
+                },
+                {
+                    "code": "RA8.e",
+                    "weight": 100,
+                    "evidence": "Valida formularis."
+                },
+                {
+                    "code": "RA8.f",
+                    "weight": 100,
+                    "evidence": "Modifica la pàgina segons l'estat."
+                },
+                {
+                    "code": "RA9.e",
+                    "weight": 100,
+                    "evidence": "Incorpora Breeze per a una funció específica."
+                }
+            ]
+        },
+        {
+            "key": "T09.2",
+            "unit": "U09",
+            "unit_name": "Laravel: interacció amb l'usuari",
+            "title": "Emmagatzematge d'arxius",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/activities/pru07/",
+            "summary": "Treball amb discos, storage:link, validació d'imatges i arxius privats.",
+            "deliver": "Formulari amb pujada d'imatge funcionant.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA5.e",
+                    "weight": 100,
+                    "evidence": "Configura els discos d'emmagatzematge."
+                },
+                {
+                    "code": "RA8.e",
+                    "weight": 100,
+                    "evidence": "Valida tipus i mida dels arxius."
+                }
+            ]
+        },
+        {
+            "key": "T09.3",
+            "unit": "U09",
+            "unit_name": "Laravel: interacció amb l'usuari",
+            "title": "Activitat guiada: employees, notes i products",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/activities/act02/",
+            "summary": "Activitat de 21 passos amb consultes, CRUD, Form Requests, API REST amb Resources i SweetAlert2.",
+            "deliver": "Projecte i captures indicades.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA5.c",
+                    "weight": 100,
+                    "evidence": "Genera vistes amb layouts i parcials."
+                },
+                {
+                    "code": "RA5.d",
+                    "weight": 100,
+                    "evidence": "Reutilitza formularis amb old i @error."
+                },
+                {
+                    "code": "RA6.f",
+                    "weight": 100,
+                    "evidence": "Completa un CRUD."
+                },
+                {
+                    "code": "RA7.e",
+                    "weight": 100,
+                    "evidence": "Programa una API REST."
+                },
+                {
+                    "code": "RA8.e",
+                    "weight": 100,
+                    "evidence": "Valida amb Form Requests."
+                },
+                {
+                    "code": "RA9.e",
+                    "weight": 100,
+                    "evidence": "Integra una llibreria externa."
+                }
+            ]
+        },
+        {
+            "key": "T10.1",
+            "unit": "U10",
+            "unit_name": "Autenticació i API",
+            "title": "API amb Sanctum i SPA amb Vue",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul05/500/",
+            "summary": "Pràctica guiada Laravel API + Vue: tokens, cookies de sessió, CORS i login des de la SPA.",
+            "deliver": "Projecte i respostes a les preguntes de reflexió.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA7.c",
+                    "weight": 100,
+                    "evidence": "Identifica els protocols i mecanismes implicats."
+                },
+                {
+                    "code": "RA7.e",
+                    "weight": 100,
+                    "evidence": "Programa els endpoints protegits."
+                },
+                {
+                    "code": "RA7.g",
+                    "weight": 100,
+                    "evidence": "Consumix l'API des de Vue."
+                },
+                {
+                    "code": "RA8.b",
+                    "weight": 100,
+                    "evidence": "Justifica l'avantatge d'unir client i servidor."
+                },
+                {
+                    "code": "RA8.g",
+                    "weight": 100,
+                    "evidence": "Aplica les dues tecnologies en una aplicació."
+                }
+            ]
+        },
+        {
+            "key": "T10.2",
+            "unit": "U10",
+            "unit_name": "Autenticació i API",
+            "title": "Mini-projecte Notes amb autorització",
+            "type": "Projecte",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul05/500/",
+            "summary": "Mini-projecte amb propietat dels recursos, rols, Policies i resposta 403.",
+            "deliver": "Repositori amb el projecte.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA4.d",
+                    "weight": 100,
+                    "evidence": "Distingix autenticació i autorització."
+                },
+                {
+                    "code": "RA4.e",
+                    "weight": 100,
+                    "evidence": "Integra el control d'accés."
+                },
+                {
+                    "code": "RA5.g",
+                    "weight": 100,
+                    "evidence": "Aplica el patró de Policies."
+                }
+            ]
+        },
+        {
+            "key": "T11.1",
+            "unit": "U11",
+            "unit_name": "Desplegament",
+            "title": "Desplegament en Render",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul06/603/",
+            "summary": "Desplegament d'una aplicació Laravel en un PaaS amb Docker i PostgreSQL.",
+            "deliver": "URL pública i Dockerfile.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA1.d",
+                    "weight": 100,
+                    "evidence": "Integra servidor d'aplicacions i servidor web."
+                },
+                {
+                    "code": "RA4.f",
+                    "weight": 100,
+                    "evidence": "Depura el desplegament amb les ferramentes de la plataforma."
+                },
+                {
+                    "code": "RA5.e",
+                    "weight": 100,
+                    "evidence": "Configura els paràmetres de producció."
+                }
+            ]
+        },
+        {
+            "key": "EX.2",
+            "unit": "EXA",
+            "unit_name": "Proves",
+            "title": "Examen 2: gestió d'incidències",
+            "type": "Examen",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/activities/examen2/",
+            "summary": "Part teòrica sobre Composer, Laravel i Blade, i part pràctica amb el projecte incidents.",
+            "deliver": "Respostes i projecte.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA5.b",
+                    "weight": 100,
+                    "evidence": "Explica i usa l'estructura del framework."
+                },
+                {
+                    "code": "RA5.f",
+                    "weight": 100,
+                    "evidence": "Construïx l'aplicació amb MVC."
+                },
+                {
+                    "code": "RA6.b",
+                    "weight": 100,
+                    "evidence": "Definix migracions i connexió."
+                },
+                {
+                    "code": "RA6.c",
+                    "weight": 100,
+                    "evidence": "Recupera dades amb relacions i paginació."
+                },
+                {
+                    "code": "RA6.e",
+                    "weight": 100,
+                    "evidence": "Treballa amb conjunts de models."
+                },
+                {
+                    "code": "RA8.e",
+                    "weight": 100,
+                    "evidence": "Valida el formulari de creació."
+                }
+            ]
+        },
+        {
+            "key": "N.1",
+            "unit": "NOV",
+            "unit_name": "Tasques complementàries",
+            "title": "REST i SOAP: comparativa",
+            "type": "Investigació",
+            "origin": "nova",
+            "url": "https://arturoblasco.github.io/dwes/contents/",
+            "summary": "Compara REST i SOAP amb un exemple real de cada un i explica quan convé usar un servei web.",
+            "deliver": "Document breu amb la comparativa.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA7.a",
+                    "weight": 100,
+                    "evidence": "Caracteritza els serveis web i el seu àmbit."
+                },
+                {
+                    "code": "RA7.b",
+                    "weight": 100,
+                    "evidence": "Argumenta els avantatges d'exposar la lògica com a servei."
+                },
+                {
+                    "code": "RA7.c",
+                    "weight": 100,
+                    "evidence": "Identifica protocols i formats."
+                },
+                {
+                    "code": "RA7.d",
+                    "weight": 100,
+                    "evidence": "Relaciona els estàndards amb cada arquitectura."
+                }
+            ]
+        },
+        {
+            "key": "N.2",
+            "unit": "NOV",
+            "unit_name": "Tasques complementàries",
+            "title": "Provar i documentar una API",
+            "type": "Pràctica",
+            "origin": "nova",
+            "url": "https://arturoblasco.github.io/dwes/contents/",
+            "summary": "A partir de l'API de Tenda o Notes, crea una col·lecció de proves i una descripció OpenAPI.",
+            "deliver": "Col·lecció exportada i fitxer openapi.yaml.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA7.f",
+                    "weight": 100,
+                    "evidence": "Verifica respostes correctes i d'error."
+                },
+                {
+                    "code": "RA7.h",
+                    "weight": 100,
+                    "evidence": "Documenta el servei amb OpenAPI."
+                }
+            ]
+        },
+        {
+            "key": "N.3",
+            "unit": "NOV",
+            "unit_name": "Tasques complementàries",
+            "title": "Aplicació híbrida amb una API externa",
+            "type": "Projecte",
+            "origin": "nova",
+            "url": "https://arturoblasco.github.io/dwes/contents/",
+            "summary": "Crea una pàgina Laravel que consumisca una API pública amb el client HTTP i combine les dades amb les pròpies.",
+            "deliver": "Repositori amb l'aplicació.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA7.g",
+                    "weight": 100,
+                    "evidence": "Consumix un servei extern i gestiona els errors."
+                },
+                {
+                    "code": "RA9.a",
+                    "weight": 100,
+                    "evidence": "Justifica la reutilització d'informació existent."
+                },
+                {
+                    "code": "RA9.b",
+                    "weight": 100,
+                    "evidence": "Tria les tecnologies adequades."
+                },
+                {
+                    "code": "RA9.c",
+                    "weight": 100,
+                    "evidence": "Processa les dades d'un repositori extern."
+                },
+                {
+                    "code": "RA9.f",
+                    "weight": 100,
+                    "evidence": "Construïx sobre codi i dades de tercers."
+                }
+            ]
+        },
+        {
+            "key": "N.4",
+            "unit": "NOV",
+            "unit_name": "Tasques complementàries",
+            "title": "Repositori propi des d'una font externa",
+            "type": "Pràctica",
+            "origin": "nova",
+            "url": "https://arturoblasco.github.io/dwes/contents/",
+            "summary": "Crea una ordre Artisan que importe un CSV o JSON públic a una taula pròpia, usant una llibreria.",
+            "deliver": "Ordre Artisan, migració i dades d'exemple.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA9.d",
+                    "weight": 100,
+                    "evidence": "Crea un magatzem específic amb dades externes."
+                },
+                {
+                    "code": "RA9.e",
+                    "weight": 100,
+                    "evidence": "Usa una llibreria per a una funció concreta."
+                }
+            ]
+        },
+        {
+            "key": "N.5",
+            "unit": "NOV",
+            "unit_name": "Tasques complementàries",
+            "title": "Quadre d'anàlisi de dades",
+            "type": "Projecte",
+            "origin": "nova",
+            "url": "https://arturoblasco.github.io/dwes/contents/",
+            "summary": "Analitza les vendes de Tenda o un conjunt de dades obert amb agregacions i una llibreria de gràfics.",
+            "deliver": "Pàgina amb els indicadors i breu interpretació.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA9.g",
+                    "weight": 100,
+                    "evidence": "Usa llibreries d'anàlisi per a extraure conclusions."
+                },
+                {
+                    "code": "RA9.h",
+                    "weight": 100,
+                    "evidence": "Prova, depura i documenta l'aplicació generada."
+                }
+            ]
+        },
+        {
+            "key": "N.6",
+            "unit": "NOV",
+            "unit_name": "Tasques complementàries",
+            "title": "Cerca en viu amb AJAX",
+            "type": "Pràctica",
+            "origin": "nova",
+            "url": "https://arturoblasco.github.io/dwes/contents/",
+            "summary": "Afig a Tenda un cercador que actualitze els resultats amb fetch, sense recarregar la pàgina.",
+            "deliver": "Projecte amb el cercador funcionant.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA8.a",
+                    "weight": 100,
+                    "evidence": "Explica què fa el client i què fa el servidor."
+                },
+                {
+                    "code": "RA8.b",
+                    "weight": 100,
+                    "evidence": "Argumenta l'avantatge d'unir les dues parts."
+                },
+                {
+                    "code": "RA8.c",
+                    "weight": 100,
+                    "evidence": "Identifica les tecnologies usades."
+                },
+                {
+                    "code": "RA8.f",
+                    "weight": 100,
+                    "evidence": "Modifica el contingut de manera dinàmica."
+                }
+            ]
+        },
+        {
+            "key": "N.7",
+            "unit": "NOV",
+            "unit_name": "Tasques complementàries",
+            "title": "Proves automàtiques i README",
+            "type": "Pràctica",
+            "origin": "nova",
+            "url": "https://arturoblasco.github.io/dwes/contents/",
+            "summary": "Escriu proves de Tenda per a rutes, validació i accés a dades, i documenta la instal·lació.",
+            "deliver": "Proves executables i README.",
+            "evaluable": false,
+            "ces": [
+                {
+                    "code": "RA5.h",
+                    "weight": 100,
+                    "evidence": "Prova i documenta el codi."
+                },
+                {
+                    "code": "RA6.h",
+                    "weight": 100,
+                    "evidence": "Prova i documenta l'accés a dades."
+                }
+            ]
+        }
+    ]
+}
