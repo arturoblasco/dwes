@@ -21,6 +21,11 @@ hide:
   Contenidos
 </a>
 
+<a href="ra-ce/" class="md-button md-button--primary">
+  <img src="img/goal.svg"  class="btn-icon-img" alt="RA y CE">
+  Qué debo saber
+</a>
+
 <a href="course26" class="md-button md-button--primary">
   <img src="img/date.svg"  class="btn-icon-img" alt="Course">
   '26-27

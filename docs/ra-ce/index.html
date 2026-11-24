@@ -8,13 +8,19 @@
       
       
       
+        <link rel="canonical" href="https://arturoblasco.github.io/dwes/ra-ce/">
+      
       
         <link rel="prev" href="../contents/">
       
       
-        <link rel="next" href="../up01/ut0101/">
+        <link rel="next" href="../course26/">
       
       
+        
+          <link rel="alternate" href="./" hreflang="es">
+        
+          <link rel="alternate" href="../ca/ra-ce/" hreflang="ca">
         
       
       
@@ -49,11 +55,17 @@
       
     
     
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
       <link rel="stylesheet" href="../stylesheets/calendario.css">
     
       <link rel="stylesheet" href="../stylesheets/ra_ce.css">
+    
+      <link rel="stylesheet" href="../stylesheets/pdf.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -151,6 +163,32 @@
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Castellano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../ca/ra-ce/" hreflang="ca" class="md-select__link">
+              Valencià
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -265,33 +303,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../course26/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Curso 26-27
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../contents/" class="md-nav__link">
         
   
@@ -345,6 +356,33 @@
 
       </a>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso 26-27
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3930,7 +3968,7 @@
 <p class="race-intro">Módulo <strong>0613 · Desenvolupament web en entorn servidor</strong>. Para aprobar tienes que superar cada <strong>resultado de aprendizaje (RA)</strong>. Cada RA se evalúa con varios <strong>criterios de evaluación (CE)</strong>, y cada CE se trabaja en una o más tareas de los apuntes.</p>
 <p class="race-note">Marca los CE que ya sabes hacer para ver tu progreso. Es una <strong>autoevaluación</strong>: se guarda solo en este navegador y no es tu nota.</p>
 <span class="race-progress" data-race-total=""><span class="race-bar"><span style="width:0%"></span></span><span class="race-pct">0&nbsp;%</span><span class="race-label">de todo el módulo, ponderado por el peso de cada RA</span></span>
-<p><button type="button" class="md-button race-reset">Borrar mi autoevaluación</button></p>
+<p><button type="button" class="md-button race-reset" data-confirm="¿Borrar todos los criterios que has marcado en este navegador?">Borrar mi autoevaluación</button></p>
 <details class="race-ra note" id="ra1" data-race-ra="RA1" data-race-weight="5"><summary><span class="race-code">RA1</span> <span class="race-weight">5&nbsp;%</span> Selecciona les arquitectures i tecnologies de programació Web en entorn servidor, analitzant les seues capacitats i característiques pròpies<span class="race-progress" ><span class="race-bar"><span style="width:0%"></span></span><span class="race-pct">0&nbsp;%</span><span class="race-label"></span></span></summary><table class="race-table"><thead><tr><th>CE</th><th>Qué tienes que demostrar</th><th>Dónde lo trabajas</th><th></th></tr></thead><tbody>
 <tr data-race-row="RA1.a" data-race-weight="10"><td class="race-code">RA1.a<br><small>10&nbsp;%</small></td><td>S&#x27;han caracteritzat i diferenciat els models d&#x27;execució de codi en servidor i en client web.</td><td><ul><li><a href="../up01/ut0101/"><span class="race-key">T01.1</span> Qüestionari d&#x27;arrancada sobre la web</a><br><small>Explica què s&#x27;executa en el client i què en el servidor.</small></li></ul></td><td><label class="race-check" title="Marca si ya sabes hacerlo"><input type="checkbox" data-race-ce="RA1.a"> <span>Ya sé hacerlo</span></label></td></tr>
 <tr data-race-row="RA1.b" data-race-weight="15"><td class="race-code">RA1.b<br><small>15&nbsp;%</small></td><td>S&#x27;han reconegut els avantatges que proporciona la generació dinàmica de pàgines.</td><td><ul><li><a href="../up01/ut0101/"><span class="race-key">T01.1</span> Qüestionari d&#x27;arrancada sobre la web</a><br><small>Justifica quan aporta valor una pàgina dinàmica.</small></li></ul></td><td><label class="race-check" title="Marca si ya sabes hacerlo"><input type="checkbox" data-race-ce="RA1.b"> <span>Ya sé hacerlo</span></label></td></tr>
@@ -4113,13 +4151,13 @@
         
         
           
-          <a href="../up01/ut0101/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 1.1. Introducción">
+          <a href="../course26/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Curso 26-27">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                1.1. Introducción
+                Curso 26-27
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4181,11 +4219,15 @@
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
+        <script src="../js/print-site.js"></script>
+      
         <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
       
         <script src="../javascripts/calendario.js"></script>
       
         <script src="../javascripts/ra_ce.js"></script>
+      
+        <script src="../javascripts/pdf.js"></script>
       
     
   </body>

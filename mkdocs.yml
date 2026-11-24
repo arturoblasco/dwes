@@ -1,6 +1,9 @@
 # Nom del lloc
 site_name: Desarrollo Web en Entorno Servidor (DWES)
 
+# Adreça publicada. Cal perquè el selector d'idioma apunte a /dwes/ i /dwes/ca/
+site_url: https://arturoblasco.github.io/dwes/
+
 # Carpeta amb el documents font
 docs_dir: 'md'
 
@@ -13,9 +16,9 @@ dev_addr: localhost:8027
 # Navegació dels lloc DWES25
 nav:
   - "Inicio": index.md
-  - "Curso 26-27": course26.md  
   - "Contenidos": contents.md
   - "Qué debo saber hacer": ra-ce.md
+  - "Curso 26-27": course26.md
   - 🔵 PHP:
     - U01 Arquitectura Web:
         - up01/ut0101.md
@@ -204,39 +207,85 @@ markdown_extensions:
 # Altres afegits
 plugins:
   - search      # plugin del quadre cerca
-  # - i18n:
-  #     docs_structure: folder
-  #     reconfigure: true   # <<--- IMPRESCINDIBLE per canviar site_name per idioma
-  #     languages:
-  #       - locale: es
-  #         name: Castellano
-  #         default: true
-  #         build: true
-  #         config:
-  #           site_name: "Desarrollo Web en Entorno Servidor (DWES)"
-  #           theme:
-  #             language: es
-  #       - locale: ca
-  #         name: Valencià
-  #         build: true
-  #         config:
-  #           site_name: "Desenvolupament Web en Entorn Servidor (DWES)"
-  #           theme:
-  #             language: ca
-  #     nav_translations:          
-  #       ca:
-  #         "UT 1 Arquitectura Web": "UT 1 Arquitectura Web"
-  #         "UT 2 Lenguaje PHP": "UT 2 Llenguatge PHP"
-          
+
+  # Multiidioma (pip install mkdocs-static-i18n)
+  # Castellà: pagina.md  ->  /pagina/
+  # Valencià: pagina.ca.md  ->  /ca/pagina/  (si no existix, es mostra la versió en castellà)
+  # El selector d'idioma apareix al costat del botó de mode fosc.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: es
+          name: Castellano
+          default: true
+          build: true
+        - locale: ca
+          name: Valencià
+          build: true
+          site_name: "Desenvolupament Web en Entorn Servidor (DWES)"
+          theme:
+            palette:
+              - scheme: default
+                primary: '#1d4975'
+                accent: '#1d4975'
+                toggle:
+                  icon: material/weather-night
+                  name: Canvia a mode fosc
+              - scheme: slate
+                primary: '#1d4975'
+                accent: '#1d4975'
+                toggle:
+                  icon: material/white-balance-sunny
+                  name: Canvia a mode clar
+          nav_translations:
+            "Inicio": "Inici"
+            "Curso 26-27": "Curs 26-27"
+            "Contenidos": "Continguts"
+            "Qué debo saber hacer": "Què he de saber fer"
+            "U02 Lenguaje PHP": "U02 Llenguatge PHP"
+            "U04 Programación web": "U04 Programació web"
+            "U05 Acceso a Base de Datos": "U05 Accés a bases de dades"
+            "U06 ED profesional": "U06 ED professional"
+            "U07 Fundamentos": "U07 Fonaments"
+            "U08 Gestión de datos": "U08 Gestió de dades"
+            "U09 Interacción con usuario": "U09 Interacció amb l'usuari"
+            "U10 Autenticación básica": "U10 Autenticació bàsica"
+            "U11 Despliegue": "U11 Desplegament"
+            "Actividades": "Activitats"
+            "🟢 Proyecto": "🟢 Projecte"
+            "U12 Proyecto": "U12 Projecte"
+
+  # Tot el material en una sola pàgina per a imprimir o guardar en PDF
+  # (pip install mkdocs-print-site-plugin). Ha d'anar l'últim.
+  # El botó de PDF de la capçalera (javascripts/pdf.js) obri esta pàgina.
+  - print-site:
+      add_to_navigation: false
+      print_page_title: "DWES"
+      add_print_site_banner: false
+      add_cover_page: true
+      add_table_of_contents: true
+      toc_depth: 2
+      enumerate_headings: false
+      add_full_urls: false
+      exclude:
+        - index.md
+        - index.ca.md
+        - ra-ce.md
+
 extra_css:
   - stylesheets/extra.css
   - stylesheets/calendario.css
   - stylesheets/ra_ce.css
+  - stylesheets/pdf.css
 
 extra_javascript:
   - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
   - javascripts/calendario.js
   - javascripts/ra_ce.js
+  - javascripts/pdf.js
 
 # Mapa de RA i CE exportat des del Gestor de RA i CE (ra_ce.json)
 hooks:

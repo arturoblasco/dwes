@@ -7,3 +7,6 @@ code/*
 !code/APM5/
 !!code/APM5/src/**
 
+
+# Python
+__pycache__/

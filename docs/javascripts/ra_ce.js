@@ -81,7 +81,7 @@
       var reset = root.querySelector('.race-reset');
       if (reset) {
         reset.addEventListener('click', function () {
-          if (!window.confirm('¿Borrar todos los criterios que has marcado en este navegador?')) return;
+          if (!window.confirm(reset.getAttribute('data-confirm') || '¿Borrar?')) return;
           done = new Set();
           save(module, done);
           refresh(root, module, done);

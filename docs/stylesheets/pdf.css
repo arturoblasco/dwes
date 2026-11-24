@@ -1,0 +1,19 @@
+/* Botó PDF de la capçalera (javascripts/pdf.js) i ajustos d'impressió */
+
+.dwes-pdf .md-select__inner { min-width: 9rem; }
+
+.dwes-pdf-wait {
+  position: fixed; top: 4rem; left: 50%; transform: translateX(-50%); z-index: 10;
+  padding: .6rem 1.2rem; border-radius: .2rem; font-size: .75rem;
+  background: var(--md-primary-fg-color); color: var(--md-primary-bg-color);
+  box-shadow: var(--md-shadow-z2);
+}
+
+@media print {
+  .dwes-pdf, .dwes-pdf-wait,
+  .race-check, .race-reset { display: none !important; }
+  /* Els blocs plegables s'imprimixen oberts */
+  .md-typeset details > summary::after { display: none; }
+  .md-typeset pre, .md-typeset table { page-break-inside: avoid; }
+  .md-typeset h1, .md-typeset h2, .md-typeset h3 { page-break-after: avoid; }
+}
