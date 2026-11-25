@@ -116,32 +116,41 @@ nav:
         - ul04/406.md
         - ul04/407.md
         - ul04/40p.md
-    - U10 Autenticación básica:
+    - U10 Servicios web (API REST):
         - ul05/500.md
-    - U11 Despliegue:
+        - ul05/501.md
+        - ul05/502.md
+        - ul05/503.md
+        - ul05/504.md
+        - ul05/50p.md
+    - U11 Aplicación híbrida con Vue:
+        - ul07/700.md
+        - ul07/701.md
+        - ul07/702.md
+        - ul07/703.md
+        - ul07/70p.md
+    - U12 Despliegue:
         - ul06/600.md
         - ul06/601.md
         - ul06/602.md
-        - ul06/603.md                        
+        - ul06/603.md
     - Actividades:
         - activities/examen2.md
         - activities/act02.md
-        - activities/pru07.md
   - 🟢 Proyecto:
-    - U12 Proyecto:
+    - U13 Proyecto:
         - ul12/100.md
 
 theme:
   name: material      # selección del tema
+  custom_dir: overrides   # icones pròpies a overrides/.icons
   language: es        # idioma del tema per defecte (ABC)
   logo: img/logo.png
   favicon: img/favicon.png
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
-    alternate: fontawesome/solid/flag-usa
-    language: material/translate   # cambia el icono de idioma
-    alternate: material/translate  # o material/translate, material/web, etc.
+    alternate: idioma/language   # icona del selector d'idioma (overrides/.icons/idioma/language.svg)
 
   palette:
    # Boto que canvia a mode oscur
@@ -252,11 +261,12 @@ plugins:
             "U07 Fundamentos": "U07 Fonaments"
             "U08 Gestión de datos": "U08 Gestió de dades"
             "U09 Interacción con usuario": "U09 Interacció amb l'usuari"
-            "U10 Autenticación básica": "U10 Autenticació bàsica"
-            "U11 Despliegue": "U11 Desplegament"
+            "U10 Servicios web (API REST)": "U10 Serveis web (API REST)"
+            "U11 Aplicación híbrida con Vue": "U11 Aplicació híbrida amb Vue"
+            "U12 Despliegue": "U12 Desplegament"
             "Actividades": "Activitats"
             "🟢 Proyecto": "🟢 Projecte"
-            "U12 Proyecto": "U12 Projecte"
+            "U13 Proyecto": "U13 Projecte"
 
   # Tot el material en una sola pàgina per a imprimir o guardar en PDF
   # (pip install mkdocs-print-site-plugin). Ha d'anar l'últim.
@@ -290,5 +300,6 @@ extra_javascript:
 # Mapa de RA i CE exportat des del Gestor de RA i CE (ra_ce.json)
 hooks:
   - hooks/ra_ce.py
+  - hooks/i18n_assets.py   # rutes d'imatges en HTML dins de les pàgines /ca/
 
 copyright: Arturo Blasco - Creative Commons CC BY-NC-SA

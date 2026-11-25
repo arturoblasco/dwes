@@ -262,7 +262,7 @@ def _render_box(page, tasks: list[dict], map_url: str | None) -> str:
             f'{escape(ce["description"])} <small>({names})</small> {_checkbox(code)}</li>'
         )
     return (
-        f'\n<details class="race-box abstract" data-race-module="{escape(_map["module"]["code"])}">'
+        f'\n<details class="race-box ies" data-race-module="{escape(_map["module"]["code"])}">'
         f'<summary>{escape(_t("box").format(n=len(codes), ras=", ".join(ras)))}</summary>'
         f'<ul>{"".join(rows)}</ul>'
         f'<p class="race-note">{escape(_t("box_note"))}{link}.</p>'

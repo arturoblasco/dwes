@@ -1304,7 +1304,7 @@
             "title": "Emmagatzematge d'arxius",
             "type": "Pràctica",
             "origin": "material",
-            "url": "https://arturoblasco.github.io/dwes/activities/pru07/",
+            "url": "https://arturoblasco.github.io/dwes/ul04/407/",
             "summary": "Treball amb discos, storage:link, validació d'imatges i arxius privats.",
             "deliver": "Formulari amb pujada d'imatge funcionant.",
             "evaluable": false,
@@ -1329,7 +1329,7 @@
             "type": "Pràctica",
             "origin": "material",
             "url": "https://arturoblasco.github.io/dwes/activities/act02/",
-            "summary": "Activitat de 21 passos amb consultes, CRUD, Form Requests, API REST amb Resources i SweetAlert2.",
+            "summary": "Activitat guiada amb consultes, CRUD, plantilles Blade, Form Requests i SweetAlert2. La part d'API REST passa a la U10.",
             "deliver": "Projecte i captures indicades.",
             "evaluable": false,
             "ces": [
@@ -1349,11 +1349,6 @@
                     "evidence": "Completa un CRUD."
                 },
                 {
-                    "code": "RA7.e",
-                    "weight": 100,
-                    "evidence": "Programa una API REST."
-                },
-                {
                     "code": "RA8.e",
                     "weight": 100,
                     "evidence": "Valida amb Form Requests."
@@ -1366,14 +1361,53 @@
             ]
         },
         {
-            "key": "T10.1",
+            "key": "T10.3",
             "unit": "U10",
-            "unit_name": "Autenticació i API",
-            "title": "API amb Sanctum i SPA amb Vue",
+            "unit_name": "Serveis web (API REST)",
+            "title": "API REST de productes",
             "type": "Pràctica",
             "origin": "material",
-            "url": "https://arturoblasco.github.io/dwes/ul05/500/",
-            "summary": "Pràctica guiada Laravel API + Vue: tokens, cookies de sessió, CORS i login des de la SPA.",
+            "url": "https://arturoblasco.github.io/dwes/ul05/50p/",
+            "summary": "API REST completa: apiResource, Resources amb paginació, Form Requests, errors en JSON, tokens de Sanctum, tests automàtics i documentació amb Scribe.",
+            "deliver": "PDF amb les captures i enllaç al repositori.",
+            "ces": [
+                {
+                    "code": "RA7.c",
+                    "weight": 100,
+                    "evidence": "Usa els mètodes i els codis d'estat HTTP de cada operació."
+                },
+                {
+                    "code": "RA7.d",
+                    "weight": 100,
+                    "evidence": "Seguix l'arquitectura REST amb JSON i OpenAPI."
+                },
+                {
+                    "code": "RA7.e",
+                    "weight": 100,
+                    "evidence": "Programa l'API REST amb autenticació per tokens."
+                },
+                {
+                    "code": "RA7.f",
+                    "weight": 100,
+                    "evidence": "Verifica l'API amb REST Client i tests automàtics."
+                },
+                {
+                    "code": "RA7.h",
+                    "weight": 100,
+                    "evidence": "Documenta l'API amb Scribe."
+                }
+            ],
+            "evaluable": false
+        },
+        {
+            "key": "T10.1",
+            "unit": "U11",
+            "unit_name": "Aplicació híbrida amb Vue",
+            "title": "Notes amb Laravel i Vue (SPA)",
+            "type": "Pràctica",
+            "origin": "material",
+            "url": "https://arturoblasco.github.io/dwes/ul07/70p/",
+            "summary": "Pràctica guiada: API amb Sanctum en mode SPA consumida des de Vue, amb login per cookies, proxy de Vite, CSRF i gestió d'errors 401, 403 i 422.",
             "deliver": "Projecte i respostes a les preguntes de reflexió.",
             "evaluable": false,
             "ces": [
@@ -1401,18 +1435,23 @@
                     "code": "RA8.g",
                     "weight": 100,
                     "evidence": "Aplica les dues tecnologies en una aplicació."
+                },
+                {
+                    "code": "RA9.b",
+                    "weight": 100,
+                    "evidence": "Combina Laravel i Vue en una aplicació híbrida."
                 }
             ]
         },
         {
             "key": "T10.2",
-            "unit": "U10",
-            "unit_name": "Autenticació i API",
-            "title": "Mini-projecte Notes amb autorització",
+            "unit": "U11",
+            "unit_name": "Aplicació híbrida amb Vue",
+            "title": "Autorització amb policies",
             "type": "Projecte",
             "origin": "material",
-            "url": "https://arturoblasco.github.io/dwes/ul05/500/",
-            "summary": "Mini-projecte amb propietat dels recursos, rols, Policies i resposta 403.",
+            "url": "https://arturoblasco.github.io/dwes/ul07/703/",
+            "summary": "Propietat dels recursos, rols, Policies amb Gate::authorize, resposta 403 i permisos enviats a la interfície Vue.",
             "deliver": "Repositori amb el projecte.",
             "evaluable": false,
             "ces": [
@@ -1435,7 +1474,7 @@
         },
         {
             "key": "T11.1",
-            "unit": "U11",
+            "unit": "U12",
             "unit_name": "Desplegament",
             "title": "Desplegament en Render",
             "type": "Pràctica",
@@ -1537,30 +1576,6 @@
                     "code": "RA7.d",
                     "weight": 100,
                     "evidence": "Relaciona els estàndards amb cada arquitectura."
-                }
-            ]
-        },
-        {
-            "key": "N.2",
-            "unit": "NOV",
-            "unit_name": "Tasques complementàries",
-            "title": "Provar i documentar una API",
-            "type": "Pràctica",
-            "origin": "nova",
-            "url": "https://arturoblasco.github.io/dwes/contents/",
-            "summary": "A partir de l'API de Tenda o Notes, crea una col·lecció de proves i una descripció OpenAPI.",
-            "deliver": "Col·lecció exportada i fitxer openapi.yaml.",
-            "evaluable": false,
-            "ces": [
-                {
-                    "code": "RA7.f",
-                    "weight": 100,
-                    "evidence": "Verifica respostes correctes i d'error."
-                },
-                {
-                    "code": "RA7.h",
-                    "weight": 100,
-                    "evidence": "Documenta el servei amb OpenAPI."
                 }
             ]
         },

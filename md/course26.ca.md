@@ -50,10 +50,14 @@ hide:
     </tr>
     <tr class="laravel">
       <td class="codigo"><span>U10</span></td>
-      <td>Autenticació bàsica</td>
+      <td>Serveis web (API REST)</td>
     </tr>
     <tr class="laravel">
       <td class="codigo"><span>U11</span></td>
+      <td>Aplicació híbrida amb Vue</td>
+    </tr>
+    <tr class="laravel">
+      <td class="codigo"><span>U12</span></td>
       <td>Desplegament</td>
     </tr>
     <tr class="proyecto">
@@ -161,8 +165,9 @@ gantt
     U07 :p2, after p1, 32d
     U08 :p3, after p2, 18d
     U09 :p4, after p3, 22d
-    U10 :p5, after p4, 14d
-    U11 :p6, after p5, 7d
+    U10 :p5, after p4, 8d
+    U11 :p6, after p5, 6d
+    U12 :p7, after p6, 7d
 
     section Projecte
     Proves finals :pr1, after p3, 43d
